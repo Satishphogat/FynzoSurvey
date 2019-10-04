@@ -20,6 +20,17 @@ class LoginViewController: UIViewController {
     }
     
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var createAccountButton: UIButton! {
+        didSet {
+            createAccountButton.setAttributedTitle(underline("Create an account", font: UIFont.systemFont(ofSize: 16), color: AppDelegate.shared.appThemeColor), for: .normal)
+        }
+    }
+    @IBOutlet weak var forgotPasswordButton: UIButton! {
+        didSet {
+            forgotPasswordButton.setAttributedTitle(underline("Forgot password", font: UIFont.systemFont(ofSize: 16), color: AppDelegate.shared.appThemeColor), for: .normal)
+        }
+    }
+
         
     var titleArray = ["Email", "Password"]
     var userInfo = UserInfo()
