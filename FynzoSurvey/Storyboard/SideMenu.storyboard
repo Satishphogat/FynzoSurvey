@@ -124,6 +124,40 @@
             </objects>
             <point key="canvasLocation" x="76" y="169.56521739130437"/>
         </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="Cob-hu-eSz">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" id="JOG-ap-J8W" customClass="SettingViewController" customModule="FynzoSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Tt-1a-9u1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d5c-IM-PYT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JOG-ap-J8W" id="9cf-Dq-6Kl"/>
+                                    <outlet property="delegate" destination="JOG-ap-J8W" id="cAu-0q-LjB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d5c-IM-PYT" firstAttribute="leading" secondItem="xRY-Ml-wdq" secondAttribute="leading" id="2hS-Gw-ygw"/>
+                            <constraint firstItem="d5c-IM-PYT" firstAttribute="top" secondItem="xRY-Ml-wdq" secondAttribute="top" id="Y0s-n5-kXd"/>
+                            <constraint firstItem="xRY-Ml-wdq" firstAttribute="bottom" secondItem="d5c-IM-PYT" secondAttribute="bottom" id="dmn-w6-IxO"/>
+                            <constraint firstItem="xRY-Ml-wdq" firstAttribute="trailing" secondItem="d5c-IM-PYT" secondAttribute="trailing" id="vMy-0H-541"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xRY-Ml-wdq"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="d5c-IM-PYT" id="sW4-R8-M20"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PYR-m7-7yN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880" y="171"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_profile" width="20" height="20"/>

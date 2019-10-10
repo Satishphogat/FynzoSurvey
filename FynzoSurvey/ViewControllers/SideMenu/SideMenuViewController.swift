@@ -72,7 +72,10 @@ extension SideMenuViewController: UITableViewDelegate {
         if indexPath.row == 0 {
             let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
             navigationController?.pushViewController(controller, animated: true)
-        }  else {
+        } else if indexPath.row == 1 {
+            let controller = SettingViewController.instantiate(fromAppStoryboard: .SideMenu)
+            navigationController?.pushViewController(controller, animated: true)
+        } else {
            
         }
     }

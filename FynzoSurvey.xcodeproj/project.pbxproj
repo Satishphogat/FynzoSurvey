@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		254A84D5234F97DE00B35EF0 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84D3234F97DD00B35EF0 /* SideMenuTableViewCell.swift */; };
 		254A84D6234F97DE00B35EF0 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254A84D4234F97DE00B35EF0 /* SideMenuTableViewCell.xib */; };
 		254A84D8234F99B600B35EF0 /* UIViewController+SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84D7234F99B600B35EF0 /* UIViewController+SideMenu.swift */; };
+		254A84DA234F9EA700B35EF0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84D9234F9EA700B35EF0 /* SettingViewController.swift */; };
+		254A84DE234F9EE500B35EF0 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84DC234F9EE500B35EF0 /* SettingTableViewCell.swift */; };
+		254A84DF234F9EE500B35EF0 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254A84DD234F9EE500B35EF0 /* SettingTableViewCell.xib */; };
 		25FEE01A234E480600BF002A /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE019234E480600BF002A /* AppConfiguration.swift */; };
 		25FEE074234E483300BF002A /* Fynzo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03A234E483300BF002A /* Fynzo.swift */; };
 		25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03B234E483300BF002A /* Fynzo+Color.swift */; };
@@ -91,6 +94,9 @@
 		254A84D3234F97DD00B35EF0 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		254A84D4234F97DE00B35EF0 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		254A84D7234F99B600B35EF0 /* UIViewController+SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+SideMenu.swift"; sourceTree = "<group>"; };
+		254A84D9234F9EA700B35EF0 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		254A84DC234F9EE500B35EF0 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		254A84DD234F9EE500B35EF0 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		25FEE019234E480600BF002A /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		25FEE03A234E483300BF002A /* Fynzo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fynzo.swift; sourceTree = "<group>"; };
 		25FEE03B234E483300BF002A /* Fynzo+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fynzo+Color.swift"; sourceTree = "<group>"; };
@@ -196,11 +202,22 @@
 		254A84D0234F955900B35EF0 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				254A84DB234F9EC700B35EF0 /* Setting */,
 				254A84D1234F95AA00B35EF0 /* SideMenuViewController.swift */,
 				254A84D3234F97DD00B35EF0 /* SideMenuTableViewCell.swift */,
 				254A84D4234F97DE00B35EF0 /* SideMenuTableViewCell.xib */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		254A84DB234F9EC700B35EF0 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				254A84D9234F9EA700B35EF0 /* SettingViewController.swift */,
+				254A84DC234F9EE500B35EF0 /* SettingTableViewCell.swift */,
+				254A84DD234F9EE500B35EF0 /* SettingTableViewCell.xib */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		25FEE018234E480600BF002A /* AppConfiguration */ = {
@@ -509,6 +526,7 @@
 				25FEE07E234E483300BF002A /* Poppins-SemiBoldItalic.otf in Resources */,
 				25FEE083234E483300BF002A /* Poppins-Light.otf in Resources */,
 				25FEE085234E483300BF002A /* Poppins-Medium.otf in Resources */,
+				254A84DF234F9EE500B35EF0 /* SettingTableViewCell.xib in Resources */,
 				7199ADC421EC8AB10066B969 /* Authentication.storyboard in Resources */,
 				25FEE088234E483300BF002A /* Poppins-Thin.otf in Resources */,
 				25FEE08C234E483300BF002A /* Poppins-Black.otf in Resources */,
@@ -598,8 +616,10 @@
 				71917E8321ECB8CE0077ADF4 /* UITableView+Reusable.swift in Sources */,
 				25FEE074234E483300BF002A /* Fynzo.swift in Sources */,
 				71917E8221ECB8CE0077ADF4 /* Reusable.swift in Sources */,
+				254A84DE234F9EE500B35EF0 /* SettingTableViewCell.swift in Sources */,
 				7199ADD521EC8AD70066B969 /* ForgotPasswordViewController.swift in Sources */,
 				7199ADD621EC8AD70066B969 /* ResetPasswordViewController.swift in Sources */,
+				254A84DA234F9EA700B35EF0 /* SettingViewController.swift in Sources */,
 				25FEE07C234E483300BF002A /* LoaderView.swift in Sources */,
 				254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */,
 				25FEE076234E483300BF002A /* Fynzo+Font.swift in Sources */,

@@ -96,6 +96,16 @@ extension Fynzo {
         static let contactUs = "Contact Us"
         static let chatWithUs = "Chat With Us"
         static let logout = "Logout"
+        static let account = "Account"
+        static let plan = "Plan"
+        static let app = "App"
+        static let uploadSetting = "Upload Setting"
+        static let Email = "Email"
+        static let name = "Name"
+        static let startDate = "Start Date"
+        static let endDate = "End Date"
+        static let version = "Version"
+        static let autoUpload = "Auto Upload"
     }
     
     struct ApiKey {
