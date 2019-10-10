@@ -7,6 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25FEE01A234E480600BF002A /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE019234E480600BF002A /* AppConfiguration.swift */; };
+		25FEE074234E483300BF002A /* Fynzo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03A234E483300BF002A /* Fynzo.swift */; };
+		25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03B234E483300BF002A /* Fynzo+Color.swift */; };
+		25FEE076234E483300BF002A /* Fynzo+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03C234E483300BF002A /* Fynzo+Font.swift */; };
+		25FEE077234E483300BF002A /* Fynzo+NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03D234E483300BF002A /* Fynzo+NavigationItem.swift */; };
+		25FEE078234E483300BF002A /* Fynzo+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03E234E483300BF002A /* Fynzo+Constant.swift */; };
+		25FEE079234E483300BF002A /* Fynzo+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03F234E483300BF002A /* Fynzo+Image.swift */; };
+		25FEE07B234E483300BF002A /* LoaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE042234E483300BF002A /* LoaderView.xib */; };
+		25FEE07C234E483300BF002A /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE043234E483300BF002A /* LoaderView.swift */; };
+		25FEE07E234E483300BF002A /* Poppins-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE046234E483300BF002A /* Poppins-SemiBoldItalic.otf */; };
+		25FEE07F234E483300BF002A /* Poppins-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE047234E483300BF002A /* Poppins-ExtraBoldItalic.otf */; };
+		25FEE080234E483300BF002A /* Poppins-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE048234E483300BF002A /* Poppins-ExtraLight.otf */; };
+		25FEE081234E483300BF002A /* Poppins-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE049234E483300BF002A /* Poppins-ThinItalic.otf */; };
+		25FEE082234E483300BF002A /* Poppins-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE04A234E483300BF002A /* Poppins-ExtraLightItalic.otf */; };
+		25FEE083234E483300BF002A /* Poppins-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE04B234E483300BF002A /* Poppins-Light.otf */; };
+		25FEE084234E483300BF002A /* Poppins-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE04C234E483300BF002A /* Poppins-BoldItalic.otf */; };
+		25FEE085234E483300BF002A /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE04D234E483300BF002A /* Poppins-Medium.otf */; };
+		25FEE086234E483300BF002A /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE04E234E483300BF002A /* Poppins-SemiBold.otf */; };
+		25FEE087234E483300BF002A /* Poppins-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE04F234E483300BF002A /* Poppins-Italic.otf */; };
+		25FEE088234E483300BF002A /* Poppins-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE050234E483300BF002A /* Poppins-Thin.otf */; };
+		25FEE089234E483300BF002A /* Poppins-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE051234E483300BF002A /* Poppins-MediumItalic.otf */; };
+		25FEE08A234E483300BF002A /* Poppins-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE052234E483300BF002A /* Poppins-LightItalic.otf */; };
+		25FEE08B234E483300BF002A /* Poppins-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE053234E483300BF002A /* Poppins-Bold.otf */; };
+		25FEE08C234E483300BF002A /* Poppins-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE054234E483300BF002A /* Poppins-Black.otf */; };
+		25FEE08D234E483300BF002A /* Poppins-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE055234E483300BF002A /* Poppins-BlackItalic.otf */; };
+		25FEE08E234E483300BF002A /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE056234E483300BF002A /* Poppins-Regular.otf */; };
+		25FEE08F234E483300BF002A /* Poppins-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */; };
+		25FEE09D234E597700BF002A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE09C234E597700BF002A /* UserInfo.swift */; };
 		5F8B092C3BC88E536F11BF7A /* Pods_FynzoSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AED3BE15D3413B80E12E8F3 /* Pods_FynzoSurvey.framework */; };
 		7165960D21ECEA9000D55A14 /* SwifterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165960C21ECEA9000D55A14 /* SwifterSwift.swift */; };
 		7165961121ECEAAD00D55A14 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165960F21ECEAAD00D55A14 /* SCLAlertView.swift */; };
@@ -23,7 +51,6 @@
 		71917E8B21ECBC6A0077ADF4 /* SuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71917E8921ECBC6A0077ADF4 /* SuccessViewController.xib */; };
 		71917E8C21ECBC6A0077ADF4 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71917E8A21ECBC6A0077ADF4 /* SuccessViewController.swift */; };
 		71917E8E21ECBCEE0077ADF4 /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71917E8D21ECBCED0077ADF4 /* String+Validation.swift */; };
-		71917E9121ECBDA30077ADF4 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71917E9021ECBDA30077ADF4 /* UserInfo.swift */; };
 		71917E9321ECBFD90077ADF4 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71917E9221ECBFD90077ADF4 /* UIImage+Color.swift */; };
 		71917E9521ECC08C0077ADF4 /* String+CoreFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71917E9421ECC08C0077ADF4 /* String+CoreFoundation.swift */; };
 		71917E9721ECC0A70077ADF4 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71917E9621ECC0A70077ADF4 /* UIViewExtensions.swift */; };
@@ -36,8 +63,6 @@
 		7199ADD821EC8AD70066B969 /* CommonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7199ADCF21EC8AD70066B969 /* CommonTableViewCell.xib */; };
 		7199ADDA21EC8B380066B969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7199ADD921EC8B370066B969 /* Assets.xcassets */; };
 		71D444AA21ECF5AE00BD1AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D444A921ECF5AE00BD1AB1 /* LaunchScreen.storyboard */; };
-		71D444B421ECF8BB00BD1AB1 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D444AC21ECF8BA00BD1AB1 /* PickerView.swift */; };
-		71D444B521ECF8BB00BD1AB1 /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D444AD21ECF8BA00BD1AB1 /* PickerView.xib */; };
 		71D444B621ECF8BB00BD1AB1 /* KPItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D444AF21ECF8BA00BD1AB1 /* KPItem.swift */; };
 		71D444B721ECF8BB00BD1AB1 /* KPItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D444B021ECF8BA00BD1AB1 /* KPItemView.xib */; };
 		71D444B821ECF8BB00BD1AB1 /* KPActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D444B121ECF8BA00BD1AB1 /* KPActionSheet.swift */; };
@@ -48,6 +73,38 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25FEE019234E480600BF002A /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		25FEE03A234E483300BF002A /* Fynzo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fynzo.swift; sourceTree = "<group>"; };
+		25FEE03B234E483300BF002A /* Fynzo+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fynzo+Color.swift"; sourceTree = "<group>"; };
+		25FEE03C234E483300BF002A /* Fynzo+Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fynzo+Font.swift"; sourceTree = "<group>"; };
+		25FEE03D234E483300BF002A /* Fynzo+NavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fynzo+NavigationItem.swift"; sourceTree = "<group>"; };
+		25FEE03E234E483300BF002A /* Fynzo+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fynzo+Constant.swift"; sourceTree = "<group>"; };
+		25FEE03F234E483300BF002A /* Fynzo+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fynzo+Image.swift"; sourceTree = "<group>"; };
+		25FEE042234E483300BF002A /* LoaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoaderView.xib; sourceTree = "<group>"; };
+		25FEE043234E483300BF002A /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		25FEE046234E483300BF002A /* Poppins-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		25FEE047234E483300BF002A /* Poppins-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		25FEE048234E483300BF002A /* Poppins-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.otf"; sourceTree = "<group>"; };
+		25FEE049234E483300BF002A /* Poppins-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.otf"; sourceTree = "<group>"; };
+		25FEE04A234E483300BF002A /* Poppins-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		25FEE04B234E483300BF002A /* Poppins-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.otf"; sourceTree = "<group>"; };
+		25FEE04C234E483300BF002A /* Poppins-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.otf"; sourceTree = "<group>"; };
+		25FEE04D234E483300BF002A /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
+		25FEE04E234E483300BF002A /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
+		25FEE04F234E483300BF002A /* Poppins-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.otf"; sourceTree = "<group>"; };
+		25FEE050234E483300BF002A /* Poppins-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.otf"; sourceTree = "<group>"; };
+		25FEE051234E483300BF002A /* Poppins-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.otf"; sourceTree = "<group>"; };
+		25FEE052234E483300BF002A /* Poppins-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.otf"; sourceTree = "<group>"; };
+		25FEE053234E483300BF002A /* Poppins-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.otf"; sourceTree = "<group>"; };
+		25FEE054234E483300BF002A /* Poppins-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.otf"; sourceTree = "<group>"; };
+		25FEE055234E483300BF002A /* Poppins-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.otf"; sourceTree = "<group>"; };
+		25FEE056234E483300BF002A /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
+		25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.otf"; sourceTree = "<group>"; };
+		25FEE096234E58CA00BF002A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		25FEE099234E58CA00BF002A /* FynzoWebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FynzoWebServices.swift; sourceTree = "<group>"; };
+		25FEE09A234E58CA00BF002A /* FynzoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FynzoAPIManager.swift; sourceTree = "<group>"; };
+		25FEE09B234E58CA00BF002A /* AppUserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefaultManager.swift; sourceTree = "<group>"; };
+		25FEE09C234E597700BF002A /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		457444D65E7D507BC1774A41 /* Pods-MyMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayer/Pods-MyMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		5660DA197C549C5D7488CB83 /* Pods-FynzoSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FynzoSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey.release.xcconfig"; sourceTree = "<group>"; };
 		5AED3BE15D3413B80E12E8F3 /* Pods_FynzoSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FynzoSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +123,6 @@
 		71917E8921ECBC6A0077ADF4 /* SuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuccessViewController.xib; sourceTree = "<group>"; };
 		71917E8A21ECBC6A0077ADF4 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		71917E8D21ECBCED0077ADF4 /* String+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
-		71917E9021ECBDA30077ADF4 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		71917E9221ECBFD90077ADF4 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		71917E9421ECC08C0077ADF4 /* String+CoreFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CoreFoundation.swift"; sourceTree = "<group>"; };
 		71917E9621ECC0A70077ADF4 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -81,8 +137,6 @@
 		7199ADCF21EC8AD70066B969 /* CommonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonTableViewCell.xib; sourceTree = "<group>"; };
 		7199ADD921EC8B370066B969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71D444A921ECF5AE00BD1AB1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		71D444AC21ECF8BA00BD1AB1 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
-		71D444AD21ECF8BA00BD1AB1 /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
 		71D444AF21ECF8BA00BD1AB1 /* KPItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPItem.swift; sourceTree = "<group>"; };
 		71D444B021ECF8BA00BD1AB1 /* KPItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPItemView.xib; sourceTree = "<group>"; };
 		71D444B121ECF8BA00BD1AB1 /* KPActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPActionSheet.swift; sourceTree = "<group>"; };
@@ -107,6 +161,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25FEE018234E480600BF002A /* AppConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				25FEE019234E480600BF002A /* AppConfiguration.swift */,
+			);
+			path = AppConfiguration;
+			sourceTree = "<group>";
+		};
+		25FEE01B234E483300BF002A /* Fynzo */ = {
+			isa = PBXGroup;
+			children = (
+				71917E7721ECB8C40077ADF4 /* Core */,
+				25FEE039234E483300BF002A /* FynzoTheme */,
+				25FEE040234E483300BF002A /* View */,
+				25FEE045234E483300BF002A /* Fonts */,
+			);
+			path = Fynzo;
+			sourceTree = "<group>";
+		};
+		25FEE039234E483300BF002A /* FynzoTheme */ = {
+			isa = PBXGroup;
+			children = (
+				25FEE03A234E483300BF002A /* Fynzo.swift */,
+				25FEE03B234E483300BF002A /* Fynzo+Color.swift */,
+				25FEE03C234E483300BF002A /* Fynzo+Font.swift */,
+				25FEE03D234E483300BF002A /* Fynzo+NavigationItem.swift */,
+				25FEE03E234E483300BF002A /* Fynzo+Constant.swift */,
+				25FEE03F234E483300BF002A /* Fynzo+Image.swift */,
+			);
+			path = FynzoTheme;
+			sourceTree = "<group>";
+		};
+		25FEE040234E483300BF002A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				25FEE042234E483300BF002A /* LoaderView.xib */,
+				25FEE043234E483300BF002A /* LoaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		25FEE045234E483300BF002A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				25FEE046234E483300BF002A /* Poppins-SemiBoldItalic.otf */,
+				25FEE047234E483300BF002A /* Poppins-ExtraBoldItalic.otf */,
+				25FEE048234E483300BF002A /* Poppins-ExtraLight.otf */,
+				25FEE049234E483300BF002A /* Poppins-ThinItalic.otf */,
+				25FEE04A234E483300BF002A /* Poppins-ExtraLightItalic.otf */,
+				25FEE04B234E483300BF002A /* Poppins-Light.otf */,
+				25FEE04C234E483300BF002A /* Poppins-BoldItalic.otf */,
+				25FEE04D234E483300BF002A /* Poppins-Medium.otf */,
+				25FEE04E234E483300BF002A /* Poppins-SemiBold.otf */,
+				25FEE04F234E483300BF002A /* Poppins-Italic.otf */,
+				25FEE050234E483300BF002A /* Poppins-Thin.otf */,
+				25FEE051234E483300BF002A /* Poppins-MediumItalic.otf */,
+				25FEE052234E483300BF002A /* Poppins-LightItalic.otf */,
+				25FEE053234E483300BF002A /* Poppins-Bold.otf */,
+				25FEE054234E483300BF002A /* Poppins-Black.otf */,
+				25FEE055234E483300BF002A /* Poppins-BlackItalic.otf */,
+				25FEE056234E483300BF002A /* Poppins-Regular.otf */,
+				25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		25FEE095234E58CA00BF002A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				25FEE096234E58CA00BF002A /* UserManager.swift */,
+				25FEE099234E58CA00BF002A /* FynzoWebServices.swift */,
+				25FEE09A234E58CA00BF002A /* FynzoAPIManager.swift */,
+				25FEE09B234E58CA00BF002A /* AppUserDefaultManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		49F392186B64C89D2966E1CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,19 +296,10 @@
 			path = Success;
 			sourceTree = "<group>";
 		};
-		71917E8F21ECBD8D0077ADF4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				71917E9021ECBDA30077ADF4 /* UserInfo.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		71917E9821ECC1410077ADF4 /* Venders */ = {
 			isa = PBXGroup;
 			children = (
 				71D444AE21ECF8BA00BD1AB1 /* ActionSheet */,
-				71D444AB21ECF8BA00BD1AB1 /* PickerView */,
 				7165960E21ECEAAD00D55A14 /* AlertView */,
 			);
 			path = Venders;
@@ -204,14 +326,16 @@
 		7199ADAB21EC8A1D0066B969 /* FynzoSurvey */ = {
 			isa = PBXGroup;
 			children = (
+				25FEE095234E58CA00BF002A /* Manager */,
+				25FEE018234E480600BF002A /* AppConfiguration */,
 				71917E9821ECC1410077ADF4 /* Venders */,
-				71917E8F21ECBD8D0077ADF4 /* Models */,
-				71917E7721ECB8C40077ADF4 /* Core */,
+				25FEE01B234E483300BF002A /* Fynzo */,
 				7199ADBF21EC8A430066B969 /* AppDelegate */,
 				7199ADC121EC8A5C0066B969 /* ViewControllers */,
 				7199ADC221EC8A850066B969 /* Assets */,
 				7199ADC021EC8A4F0066B969 /* Storyboard */,
 				7199ADB821EC8A1D0066B969 /* Info.plist */,
+				25FEE09C234E597700BF002A /* UserInfo.swift */,
 			);
 			path = FynzoSurvey;
 			sourceTree = "<group>";
@@ -263,15 +387,6 @@
 				C90A34AE23434E7C004092CF /* SurveyorLoginViewController.swift */,
 			);
 			path = Authentication;
-			sourceTree = "<group>";
-		};
-		71D444AB21ECF8BA00BD1AB1 /* PickerView */ = {
-			isa = PBXGroup;
-			children = (
-				71D444AC21ECF8BA00BD1AB1 /* PickerView.swift */,
-				71D444AD21ECF8BA00BD1AB1 /* PickerView.xib */,
-			);
-			path = PickerView;
 			sourceTree = "<group>";
 		};
 		71D444AE21ECF8BA00BD1AB1 /* ActionSheet */ = {
@@ -345,13 +460,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FEE084234E483300BF002A /* Poppins-BoldItalic.otf in Resources */,
 				7199ADD821EC8AD70066B969 /* CommonTableViewCell.xib in Resources */,
+				25FEE082234E483300BF002A /* Poppins-ExtraLightItalic.otf in Resources */,
+				25FEE07B234E483300BF002A /* LoaderView.xib in Resources */,
+				25FEE08D234E483300BF002A /* Poppins-BlackItalic.otf in Resources */,
+				25FEE08E234E483300BF002A /* Poppins-Regular.otf in Resources */,
+				25FEE07F234E483300BF002A /* Poppins-ExtraBoldItalic.otf in Resources */,
+				25FEE08B234E483300BF002A /* Poppins-Bold.otf in Resources */,
+				25FEE07E234E483300BF002A /* Poppins-SemiBoldItalic.otf in Resources */,
+				25FEE083234E483300BF002A /* Poppins-Light.otf in Resources */,
+				25FEE085234E483300BF002A /* Poppins-Medium.otf in Resources */,
 				7199ADC421EC8AB10066B969 /* Authentication.storyboard in Resources */,
-				71D444B521ECF8BB00BD1AB1 /* PickerView.xib in Resources */,
+				25FEE088234E483300BF002A /* Poppins-Thin.otf in Resources */,
+				25FEE08C234E483300BF002A /* Poppins-Black.otf in Resources */,
+				25FEE081234E483300BF002A /* Poppins-ThinItalic.otf in Resources */,
+				25FEE087234E483300BF002A /* Poppins-Italic.otf in Resources */,
+				25FEE08F234E483300BF002A /* Poppins-ExtraBold.otf in Resources */,
+				25FEE086234E483300BF002A /* Poppins-SemiBold.otf in Resources */,
+				25FEE089234E483300BF002A /* Poppins-MediumItalic.otf in Resources */,
 				71D444B721ECF8BB00BD1AB1 /* KPItemView.xib in Resources */,
 				71917E8B21ECBC6A0077ADF4 /* SuccessViewController.xib in Resources */,
 				71D444AA21ECF5AE00BD1AB1 /* LaunchScreen.storyboard in Resources */,
+				25FEE080234E483300BF002A /* Poppins-ExtraLight.otf in Resources */,
 				7199ADDA21EC8B380066B969 /* Assets.xcassets in Resources */,
+				25FEE08A234E483300BF002A /* Poppins-LightItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,21 +520,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FEE079234E483300BF002A /* Fynzo+Image.swift in Sources */,
 				7165961221ECEAAD00D55A14 /* SCLExtensions.swift in Sources */,
 				71917E8121ECB8CE0077ADF4 /* UIViewController+Alert.swift in Sources */,
+				25FEE01A234E480600BF002A /* AppConfiguration.swift in Sources */,
 				71917E8021ECB8CE0077ADF4 /* AppStoryboard.swift in Sources */,
 				71917E9521ECC08C0077ADF4 /* String+CoreFoundation.swift in Sources */,
 				C90A34AF23434E7C004092CF /* SurveyorLoginViewController.swift in Sources */,
 				71917E8721ECB93A0077ADF4 /* AttributtedString+Foundation.swift in Sources */,
 				7199ADD721EC8AD70066B969 /* LoginViewController.swift in Sources */,
 				71D444B821ECF8BB00BD1AB1 /* KPActionSheet.swift in Sources */,
+				25FEE077234E483300BF002A /* Fynzo+NavigationItem.swift in Sources */,
 				7199ADD021EC8AD70066B969 /* CommonTableViewCell.swift in Sources */,
+				25FEE078234E483300BF002A /* Fynzo+Constant.swift in Sources */,
+				25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */,
 				71917E9721ECC0A70077ADF4 /* UIViewExtensions.swift in Sources */,
-				71917E9121ECBDA30077ADF4 /* UserInfo.swift in Sources */,
 				71917E8321ECB8CE0077ADF4 /* UITableView+Reusable.swift in Sources */,
+				25FEE074234E483300BF002A /* Fynzo.swift in Sources */,
 				71917E8221ECB8CE0077ADF4 /* Reusable.swift in Sources */,
 				7199ADD521EC8AD70066B969 /* ForgotPasswordViewController.swift in Sources */,
 				7199ADD621EC8AD70066B969 /* ResetPasswordViewController.swift in Sources */,
+				25FEE07C234E483300BF002A /* LoaderView.swift in Sources */,
+				25FEE076234E483300BF002A /* Fynzo+Font.swift in Sources */,
 				7165961121ECEAAD00D55A14 /* SCLAlertView.swift in Sources */,
 				71917E8421ECB8CE0077ADF4 /* UIView+Nib.swift in Sources */,
 				71917E9321ECBFD90077ADF4 /* UIImage+Color.swift in Sources */,
@@ -411,7 +551,7 @@
 				71917E8521ECB8CE0077ADF4 /* CustomizedNavigation.swift in Sources */,
 				71D444B921ECF8BB00BD1AB1 /* KPItemView.swift in Sources */,
 				71917E8C21ECBC6A0077ADF4 /* SuccessViewController.swift in Sources */,
-				71D444B421ECF8BB00BD1AB1 /* PickerView.swift in Sources */,
+				25FEE09D234E597700BF002A /* UserInfo.swift in Sources */,
 				71917E7F21ECB8CE0077ADF4 /* UIViewController+NavigationBar.swift in Sources */,
 				7165960D21ECEA9000D55A14 /* SwifterSwift.swift in Sources */,
 				71917E8E21ECBCEE0077ADF4 /* String+Validation.swift in Sources */,
