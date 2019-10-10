@@ -40,6 +40,9 @@ class LoginViewController: UIViewController {
         
         navigationController?.navigationBar.isHidden = false
         configureNavigationBar(withTitle: "Login", leftBarImage: #imageLiteral(resourceName: "leftArrowWhite"), leftSelector: #selector(leftButtonAction))
+        
+        let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func leftButtonAction() {
@@ -97,7 +100,9 @@ class LoginViewController: UIViewController {
     }
     
     private func login() {
-      
+        //UserManager.instance.moveToHomeViewController()
+        let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -116,7 +121,6 @@ extension LoginViewController: UITableViewDataSource {
         cell.textField.layer.borderColor = UIColor.white.cgColor
         cell.textField.layer.borderWidth = 0.7
         cell.textField.isSecureTextEntry = indexPath.row == 1
-        cell.textField.textColor = UIColor.white
         cell.passwordShowHide.isHidden = true
         cell.textField.placeholder = titleArray[indexPath.row]
         
@@ -137,7 +141,7 @@ extension LoginViewController: UITableViewDataSource {
 extension LoginViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
     }
 }
 

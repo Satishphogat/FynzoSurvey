@@ -90,6 +90,12 @@ extension Fynzo {
         static let agreeTo = "Agree to "
         static let termAndConditions = "terms & conditions"
         static let noInternetOpenSetting = "Sorry! Internet connection required. Please tap on settings and turn on your internet."
+        static let home = "Home"
+        static let setting = "Settings"
+        static let help = "Help"
+        static let contactUs = "Contact Us"
+        static let chatWithUs = "Chat With Us"
+        static let logout = "Logout"
     }
     
     struct ApiKey {

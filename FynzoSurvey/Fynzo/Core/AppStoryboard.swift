@@ -2,10 +2,8 @@ import UIKit
 
 enum AppStoryboard: String {
     case Authentication
-    case Profile
-    case TabBar
-    case Requests
     case Home
+    case SideMenu
 }
 
 extension AppStoryboard {

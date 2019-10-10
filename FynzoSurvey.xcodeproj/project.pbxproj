@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		254A84C3234F8F0200B35EF0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A84C2234F8F0200B35EF0 /* Home.storyboard */; };
+		254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */; };
+		254A84CA234F91D600B35EF0 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C8234F91D600B35EF0 /* UserManager.swift */; };
+		254A84CB234F91D600B35EF0 /* AppUserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C9234F91D600B35EF0 /* AppUserDefaultManager.swift */; };
+		254A84CF234F954300B35EF0 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A84CE234F954300B35EF0 /* SideMenu.storyboard */; };
+		254A84D2234F95AA00B35EF0 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84D1234F95AA00B35EF0 /* SideMenuViewController.swift */; };
+		254A84D5234F97DE00B35EF0 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84D3234F97DD00B35EF0 /* SideMenuTableViewCell.swift */; };
+		254A84D6234F97DE00B35EF0 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254A84D4234F97DE00B35EF0 /* SideMenuTableViewCell.xib */; };
+		254A84D8234F99B600B35EF0 /* UIViewController+SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84D7234F99B600B35EF0 /* UIViewController+SideMenu.swift */; };
 		25FEE01A234E480600BF002A /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE019234E480600BF002A /* AppConfiguration.swift */; };
 		25FEE074234E483300BF002A /* Fynzo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03A234E483300BF002A /* Fynzo.swift */; };
 		25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03B234E483300BF002A /* Fynzo+Color.swift */; };
@@ -73,6 +82,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		254A84C2234F8F0200B35EF0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		254A84C8234F91D600B35EF0 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		254A84C9234F91D600B35EF0 /* AppUserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaultManager.swift; sourceTree = "<group>"; };
+		254A84CE234F954300B35EF0 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		254A84D1234F95AA00B35EF0 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		254A84D3234F97DD00B35EF0 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		254A84D4234F97DE00B35EF0 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		254A84D7234F99B600B35EF0 /* UIViewController+SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+SideMenu.swift"; sourceTree = "<group>"; };
 		25FEE019234E480600BF002A /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		25FEE03A234E483300BF002A /* Fynzo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fynzo.swift; sourceTree = "<group>"; };
 		25FEE03B234E483300BF002A /* Fynzo+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fynzo+Color.swift"; sourceTree = "<group>"; };
@@ -100,10 +118,6 @@
 		25FEE055234E483300BF002A /* Poppins-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.otf"; sourceTree = "<group>"; };
 		25FEE056234E483300BF002A /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
 		25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.otf"; sourceTree = "<group>"; };
-		25FEE096234E58CA00BF002A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		25FEE099234E58CA00BF002A /* FynzoWebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FynzoWebServices.swift; sourceTree = "<group>"; };
-		25FEE09A234E58CA00BF002A /* FynzoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FynzoAPIManager.swift; sourceTree = "<group>"; };
-		25FEE09B234E58CA00BF002A /* AppUserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefaultManager.swift; sourceTree = "<group>"; };
 		25FEE09C234E597700BF002A /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		457444D65E7D507BC1774A41 /* Pods-MyMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayer/Pods-MyMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		5660DA197C549C5D7488CB83 /* Pods-FynzoSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FynzoSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +175,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		254A84C4234F8F1700B35EF0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		254A84C7234F91D600B35EF0 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				254A84C8234F91D600B35EF0 /* UserManager.swift */,
+				254A84C9234F91D600B35EF0 /* AppUserDefaultManager.swift */,
+			);
+			name = Manager;
+			path = FynzoSurvey/Manager;
+			sourceTree = SOURCE_ROOT;
+		};
+		254A84D0234F955900B35EF0 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				254A84D1234F95AA00B35EF0 /* SideMenuViewController.swift */,
+				254A84D3234F97DD00B35EF0 /* SideMenuTableViewCell.swift */,
+				254A84D4234F97DE00B35EF0 /* SideMenuTableViewCell.xib */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		25FEE018234E480600BF002A /* AppConfiguration */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,17 +269,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		25FEE095234E58CA00BF002A /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				25FEE096234E58CA00BF002A /* UserManager.swift */,
-				25FEE099234E58CA00BF002A /* FynzoWebServices.swift */,
-				25FEE09A234E58CA00BF002A /* FynzoAPIManager.swift */,
-				25FEE09B234E58CA00BF002A /* AppUserDefaultManager.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
 		49F392186B64C89D2966E1CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				71917E9621ECC0A70077ADF4 /* UIViewExtensions.swift */,
+				254A84D7234F99B600B35EF0 /* UIViewController+SideMenu.swift */,
 				C90A34AC23433BBD004092CF /* ORDesinables.swift */,
 				71917E9421ECC08C0077ADF4 /* String+CoreFoundation.swift */,
 				71917E9221ECBFD90077ADF4 /* UIImage+Color.swift */,
@@ -326,7 +358,7 @@
 		7199ADAB21EC8A1D0066B969 /* FynzoSurvey */ = {
 			isa = PBXGroup;
 			children = (
-				25FEE095234E58CA00BF002A /* Manager */,
+				254A84C7234F91D600B35EF0 /* Manager */,
 				25FEE018234E480600BF002A /* AppConfiguration */,
 				71917E9821ECC1410077ADF4 /* Venders */,
 				25FEE01B234E483300BF002A /* Fynzo */,
@@ -353,6 +385,8 @@
 			children = (
 				7199ADC321EC8AB10066B969 /* Authentication.storyboard */,
 				71D444A921ECF5AE00BD1AB1 /* LaunchScreen.storyboard */,
+				254A84C2234F8F0200B35EF0 /* Home.storyboard */,
+				254A84CE234F954300B35EF0 /* SideMenu.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -360,6 +394,8 @@
 		7199ADC121EC8A5C0066B969 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				254A84D0234F955900B35EF0 /* SideMenu */,
+				254A84C4234F8F1700B35EF0 /* Home */,
 				71917E8821ECBC6A0077ADF4 /* Success */,
 				7199ADC521EC8AD70066B969 /* Authentication */,
 			);
@@ -412,6 +448,7 @@
 				7199ADA521EC8A1D0066B969 /* Sources */,
 				7199ADA621EC8A1D0066B969 /* Frameworks */,
 				7199ADA721EC8A1D0066B969 /* Resources */,
+				81347DBD433104B13B4D8A30 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -463,6 +500,7 @@
 				25FEE084234E483300BF002A /* Poppins-BoldItalic.otf in Resources */,
 				7199ADD821EC8AD70066B969 /* CommonTableViewCell.xib in Resources */,
 				25FEE082234E483300BF002A /* Poppins-ExtraLightItalic.otf in Resources */,
+				254A84CF234F954300B35EF0 /* SideMenu.storyboard in Resources */,
 				25FEE07B234E483300BF002A /* LoaderView.xib in Resources */,
 				25FEE08D234E483300BF002A /* Poppins-BlackItalic.otf in Resources */,
 				25FEE08E234E483300BF002A /* Poppins-Regular.otf in Resources */,
@@ -475,12 +513,14 @@
 				25FEE088234E483300BF002A /* Poppins-Thin.otf in Resources */,
 				25FEE08C234E483300BF002A /* Poppins-Black.otf in Resources */,
 				25FEE081234E483300BF002A /* Poppins-ThinItalic.otf in Resources */,
+				254A84C3234F8F0200B35EF0 /* Home.storyboard in Resources */,
 				25FEE087234E483300BF002A /* Poppins-Italic.otf in Resources */,
 				25FEE08F234E483300BF002A /* Poppins-ExtraBold.otf in Resources */,
 				25FEE086234E483300BF002A /* Poppins-SemiBold.otf in Resources */,
 				25FEE089234E483300BF002A /* Poppins-MediumItalic.otf in Resources */,
 				71D444B721ECF8BB00BD1AB1 /* KPItemView.xib in Resources */,
 				71917E8B21ECBC6A0077ADF4 /* SuccessViewController.xib in Resources */,
+				254A84D6234F97DE00B35EF0 /* SideMenuTableViewCell.xib in Resources */,
 				71D444AA21ECF5AE00BD1AB1 /* LaunchScreen.storyboard in Resources */,
 				25FEE080234E483300BF002A /* Poppins-ExtraLight.otf in Resources */,
 				7199ADDA21EC8B380066B969 /* Assets.xcassets in Resources */,
@@ -491,6 +531,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		81347DBD433104B13B4D8A30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BE8E412CBD73AD5D584069C7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -523,6 +580,7 @@
 				25FEE079234E483300BF002A /* Fynzo+Image.swift in Sources */,
 				7165961221ECEAAD00D55A14 /* SCLExtensions.swift in Sources */,
 				71917E8121ECB8CE0077ADF4 /* UIViewController+Alert.swift in Sources */,
+				254A84CA234F91D600B35EF0 /* UserManager.swift in Sources */,
 				25FEE01A234E480600BF002A /* AppConfiguration.swift in Sources */,
 				71917E8021ECB8CE0077ADF4 /* AppStoryboard.swift in Sources */,
 				71917E9521ECC08C0077ADF4 /* String+CoreFoundation.swift in Sources */,
@@ -532,7 +590,9 @@
 				71D444B821ECF8BB00BD1AB1 /* KPActionSheet.swift in Sources */,
 				25FEE077234E483300BF002A /* Fynzo+NavigationItem.swift in Sources */,
 				7199ADD021EC8AD70066B969 /* CommonTableViewCell.swift in Sources */,
+				254A84D2234F95AA00B35EF0 /* SideMenuViewController.swift in Sources */,
 				25FEE078234E483300BF002A /* Fynzo+Constant.swift in Sources */,
+				254A84CB234F91D600B35EF0 /* AppUserDefaultManager.swift in Sources */,
 				25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */,
 				71917E9721ECC0A70077ADF4 /* UIViewExtensions.swift in Sources */,
 				71917E8321ECB8CE0077ADF4 /* UITableView+Reusable.swift in Sources */,
@@ -541,6 +601,7 @@
 				7199ADD521EC8AD70066B969 /* ForgotPasswordViewController.swift in Sources */,
 				7199ADD621EC8AD70066B969 /* ResetPasswordViewController.swift in Sources */,
 				25FEE07C234E483300BF002A /* LoaderView.swift in Sources */,
+				254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */,
 				25FEE076234E483300BF002A /* Fynzo+Font.swift in Sources */,
 				7165961121ECEAAD00D55A14 /* SCLAlertView.swift in Sources */,
 				71917E8421ECB8CE0077ADF4 /* UIView+Nib.swift in Sources */,
@@ -549,12 +610,14 @@
 				71917E7621ECB8370077ADF4 /* SignUpViewController.swift in Sources */,
 				71D444B621ECF8BB00BD1AB1 /* KPItem.swift in Sources */,
 				71917E8521ECB8CE0077ADF4 /* CustomizedNavigation.swift in Sources */,
+				254A84D8234F99B600B35EF0 /* UIViewController+SideMenu.swift in Sources */,
 				71D444B921ECF8BB00BD1AB1 /* KPItemView.swift in Sources */,
 				71917E8C21ECBC6A0077ADF4 /* SuccessViewController.swift in Sources */,
 				25FEE09D234E597700BF002A /* UserInfo.swift in Sources */,
 				71917E7F21ECB8CE0077ADF4 /* UIViewController+NavigationBar.swift in Sources */,
 				7165960D21ECEA9000D55A14 /* SwifterSwift.swift in Sources */,
 				71917E8E21ECBCEE0077ADF4 /* String+Validation.swift in Sources */,
+				254A84D5234F97DE00B35EF0 /* SideMenuTableViewCell.swift in Sources */,
 				C90A34AB23432DD7004092CF /* FirstViewController.swift in Sources */,
 				C90A34AD23433BBD004092CF /* ORDesinables.swift in Sources */,
 			);

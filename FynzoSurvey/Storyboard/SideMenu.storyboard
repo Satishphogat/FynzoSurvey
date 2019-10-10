@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoSans-Regular.ttf">
+            <string>NunitoSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Side Menu View Controller-->
+        <scene sceneID="scy-Ex-E2Z">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuViewController" id="Emu-lj-gtU" customClass="SideMenuViewController" customModule="FynzoSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P3S-rW-zTa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iya-1V-bwG">
+                                <rect key="frame" x="0.0" y="180" width="414" height="682"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="25" minY="0.0" maxX="25" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Emu-lj-gtU" id="YdE-pt-xUQ"/>
+                                    <outlet property="delegate" destination="Emu-lj-gtU" id="eUc-sa-lBc"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NE-Lu-3ca">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile" translatesAutoresizingMaskIntoConstraints="NO" id="dw0-PS-IJf" customClass="ORDesignableImageView" customModule="LussotDriverTesters" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="45" width="90" height="90"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="GIf-9f-YhH"/>
+                                            <constraint firstAttribute="height" constant="90" id="k1n-ZI-W1l"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="45"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pushpraj Chaudhary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yg9-vb-Z4E">
+                                        <rect key="frame" x="113" y="69.5" width="291" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="M4t-gL-f2i"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pushpraj.chaudhary@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agz-zL-kCk">
+                                        <rect key="frame" x="113" y="100.5" width="291" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="geN-Z7-bdX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9N-qr-YNf">
+                                        <rect key="frame" x="15" y="42" width="389" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Vv7-k6-4qJ"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="profileButtonAction:" destination="Emu-lj-gtU" eventType="touchUpInside" id="wqf-2c-HEk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="appThemeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Yg9-vb-Z4E" secondAttribute="trailing" constant="10" id="2GK-nd-oDf"/>
+                                    <constraint firstAttribute="trailing" secondItem="agz-zL-kCk" secondAttribute="trailing" constant="10" id="A9G-no-mAB"/>
+                                    <constraint firstItem="agz-zL-kCk" firstAttribute="leading" secondItem="dw0-PS-IJf" secondAttribute="trailing" constant="8" id="MxW-15-EZi"/>
+                                    <constraint firstAttribute="height" constant="180" id="cbZ-zv-hp5"/>
+                                    <constraint firstItem="Yg9-vb-Z4E" firstAttribute="leading" secondItem="dw0-PS-IJf" secondAttribute="trailing" constant="8" id="gg2-wK-ulI"/>
+                                    <constraint firstItem="Yg9-vb-Z4E" firstAttribute="centerY" secondItem="dw0-PS-IJf" secondAttribute="centerY" constant="-10" id="hpo-sh-FqT"/>
+                                    <constraint firstItem="c9N-qr-YNf" firstAttribute="leading" secondItem="5NE-Lu-3ca" secondAttribute="leading" constant="15" id="jrb-32-ckP"/>
+                                    <constraint firstItem="dw0-PS-IJf" firstAttribute="centerY" secondItem="5NE-Lu-3ca" secondAttribute="centerY" id="onq-IP-gCb"/>
+                                    <constraint firstItem="dw0-PS-IJf" firstAttribute="leading" secondItem="5NE-Lu-3ca" secondAttribute="leading" constant="15" id="r5d-SK-MFr"/>
+                                    <constraint firstItem="c9N-qr-YNf" firstAttribute="top" secondItem="5NE-Lu-3ca" secondAttribute="top" constant="42" id="sZB-f3-YfC"/>
+                                    <constraint firstAttribute="trailing" secondItem="c9N-qr-YNf" secondAttribute="trailing" constant="10" id="syB-aF-OTa"/>
+                                    <constraint firstItem="agz-zL-kCk" firstAttribute="top" secondItem="Yg9-vb-Z4E" secondAttribute="bottom" constant="10" id="vj3-Dp-nPc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.20424871580000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5NE-Lu-3ca" firstAttribute="leading" secondItem="ck7-sn-nMU" secondAttribute="leading" id="4hP-v6-JbD"/>
+                            <constraint firstItem="5NE-Lu-3ca" firstAttribute="top" secondItem="P3S-rW-zTa" secondAttribute="top" id="7GS-Nu-6rj"/>
+                            <constraint firstItem="iya-1V-bwG" firstAttribute="trailing" secondItem="ck7-sn-nMU" secondAttribute="trailing" id="8hw-zj-7RI"/>
+                            <constraint firstItem="iya-1V-bwG" firstAttribute="leading" secondItem="ck7-sn-nMU" secondAttribute="leading" id="ZUD-E5-O7M"/>
+                            <constraint firstItem="iya-1V-bwG" firstAttribute="top" secondItem="5NE-Lu-3ca" secondAttribute="bottom" id="gQK-yI-pDx"/>
+                            <constraint firstItem="ck7-sn-nMU" firstAttribute="bottom" secondItem="iya-1V-bwG" secondAttribute="bottom" id="lz4-A1-9xG"/>
+                            <constraint firstItem="5NE-Lu-3ca" firstAttribute="trailing" secondItem="ck7-sn-nMU" secondAttribute="trailing" id="nje-5r-QPB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ck7-sn-nMU"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="agz-zL-kCk" id="E3D-f8-o2h"/>
+                        <outlet property="nameLabel" destination="Yg9-vb-Z4E" id="Vue-hT-DEU"/>
+                        <outlet property="profileImageView" destination="dw0-PS-IJf" id="bKe-yQ-ukx"/>
+                        <outlet property="tableView" destination="iya-1V-bwG" id="fn4-Us-ovD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y5v-Vv-wec" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="169.56521739130437"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_profile" width="20" height="20"/>
+        <namedColor name="appThemeColor">
+            <color red="0.0" green="0.5607843137254902" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
