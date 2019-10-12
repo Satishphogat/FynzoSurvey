@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StarCollectionViewCell" customModule="FynzoSurvey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="X8R-Js-Pnt">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate your dining experience as per the following aspects" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pj-Sg-Izu" customClass="FormBoldLabel" customModule="FynzoSurvey" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="Bhp-Bq-upD"/>
+                        </constraints>
+                    </stackView>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v4y-yV-on6">
+                        <rect key="frame" x="0.0" y="40" width="200" height="160"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="gTV-IL-0wX" id="39y-ML-03W"/>
+                            <outlet property="delegate" destination="gTV-IL-0wX" id="Pfa-y9-V77"/>
+                        </connections>
+                    </tableView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="X8R-Js-Pnt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8r7-A6-F1j"/>
+                <constraint firstItem="v4y-yV-on6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AuZ-9c-31p"/>
+                <constraint firstAttribute="trailing" secondItem="v4y-yV-on6" secondAttribute="trailing" id="QCF-06-fc3"/>
+                <constraint firstAttribute="trailing" secondItem="X8R-Js-Pnt" secondAttribute="trailing" id="U9r-iC-tMT"/>
+                <constraint firstItem="X8R-Js-Pnt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="by6-sr-ykj"/>
+                <constraint firstItem="v4y-yV-on6" firstAttribute="top" secondItem="X8R-Js-Pnt" secondAttribute="bottom" id="omZ-lX-hyK"/>
+                <constraint firstAttribute="bottom" secondItem="v4y-yV-on6" secondAttribute="bottom" id="xDO-ut-9gW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="tableView" destination="v4y-yV-on6" id="Zc4-hR-cH4"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
+        </collectionViewCell>
+    </objects>
+</document>

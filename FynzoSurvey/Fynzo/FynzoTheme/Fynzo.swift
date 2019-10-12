@@ -41,10 +41,10 @@ enum Fynzo {
         static let extraLight = "Poppins-ExtraLight"
         static let light = "Poppins-Light"
         static let thin = "Poppins-Thin"
-        static let medium = "Poppins-Medium"
-        static let regular = "Poppins-Regular"
-        static let semiBold = "Poppins-SemiBold"
-        static let bold = "Poppins-Bold"
+        static let medium = "HelveticaNeue-Medium"
+        static let regular = "HelveticaNeue-Regular"
+        static let semiBold = "HelveticaNeue-SemiBold"
+        static let bold = "HelveticaNeue-Bold"
         static let extraBold = "Poppins-ExtraBold"
     }
 }

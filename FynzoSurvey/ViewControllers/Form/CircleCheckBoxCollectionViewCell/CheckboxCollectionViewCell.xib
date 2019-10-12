@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CheckboxCollectionViewCell" customModule="FynzoSurvey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dm1-Yq-Z76">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How did you know about us" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkG-NH-jkE" customClass="FormBoldLabel" customModule="FynzoSurvey" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MkG-NH-jkE" secondAttribute="trailing" id="8CS-RO-z8s"/>
+                            <constraint firstAttribute="bottom" secondItem="MkG-NH-jkE" secondAttribute="bottom" id="YAE-zS-xaD"/>
+                            <constraint firstItem="MkG-NH-jkE" firstAttribute="leading" secondItem="Dm1-Yq-Z76" secondAttribute="leading" id="YBR-0C-dlq"/>
+                            <constraint firstItem="MkG-NH-jkE" firstAttribute="top" secondItem="Dm1-Yq-Z76" secondAttribute="top" id="f7B-eX-awX"/>
+                        </constraints>
+                    </view>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="W3q-rK-Jqg">
+                        <rect key="frame" x="0.0" y="60" width="200" height="90"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RTs-TQ-kN3">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="gTV-IL-0wX" id="yvx-PD-Cof"/>
+                            <outlet property="delegate" destination="gTV-IL-0wX" id="8hm-s5-ySM"/>
+                        </connections>
+                    </collectionView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="W3q-rK-Jqg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1wm-kh-OQT"/>
+                <constraint firstAttribute="bottom" secondItem="W3q-rK-Jqg" secondAttribute="bottom" id="51Y-0e-LRX"/>
+                <constraint firstItem="W3q-rK-Jqg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="60" id="R7v-jA-mg7"/>
+                <constraint firstItem="W3q-rK-Jqg" firstAttribute="top" secondItem="Dm1-Yq-Z76" secondAttribute="bottom" id="UbK-Uh-yZr"/>
+                <constraint firstItem="Dm1-Yq-Z76" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wvl-1B-9Pr"/>
+                <constraint firstAttribute="trailing" secondItem="Dm1-Yq-Z76" secondAttribute="trailing" id="hwu-oO-WlS"/>
+                <constraint firstAttribute="trailing" secondItem="W3q-rK-Jqg" secondAttribute="trailing" id="ju8-Cl-88H"/>
+                <constraint firstItem="Dm1-Yq-Z76" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mJk-Dx-ww7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="collectionView" destination="W3q-rK-Jqg" id="a1t-9t-BNo"/>
+                <outlet property="titleLabel" destination="MkG-NH-jkE" id="5Wd-qn-pPs"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </collectionViewCell>
+    </objects>
+</document>

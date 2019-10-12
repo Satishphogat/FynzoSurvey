@@ -7,6 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250C111C2351A03500758B04 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C111B2351A03500758B04 /* FormViewController.swift */; };
+		250C111F2351A10400758B04 /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C111D2351A10400758B04 /* FirstCollectionViewCell.swift */; };
+		250C11202351A10400758B04 /* FirstCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C111E2351A10400758B04 /* FirstCollectionViewCell.xib */; };
+		250C11222351A39B00758B04 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C11212351A39B00758B04 /* UICollectionView+Reusable.swift */; };
+		250C11282351A78C00758B04 /* StarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C11262351A78C00758B04 /* StarCollectionViewCell.swift */; };
+		250C11292351A78C00758B04 /* StarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C11272351A78C00758B04 /* StarCollectionViewCell.xib */; };
+		250C112C2351A86B00758B04 /* StarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C112A2351A86B00758B04 /* StarTableViewCell.swift */; };
+		250C112D2351A86B00758B04 /* StarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C112B2351A86B00758B04 /* StarTableViewCell.xib */; };
+		250C11332351B74D00758B04 /* CheckboxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C11312351B74D00758B04 /* CheckboxCollectionViewCell.swift */; };
+		250C11342351B74D00758B04 /* CheckboxCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C11322351B74D00758B04 /* CheckboxCollectionViewCell.xib */; };
+		250C113B2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C11392351BDC600758B04 /* CheckBoxInnerCollectionViewCell.swift */; };
+		250C113C2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C113A2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.xib */; };
+		250C11412351C20700758B04 /* SquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C113F2351C20700758B04 /* SquareCollectionViewCell.swift */; };
+		250C11422351C20700758B04 /* SquareCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C11402351C20700758B04 /* SquareCollectionViewCell.xib */; };
+		250C11462351C4D300758B04 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C11442351C4D300758B04 /* CardCollectionViewCell.swift */; };
+		250C11472351C4D300758B04 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C11452351C4D300758B04 /* CardCollectionViewCell.xib */; };
+		250C114A2351C64600758B04 /* CardInnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C11482351C64600758B04 /* CardInnerCollectionViewCell.swift */; };
+		250C114B2351C64600758B04 /* CardInnerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C11492351C64600758B04 /* CardInnerCollectionViewCell.xib */; };
+		250C115023521E7800758B04 /* TextfieldCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C114E23521E7800758B04 /* TextfieldCollectionViewCell.swift */; };
+		250C115123521E7800758B04 /* TextfieldCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C114F23521E7800758B04 /* TextfieldCollectionViewCell.xib */; };
+		250C115423521EAC00758B04 /* TextfieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C115223521EAC00758B04 /* TextfieldTableViewCell.swift */; };
+		250C115523521EAC00758B04 /* TextfieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C115323521EAC00758B04 /* TextfieldTableViewCell.xib */; };
 		254A84C3234F8F0200B35EF0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A84C2234F8F0200B35EF0 /* Home.storyboard */; };
 		254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */; };
 		254A84CA234F91D600B35EF0 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C8234F91D600B35EF0 /* UserManager.swift */; };
@@ -19,6 +41,8 @@
 		254A84DA234F9EA700B35EF0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84D9234F9EA700B35EF0 /* SettingViewController.swift */; };
 		254A84DE234F9EE500B35EF0 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84DC234F9EE500B35EF0 /* SettingTableViewCell.swift */; };
 		254A84DF234F9EE500B35EF0 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254A84DD234F9EE500B35EF0 /* SettingTableViewCell.xib */; };
+		254A84E2234FA9D800B35EF0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84E0234FA9D800B35EF0 /* HomeTableViewCell.swift */; };
+		254A84E3234FA9D800B35EF0 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254A84E1234FA9D800B35EF0 /* HomeTableViewCell.xib */; };
 		25FEE01A234E480600BF002A /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE019234E480600BF002A /* AppConfiguration.swift */; };
 		25FEE074234E483300BF002A /* Fynzo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03A234E483300BF002A /* Fynzo.swift */; };
 		25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03B234E483300BF002A /* Fynzo+Color.swift */; };
@@ -85,6 +109,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		250C111B2351A03500758B04 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		250C111D2351A10400758B04 /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
+		250C111E2351A10400758B04 /* FirstCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstCollectionViewCell.xib; sourceTree = "<group>"; };
+		250C11212351A39B00758B04 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
+		250C11262351A78C00758B04 /* StarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarCollectionViewCell.swift; sourceTree = "<group>"; };
+		250C11272351A78C00758B04 /* StarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarCollectionViewCell.xib; sourceTree = "<group>"; };
+		250C112A2351A86B00758B04 /* StarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTableViewCell.swift; sourceTree = "<group>"; };
+		250C112B2351A86B00758B04 /* StarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarTableViewCell.xib; sourceTree = "<group>"; };
+		250C11312351B74D00758B04 /* CheckboxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCollectionViewCell.swift; sourceTree = "<group>"; };
+		250C11322351B74D00758B04 /* CheckboxCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxCollectionViewCell.xib; sourceTree = "<group>"; };
+		250C11392351BDC600758B04 /* CheckBoxInnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxInnerCollectionViewCell.swift; sourceTree = "<group>"; };
+		250C113A2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxInnerCollectionViewCell.xib; sourceTree = "<group>"; };
+		250C113F2351C20700758B04 /* SquareCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareCollectionViewCell.swift; sourceTree = "<group>"; };
+		250C11402351C20700758B04 /* SquareCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquareCollectionViewCell.xib; sourceTree = "<group>"; };
+		250C11442351C4D300758B04 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		250C11452351C4D300758B04 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		250C11482351C64600758B04 /* CardInnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInnerCollectionViewCell.swift; sourceTree = "<group>"; };
+		250C11492351C64600758B04 /* CardInnerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardInnerCollectionViewCell.xib; sourceTree = "<group>"; };
+		250C114E23521E7800758B04 /* TextfieldCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldCollectionViewCell.swift; sourceTree = "<group>"; };
+		250C114F23521E7800758B04 /* TextfieldCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextfieldCollectionViewCell.xib; sourceTree = "<group>"; };
+		250C115223521EAC00758B04 /* TextfieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldTableViewCell.swift; sourceTree = "<group>"; };
+		250C115323521EAC00758B04 /* TextfieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextfieldTableViewCell.xib; sourceTree = "<group>"; };
 		254A84C2234F8F0200B35EF0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		254A84C8234F91D600B35EF0 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -97,6 +143,8 @@
 		254A84D9234F9EA700B35EF0 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		254A84DC234F9EE500B35EF0 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		254A84DD234F9EE500B35EF0 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		254A84E0234FA9D800B35EF0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		254A84E1234FA9D800B35EF0 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		25FEE019234E480600BF002A /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		25FEE03A234E483300BF002A /* Fynzo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fynzo.swift; sourceTree = "<group>"; };
 		25FEE03B234E483300BF002A /* Fynzo+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fynzo+Color.swift"; sourceTree = "<group>"; };
@@ -181,10 +229,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		250C111A2351A00300758B04 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				250C114D23521E5D00758B04 /* TextFieldCollectionViewCell */,
+				250C11432351C49D00758B04 /* CardCollectionViewCell */,
+				250C113E2351C1EB00758B04 /* SquareCheckBoxCollectionViewCell */,
+				250C11302351B72800758B04 /* CircleCheckBoxCollectionViewCell */,
+				250C11252351A76100758B04 /* StarCollectionViewCell */,
+				250C11242351A74D00758B04 /* FirstCollectionViewCell */,
+				250C111B2351A03500758B04 /* FormViewController.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		250C11242351A74D00758B04 /* FirstCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				250C111D2351A10400758B04 /* FirstCollectionViewCell.swift */,
+				250C111E2351A10400758B04 /* FirstCollectionViewCell.xib */,
+			);
+			path = FirstCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		250C11252351A76100758B04 /* StarCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				250C11262351A78C00758B04 /* StarCollectionViewCell.swift */,
+				250C11272351A78C00758B04 /* StarCollectionViewCell.xib */,
+				250C112A2351A86B00758B04 /* StarTableViewCell.swift */,
+				250C112B2351A86B00758B04 /* StarTableViewCell.xib */,
+			);
+			path = StarCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		250C11302351B72800758B04 /* CircleCheckBoxCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				250C11312351B74D00758B04 /* CheckboxCollectionViewCell.swift */,
+				250C11322351B74D00758B04 /* CheckboxCollectionViewCell.xib */,
+				250C11392351BDC600758B04 /* CheckBoxInnerCollectionViewCell.swift */,
+				250C113A2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.xib */,
+			);
+			path = CircleCheckBoxCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		250C113E2351C1EB00758B04 /* SquareCheckBoxCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				250C113F2351C20700758B04 /* SquareCollectionViewCell.swift */,
+				250C11402351C20700758B04 /* SquareCollectionViewCell.xib */,
+			);
+			path = SquareCheckBoxCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		250C11432351C49D00758B04 /* CardCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				250C11442351C4D300758B04 /* CardCollectionViewCell.swift */,
+				250C11452351C4D300758B04 /* CardCollectionViewCell.xib */,
+				250C11482351C64600758B04 /* CardInnerCollectionViewCell.swift */,
+				250C11492351C64600758B04 /* CardInnerCollectionViewCell.xib */,
+			);
+			path = CardCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		250C114D23521E5D00758B04 /* TextFieldCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				250C114E23521E7800758B04 /* TextfieldCollectionViewCell.swift */,
+				250C114F23521E7800758B04 /* TextfieldCollectionViewCell.xib */,
+				250C115223521EAC00758B04 /* TextfieldTableViewCell.swift */,
+				250C115323521EAC00758B04 /* TextfieldTableViewCell.xib */,
+			);
+			path = TextFieldCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		254A84C4234F8F1700B35EF0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */,
+				254A84E0234FA9D800B35EF0 /* HomeTableViewCell.swift */,
+				254A84E1234FA9D800B35EF0 /* HomeTableViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -327,6 +453,7 @@
 				71917E7E21ECB8CE0077ADF4 /* CustomizedNavigation.swift */,
 				71917E7B21ECB8CE0077ADF4 /* Reusable.swift */,
 				71917E7C21ECB8CE0077ADF4 /* UITableView+Reusable.swift */,
+				250C11212351A39B00758B04 /* UICollectionView+Reusable.swift */,
 				71917E7D21ECB8CE0077ADF4 /* UIView+Nib.swift */,
 				71917E7A21ECB8CE0077ADF4 /* UIViewController+Alert.swift */,
 				71917E8621ECB93A0077ADF4 /* AttributtedString+Foundation.swift */,
@@ -411,6 +538,7 @@
 		7199ADC121EC8A5C0066B969 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				250C111A2351A00300758B04 /* Form */,
 				254A84D0234F955900B35EF0 /* SideMenu */,
 				254A84C4234F8F1700B35EF0 /* Home */,
 				71917E8821ECBC6A0077ADF4 /* Success */,
@@ -518,13 +646,20 @@
 				7199ADD821EC8AD70066B969 /* CommonTableViewCell.xib in Resources */,
 				25FEE082234E483300BF002A /* Poppins-ExtraLightItalic.otf in Resources */,
 				254A84CF234F954300B35EF0 /* SideMenu.storyboard in Resources */,
+				250C11202351A10400758B04 /* FirstCollectionViewCell.xib in Resources */,
+				250C112D2351A86B00758B04 /* StarTableViewCell.xib in Resources */,
 				25FEE07B234E483300BF002A /* LoaderView.xib in Resources */,
 				25FEE08D234E483300BF002A /* Poppins-BlackItalic.otf in Resources */,
+				250C115123521E7800758B04 /* TextfieldCollectionViewCell.xib in Resources */,
 				25FEE08E234E483300BF002A /* Poppins-Regular.otf in Resources */,
+				250C11422351C20700758B04 /* SquareCollectionViewCell.xib in Resources */,
 				25FEE07F234E483300BF002A /* Poppins-ExtraBoldItalic.otf in Resources */,
 				25FEE08B234E483300BF002A /* Poppins-Bold.otf in Resources */,
 				25FEE07E234E483300BF002A /* Poppins-SemiBoldItalic.otf in Resources */,
+				250C11472351C4D300758B04 /* CardCollectionViewCell.xib in Resources */,
+				250C115523521EAC00758B04 /* TextfieldTableViewCell.xib in Resources */,
 				25FEE083234E483300BF002A /* Poppins-Light.otf in Resources */,
+				250C11292351A78C00758B04 /* StarCollectionViewCell.xib in Resources */,
 				25FEE085234E483300BF002A /* Poppins-Medium.otf in Resources */,
 				254A84DF234F9EE500B35EF0 /* SettingTableViewCell.xib in Resources */,
 				7199ADC421EC8AB10066B969 /* Authentication.storyboard in Resources */,
@@ -532,16 +667,20 @@
 				25FEE08C234E483300BF002A /* Poppins-Black.otf in Resources */,
 				25FEE081234E483300BF002A /* Poppins-ThinItalic.otf in Resources */,
 				254A84C3234F8F0200B35EF0 /* Home.storyboard in Resources */,
+				250C11342351B74D00758B04 /* CheckboxCollectionViewCell.xib in Resources */,
 				25FEE087234E483300BF002A /* Poppins-Italic.otf in Resources */,
 				25FEE08F234E483300BF002A /* Poppins-ExtraBold.otf in Resources */,
 				25FEE086234E483300BF002A /* Poppins-SemiBold.otf in Resources */,
 				25FEE089234E483300BF002A /* Poppins-MediumItalic.otf in Resources */,
+				250C113C2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.xib in Resources */,
 				71D444B721ECF8BB00BD1AB1 /* KPItemView.xib in Resources */,
 				71917E8B21ECBC6A0077ADF4 /* SuccessViewController.xib in Resources */,
 				254A84D6234F97DE00B35EF0 /* SideMenuTableViewCell.xib in Resources */,
 				71D444AA21ECF5AE00BD1AB1 /* LaunchScreen.storyboard in Resources */,
+				250C114B2351C64600758B04 /* CardInnerCollectionViewCell.xib in Resources */,
 				25FEE080234E483300BF002A /* Poppins-ExtraLight.otf in Resources */,
 				7199ADDA21EC8B380066B969 /* Assets.xcassets in Resources */,
+				254A84E3234FA9D800B35EF0 /* HomeTableViewCell.xib in Resources */,
 				25FEE08A234E483300BF002A /* Poppins-LightItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,22 +735,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				25FEE079234E483300BF002A /* Fynzo+Image.swift in Sources */,
+				250C112C2351A86B00758B04 /* StarTableViewCell.swift in Sources */,
 				7165961221ECEAAD00D55A14 /* SCLExtensions.swift in Sources */,
+				250C11462351C4D300758B04 /* CardCollectionViewCell.swift in Sources */,
 				71917E8121ECB8CE0077ADF4 /* UIViewController+Alert.swift in Sources */,
 				254A84CA234F91D600B35EF0 /* UserManager.swift in Sources */,
 				25FEE01A234E480600BF002A /* AppConfiguration.swift in Sources */,
+				250C11222351A39B00758B04 /* UICollectionView+Reusable.swift in Sources */,
 				71917E8021ECB8CE0077ADF4 /* AppStoryboard.swift in Sources */,
 				71917E9521ECC08C0077ADF4 /* String+CoreFoundation.swift in Sources */,
 				C90A34AF23434E7C004092CF /* SurveyorLoginViewController.swift in Sources */,
+				250C11332351B74D00758B04 /* CheckboxCollectionViewCell.swift in Sources */,
 				71917E8721ECB93A0077ADF4 /* AttributtedString+Foundation.swift in Sources */,
 				7199ADD721EC8AD70066B969 /* LoginViewController.swift in Sources */,
+				250C113B2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.swift in Sources */,
 				71D444B821ECF8BB00BD1AB1 /* KPActionSheet.swift in Sources */,
 				25FEE077234E483300BF002A /* Fynzo+NavigationItem.swift in Sources */,
 				7199ADD021EC8AD70066B969 /* CommonTableViewCell.swift in Sources */,
 				254A84D2234F95AA00B35EF0 /* SideMenuViewController.swift in Sources */,
 				25FEE078234E483300BF002A /* Fynzo+Constant.swift in Sources */,
+				250C11282351A78C00758B04 /* StarCollectionViewCell.swift in Sources */,
 				254A84CB234F91D600B35EF0 /* AppUserDefaultManager.swift in Sources */,
+				250C11412351C20700758B04 /* SquareCollectionViewCell.swift in Sources */,
 				25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */,
+				250C111C2351A03500758B04 /* FormViewController.swift in Sources */,
 				71917E9721ECC0A70077ADF4 /* UIViewExtensions.swift in Sources */,
 				71917E8321ECB8CE0077ADF4 /* UITableView+Reusable.swift in Sources */,
 				25FEE074234E483300BF002A /* Fynzo.swift in Sources */,
@@ -630,12 +777,17 @@
 				71917E7621ECB8370077ADF4 /* SignUpViewController.swift in Sources */,
 				71D444B621ECF8BB00BD1AB1 /* KPItem.swift in Sources */,
 				71917E8521ECB8CE0077ADF4 /* CustomizedNavigation.swift in Sources */,
+				250C114A2351C64600758B04 /* CardInnerCollectionViewCell.swift in Sources */,
+				250C115023521E7800758B04 /* TextfieldCollectionViewCell.swift in Sources */,
 				254A84D8234F99B600B35EF0 /* UIViewController+SideMenu.swift in Sources */,
 				71D444B921ECF8BB00BD1AB1 /* KPItemView.swift in Sources */,
 				71917E8C21ECBC6A0077ADF4 /* SuccessViewController.swift in Sources */,
+				250C111F2351A10400758B04 /* FirstCollectionViewCell.swift in Sources */,
 				25FEE09D234E597700BF002A /* UserInfo.swift in Sources */,
 				71917E7F21ECB8CE0077ADF4 /* UIViewController+NavigationBar.swift in Sources */,
+				254A84E2234FA9D800B35EF0 /* HomeTableViewCell.swift in Sources */,
 				7165960D21ECEA9000D55A14 /* SwifterSwift.swift in Sources */,
+				250C115423521EAC00758B04 /* TextfieldTableViewCell.swift in Sources */,
 				71917E8E21ECBCEE0077ADF4 /* String+Validation.swift in Sources */,
 				254A84D5234F97DE00B35EF0 /* SideMenuTableViewCell.swift in Sources */,
 				C90A34AB23432DD7004092CF /* FirstViewController.swift in Sources */,
