@@ -7,6 +7,7 @@ target 'FynzoSurvey' do
   use_frameworks!
   pod 'SideMenu', '4.0.0'
   pod 'Cosmos'
+  pod 'JJFloatingActionButton'
   # Pods for FynzoSurvey
 
 #  pod 'IQKeyboardManagerSwift','6.2.0'

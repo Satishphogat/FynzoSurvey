@@ -1,20 +1,24 @@
 PODS:
   - Cosmos (20.0.1)
+  - JJFloatingActionButton (2.1.0)
   - SideMenu (4.0.0)
 
 DEPENDENCIES:
   - Cosmos
+  - JJFloatingActionButton
   - SideMenu (= 4.0.0)
 
 SPEC REPOS:
   trunk:
     - Cosmos
+    - JJFloatingActionButton
     - SideMenu
 
 SPEC CHECKSUMS:
   Cosmos: b47fddf2102bb48580cd3025d9ce0a5c658a65da
+  JJFloatingActionButton: 26805f87c7e9f68c6a91bd9f3f09c2e6b904a84f
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
 
-PODFILE CHECKSUM: 32aa051f4c815bb908eff9a4705e81db7d574aff
+PODFILE CHECKSUM: b030d21627c619f813b2a7a0549abf8ee2f3a100
 
 COCOAPODS: 1.8.3
