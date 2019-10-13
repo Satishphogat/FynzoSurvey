@@ -2,7 +2,7 @@
 import Foundation
 
 struct AppConfiguration {
-//    static let baseUrl = "https://\(Environment().configuration(PlistKey.ServerURL))"
+    static let baseUrl = "https://accounts.fynzo.com/webservices/"
 }
 
 struct AppInfo {

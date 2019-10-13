@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25067C1723531630005F7115 /* FynzoWebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25067C152353162F005F7115 /* FynzoWebServices.swift */; };
+		25067C1823531630005F7115 /* FynzoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25067C162353162F005F7115 /* FynzoAPIManager.swift */; };
 		250C111C2351A03500758B04 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C111B2351A03500758B04 /* FormViewController.swift */; };
 		250C111F2351A10400758B04 /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C111D2351A10400758B04 /* FirstCollectionViewCell.swift */; };
 		250C11202351A10400758B04 /* FirstCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C111E2351A10400758B04 /* FirstCollectionViewCell.xib */; };
@@ -109,6 +111,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25067C152353162F005F7115 /* FynzoWebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FynzoWebServices.swift; sourceTree = "<group>"; };
+		25067C162353162F005F7115 /* FynzoAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FynzoAPIManager.swift; sourceTree = "<group>"; };
 		250C111B2351A03500758B04 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		250C111D2351A10400758B04 /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		250C111E2351A10400758B04 /* FirstCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -319,6 +323,8 @@
 			isa = PBXGroup;
 			children = (
 				254A84C8234F91D600B35EF0 /* UserManager.swift */,
+				25067C162353162F005F7115 /* FynzoAPIManager.swift */,
+				25067C152353162F005F7115 /* FynzoWebServices.swift */,
 				254A84C9234F91D600B35EF0 /* AppUserDefaultManager.swift */,
 			);
 			name = Manager;
@@ -756,6 +762,7 @@
 				25FEE078234E483300BF002A /* Fynzo+Constant.swift in Sources */,
 				250C11282351A78C00758B04 /* StarCollectionViewCell.swift in Sources */,
 				254A84CB234F91D600B35EF0 /* AppUserDefaultManager.swift in Sources */,
+				25067C1823531630005F7115 /* FynzoAPIManager.swift in Sources */,
 				250C11412351C20700758B04 /* SquareCollectionViewCell.swift in Sources */,
 				25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */,
 				250C111C2351A03500758B04 /* FormViewController.swift in Sources */,
@@ -771,6 +778,7 @@
 				254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */,
 				25FEE076234E483300BF002A /* Fynzo+Font.swift in Sources */,
 				7165961121ECEAAD00D55A14 /* SCLAlertView.swift in Sources */,
+				25067C1723531630005F7115 /* FynzoWebServices.swift in Sources */,
 				71917E8421ECB8CE0077ADF4 /* UIView+Nib.swift in Sources */,
 				71917E9321ECBFD90077ADF4 /* UIImage+Color.swift in Sources */,
 				7199ADAD21EC8A1D0066B969 /* AppDelegate.swift in Sources */,

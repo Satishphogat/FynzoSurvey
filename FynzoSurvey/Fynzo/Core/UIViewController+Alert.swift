@@ -23,6 +23,13 @@ public extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    func noInternetConnection() {
+        alertWithTwoAction(message: Fynzo.LabelText.noInternetOpenSetting, title: Fynzo.AlertMessages.noInternetConnection, okButtonTitle: Fynzo.ButtonTitle.settings, cancelButtonTitle: Fynzo.ButtonTitle.cancel, OKAction: { (_) in
+            guard let urlString = URL(string: UIApplicationOpenSettingsURLString) else {return}
+            UIApplication.shared.open(urlString, options: [:], completionHandler: nil)
+        })
+    }
+    
     func customizedAlert(withTitle title: String = "", message mess: String, iconImage image: UIImage = #imageLiteral(resourceName: "ic_logout_alert"), buttonTitles array: [String] = ["OK"], afterDelay delay: Double = 0, completion: ((Int) -> Void)? = nil) {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             let alert = SCLAlertView()
