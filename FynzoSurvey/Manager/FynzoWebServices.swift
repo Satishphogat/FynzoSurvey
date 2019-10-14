@@ -20,9 +20,10 @@ class FynzoWebServices: UIViewController {
     enum EndPoint: String {
         case authToken          = "basic-auth"
         case signUp          = "auth/register"
-        case login          = "auth/login"
+        case login          = "login"
         case changePassword          = "auth/resetPassword"
         case forgotPassword          = "auth/resetPasswordRequest"
+        case surveyForms     = "surveyforms"
 
         var latestUrl: String {
             return "\(AppConfiguration.baseUrl)\(self.rawValue)"
@@ -45,6 +46,21 @@ extension FynzoWebServices {
     
     func signUp(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock) {
         postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: EndPoint.signUp.latestUrl, controller: controller, parameters: parameters, headers: [:], completion: completion)
+    }
+    
+    func login(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
+        
+        postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: EndPoint.login.latestUrl, controller: controller, parameters: parameters, headers: [:], completion: completion)
+    }
+    
+    func surveyForms(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
+        
+        postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: "https://survey.fynzo.com/webservices/surveyforms", controller: controller, parameters: parameters, headers: [:], completion: completion)
+    }
+    
+    func getQuestionnaire(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
+        
+        postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: "https://survey.fynzo.com/webservices/surveyform", controller: controller, parameters: parameters, headers: [:], completion: completion)
     }
     
     func forgotPassword(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock) {

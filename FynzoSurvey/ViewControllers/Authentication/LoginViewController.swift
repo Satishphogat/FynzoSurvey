@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import SwiftyJSON
 //import ObjectMapper
 
 class LoginViewController: UIViewController {
@@ -39,10 +40,7 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = false
-        configureNavigationBar(withTitle: "Login", leftBarImage: #imageLiteral(resourceName: "leftArrowWhite"), leftSelector: #selector(leftButtonAction))
-        
-        let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
-        navigationController?.pushViewController(controller, animated: true)
+        configureNavigationBar(withTitle: "Login", leftBarImage: #imageLiteral(resourceName: "leftArrowWhite"), leftSelector: #selector(leftButtonAction))        
     }
     
     @objc func leftButtonAction() {
@@ -68,9 +66,9 @@ class LoginViewController: UIViewController {
     @IBAction func signInButtonAction(_ sender: UIButton) {
         view.endEditing(true)
         
-        if isValidate() {
+        //if isValidate() {
             login()
-        }
+        //}
     }
     
     @IBAction func surveyorButtonAction(_ sender: UIButton) {
@@ -101,6 +99,16 @@ class LoginViewController: UIViewController {
     
     private func login() {
         //UserManager.instance.moveToHomeViewController()
+        FynzoWebServices.shared.login(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.email: "user@gmail.com", Fynzo.ApiKey.password: "12345", Fynzo.ApiKey.service: Fynzo.ApiKey.survey]) { [weak self](json, error) in
+            guard let `self` = self else { return }
+            
+            self.handleLoginSuccess(json)
+        }
+    }
+    
+    private func handleLoginSuccess(_ json: JSON) {
+        userInfo = UserInfo(json: json)
+        AppUserDefaults.save(value: userInfo.id, forKey: .id)
         let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
         navigationController?.pushViewController(controller, animated: true)
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 import JJFloatingActionButton
+import SwiftyJSON
 
 class HomeViewController: UIViewController {
     
@@ -19,10 +20,12 @@ class HomeViewController: UIViewController {
     
     var dataArray = [Fynzo.LabelText.Email, Fynzo.LabelText.name, Fynzo.LabelText.startDate, Fynzo.LabelText.endDate, Fynzo.LabelText.version, Fynzo.LabelText.autoUpload]
     
+    var forms = [Form]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        getFormsApi()
         addFloatingButton()
     }
     
@@ -35,6 +38,19 @@ class HomeViewController: UIViewController {
     
     @objc func leftButtonAction() {
         openMenu()
+    }
+    
+    private func getFormsApi() {
+        FynzoWebServices.shared.surveyForms(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""]) { [weak self](json, error) in
+            guard let `self` = self else { return }
+            
+            self.handleSurveyFormsSuccess(json)
+        }
+    }
+    
+    private func handleSurveyFormsSuccess(_ json: JSON) {
+        forms = Form.models(from: json.arrayValue)
+        tableView.reloadData()
     }
     
     private func addFloatingButton() {
@@ -54,17 +70,29 @@ class HomeViewController: UIViewController {
         actionButton.display(inView: self.view)
         view.addSubview(actionButton)
     }
+    
+    @objc func startButtonAction(_ sender: UIButton) {
+        let index = sender.tag
+        
+        let controller = FormViewController.instantiate(fromAppStoryboard: .Home)
+        controller.form = forms[index]
+        navigationController?.pushViewController(controller, animated: true)
+    }
 
 }
 
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArray.count
+        return forms.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: HomeTableViewCell.self)
+        
+        cell.label.text = forms[indexPath.row].name
+        cell.startButton.tag = indexPath.row
+        cell.startButton.addTarget(self, action: #selector(startButtonAction(_:)), for: .touchUpInside)
         
         return cell
     }

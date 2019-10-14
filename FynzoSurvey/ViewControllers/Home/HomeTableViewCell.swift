@@ -10,4 +10,6 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell, NibReusable {
     
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var startButton: UIButton!
 }

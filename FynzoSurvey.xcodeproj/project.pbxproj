@@ -31,6 +31,9 @@
 		250C115123521E7800758B04 /* TextfieldCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C114F23521E7800758B04 /* TextfieldCollectionViewCell.xib */; };
 		250C115423521EAC00758B04 /* TextfieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C115223521EAC00758B04 /* TextfieldTableViewCell.swift */; };
 		250C115523521EAC00758B04 /* TextfieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C115323521EAC00758B04 /* TextfieldTableViewCell.xib */; };
+		251596D62354DDD200E69D95 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251596D52354DDD200E69D95 /* UserInfo.swift */; };
+		251596DA2354E2D000E69D95 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251596D92354E2D000E69D95 /* Form.swift */; };
+		251596DE2354ECCA00E69D95 /* Questionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251596DD2354ECCA00E69D95 /* Questionnaire.swift */; };
 		254A84C3234F8F0200B35EF0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A84C2234F8F0200B35EF0 /* Home.storyboard */; };
 		254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */; };
 		254A84CA234F91D600B35EF0 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C8234F91D600B35EF0 /* UserManager.swift */; };
@@ -72,7 +75,6 @@
 		25FEE08D234E483300BF002A /* Poppins-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE055234E483300BF002A /* Poppins-BlackItalic.otf */; };
 		25FEE08E234E483300BF002A /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE056234E483300BF002A /* Poppins-Regular.otf */; };
 		25FEE08F234E483300BF002A /* Poppins-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */; };
-		25FEE09D234E597700BF002A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE09C234E597700BF002A /* UserInfo.swift */; };
 		5F8B092C3BC88E536F11BF7A /* Pods_FynzoSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AED3BE15D3413B80E12E8F3 /* Pods_FynzoSurvey.framework */; };
 		7165960D21ECEA9000D55A14 /* SwifterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165960C21ECEA9000D55A14 /* SwifterSwift.swift */; };
 		7165961121ECEAAD00D55A14 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165960F21ECEAAD00D55A14 /* SCLAlertView.swift */; };
@@ -135,6 +137,9 @@
 		250C114F23521E7800758B04 /* TextfieldCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextfieldCollectionViewCell.xib; sourceTree = "<group>"; };
 		250C115223521EAC00758B04 /* TextfieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldTableViewCell.swift; sourceTree = "<group>"; };
 		250C115323521EAC00758B04 /* TextfieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextfieldTableViewCell.xib; sourceTree = "<group>"; };
+		251596D52354DDD200E69D95 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		251596D92354E2D000E69D95 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
+		251596DD2354ECCA00E69D95 /* Questionnaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questionnaire.swift; sourceTree = "<group>"; };
 		254A84C2234F8F0200B35EF0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		254A84C8234F91D600B35EF0 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -176,7 +181,6 @@
 		25FEE055234E483300BF002A /* Poppins-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.otf"; sourceTree = "<group>"; };
 		25FEE056234E483300BF002A /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
 		25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.otf"; sourceTree = "<group>"; };
-		25FEE09C234E597700BF002A /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		457444D65E7D507BC1774A41 /* Pods-MyMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayer/Pods-MyMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		5660DA197C549C5D7488CB83 /* Pods-FynzoSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FynzoSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey.release.xcconfig"; sourceTree = "<group>"; };
 		5AED3BE15D3413B80E12E8F3 /* Pods_FynzoSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FynzoSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +311,16 @@
 				250C115323521EAC00758B04 /* TextfieldTableViewCell.xib */,
 			);
 			path = TextFieldCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		251596D42354DD9200E69D95 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				251596D52354DDD200E69D95 /* UserInfo.swift */,
+				251596DD2354ECCA00E69D95 /* Questionnaire.swift */,
+				251596D92354E2D000E69D95 /* Form.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		254A84C4234F8F1700B35EF0 /* Home */ = {
@@ -510,6 +524,7 @@
 			children = (
 				254A84C7234F91D600B35EF0 /* Manager */,
 				25FEE018234E480600BF002A /* AppConfiguration */,
+				251596D42354DD9200E69D95 /* Model */,
 				71917E9821ECC1410077ADF4 /* Venders */,
 				25FEE01B234E483300BF002A /* Fynzo */,
 				7199ADBF21EC8A430066B969 /* AppDelegate */,
@@ -517,7 +532,6 @@
 				7199ADC221EC8A850066B969 /* Assets */,
 				7199ADC021EC8A4F0066B969 /* Storyboard */,
 				7199ADB821EC8A1D0066B969 /* Info.plist */,
-				25FEE09C234E597700BF002A /* UserInfo.swift */,
 			);
 			path = FynzoSurvey;
 			sourceTree = "<group>";
@@ -745,12 +759,15 @@
 				7165961221ECEAAD00D55A14 /* SCLExtensions.swift in Sources */,
 				250C11462351C4D300758B04 /* CardCollectionViewCell.swift in Sources */,
 				71917E8121ECB8CE0077ADF4 /* UIViewController+Alert.swift in Sources */,
+				251596D62354DDD200E69D95 /* UserInfo.swift in Sources */,
 				254A84CA234F91D600B35EF0 /* UserManager.swift in Sources */,
 				25FEE01A234E480600BF002A /* AppConfiguration.swift in Sources */,
 				250C11222351A39B00758B04 /* UICollectionView+Reusable.swift in Sources */,
 				71917E8021ECB8CE0077ADF4 /* AppStoryboard.swift in Sources */,
+				251596DA2354E2D000E69D95 /* Form.swift in Sources */,
 				71917E9521ECC08C0077ADF4 /* String+CoreFoundation.swift in Sources */,
 				C90A34AF23434E7C004092CF /* SurveyorLoginViewController.swift in Sources */,
+				251596DE2354ECCA00E69D95 /* Questionnaire.swift in Sources */,
 				250C11332351B74D00758B04 /* CheckboxCollectionViewCell.swift in Sources */,
 				71917E8721ECB93A0077ADF4 /* AttributtedString+Foundation.swift in Sources */,
 				7199ADD721EC8AD70066B969 /* LoginViewController.swift in Sources */,
@@ -791,7 +808,6 @@
 				71D444B921ECF8BB00BD1AB1 /* KPItemView.swift in Sources */,
 				71917E8C21ECBC6A0077ADF4 /* SuccessViewController.swift in Sources */,
 				250C111F2351A10400758B04 /* FirstCollectionViewCell.swift in Sources */,
-				25FEE09D234E597700BF002A /* UserInfo.swift in Sources */,
 				71917E7F21ECB8CE0077ADF4 /* UIViewController+NavigationBar.swift in Sources */,
 				254A84E2234FA9D800B35EF0 /* HomeTableViewCell.swift in Sources */,
 				7165960D21ECEA9000D55A14 /* SwifterSwift.swift in Sources */,

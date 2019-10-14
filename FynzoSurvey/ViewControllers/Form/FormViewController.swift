@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class FormViewController: UIViewController {
     
@@ -24,15 +25,32 @@ class FormViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var previousButton: UIButton!
     
+    var form = Form()
+    var questionnaire = [Questionnaire]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
+        getFormsApi()
     }
     
     override var shouldAutorotate: Bool {
         return true
+    }
+    
+    private func getFormsApi() {
+        FynzoWebServices.shared.getQuestionnaire(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? "", Fynzo.ApiKey.surveyform_id: form.id]) { [weak self](json, error) in
+            guard let `self` = self else { return }
+            
+            self.handleSurveyFormsSuccess(json)
+        }
+    }
+    
+    private func handleSurveyFormsSuccess(_ json: JSON) {
+        questionnaire = Questionnaire.models(from: json[Fynzo.ApiKey.questionnaire].arrayValue)
+        collectionView.reloadData()
     }
     
     @IBAction func previousButtonAction() {

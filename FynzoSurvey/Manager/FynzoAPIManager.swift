@@ -104,7 +104,7 @@ enum FynzoAPIManager {
             Alamofire.request(URLString, method: httpMethod,
                               parameters: parameters,
                               encoding: (httpMethod == .post) || (httpMethod == .put) ? JSONEncoding.default : URLEncoding.queryString,
-                              headers: additionalHeaders).responseJSON { (response: DataResponse<Any>) in
+                              headers: additionalHeaders).authenticate(user: "admin", password: "1234").responseJSON { (response: DataResponse<Any>) in
                                 parseResponse(response, success: success, failure: failure)
             }
         }
@@ -137,14 +137,16 @@ enum FynzoAPIManager {
                 let err = NSError(code: 403, localizedDescription: message)
                 failure(err)
             } else {
-                success(JSON(value))
+                if let value1 = value as? NSDictionary {
+                    success(JSON(value1["data"]))
+                }
             }
         case .failure(let error):
             
             if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8){
                 print("Server Error: " + str)
             }
-
+            
             let err = (error as NSError)
             if err.code == NSURLErrorNotConnectedToInternet || err.code == NSURLErrorInternationalRoamingOff {
                 // Handle Internet Not available UI

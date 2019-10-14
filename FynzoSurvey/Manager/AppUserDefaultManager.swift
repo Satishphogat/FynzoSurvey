@@ -14,7 +14,7 @@ class AppUserDefaults {
         case email
         case authToken
         case session
-        case userId
+        case id
         case fullName
         case image
         case phone
