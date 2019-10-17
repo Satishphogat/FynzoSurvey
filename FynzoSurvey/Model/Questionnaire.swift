@@ -22,8 +22,9 @@ struct Questionnaire {
     var status = ""
     var createTime = ""
     var updateTime = ""
-    var questing = ""
+    var questions = [Question]()
     var dequesting = ""
+    var questionText = ""
     
     init(json: JSON = JSON.null) {
         id          = json[Fynzo.ApiKey.id].stringValue
@@ -38,8 +39,10 @@ struct Questionnaire {
         status          = json[Fynzo.ApiKey.status].stringValue
         createTime = json[Fynzo.ApiKey.createTime].stringValue
         updateTime          = json[Fynzo.ApiKey.updateTime].stringValue
-        questing          = json[Fynzo.ApiKey.question].stringValue
+        questions          = Question.models(from: json[Fynzo.ApiKey.question].arrayValue)
         dequesting          = json[Fynzo.ApiKey.dquestion].stringValue
+        questingText          = json[Fynzo.ApiKey.questionText].stringValue
+
     }
     
     static func models(from jsonArray: [JSON]) -> [Questionnaire] {

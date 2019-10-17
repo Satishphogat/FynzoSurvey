@@ -18,18 +18,21 @@ class CardCollectionViewCell: UICollectionViewCell, NibReusable {
         }
     }
     
-    let numberOfCell: CGFloat = 10
+    var questionnaire = Questionnaire()
+    
 }
 
 extension CardCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int(numberOfCell)
+        return Int((questionnaire.questions.first ?? Question()).scale) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CardInnerCollectionViewCell.self)
-                
+        
+        cell.titleButton.setTitle(String(indexPath.item), for: .normal)
+        
         return cell
     }
 }

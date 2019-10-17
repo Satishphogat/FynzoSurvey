@@ -26,7 +26,7 @@ class FormViewController: UIViewController {
     @IBOutlet weak var previousButton: UIButton!
     
     var form = Form()
-    var questionnaire = [Questionnaire]()
+    var questionnairies: [[Questionnaire]] = [[]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,14 @@ class FormViewController: UIViewController {
     }
     
     private func handleSurveyFormsSuccess(_ json: JSON) {
-        questionnaire = Questionnaire.models(from: json[Fynzo.ApiKey.questionnaire].arrayValue)
+        let questionnaire = Questionnaire.models(from: json[Fynzo.ApiKey.questionnaire].arrayValue)
+        let screens = Set(questionnaire.map({$0.screenNo})).sorted()
+        questionnairies.removeFirst()
+        for screen in screens.sorted() {
+            let screenTypeArray = questionnaire.filter({$0.screenNo == screen})
+            questionnairies.append(screenTypeArray)
+        }
+        
         collectionView.reloadData()
     }
     
@@ -75,32 +82,55 @@ class FormViewController: UIViewController {
 extension FormViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return questionnairies.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.item == 0 {
+         let questionary = questionnairies[indexPath.item]
+        
+        if questionary.isEmpty {
+            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: FirstCollectionViewCell.self)
+            
+            return cell
+        }
+        
+        if questionary.last?.questionTypeId == "0" {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: FirstCollectionViewCell.self)
+            
+            cell.topLabel.text = !questionary.isEmpty ? questionary[0].questingText : ""
+            cell.bottomLabel.text = questionary.count >= 2 ? questionary[1].questingText : ""
         
         return cell
-        } else if indexPath.item == 1 {
+        } else if questionary.last?.questionTypeId == "5" && ((questionary.last?.questions.first ?? Question()).labels != Fynzo.LabelText.veryLikelyUnlikely) {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: StarCollectionViewCell.self)
             
-            return cell
-        } else if indexPath.item == 2 {
-            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CheckboxCollectionViewCell.self)
+            let questionArray = questionary.filter({$0.questionTypeId == "5"})
+            cell.questionaries = questionArray
             
             return cell
-        } else if indexPath.item == 3 {
+        } else if questionary.last?.questionTypeId == "3" {
+            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CheckboxCollectionViewCell.self)
+            
+            cell.titleLabel.text = questionnairies[indexPath.item].first?.questingText
+            cell.questionary = questionary.filter({$0.questionTypeId == "3"}).first ?? Questionnaire()
+            
+            return cell
+        } else if questionary.last?.screenNo == "6" {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SquareCollectionViewCell.self)
             
             return cell
-        } else if indexPath.item == 4{
+        } else if questionary.last?.questionTypeId == "5" && ((questionary.last?.questions.first ?? Question()).labels == Fynzo.LabelText.veryLikelyUnlikely) {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CardCollectionViewCell.self)
+            
+            cell.questionnaire = questionary.filter({$0.questionTypeId == "5"}).first ?? Questionnaire() 
+            
+            return cell
+        } else if questionary.last?.questionTypeId == "1" {
+            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TextfieldCollectionViewCell.self)
             
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TextfieldCollectionViewCell.self)
+            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: FirstCollectionViewCell.self)
             
             return cell
         }

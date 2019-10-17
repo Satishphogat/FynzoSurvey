@@ -106,6 +106,7 @@ extension Fynzo {
         static let endDate = "End Date"
         static let version = "Version"
         static let autoUpload = "Auto Upload"
+        static let veryLikelyUnlikely = "Very Unlikely,,,,,,,,,,Very likely"
     }
     
     struct ApiKey {
@@ -151,6 +152,10 @@ extension Fynzo {
         static let service = "service"
         static let survey = "survey"
         static let surveyform_id = "surveyform_id"
+        static let questionnaireQuestionId = "questionnaire_question_id"
+        static let choice = "choice"
+        static let labels = "labels"
+        static let scale = "scale"
     }
     
     struct ValidationStrings {

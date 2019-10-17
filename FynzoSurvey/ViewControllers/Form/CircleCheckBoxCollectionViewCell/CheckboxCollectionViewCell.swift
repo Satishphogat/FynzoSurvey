@@ -17,16 +17,22 @@ class CheckboxCollectionViewCell: UICollectionViewCell, NibReusable {
             collectionView.register(cellType: CheckBoxInnerCollectionViewCell.self)
         }
     }
+    
+    var questionary = Questionnaire()
 }
 
 extension CheckboxCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return questionary.questions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CheckBoxInnerCollectionViewCell.self)
+        
+        let question = questionary.questions[indexPath.item]
+        
+        cell.titleButton.setTitle(question.choice, for: .normal)
             
             return cell
     }

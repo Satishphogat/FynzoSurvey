@@ -9,6 +9,15 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if !(AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? "").isEmpty {
+            let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
