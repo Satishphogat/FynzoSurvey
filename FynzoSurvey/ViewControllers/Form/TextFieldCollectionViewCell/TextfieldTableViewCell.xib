@@ -51,6 +51,9 @@
                                 <real key="value" value="2"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="5Qz-U2-HM6"/>
+                        </connections>
                     </textField>
                 </subviews>
                 <constraints>
@@ -64,6 +67,10 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="label" destination="t9o-Qv-9V5" id="jAd-S9-HpH"/>
+                <outlet property="textField" destination="cU1-pi-IJw" id="Tru-Jh-3L4"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

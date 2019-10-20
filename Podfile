@@ -10,6 +10,7 @@ target 'FynzoSurvey' do
   pod 'JJFloatingActionButton'
   pod 'Alamofire', '4.6.0'
   pod 'SwiftyJSON', '4.0.0'
+  pod 'Kingfisher','5.8.3'
   # Pods for FynzoSurvey
 
 #  pod 'IQKeyboardManagerSwift','6.2.0'

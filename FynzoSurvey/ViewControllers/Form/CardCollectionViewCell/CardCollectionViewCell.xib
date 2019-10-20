@@ -40,7 +40,7 @@
                         </constraints>
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hzo-QH-VdV">
-                        <rect key="frame" x="0.0" y="120" width="300" height="50"/>
+                        <rect key="frame" x="20" y="120" width="260" height="50"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="K8E-WA-c4L"/>
@@ -59,9 +59,9 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="hzo-QH-VdV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="05f-PT-1sq"/>
+                <constraint firstItem="hzo-QH-VdV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="05f-PT-1sq"/>
                 <constraint firstItem="an2-7I-F8x" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6Eh-XX-dH1"/>
-                <constraint firstAttribute="trailing" secondItem="hzo-QH-VdV" secondAttribute="trailing" id="7w7-JO-pjc"/>
+                <constraint firstAttribute="trailing" secondItem="hzo-QH-VdV" secondAttribute="trailing" constant="20" id="7w7-JO-pjc"/>
                 <constraint firstItem="an2-7I-F8x" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8vy-FQ-mqb"/>
                 <constraint firstItem="hzo-QH-VdV" firstAttribute="top" secondItem="an2-7I-F8x" secondAttribute="bottom" id="lzX-t8-mdf"/>
                 <constraint firstAttribute="trailing" secondItem="an2-7I-F8x" secondAttribute="trailing" id="mLE-nI-r9T"/>
@@ -69,6 +69,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="collectionView" destination="hzo-QH-VdV" id="KyL-Wb-ryb"/>
+                <outlet property="label" destination="6QU-rV-cqW" id="ang-7m-1Is"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </collectionViewCell>

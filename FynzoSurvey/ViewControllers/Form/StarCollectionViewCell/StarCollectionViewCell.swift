@@ -10,7 +10,7 @@ import UIKit
 
 class StarCollectionViewCell: UICollectionViewCell, NibReusable {
 
-    
+    @IBOutlet weak var label: UILabel! 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(cellType: StarTableViewCell.self)
@@ -29,7 +29,7 @@ extension StarCollectionViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: StarTableViewCell.self)
         
-        cell.label.text = questionaries[indexPath.row].questingText
+        cell.label.text = questionaries.count  == 1 ? "" : questionaries[indexPath.row].questingText
         cell.ratingView.didFinishTouchingCosmos = { rating in
             
         }

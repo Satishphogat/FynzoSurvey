@@ -25,6 +25,7 @@ struct Questionnaire {
     var questions = [Question]()
     var dequesting = ""
     var questionText = ""
+    var question = Question()
     
     init(json: JSON = JSON.null) {
         id          = json[Fynzo.ApiKey.id].stringValue
@@ -42,6 +43,7 @@ struct Questionnaire {
         questions          = Question.models(from: json[Fynzo.ApiKey.question].arrayValue)
         dequesting          = json[Fynzo.ApiKey.dquestion].stringValue
         questingText          = json[Fynzo.ApiKey.questionText].stringValue
+        question          = Question(json: json[Fynzo.ApiKey.question])
 
     }
     

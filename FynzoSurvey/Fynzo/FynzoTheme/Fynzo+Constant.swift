@@ -156,6 +156,8 @@ extension Fynzo {
         static let choice = "choice"
         static let labels = "labels"
         static let scale = "scale"
+        static let isNps = "isNps"
+        static let surveyForm = "surveyform"
     }
     
     struct ValidationStrings {

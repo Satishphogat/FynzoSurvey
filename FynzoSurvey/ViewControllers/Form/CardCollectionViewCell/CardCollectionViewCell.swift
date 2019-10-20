@@ -12,6 +12,7 @@ import UIKit
 
 class CardCollectionViewCell: UICollectionViewCell, NibReusable {
 
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.register(cellType: CardInnerCollectionViewCell.self)
@@ -25,7 +26,7 @@ class CardCollectionViewCell: UICollectionViewCell, NibReusable {
 extension CardCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int((questionnaire.questions.first ?? Question()).scale) ?? 0
+        return Int(questionnaire.question.scale) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -40,8 +41,9 @@ extension CardCollectionViewCell: UICollectionViewDataSource {
 extension CardCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfCell = Float(questionnaire.question.scale) ?? 0.0
         
-        return CGSize(width: (collectionView.frame.size.width - 20) / 10, height: 50)
+        return CGSize(width: (collectionView.frame.size.width) / CGFloat.init(numberOfCell), height: 50)
     }
 }
 

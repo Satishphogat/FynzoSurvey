@@ -17,6 +17,7 @@ struct Question {
     var status = ""
     var labels = ""
     var scale = ""
+    var isNps = ""
     
     init(json: JSON = JSON.null) {
         id          = json[Fynzo.ApiKey.id].stringValue
@@ -27,6 +28,7 @@ struct Question {
         updateTime          = json[Fynzo.ApiKey.updateTime].stringValue
         labels = json[Fynzo.ApiKey.updateTime].stringValue
         scale = json[Fynzo.ApiKey.scale].stringValue
+        isNps = json[Fynzo.ApiKey.isNps].stringValue
     }
     
     static func models(from jsonArray: [JSON]) -> [Question] {

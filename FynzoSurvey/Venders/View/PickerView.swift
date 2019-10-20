@@ -42,32 +42,27 @@ class PickerView: UIView {
         }
     }
     
-    func showPicker(_ data: [String], selectedValue: String = "",  completion: @escaping (Any) -> Void) {
-        let selectedElement = data.firstIndex(of: selectedValue)
+    func showPicker(_ data: [Any], completion: @escaping (Any) -> Void) {
         contentArray = data
         datePicker.isHidden = true
         picker.isHidden = false
         picker.delegate = self
         picker.dataSource = self
-        picker.selectRow(selectedElement ?? 0, inComponent: 0, animated: true)
         dataBlock = completion
         frame = UIScreen.main.bounds
-        if AppDelegate.shared.window == nil {
-            UIApplication.shared.keyWindow?.rootViewController?.view.addSubview(self)
-        } else {
-            AppDelegate.shared.window?.rootViewController?.view.addSubview(self)
-        }
+        AppDelegate.shared.window?.rootViewController?.view.addSubview(self)
     }
     
-    func showDatePicker(_ minimumDate: Date = Date(), selectedDate: Date = Date(), datePickerMode: UIDatePicker.Mode, completion: @escaping (Any?) -> Void) {
+    func showDatePicker(minimumDate: Date?, maximumDate: Date?, selectedDate: Date? = Date(), datePickerMode: UIDatePicker.Mode, completion: @escaping (Any) -> Void) {
         datePicker.isHidden = false
         picker.isHidden = true
         picker.delegate = nil
         picker.dataSource = nil
         datePicker.datePickerMode = datePickerMode
         datePicker.minimumDate = minimumDate
-        datePicker.setDate(selectedDate, animated: false)
+        datePicker.maximumDate = maximumDate
         dataBlock = completion
+        datePicker.setDate(selectedDate ?? Date(), animated: false)
         frame = UIScreen.main.bounds
         AppDelegate.shared.window?.rootViewController?.view.addSubview(self)
     }
@@ -99,9 +94,8 @@ extension PickerView: UIPickerViewDelegate {
         let rowInfo = contentArray[row]
         if let title = rowInfo as? String {
             return title
-        } else {
-            return ""
         }
+        return "" 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

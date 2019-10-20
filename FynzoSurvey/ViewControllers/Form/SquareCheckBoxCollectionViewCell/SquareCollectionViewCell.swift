@@ -12,23 +12,28 @@ import UIKit
 
 class SquareCollectionViewCell: UICollectionViewCell, NibReusable {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.register(cellType: CheckBoxInnerCollectionViewCell.self)
         }
     }
+    
+    var questionary = Questionnaire()
 }
 
 extension SquareCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return questionary.questions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CheckBoxInnerCollectionViewCell.self)
         
-        cell.titleButton.setImage(UIImage.init(named: "empty_square_checkbox"), for: .normal)
+        let question = questionary.questions[indexPath.item]
+        
+        cell.titleButton.setTitle(question.choice, for: .normal)
         
         return cell
     }

@@ -16,17 +16,19 @@ class TextfieldCollectionViewCell: UICollectionViewCell, NibReusable {
             tableView.register(cellType: TextfieldTableViewCell.self)
         }
     }
-    
+    var questionnaries = [Questionnaire]()
 }
 
 extension TextfieldCollectionViewCell: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return questionnaries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: TextfieldTableViewCell.self)
+        
+        cell.label.text = questionnaries[indexPath.row].questingText
         
         return cell
     }

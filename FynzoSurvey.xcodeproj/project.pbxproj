@@ -34,6 +34,12 @@
 		251596D62354DDD200E69D95 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251596D52354DDD200E69D95 /* UserInfo.swift */; };
 		251596DA2354E2D000E69D95 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251596D92354E2D000E69D95 /* Form.swift */; };
 		251596DE2354ECCA00E69D95 /* Questionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251596DD2354ECCA00E69D95 /* Questionnaire.swift */; };
+		2517C7CC2359C52A00E7866B /* DropDownCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2517C7CA2359C52A00E7866B /* DropDownCollectionViewCell.swift */; };
+		2517C7CD2359C52A00E7866B /* DropDownCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2517C7CB2359C52A00E7866B /* DropDownCollectionViewCell.xib */; };
+		2517C7D02359C61000E7866B /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2517C7CE2359C61000E7866B /* DropDownTableViewCell.swift */; };
+		2517C7D12359C61000E7866B /* DropDownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2517C7CF2359C61000E7866B /* DropDownTableViewCell.xib */; };
+		2517C7D52359CC1400E7866B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2517C7D32359CC1400E7866B /* PickerView.swift */; };
+		2517C7D62359CC1400E7866B /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2517C7D42359CC1400E7866B /* PickerView.xib */; };
 		254313C823577A2A007F7918 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254313C723577A2A007F7918 /* Question.swift */; };
 		254A84C3234F8F0200B35EF0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A84C2234F8F0200B35EF0 /* Home.storyboard */; };
 		254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */; };
@@ -141,6 +147,12 @@
 		251596D52354DDD200E69D95 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		251596D92354E2D000E69D95 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		251596DD2354ECCA00E69D95 /* Questionnaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questionnaire.swift; sourceTree = "<group>"; };
+		2517C7CA2359C52A00E7866B /* DropDownCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCollectionViewCell.swift; sourceTree = "<group>"; };
+		2517C7CB2359C52A00E7866B /* DropDownCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownCollectionViewCell.xib; sourceTree = "<group>"; };
+		2517C7CE2359C61000E7866B /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
+		2517C7CF2359C61000E7866B /* DropDownTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownTableViewCell.xib; sourceTree = "<group>"; };
+		2517C7D32359CC1400E7866B /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		2517C7D42359CC1400E7866B /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
 		254313C723577A2A007F7918 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		254A84C2234F8F0200B35EF0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +254,7 @@
 		250C111A2351A00300758B04 /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				2517C7C92359C50300E7866B /* DropDownCollectionViewCell */,
 				250C114D23521E5D00758B04 /* TextFieldCollectionViewCell */,
 				250C11432351C49D00758B04 /* CardCollectionViewCell */,
 				250C113E2351C1EB00758B04 /* SquareCheckBoxCollectionViewCell */,
@@ -325,6 +338,27 @@
 			);
 			path = Model;
 			sourceTree = "<group>";
+		};
+		2517C7C92359C50300E7866B /* DropDownCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2517C7CA2359C52A00E7866B /* DropDownCollectionViewCell.swift */,
+				2517C7CB2359C52A00E7866B /* DropDownCollectionViewCell.xib */,
+				2517C7CE2359C61000E7866B /* DropDownTableViewCell.swift */,
+				2517C7CF2359C61000E7866B /* DropDownTableViewCell.xib */,
+			);
+			path = DropDownCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		2517C7D22359CC1400E7866B /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				2517C7D32359CC1400E7866B /* PickerView.swift */,
+				2517C7D42359CC1400E7866B /* PickerView.xib */,
+			);
+			name = PickerView;
+			path = FynzoSurvey/Venders/PickerView;
+			sourceTree = SOURCE_ROOT;
 		};
 		254A84C4234F8F1700B35EF0 /* Home */ = {
 			isa = PBXGroup;
@@ -499,6 +533,7 @@
 			isa = PBXGroup;
 			children = (
 				71D444AE21ECF8BA00BD1AB1 /* ActionSheet */,
+				2517C7D22359CC1400E7866B /* PickerView */,
 				7165960E21ECEAAD00D55A14 /* AlertView */,
 			);
 			path = Venders;
@@ -686,13 +721,16 @@
 				25FEE085234E483300BF002A /* Poppins-Medium.otf in Resources */,
 				254A84DF234F9EE500B35EF0 /* SettingTableViewCell.xib in Resources */,
 				7199ADC421EC8AB10066B969 /* Authentication.storyboard in Resources */,
+				2517C7CD2359C52A00E7866B /* DropDownCollectionViewCell.xib in Resources */,
 				25FEE088234E483300BF002A /* Poppins-Thin.otf in Resources */,
 				25FEE08C234E483300BF002A /* Poppins-Black.otf in Resources */,
 				25FEE081234E483300BF002A /* Poppins-ThinItalic.otf in Resources */,
+				2517C7D62359CC1400E7866B /* PickerView.xib in Resources */,
 				254A84C3234F8F0200B35EF0 /* Home.storyboard in Resources */,
 				250C11342351B74D00758B04 /* CheckboxCollectionViewCell.xib in Resources */,
 				25FEE087234E483300BF002A /* Poppins-Italic.otf in Resources */,
 				25FEE08F234E483300BF002A /* Poppins-ExtraBold.otf in Resources */,
+				2517C7D12359C61000E7866B /* DropDownTableViewCell.xib in Resources */,
 				25FEE086234E483300BF002A /* Poppins-SemiBold.otf in Resources */,
 				25FEE089234E483300BF002A /* Poppins-MediumItalic.otf in Resources */,
 				250C113C2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.xib in Resources */,
@@ -766,6 +804,7 @@
 				254A84CA234F91D600B35EF0 /* UserManager.swift in Sources */,
 				25FEE01A234E480600BF002A /* AppConfiguration.swift in Sources */,
 				250C11222351A39B00758B04 /* UICollectionView+Reusable.swift in Sources */,
+				2517C7D02359C61000E7866B /* DropDownTableViewCell.swift in Sources */,
 				71917E8021ECB8CE0077ADF4 /* AppStoryboard.swift in Sources */,
 				251596DA2354E2D000E69D95 /* Form.swift in Sources */,
 				71917E9521ECC08C0077ADF4 /* String+CoreFoundation.swift in Sources */,
@@ -787,12 +826,14 @@
 				250C11412351C20700758B04 /* SquareCollectionViewCell.swift in Sources */,
 				25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */,
 				250C111C2351A03500758B04 /* FormViewController.swift in Sources */,
+				2517C7CC2359C52A00E7866B /* DropDownCollectionViewCell.swift in Sources */,
 				71917E9721ECC0A70077ADF4 /* UIViewExtensions.swift in Sources */,
 				71917E8321ECB8CE0077ADF4 /* UITableView+Reusable.swift in Sources */,
 				25FEE074234E483300BF002A /* Fynzo.swift in Sources */,
 				71917E8221ECB8CE0077ADF4 /* Reusable.swift in Sources */,
 				254A84DE234F9EE500B35EF0 /* SettingTableViewCell.swift in Sources */,
 				7199ADD521EC8AD70066B969 /* ForgotPasswordViewController.swift in Sources */,
+				2517C7D52359CC1400E7866B /* PickerView.swift in Sources */,
 				7199ADD621EC8AD70066B969 /* ResetPasswordViewController.swift in Sources */,
 				254A84DA234F9EA700B35EF0 /* SettingViewController.swift in Sources */,
 				25FEE07C234E483300BF002A /* LoaderView.swift in Sources */,

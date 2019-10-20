@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_1" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="V0q-GS-JIV" customClass="HomeViewController" customModule="FynzoSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3bx-xW-vGf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dAO-M4-IO9">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="44" y="0.0" width="808" height="393"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="V0q-GS-JIV" id="Ev5-lz-9Yd"/>
@@ -49,17 +49,17 @@
             <objects>
                 <viewController storyboardIdentifier="FormViewController" id="bZU-e2-4UM" customClass="FormViewController" customModule="FynzoSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n5r-Wz-mjE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="form_background" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-r1-Llu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="form_background" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-r1-Llu">
+                                <rect key="frame" x="44" y="-10" width="808" height="403"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nog-bE-7P1">
-                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <rect key="frame" x="44" y="0.0" width="808" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fQV-fC-h4V">
-                                        <rect key="frame" x="0.0" y="0.0" width="135" height="70"/>
+                                        <rect key="frame" x="0.0" y="-5" width="135" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVE-8K-5Us" customClass="FormButton" customModule="FynzoSurvey" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="135" height="70"/>
@@ -77,14 +77,14 @@
                                         </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="y8G-jV-l5M">
-                                        <rect key="frame" x="172" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="369" y="-5" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="ARy-8U-sPK"/>
                                             <constraint firstAttribute="height" constant="70" id="MfF-dp-yy6"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cac-IZ-YBP">
-                                        <rect key="frame" x="344" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="738" y="-5" width="70" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWv-AS-Urs" customClass="FormButton" customModule="FynzoSurvey" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -104,7 +104,7 @@
                                 <constraints>
                                     <constraint firstItem="fQV-fC-h4V" firstAttribute="centerY" secondItem="nog-bE-7P1" secondAttribute="centerY" id="22M-vh-T7p"/>
                                     <constraint firstItem="y8G-jV-l5M" firstAttribute="centerY" secondItem="nog-bE-7P1" secondAttribute="centerY" id="6es-7Q-ab7"/>
-                                    <constraint firstAttribute="height" constant="70" id="cLd-4z-CAR"/>
+                                    <constraint firstAttribute="height" constant="60" id="cLd-4z-CAR"/>
                                     <constraint firstAttribute="trailing" secondItem="cac-IZ-YBP" secondAttribute="trailing" id="f1Q-Gu-0dO"/>
                                     <constraint firstItem="y8G-jV-l5M" firstAttribute="centerX" secondItem="nog-bE-7P1" secondAttribute="centerX" id="q3r-IY-hSd"/>
                                     <constraint firstItem="cac-IZ-YBP" firstAttribute="centerY" secondItem="nog-bE-7P1" secondAttribute="centerY" id="qeo-W3-Y0f"/>
@@ -112,9 +112,9 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zyE-JS-g2v">
-                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <rect key="frame" x="44" y="70" width="808" height="323"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xzw-mp-SYi">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Xzw-mp-SYi">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -153,7 +153,9 @@
                         <viewLayoutGuide key="safeArea" id="sQG-93-ZNl"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="Afg-r1-Llu" id="YEF-BB-RSl"/>
                         <outlet property="collectionView" destination="zyE-JS-g2v" id="Uk8-nI-kPH"/>
+                        <outlet property="logoImageView" destination="y8G-jV-l5M" id="6F1-ZI-gmY"/>
                         <outlet property="nextButton" destination="PWv-AS-Urs" id="lEO-qt-OdQ"/>
                         <outlet property="previousButton" destination="CVE-8K-5Us" id="EJI-aJ-eHU"/>
                     </connections>

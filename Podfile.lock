@@ -2,6 +2,9 @@ PODS:
   - Alamofire (4.6.0)
   - Cosmos (20.0.1)
   - JJFloatingActionButton (2.1.0)
+  - Kingfisher (5.8.3):
+    - Kingfisher/Core (= 5.8.3)
+  - Kingfisher/Core (5.8.3)
   - SideMenu (4.0.0)
   - SwiftyJSON (4.0.0)
 
@@ -9,6 +12,7 @@ DEPENDENCIES:
   - Alamofire (= 4.6.0)
   - Cosmos
   - JJFloatingActionButton
+  - Kingfisher
   - SideMenu (= 4.0.0)
   - SwiftyJSON (= 4.0.0)
 
@@ -17,6 +21,7 @@ SPEC REPOS:
     - Alamofire
     - Cosmos
     - JJFloatingActionButton
+    - Kingfisher
     - SideMenu
     - SwiftyJSON
 
@@ -24,9 +29,10 @@ SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Cosmos: b47fddf2102bb48580cd3025d9ce0a5c658a65da
   JJFloatingActionButton: 26805f87c7e9f68c6a91bd9f3f09c2e6b904a84f
+  Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: e089c6e79682ce3ab9dd5d588e7be2c60b7d431d
+PODFILE CHECKSUM: a3b5f6f92091354a3a3d1d4fded51269f9ceaad9
 
 COCOAPODS: 1.8.3
