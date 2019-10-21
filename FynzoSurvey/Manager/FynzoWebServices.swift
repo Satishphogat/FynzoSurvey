@@ -114,11 +114,11 @@ extension FynzoWebServices {
     
     func showIndicator(_ controller: UIViewController, _ showHud: Bool, _ pageNumber: Int = 1) {
         self.controller = controller
-       
+            GIFLoading.shared.showWithActivityIndicator("Loading", activitycolor: .white, labelfontcolor: .white, labelfontsize: 15, activityStyle: .whiteLarge)
     }
     
     func removeIndicator() {
-        LoaderView.remove(controller.view)
+        GIFLoading.shared.hide()
     }
     
     func handleFailureBlock(error: NSError) {

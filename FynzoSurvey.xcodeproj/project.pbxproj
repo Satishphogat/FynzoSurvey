@@ -11,6 +11,7 @@
 		25067C1823531630005F7115 /* FynzoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25067C162353162F005F7115 /* FynzoAPIManager.swift */; };
 		250892AC235D76E5008E1E30 /* SubmitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250892AA235D76E5008E1E30 /* SubmitCollectionViewCell.swift */; };
 		250892AD235D76E5008E1E30 /* SubmitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250892AB235D76E5008E1E30 /* SubmitCollectionViewCell.xib */; };
+		250892B0235D8366008E1E30 /* GIFLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250892AF235D8366008E1E30 /* GIFLoading.swift */; };
 		250C111C2351A03500758B04 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C111B2351A03500758B04 /* FormViewController.swift */; };
 		250C111F2351A10400758B04 /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C111D2351A10400758B04 /* FirstCollectionViewCell.swift */; };
 		250C11202351A10400758B04 /* FirstCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C111E2351A10400758B04 /* FirstCollectionViewCell.xib */; };
@@ -126,6 +127,7 @@
 		25067C162353162F005F7115 /* FynzoAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FynzoAPIManager.swift; sourceTree = "<group>"; };
 		250892AA235D76E5008E1E30 /* SubmitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitCollectionViewCell.swift; sourceTree = "<group>"; };
 		250892AB235D76E5008E1E30 /* SubmitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitCollectionViewCell.xib; sourceTree = "<group>"; };
+		250892AF235D8366008E1E30 /* GIFLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFLoading.swift; sourceTree = "<group>"; };
 		250C111B2351A03500758B04 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		250C111D2351A10400758B04 /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		250C111E2351A10400758B04 /* FirstCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -262,6 +264,14 @@
 				250892AB235D76E5008E1E30 /* SubmitCollectionViewCell.xib */,
 			);
 			path = SubmitCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		250892AE235D833B008E1E30 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				250892AF235D8366008E1E30 /* GIFLoading.swift */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		250C111A2351A00300758B04 /* Form */ = {
@@ -546,6 +556,7 @@
 		71917E9821ECC1410077ADF4 /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				250892AE235D833B008E1E30 /* Loader */,
 				71D444AE21ECF8BA00BD1AB1 /* ActionSheet */,
 				2517C7D22359CC1400E7866B /* PickerView */,
 				7165960E21ECEAAD00D55A14 /* AlertView */,
@@ -821,6 +832,7 @@
 				250C11222351A39B00758B04 /* UICollectionView+Reusable.swift in Sources */,
 				2517C7D02359C61000E7866B /* DropDownTableViewCell.swift in Sources */,
 				71917E8021ECB8CE0077ADF4 /* AppStoryboard.swift in Sources */,
+				250892B0235D8366008E1E30 /* GIFLoading.swift in Sources */,
 				251596DA2354E2D000E69D95 /* Form.swift in Sources */,
 				71917E9521ECC08C0077ADF4 /* String+CoreFoundation.swift in Sources */,
 				254313C823577A2A007F7918 /* Question.swift in Sources */,
