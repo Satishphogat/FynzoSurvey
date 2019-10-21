@@ -13,10 +13,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    static var shared = AppDelegate()
-    let buttonColor = #colorLiteral(red: 0.968627451, green: 0.662745098, blue: 0.1882352941, alpha: 1)
+    let buttonColor = #colorLiteral(red: 0, green: 0.5607843137, blue: 0.9333333333, alpha: 1)
     let appDarkGray = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
     let appThemeColor = #colorLiteral(red: 0, green: 0.5607843137, blue: 0.9333333333, alpha: 1)
+    
+    class var shared: AppDelegate {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return AppDelegate()
+        }
+        return appDelegate
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        IQKeyboardManager.shared.enable = true

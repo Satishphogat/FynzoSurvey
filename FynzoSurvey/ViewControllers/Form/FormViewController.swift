@@ -21,6 +21,7 @@ class FormViewController: UIViewController {
             collectionView.register(cellType: CardCollectionViewCell.self)
             collectionView.register(cellType: TextfieldCollectionViewCell.self)
             collectionView.register(cellType: DropDownCollectionViewCell.self)
+            collectionView.register(cellType: SubmitCollectionViewCell.self)
         }
     }
     
@@ -35,8 +36,7 @@ class FormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
+        moveToLandscape()
         getFormsApi()
     }
     
@@ -48,8 +48,24 @@ class FormViewController: UIViewController {
     }
     
     @objc func leftButtonAction() {
-        navigationController?.popViewController(animated: true)
+        customizedAlert(withTitle: "Exit Feedback", message: "Are you sure you want to exit feedback", buttonTitles: ["CANCEL", "OK"]) { (index) in
+            if index == 1 {
+                self.moveToPortrait()
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
+    
+    private func moveToLandscape() {
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+    }
+    
+    private func moveToPortrait() {
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+    }
+    
     
     override var shouldAutorotate: Bool {
         return true
@@ -122,6 +138,8 @@ class FormViewController: UIViewController {
         }
         
         questionnairies = updatedQuestionaries.filter({!$0.isEmpty})
+        questionnairies.append([Questionnaire()]) // for submit screen
+        
         collectionView.reloadData()
     }
     
@@ -151,6 +169,10 @@ class FormViewController: UIViewController {
         
         let frame: CGRect = CGRect(x : contentOffset ,y : collectionView.contentOffset.y ,width : collectionView.frame.width,height : collectionView.frame.height)
         collectionView.scrollRectToVisible(frame, animated: true)
+    }
+    
+    @objc func submitButtonAction() {
+    
     }
 }
 
@@ -228,6 +250,12 @@ extension FormViewController: UICollectionViewDataSource {
             
             cell.questionnaries = questionary.filter({$0.questionTypeId == "1"})
             cell.tableView.reloadData()
+            
+            return cell
+        } else if indexPath.item == questionnairies.count - 1 {
+            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SubmitCollectionViewCell.self)
+            
+            cell.submitButton.addTarget(self, action: #selector(submitButtonAction), for: .touchUpInside)
             
             return cell
         } else {

@@ -35,7 +35,7 @@ class SideMenuViewController: UIViewController {
         
     }
     
-    @IBAction func logoutButtonAction(_ sender: UIButton) {
+    func logoutButtonAction() {
         customizedAlert(message: Fynzo.AlertMessages.logoutMessage, buttonTitles: [Fynzo.ButtonTitle.cancel.uppercased(), Fynzo.ButtonTitle.ok]) { (index) in
             if index == 1 { // OK
                 self.logout()
@@ -45,6 +45,7 @@ class SideMenuViewController: UIViewController {
     
     private func logout() {
         dismiss(animated: false, completion: nil)
+        AppUserDefaults.removeAllValues()
         UserManager.instance.moveToLogin()
     }
 }
@@ -75,6 +76,8 @@ extension SideMenuViewController: UITableViewDelegate {
         } else if indexPath.row == 1 {
             let controller = SettingViewController.instantiate(fromAppStoryboard: .SideMenu)
             navigationController?.pushViewController(controller, animated: true)
+        } else if indexPath.row == titleArray.count - 1 {
+            logoutButtonAction()
         } else {
            
         }

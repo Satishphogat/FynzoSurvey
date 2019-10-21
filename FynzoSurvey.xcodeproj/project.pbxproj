@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		25067C1723531630005F7115 /* FynzoWebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25067C152353162F005F7115 /* FynzoWebServices.swift */; };
 		25067C1823531630005F7115 /* FynzoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25067C162353162F005F7115 /* FynzoAPIManager.swift */; };
+		250892AC235D76E5008E1E30 /* SubmitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250892AA235D76E5008E1E30 /* SubmitCollectionViewCell.swift */; };
+		250892AD235D76E5008E1E30 /* SubmitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250892AB235D76E5008E1E30 /* SubmitCollectionViewCell.xib */; };
 		250C111C2351A03500758B04 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C111B2351A03500758B04 /* FormViewController.swift */; };
 		250C111F2351A10400758B04 /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C111D2351A10400758B04 /* FirstCollectionViewCell.swift */; };
 		250C11202351A10400758B04 /* FirstCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C111E2351A10400758B04 /* FirstCollectionViewCell.xib */; };
@@ -122,6 +124,8 @@
 /* Begin PBXFileReference section */
 		25067C152353162F005F7115 /* FynzoWebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FynzoWebServices.swift; sourceTree = "<group>"; };
 		25067C162353162F005F7115 /* FynzoAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FynzoAPIManager.swift; sourceTree = "<group>"; };
+		250892AA235D76E5008E1E30 /* SubmitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitCollectionViewCell.swift; sourceTree = "<group>"; };
+		250892AB235D76E5008E1E30 /* SubmitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitCollectionViewCell.xib; sourceTree = "<group>"; };
 		250C111B2351A03500758B04 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		250C111D2351A10400758B04 /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		250C111E2351A10400758B04 /* FirstCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -251,6 +255,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		250892A9235D76BE008E1E30 /* SubmitCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				250892AA235D76E5008E1E30 /* SubmitCollectionViewCell.swift */,
+				250892AB235D76E5008E1E30 /* SubmitCollectionViewCell.xib */,
+			);
+			path = SubmitCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		250C111A2351A00300758B04 /* Form */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +274,7 @@
 				250C11302351B72800758B04 /* CircleCheckBoxCollectionViewCell */,
 				250C11252351A76100758B04 /* StarCollectionViewCell */,
 				250C11242351A74D00758B04 /* FirstCollectionViewCell */,
+				250892A9235D76BE008E1E30 /* SubmitCollectionViewCell */,
 				250C111B2351A03500758B04 /* FormViewController.swift */,
 			);
 			path = Form;
@@ -704,6 +718,7 @@
 				7199ADD821EC8AD70066B969 /* CommonTableViewCell.xib in Resources */,
 				25FEE082234E483300BF002A /* Poppins-ExtraLightItalic.otf in Resources */,
 				254A84CF234F954300B35EF0 /* SideMenu.storyboard in Resources */,
+				250892AD235D76E5008E1E30 /* SubmitCollectionViewCell.xib in Resources */,
 				250C11202351A10400758B04 /* FirstCollectionViewCell.xib in Resources */,
 				250C112D2351A86B00758B04 /* StarTableViewCell.xib in Resources */,
 				25FEE07B234E483300BF002A /* LoaderView.xib in Resources */,
@@ -851,6 +866,7 @@
 				250C115023521E7800758B04 /* TextfieldCollectionViewCell.swift in Sources */,
 				254A84D8234F99B600B35EF0 /* UIViewController+SideMenu.swift in Sources */,
 				71D444B921ECF8BB00BD1AB1 /* KPItemView.swift in Sources */,
+				250892AC235D76E5008E1E30 /* SubmitCollectionViewCell.swift in Sources */,
 				71917E8C21ECBC6A0077ADF4 /* SuccessViewController.swift in Sources */,
 				250C111F2351A10400758B04 /* FirstCollectionViewCell.swift in Sources */,
 				71917E7F21ECB8CE0077ADF4 /* UIViewController+NavigationBar.swift in Sources */,
