@@ -9,6 +9,7 @@
 import UIKit
 import JJFloatingActionButton
 import SwiftyJSON
+import ALCameraViewController
 
 class HomeViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class HomeViewController: UIViewController {
     }
     
     var dataArray = [Fynzo.LabelText.Email, Fynzo.LabelText.name, Fynzo.LabelText.startDate, Fynzo.LabelText.endDate, Fynzo.LabelText.version, Fynzo.LabelText.autoUpload]
+    var pickerViewDataArray = ["Open Without Lock", "Open With Lock(Kiosk Mode)", "Share Survey URL", "Response Report", "Edit"]
     
     var forms = [Form]()
     
@@ -48,6 +50,40 @@ class HomeViewController: UIViewController {
         }
     }
     
+    func openPicker(_ sender: UIButton) {
+        var croppingParameters: CroppingParameters {
+            return CroppingParameters(isEnabled: true, allowResizing: true, allowMoving: true, minimumSize: CGSize(width: 60, height: 60))
+        }
+        let actionSheet = KPActionSheet(items: [
+            KPItem(title: Fynzo.ButtonTitle.openWithOutLock, titleColor: Fynzo.ColorCode.black, onTap: {
+                self.openForm(sender.tag)
+            }),
+            KPItem(title: Fynzo.ButtonTitle.openWithLock, titleColor: Fynzo.ColorCode.black, onTap: {
+            }),
+            KPItem(title: Fynzo.ButtonTitle.shareUrl, titleColor: Fynzo.ColorCode.black, onTap: {
+                self.openShareScreen(sender.tag)
+            }),
+            KPItem(title: Fynzo.ButtonTitle.responseReport, titleColor: Fynzo.ColorCode.black, onTap: {
+            }),
+            KPItem(title: Fynzo.ButtonTitle.edit, titleColor: Fynzo.ColorCode.black, onTap: {
+            }),
+            ])
+        DispatchQueue.main.async {
+            self.present(actionSheet, animated: true, completion: nil)
+        }
+    }
+    
+    private func openForm(_ index: Int) {
+        let controller = FormViewController.instantiate(fromAppStoryboard: .Home)
+        controller.form = forms[index]
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    private func openShareScreen(_ index: Int) {
+        let controller = ShareViewController.instantiate(fromAppStoryboard: .Home)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     private func handleSurveyFormsSuccess(_ json: JSON) {
         forms = Form.models(from: json.arrayValue)
         tableView.reloadData()
@@ -69,11 +105,8 @@ class HomeViewController: UIViewController {
     }
     
     @objc func startButtonAction(_ sender: UIButton) {
-        let index = sender.tag
-        
-        let controller = FormViewController.instantiate(fromAppStoryboard: .Home)
-        controller.form = forms[index]
-        navigationController?.pushViewController(controller, animated: true)
+        //openPicker(sender)
+        openPicker(sender)
     }
 
 }

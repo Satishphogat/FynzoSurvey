@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="landscape">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +16,11 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="V0q-GS-JIV" customClass="HomeViewController" customModule="FynzoSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3bx-xW-vGf">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dAO-M4-IO9">
-                                <rect key="frame" x="44" y="0.0" width="808" height="393"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="V0q-GS-JIV" id="Ev5-lz-9Yd"/>
@@ -49,14 +50,14 @@
             <objects>
                 <viewController storyboardIdentifier="FormViewController" id="bZU-e2-4UM" customClass="FormViewController" customModule="FynzoSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n5r-Wz-mjE">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="form_background" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-r1-Llu">
-                                <rect key="frame" x="44" y="-10" width="808" height="403"/>
+                                <rect key="frame" x="0.0" y="34" width="414" height="828"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nog-bE-7P1">
-                                <rect key="frame" x="44" y="0.0" width="808" height="60"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fQV-fC-h4V">
                                         <rect key="frame" x="0.0" y="-5" width="135" height="70"/>
@@ -77,14 +78,14 @@
                                         </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="y8G-jV-l5M">
-                                        <rect key="frame" x="369" y="-5" width="70" height="70"/>
+                                        <rect key="frame" x="172" y="-5" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="ARy-8U-sPK"/>
                                             <constraint firstAttribute="height" constant="70" id="MfF-dp-yy6"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cac-IZ-YBP">
-                                        <rect key="frame" x="738" y="-5" width="70" height="70"/>
+                                        <rect key="frame" x="344" y="-5" width="70" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWv-AS-Urs" customClass="FormButton" customModule="FynzoSurvey" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -112,7 +113,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zyE-JS-g2v">
-                                <rect key="frame" x="44" y="70" width="808" height="323"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="748"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Xzw-mp-SYi">
                                     <size key="itemSize" width="50" height="50"/>
@@ -164,9 +165,107 @@
             </objects>
             <point key="canvasLocation" x="902.89855072463774" y="114.50892857142857"/>
         </scene>
+        <!--Share View Controller-->
+        <scene sceneID="ea3-Ny-RTP">
+            <objects>
+                <viewController storyboardIdentifier="ShareViewController" id="eEz-Db-DuJ" customClass="ShareViewController" customModule="FynzoSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2gy-OZ-2jq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcI-tC-HcE">
+                                <rect key="frame" x="20" y="54" width="374" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="gbk-De-07Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" name="appThemeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://survey.fynzo.com/uoqwierksdf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RL-fc-TGJ">
+                                <rect key="frame" x="20" y="109" width="374" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="m5E-ZD-ubB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpS-lC-xUm">
+                                <rect key="frame" x="0.0" y="144" width="414" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="47R-ZZ-ONP"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7vH-LY-Z2W">
+                                <rect key="frame" x="60" y="180" width="294" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbR-zh-MeT">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="70"/>
+                                        <color key="backgroundColor" red="1" green="0.38031616166282034" blue="0.48943973371279337" alpha="0.87744828345070425" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <state key="normal" title="COPY">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="copyButtonAction" destination="eEz-Db-DuJ" eventType="touchUpInside" id="iXn-Qa-bii"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UP2-fn-JFP">
+                                        <rect key="frame" x="0.0" y="80" width="294" height="70"/>
+                                        <color key="backgroundColor" name="appThemeColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <state key="normal" title="SHARE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareButtonAction" destination="eEz-Db-DuJ" eventType="touchUpInside" id="TQo-H7-a4U"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="1Rv-nL-T8f"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6RL-fc-TGJ" firstAttribute="top" secondItem="mcI-tC-HcE" secondAttribute="bottom" constant="20" id="28q-Fb-Sv2"/>
+                            <constraint firstItem="DeO-u3-5Lj" firstAttribute="trailing" secondItem="7vH-LY-Z2W" secondAttribute="trailing" constant="60" id="Mus-of-Adh"/>
+                            <constraint firstItem="7vH-LY-Z2W" firstAttribute="leading" secondItem="DeO-u3-5Lj" secondAttribute="leading" constant="60" id="Q8l-UD-aUU"/>
+                            <constraint firstItem="mcI-tC-HcE" firstAttribute="top" secondItem="DeO-u3-5Lj" secondAttribute="top" constant="10" id="Qd7-CJ-Uxk"/>
+                            <constraint firstItem="wpS-lC-xUm" firstAttribute="top" secondItem="6RL-fc-TGJ" secondAttribute="bottom" constant="10" id="ZQF-ZF-UH5"/>
+                            <constraint firstItem="6RL-fc-TGJ" firstAttribute="leading" secondItem="DeO-u3-5Lj" secondAttribute="leading" constant="20" id="ZZK-eP-hOb"/>
+                            <constraint firstItem="DeO-u3-5Lj" firstAttribute="trailing" secondItem="6RL-fc-TGJ" secondAttribute="trailing" constant="20" id="Zub-Xo-f5t"/>
+                            <constraint firstItem="DeO-u3-5Lj" firstAttribute="trailing" secondItem="mcI-tC-HcE" secondAttribute="trailing" constant="20" id="a9t-Kj-bFD"/>
+                            <constraint firstItem="mcI-tC-HcE" firstAttribute="leading" secondItem="DeO-u3-5Lj" secondAttribute="leading" constant="20" id="c53-iH-Xkn"/>
+                            <constraint firstItem="DeO-u3-5Lj" firstAttribute="trailing" secondItem="wpS-lC-xUm" secondAttribute="trailing" id="fgn-Fx-6br"/>
+                            <constraint firstItem="7vH-LY-Z2W" firstAttribute="top" secondItem="wpS-lC-xUm" secondAttribute="bottom" constant="35" id="g5T-8a-2Tq"/>
+                            <constraint firstItem="wpS-lC-xUm" firstAttribute="leading" secondItem="DeO-u3-5Lj" secondAttribute="leading" id="gU9-7F-hxd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DeO-u3-5Lj"/>
+                    </view>
+                    <connections>
+                        <outlet property="copyButton" destination="VbR-zh-MeT" id="REa-pl-ESm"/>
+                        <outlet property="shareButton" destination="UP2-fn-JFP" id="rES-ct-VLL"/>
+                        <outlet property="titleLabel" destination="mcI-tC-HcE" id="QER-F7-Ox8"/>
+                        <outlet property="urlLabel" destination="6RL-fc-TGJ" id="DAJ-0R-yaM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QhW-WA-qE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1678.2608695652175" y="113.83928571428571"/>
+        </scene>
     </scenes>
     <resources>
         <image name="form_background" width="1900" height="782"/>
         <image name="profileImage" width="306" height="331"/>
+        <namedColor name="appThemeColor">
+            <color red="0.0" green="0.5607843137254902" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColor">
+            <color red="0.35686274509803922" green="0.35294117647058826" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

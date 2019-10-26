@@ -43,6 +43,7 @@
 		2517C7D12359C61000E7866B /* DropDownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2517C7CF2359C61000E7866B /* DropDownTableViewCell.xib */; };
 		2517C7D52359CC1400E7866B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2517C7D32359CC1400E7866B /* PickerView.swift */; };
 		2517C7D62359CC1400E7866B /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2517C7D42359CC1400E7866B /* PickerView.xib */; };
+		2523078E23641109002A6A24 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523078D23641109002A6A24 /* ShareViewController.swift */; };
 		254313C823577A2A007F7918 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254313C723577A2A007F7918 /* Question.swift */; };
 		254A84C3234F8F0200B35EF0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A84C2234F8F0200B35EF0 /* Home.storyboard */; };
 		254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */; };
@@ -159,6 +160,7 @@
 		2517C7CF2359C61000E7866B /* DropDownTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownTableViewCell.xib; sourceTree = "<group>"; };
 		2517C7D32359CC1400E7866B /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		2517C7D42359CC1400E7866B /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
+		2523078D23641109002A6A24 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		254313C723577A2A007F7918 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		254A84C2234F8F0200B35EF0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -384,9 +386,18 @@
 			path = FynzoSurvey/Venders/PickerView;
 			sourceTree = SOURCE_ROOT;
 		};
+		2523078C236410DD002A6A24 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				2523078D23641109002A6A24 /* ShareViewController.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		254A84C4234F8F1700B35EF0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2523078C236410DD002A6A24 /* Share */,
 				254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */,
 				254A84E0234FA9D800B35EF0 /* HomeTableViewCell.swift */,
 				254A84E1234FA9D800B35EF0 /* HomeTableViewCell.xib */,
@@ -833,6 +844,7 @@
 				2517C7D02359C61000E7866B /* DropDownTableViewCell.swift in Sources */,
 				71917E8021ECB8CE0077ADF4 /* AppStoryboard.swift in Sources */,
 				250892B0235D8366008E1E30 /* GIFLoading.swift in Sources */,
+				2523078E23641109002A6A24 /* ShareViewController.swift in Sources */,
 				251596DA2354E2D000E69D95 /* Form.swift in Sources */,
 				71917E9521ECC08C0077ADF4 /* String+CoreFoundation.swift in Sources */,
 				254313C823577A2A007F7918 /* Question.swift in Sources */,

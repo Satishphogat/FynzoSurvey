@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.6.0)
+  - ALCameraViewController (3.0.2)
   - Cosmos (20.0.1)
   - JJFloatingActionButton (2.1.0)
   - Kingfisher (5.8.3):
@@ -10,15 +11,17 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.6.0)
+  - ALCameraViewController (= 3.0.2)
   - Cosmos
   - JJFloatingActionButton
-  - Kingfisher
+  - Kingfisher (= 5.8.3)
   - SideMenu (= 4.0.0)
   - SwiftyJSON (= 4.0.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ALCameraViewController
     - Cosmos
     - JJFloatingActionButton
     - Kingfisher
@@ -27,12 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  ALCameraViewController: 1edce3497633f0df138523645ed1228961ee2eab
   Cosmos: b47fddf2102bb48580cd3025d9ce0a5c658a65da
   JJFloatingActionButton: 26805f87c7e9f68c6a91bd9f3f09c2e6b904a84f
   Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: a3b5f6f92091354a3a3d1d4fded51269f9ceaad9
+PODFILE CHECKSUM: 5cfe78b316171ca9f54a73e1d1aed16057878aa2
 
 COCOAPODS: 1.8.3

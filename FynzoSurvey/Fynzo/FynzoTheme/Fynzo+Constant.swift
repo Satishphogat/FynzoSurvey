@@ -78,6 +78,11 @@ extension Fynzo {
         static let changePassword = "Change Password"
         static let resetPassword = "Reset Password?"
         static let toChangeYourPassword = "To change your password, enter your old and new password fields below."
+        static let openWithOutLock = "Open Without Lock"
+        static let openWithLock = "Open With Lock(Kiosk Mode)"
+        static let shareUrl = "Share Survey URL"
+        static let responseReport = "Response Report"
+        static let edit = "Edit"
     }
     
     struct LabelText {
