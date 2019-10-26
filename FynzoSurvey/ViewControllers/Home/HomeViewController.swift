@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         configureNavigationBar(withTitle: "Fynzo Survey", leftBarImage: #imageLiteral(resourceName: "leftArrowWhite"), leftSelector: #selector(leftButtonAction))
-
+        navigationController?.navigationBar.isHidden = false
     }
     
     @objc func leftButtonAction() {
@@ -56,17 +56,14 @@ class HomeViewController: UIViewController {
     private func addFloatingButton() {
         let actionButton = JJFloatingActionButton()
         
-        actionButton.addItem(title: "item 1", image: UIImage(named: "First")?.withRenderingMode(.alwaysTemplate)) { item in
+        actionButton.addItem(title: "Create New Survey", image: UIImage(named: "First")?.withRenderingMode(.alwaysTemplate)) { item in
             // do something
         }
         
-        actionButton.addItem(title: "item 2", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in
+        actionButton.addItem(title: "Import Survey From Templates", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in
             // do something
         }
         
-        actionButton.addItem(title: "item 3", image: nil) { item in
-            // do something
-        }
         actionButton.display(inView: self.view)
         view.addSubview(actionButton)
     }
