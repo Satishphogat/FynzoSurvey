@@ -44,6 +44,13 @@
 		2517C7D52359CC1400E7866B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2517C7D32359CC1400E7866B /* PickerView.swift */; };
 		2517C7D62359CC1400E7866B /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2517C7D42359CC1400E7866B /* PickerView.xib */; };
 		2523078E23641109002A6A24 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523078D23641109002A6A24 /* ShareViewController.swift */; };
+		25230790236415B6002A6A24 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523078F236415B6002A6A24 /* ReportViewController.swift */; };
+		2523079523642282002A6A24 /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523079423642282002A6A24 /* ResponseViewController.swift */; };
+		2523079823642295002A6A24 /* ResponseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523079623642295002A6A24 /* ResponseTableViewCell.swift */; };
+		2523079923642295002A6A24 /* ResponseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2523079723642295002A6A24 /* ResponseTableViewCell.xib */; };
+		2523079C23642655002A6A24 /* ResponseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523079B23642655002A6A24 /* ResponseDetailViewController.swift */; };
+		2523079F23642691002A6A24 /* ResponseDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523079D23642691002A6A24 /* ResponseDetailTableViewCell.swift */; };
+		252307A023642691002A6A24 /* ResponseDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2523079E23642691002A6A24 /* ResponseDetailTableViewCell.xib */; };
 		254313C823577A2A007F7918 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254313C723577A2A007F7918 /* Question.swift */; };
 		254A84C3234F8F0200B35EF0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A84C2234F8F0200B35EF0 /* Home.storyboard */; };
 		254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */; };
@@ -161,6 +168,13 @@
 		2517C7D32359CC1400E7866B /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		2517C7D42359CC1400E7866B /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
 		2523078D23641109002A6A24 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		2523078F236415B6002A6A24 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		2523079423642282002A6A24 /* ResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
+		2523079623642295002A6A24 /* ResponseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTableViewCell.swift; sourceTree = "<group>"; };
+		2523079723642295002A6A24 /* ResponseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResponseTableViewCell.xib; sourceTree = "<group>"; };
+		2523079B23642655002A6A24 /* ResponseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDetailViewController.swift; sourceTree = "<group>"; };
+		2523079D23642691002A6A24 /* ResponseDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDetailTableViewCell.swift; sourceTree = "<group>"; };
+		2523079E23642691002A6A24 /* ResponseDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResponseDetailTableViewCell.xib; sourceTree = "<group>"; };
 		254313C723577A2A007F7918 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		254A84C2234F8F0200B35EF0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -394,9 +408,40 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
+		25230792236415CD002A6A24 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				2523079A236425EC002A6A24 /* ResponseDetail */,
+				2523079323642277002A6A24 /* Response */,
+				2523078F236415B6002A6A24 /* ReportViewController.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		2523079323642277002A6A24 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				2523079423642282002A6A24 /* ResponseViewController.swift */,
+				2523079623642295002A6A24 /* ResponseTableViewCell.swift */,
+				2523079723642295002A6A24 /* ResponseTableViewCell.xib */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		2523079A236425EC002A6A24 /* ResponseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2523079B23642655002A6A24 /* ResponseDetailViewController.swift */,
+				2523079D23642691002A6A24 /* ResponseDetailTableViewCell.swift */,
+				2523079E23642691002A6A24 /* ResponseDetailTableViewCell.xib */,
+			);
+			path = ResponseDetail;
+			sourceTree = "<group>";
+		};
 		254A84C4234F8F1700B35EF0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				25230792236415CD002A6A24 /* Report */,
 				2523078C236410DD002A6A24 /* Share */,
 				254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */,
 				254A84E0234FA9D800B35EF0 /* HomeTableViewCell.swift */,
@@ -737,9 +782,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				25FEE084234E483300BF002A /* Poppins-BoldItalic.otf in Resources */,
+				252307A023642691002A6A24 /* ResponseDetailTableViewCell.xib in Resources */,
 				7199ADD821EC8AD70066B969 /* CommonTableViewCell.xib in Resources */,
 				25FEE082234E483300BF002A /* Poppins-ExtraLightItalic.otf in Resources */,
 				254A84CF234F954300B35EF0 /* SideMenu.storyboard in Resources */,
+				2523079923642295002A6A24 /* ResponseTableViewCell.xib in Resources */,
 				250892AD235D76E5008E1E30 /* SubmitCollectionViewCell.xib in Resources */,
 				250C11202351A10400758B04 /* FirstCollectionViewCell.xib in Resources */,
 				250C112D2351A86B00758B04 /* StarTableViewCell.xib in Resources */,
@@ -846,6 +893,7 @@
 				250892B0235D8366008E1E30 /* GIFLoading.swift in Sources */,
 				2523078E23641109002A6A24 /* ShareViewController.swift in Sources */,
 				251596DA2354E2D000E69D95 /* Form.swift in Sources */,
+				2523079523642282002A6A24 /* ResponseViewController.swift in Sources */,
 				71917E9521ECC08C0077ADF4 /* String+CoreFoundation.swift in Sources */,
 				254313C823577A2A007F7918 /* Question.swift in Sources */,
 				C90A34AF23434E7C004092CF /* SurveyorLoginViewController.swift in Sources */,
@@ -880,6 +928,7 @@
 				25FEE076234E483300BF002A /* Fynzo+Font.swift in Sources */,
 				7165961121ECEAAD00D55A14 /* SCLAlertView.swift in Sources */,
 				25067C1723531630005F7115 /* FynzoWebServices.swift in Sources */,
+				25230790236415B6002A6A24 /* ReportViewController.swift in Sources */,
 				71917E8421ECB8CE0077ADF4 /* UIView+Nib.swift in Sources */,
 				71917E9321ECBFD90077ADF4 /* UIImage+Color.swift in Sources */,
 				7199ADAD21EC8A1D0066B969 /* AppDelegate.swift in Sources */,
@@ -894,11 +943,14 @@
 				71917E8C21ECBC6A0077ADF4 /* SuccessViewController.swift in Sources */,
 				250C111F2351A10400758B04 /* FirstCollectionViewCell.swift in Sources */,
 				71917E7F21ECB8CE0077ADF4 /* UIViewController+NavigationBar.swift in Sources */,
+				2523079C23642655002A6A24 /* ResponseDetailViewController.swift in Sources */,
+				2523079823642295002A6A24 /* ResponseTableViewCell.swift in Sources */,
 				254A84E2234FA9D800B35EF0 /* HomeTableViewCell.swift in Sources */,
 				7165960D21ECEA9000D55A14 /* SwifterSwift.swift in Sources */,
 				250C115423521EAC00758B04 /* TextfieldTableViewCell.swift in Sources */,
 				71917E8E21ECBCEE0077ADF4 /* String+Validation.swift in Sources */,
 				254A84D5234F97DE00B35EF0 /* SideMenuTableViewCell.swift in Sources */,
+				2523079F23642691002A6A24 /* ResponseDetailTableViewCell.swift in Sources */,
 				C90A34AB23432DD7004092CF /* FirstViewController.swift in Sources */,
 				C90A34AD23433BBD004092CF /* ORDesinables.swift in Sources */,
 			);

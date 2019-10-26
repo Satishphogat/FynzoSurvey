@@ -64,6 +64,7 @@ class HomeViewController: UIViewController {
                 self.openShareScreen(sender.tag)
             }),
             KPItem(title: Fynzo.ButtonTitle.responseReport, titleColor: Fynzo.ColorCode.black, onTap: {
+                self.openReportScreen(sender.tag)
             }),
             KPItem(title: Fynzo.ButtonTitle.edit, titleColor: Fynzo.ColorCode.black, onTap: {
             }),
@@ -81,6 +82,11 @@ class HomeViewController: UIViewController {
     
     private func openShareScreen(_ index: Int) {
         let controller = ShareViewController.instantiate(fromAppStoryboard: .Home)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    private func openReportScreen(_ index: Int) {
+        let controller = ReportViewController.instantiate(fromAppStoryboard: .Home)
         navigationController?.pushViewController(controller, animated: true)
     }
     
