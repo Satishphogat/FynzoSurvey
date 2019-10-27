@@ -30,7 +30,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="9hk-lD-Eyo"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="15"/>
                         <color key="textColor" name="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>

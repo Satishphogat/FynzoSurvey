@@ -78,8 +78,12 @@ extension SideMenuViewController: UITableViewDelegate {
             navigationController?.pushViewController(controller, animated: true)
         } else if indexPath.row == titleArray.count - 1 {
             logoutButtonAction()
-        } else {
-           
+        } else if indexPath.row == 2 {
+            let controller = HelpViewController.instantiate(fromAppStoryboard: .SideMenu)
+            navigationController?.pushViewController(controller, animated: true)
+        } else if indexPath.row == 3 {
+            let controller = ContactUsViewController.instantiate(fromAppStoryboard: .SideMenu)
+            navigationController?.pushViewController(controller, animated: true)
         }
     }
 }

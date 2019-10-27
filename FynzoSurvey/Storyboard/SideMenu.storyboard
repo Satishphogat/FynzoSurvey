@@ -158,6 +158,94 @@
             </objects>
             <point key="canvasLocation" x="880" y="171"/>
         </scene>
+        <!--Contact Us View Controller-->
+        <scene sceneID="F3l-vY-N2N">
+            <objects>
+                <viewController storyboardIdentifier="ContactUsViewController" id="eme-2V-vSh" customClass="ContactUsViewController" customModule="FynzoSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QCp-Ya-nZR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write your feedback or concern here." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NfD-bs-QZq">
+                                <rect key="frame" x="0.0" y="59" width="414" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="fre-Sk-PA3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eme-2V-vSh" id="yY4-Dh-5Ly"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqw-RJ-y0V">
+                                <rect key="frame" x="0.0" y="209" width="414" height="40"/>
+                                <color key="backgroundColor" name="appThemeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="h5z-Bx-KsX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="SUBMIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonAction" destination="eme-2V-vSh" eventType="touchUpInside" id="htc-3c-Vd3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NfD-bs-QZq" firstAttribute="leading" secondItem="YZP-fl-rcT" secondAttribute="leading" id="6jK-hT-NCc"/>
+                            <constraint firstItem="pqw-RJ-y0V" firstAttribute="top" secondItem="NfD-bs-QZq" secondAttribute="bottom" id="YAI-VM-xHw"/>
+                            <constraint firstItem="YZP-fl-rcT" firstAttribute="trailing" secondItem="NfD-bs-QZq" secondAttribute="trailing" id="ZTC-ac-XKN"/>
+                            <constraint firstItem="YZP-fl-rcT" firstAttribute="trailing" secondItem="pqw-RJ-y0V" secondAttribute="trailing" id="hML-6C-STu"/>
+                            <constraint firstItem="NfD-bs-QZq" firstAttribute="top" secondItem="YZP-fl-rcT" secondAttribute="top" constant="15" id="nZb-Pb-E8c"/>
+                            <constraint firstItem="pqw-RJ-y0V" firstAttribute="leading" secondItem="YZP-fl-rcT" secondAttribute="leading" id="xAi-nn-Nch"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YZP-fl-rcT"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="NfD-bs-QZq" id="Rfk-Ft-YTf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r6I-UT-cDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1717" y="173"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="pDh-sn-da9">
+            <objects>
+                <viewController storyboardIdentifier="HelpViewController" id="dA3-lL-n91" customClass="HelpViewController" customModule="FynzoSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gna-6A-jLt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-2R-JdK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dA3-lL-n91" id="mOg-fw-hiC"/>
+                                    <outlet property="delegate" destination="dA3-lL-n91" id="B9e-wQ-ec2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tNN-EF-vhe" firstAttribute="bottom" secondItem="9v3-2R-JdK" secondAttribute="bottom" id="1tZ-mi-xdR"/>
+                            <constraint firstItem="9v3-2R-JdK" firstAttribute="top" secondItem="tNN-EF-vhe" secondAttribute="top" id="ITR-Hf-32a"/>
+                            <constraint firstItem="tNN-EF-vhe" firstAttribute="trailing" secondItem="9v3-2R-JdK" secondAttribute="trailing" id="Ist-rY-ZcP"/>
+                            <constraint firstItem="9v3-2R-JdK" firstAttribute="leading" secondItem="tNN-EF-vhe" secondAttribute="leading" id="XFg-Om-X9K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tNN-EF-vhe"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="9v3-2R-JdK" id="eaE-Qi-pJ1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kL6-Dv-ClB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2543" y="183"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_profile" width="20" height="20"/>

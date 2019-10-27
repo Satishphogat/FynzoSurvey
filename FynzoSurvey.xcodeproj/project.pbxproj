@@ -51,6 +51,10 @@
 		2523079C23642655002A6A24 /* ResponseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523079B23642655002A6A24 /* ResponseDetailViewController.swift */; };
 		2523079F23642691002A6A24 /* ResponseDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523079D23642691002A6A24 /* ResponseDetailTableViewCell.swift */; };
 		252307A023642691002A6A24 /* ResponseDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2523079E23642691002A6A24 /* ResponseDetailTableViewCell.xib */; };
+		252307A323649428002A6A24 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252307A223649428002A6A24 /* ContactUsViewController.swift */; };
+		252307A723649747002A6A24 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252307A623649747002A6A24 /* HelpViewController.swift */; };
+		252307AA2364984C002A6A24 /* HelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252307A82364984C002A6A24 /* HelpTableViewCell.swift */; };
+		252307AB2364984C002A6A24 /* HelpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 252307A92364984C002A6A24 /* HelpTableViewCell.xib */; };
 		254313C823577A2A007F7918 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254313C723577A2A007F7918 /* Question.swift */; };
 		254A84C3234F8F0200B35EF0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A84C2234F8F0200B35EF0 /* Home.storyboard */; };
 		254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */; };
@@ -175,6 +179,10 @@
 		2523079B23642655002A6A24 /* ResponseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDetailViewController.swift; sourceTree = "<group>"; };
 		2523079D23642691002A6A24 /* ResponseDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDetailTableViewCell.swift; sourceTree = "<group>"; };
 		2523079E23642691002A6A24 /* ResponseDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResponseDetailTableViewCell.xib; sourceTree = "<group>"; };
+		252307A223649428002A6A24 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		252307A623649747002A6A24 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		252307A82364984C002A6A24 /* HelpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpTableViewCell.swift; sourceTree = "<group>"; };
+		252307A92364984C002A6A24 /* HelpTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpTableViewCell.xib; sourceTree = "<group>"; };
 		254313C723577A2A007F7918 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		254A84C2234F8F0200B35EF0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -438,6 +446,24 @@
 			path = ResponseDetail;
 			sourceTree = "<group>";
 		};
+		252307A123649408002A6A24 /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				252307A223649428002A6A24 /* ContactUsViewController.swift */,
+			);
+			path = ContactUs;
+			sourceTree = "<group>";
+		};
+		252307A523649732002A6A24 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				252307A623649747002A6A24 /* HelpViewController.swift */,
+				252307A82364984C002A6A24 /* HelpTableViewCell.swift */,
+				252307A92364984C002A6A24 /* HelpTableViewCell.xib */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
 		254A84C4234F8F1700B35EF0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +491,8 @@
 		254A84D0234F955900B35EF0 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				252307A523649732002A6A24 /* Help */,
+				252307A123649408002A6A24 /* ContactUs */,
 				254A84DB234F9EC700B35EF0 /* Setting */,
 				254A84D1234F95AA00B35EF0 /* SideMenuViewController.swift */,
 				254A84D3234F97DD00B35EF0 /* SideMenuTableViewCell.swift */,
@@ -791,6 +819,7 @@
 				250C11202351A10400758B04 /* FirstCollectionViewCell.xib in Resources */,
 				250C112D2351A86B00758B04 /* StarTableViewCell.xib in Resources */,
 				25FEE07B234E483300BF002A /* LoaderView.xib in Resources */,
+				252307AB2364984C002A6A24 /* HelpTableViewCell.xib in Resources */,
 				25FEE08D234E483300BF002A /* Poppins-BlackItalic.otf in Resources */,
 				250C115123521E7800758B04 /* TextfieldCollectionViewCell.xib in Resources */,
 				25FEE08E234E483300BF002A /* Poppins-Regular.otf in Resources */,
@@ -881,6 +910,7 @@
 			files = (
 				25FEE079234E483300BF002A /* Fynzo+Image.swift in Sources */,
 				250C112C2351A86B00758B04 /* StarTableViewCell.swift in Sources */,
+				252307A323649428002A6A24 /* ContactUsViewController.swift in Sources */,
 				7165961221ECEAAD00D55A14 /* SCLExtensions.swift in Sources */,
 				250C11462351C4D300758B04 /* CardCollectionViewCell.swift in Sources */,
 				71917E8121ECB8CE0077ADF4 /* UIViewController+Alert.swift in Sources */,
@@ -901,6 +931,7 @@
 				250C11332351B74D00758B04 /* CheckboxCollectionViewCell.swift in Sources */,
 				71917E8721ECB93A0077ADF4 /* AttributtedString+Foundation.swift in Sources */,
 				7199ADD721EC8AD70066B969 /* LoginViewController.swift in Sources */,
+				252307AA2364984C002A6A24 /* HelpTableViewCell.swift in Sources */,
 				250C113B2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.swift in Sources */,
 				71D444B821ECF8BB00BD1AB1 /* KPActionSheet.swift in Sources */,
 				25FEE077234E483300BF002A /* Fynzo+NavigationItem.swift in Sources */,
@@ -909,6 +940,7 @@
 				25FEE078234E483300BF002A /* Fynzo+Constant.swift in Sources */,
 				250C11282351A78C00758B04 /* StarCollectionViewCell.swift in Sources */,
 				254A84CB234F91D600B35EF0 /* AppUserDefaultManager.swift in Sources */,
+				252307A723649747002A6A24 /* HelpViewController.swift in Sources */,
 				25067C1823531630005F7115 /* FynzoAPIManager.swift in Sources */,
 				250C11412351C20700758B04 /* SquareCollectionViewCell.swift in Sources */,
 				25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */,

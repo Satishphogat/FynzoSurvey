@@ -112,6 +112,7 @@ extension Fynzo {
         static let version = "Version"
         static let autoUpload = "Auto Upload"
         static let veryLikelyUnlikely = "Very Unlikely,,,,,,,,,,Very likely"
+        static let writeFeedBack = "Write your feedback or concern here.."
     }
     
     struct ApiKey {
