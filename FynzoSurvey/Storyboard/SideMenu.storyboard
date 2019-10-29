@@ -179,10 +179,10 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqw-RJ-y0V">
-                                <rect key="frame" x="0.0" y="209" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="209" width="414" height="50"/>
                                 <color key="backgroundColor" name="appThemeColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="h5z-Bx-KsX"/>
+                                    <constraint firstAttribute="height" constant="50" id="h5z-Bx-KsX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <state key="normal" title="SUBMIT">
