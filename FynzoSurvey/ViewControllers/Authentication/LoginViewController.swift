@@ -98,7 +98,6 @@ class LoginViewController: UIViewController {
     }
     
     private func login() {
-        //UserManager.instance.moveToHomeViewController()
         FynzoWebServices.shared.login(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.email: "user@gmail.com", Fynzo.ApiKey.password: "12345", Fynzo.ApiKey.service: Fynzo.ApiKey.survey]) { [weak self](json, error) in
             guard let `self` = self else { return }
             

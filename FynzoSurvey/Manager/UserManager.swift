@@ -10,7 +10,7 @@ import UIKit
 
 class UserManager {
     
-    static let instance = UserManager()
+    static let shared = UserManager()
     var userInfo = UserInfo()
     
     func moveToLogin() {

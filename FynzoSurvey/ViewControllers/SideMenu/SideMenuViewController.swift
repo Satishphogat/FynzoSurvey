@@ -46,7 +46,7 @@ class SideMenuViewController: UIViewController {
     private func logout() {
         dismiss(animated: false, completion: nil)
         AppUserDefaults.removeAllValues()
-        UserManager.instance.moveToLogin()
+        UserManager.shared.moveToLogin()
     }
 }
 

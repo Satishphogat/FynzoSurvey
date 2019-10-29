@@ -67,7 +67,7 @@ class TemplatesViewController: UIViewController {
             selectedForm += forms.filter({$0.copiedFrom == category.surveyFormId})
         }
        selectedForms = selectedForm.unique(map: {$0.copiedFrom})
-        tableView.reloadData()
+       tableView.reloadData()
     }
     
     func openPicker(_ sender: UIButton) {
@@ -76,14 +76,60 @@ class TemplatesViewController: UIViewController {
         }
         let actionSheet = KPActionSheet(items: [
             KPItem(title: Fynzo.ButtonTitle.importForm, titleColor: Fynzo.ColorCode.black, onTap: {
-                
+                self.importSurvey(self.selectedForms[sender.tag])
             }),
             KPItem(title: Fynzo.ButtonTitle.preview, titleColor: Fynzo.ColorCode.black, onTap: {
+                self.preview(self.selectedForms[sender.tag])
             }),
             ])
         DispatchQueue.main.async {
             self.present(actionSheet, animated: true, completion: nil)
         }
+    }
+    
+    private func importSurvey(_ form: Form) {
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Form Name"
+            textField.text = form.name
+        }
+        let impoprtAction = UIAlertAction(title: "Import", style: .default, handler: { alert -> Void in
+            let nametxt = alertController.textFields![0] as UITextField
+            if (nametxt.text ?? "").isEmpty {
+                self.customizedAlert(message: "Please Enter Form Name")
+            } else {
+                self.importApi(form, surveyName: nametxt.text ?? "")
+            }
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {
+            (action : UIAlertAction!) -> Void in })
+        
+        alertController.addAction(impoprtAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func importApi(_ form: Form, surveyName: String) {
+        let dict = [
+            "from_surveyform_id": form.id,
+            "to_userid": AppUserDefaults.value(forKey: .id, fallBackValue: "") as? String ?? "",
+            "to_form_name": surveyName
+        ]
+        
+        FynzoWebServices.shared.importSurvey(parameters: dict, controller: self) { [weak self] (json, error) in
+            guard let `self` = self, error == nil else { return }
+            
+            self.customizedAlert(withTitle: "Success", message: "Imported success", iconImage: #imageLiteral(resourceName: "ic_success"), buttonTitles: ["OK"], afterDelay: 0.5, completion: { (_) in
+                UserManager.shared.moveToHomeViewController()
+            })
+        }
+    }
+    
+    private func preview(_ form: Form) {
+        let controller = FormViewController.instantiate(fromAppStoryboard: .Home)
+        controller.form = form
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func startButtonAction(_ sender: UIButton) {
@@ -117,6 +163,7 @@ extension TemplatesViewController: UITableViewDataSource {
         
         cell.startButton.addTarget(self, action: #selector(startButtonAction(_:)), for: .touchUpInside)
         cell.label.text = selectedForms[indexPath.row].name
+        cell.startButton.tag = indexPath.row
         
         return cell
     }

@@ -69,6 +69,11 @@ extension FynzoWebServices {
         postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: "https://survey.fynzo.com/webservices/categories", controller: controller, parameters: [:], headers: [:], completion: completion)
     }
     
+    func importSurvey(parameters: JSONDictionary ,controller: UIViewController, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
+        
+        postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: "https://survey.fynzo.com/webservices/surveyform_copy", controller: controller, parameters: parameters, headers: [:], completion: completion)
+    }
+    
     func getCategoryTemplate(controller: UIViewController, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
         
         postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: "https://survey.fynzo.com/webservices/category_templates", controller: controller, parameters: [:], headers: [:], completion: completion)
@@ -137,7 +142,7 @@ extension FynzoWebServices {
         if error.code == -1009 {
             controller.noInternetConnection()
         } else if error.code == 401 {
-            UserManager.instance.moveToLogin()
+            UserManager.shared.moveToLogin()
         } else {
             customizedAlert(message: error.localizedDescription, afterDelay: 0.5)
         }
