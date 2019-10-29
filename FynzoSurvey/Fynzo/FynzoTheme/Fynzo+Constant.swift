@@ -83,6 +83,8 @@ extension Fynzo {
         static let shareUrl = "Share Survey URL"
         static let responseReport = "Response Report"
         static let edit = "Edit"
+        static let importForm = "Import Form"
+        static let preview = "Preview"
     }
     
     struct LabelText {

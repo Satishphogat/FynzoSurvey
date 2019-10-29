@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 struct UserInfo {
+    
     var id = ""
     var baseUserId = ""
     var firstName = ""

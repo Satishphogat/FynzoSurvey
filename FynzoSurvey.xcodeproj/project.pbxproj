@@ -55,6 +55,10 @@
 		252307A723649747002A6A24 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252307A623649747002A6A24 /* HelpViewController.swift */; };
 		252307AA2364984C002A6A24 /* HelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252307A82364984C002A6A24 /* HelpTableViewCell.swift */; };
 		252307AB2364984C002A6A24 /* HelpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 252307A92364984C002A6A24 /* HelpTableViewCell.xib */; };
+		25348D9223655A6F006B8AA0 /* ImportTemplateSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25348D9123655A6F006B8AA0 /* ImportTemplateSurveyViewController.swift */; };
+		25348D9523655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25348D9323655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.swift */; };
+		25348D9623655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25348D9423655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.xib */; };
+		25348D992365620A006B8AA0 /* TemplatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25348D982365620A006B8AA0 /* TemplatesViewController.swift */; };
 		254313C823577A2A007F7918 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254313C723577A2A007F7918 /* Question.swift */; };
 		254A84C3234F8F0200B35EF0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254A84C2234F8F0200B35EF0 /* Home.storyboard */; };
 		254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */; };
@@ -70,6 +74,7 @@
 		254A84DF234F9EE500B35EF0 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254A84DD234F9EE500B35EF0 /* SettingTableViewCell.xib */; };
 		254A84E2234FA9D800B35EF0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254A84E0234FA9D800B35EF0 /* HomeTableViewCell.swift */; };
 		254A84E3234FA9D800B35EF0 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254A84E1234FA9D800B35EF0 /* HomeTableViewCell.xib */; };
+		25E750F9236841F0008F5A90 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E750F8236841F0008F5A90 /* Category.swift */; };
 		25FEE01A234E480600BF002A /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE019234E480600BF002A /* AppConfiguration.swift */; };
 		25FEE074234E483300BF002A /* Fynzo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03A234E483300BF002A /* Fynzo.swift */; };
 		25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FEE03B234E483300BF002A /* Fynzo+Color.swift */; };
@@ -183,6 +188,10 @@
 		252307A623649747002A6A24 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		252307A82364984C002A6A24 /* HelpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpTableViewCell.swift; sourceTree = "<group>"; };
 		252307A92364984C002A6A24 /* HelpTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpTableViewCell.xib; sourceTree = "<group>"; };
+		25348D9123655A6F006B8AA0 /* ImportTemplateSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTemplateSurveyViewController.swift; sourceTree = "<group>"; };
+		25348D9323655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTamplateSurveyTableViewCell.swift; sourceTree = "<group>"; };
+		25348D9423655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportTamplateSurveyTableViewCell.xib; sourceTree = "<group>"; };
+		25348D982365620A006B8AA0 /* TemplatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesViewController.swift; sourceTree = "<group>"; };
 		254313C723577A2A007F7918 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		254A84C2234F8F0200B35EF0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +207,7 @@
 		254A84DD234F9EE500B35EF0 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		254A84E0234FA9D800B35EF0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		254A84E1234FA9D800B35EF0 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		25E750F8236841F0008F5A90 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		25FEE019234E480600BF002A /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		25FEE03A234E483300BF002A /* Fynzo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fynzo.swift; sourceTree = "<group>"; };
 		25FEE03B234E483300BF002A /* Fynzo+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fynzo+Color.swift"; sourceTree = "<group>"; };
@@ -383,6 +393,7 @@
 				254313C723577A2A007F7918 /* Question.swift */,
 				251596DD2354ECCA00E69D95 /* Questionnaire.swift */,
 				251596D92354E2D000E69D95 /* Form.swift */,
+				25E750F8236841F0008F5A90 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -419,6 +430,7 @@
 		25230792236415CD002A6A24 /* Report */ = {
 			isa = PBXGroup;
 			children = (
+				25348D9023655A46006B8AA0 /* ImportSurvey */,
 				2523079A236425EC002A6A24 /* ResponseDetail */,
 				2523079323642277002A6A24 /* Response */,
 				2523078F236415B6002A6A24 /* ReportViewController.swift */,
@@ -462,6 +474,25 @@
 				252307A92364984C002A6A24 /* HelpTableViewCell.xib */,
 			);
 			path = Help;
+			sourceTree = "<group>";
+		};
+		25348D9023655A46006B8AA0 /* ImportSurvey */ = {
+			isa = PBXGroup;
+			children = (
+				25348D97236561E9006B8AA0 /* Templates */,
+				25348D9123655A6F006B8AA0 /* ImportTemplateSurveyViewController.swift */,
+				25348D9323655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.swift */,
+				25348D9423655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.xib */,
+			);
+			path = ImportSurvey;
+			sourceTree = "<group>";
+		};
+		25348D97236561E9006B8AA0 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				25348D982365620A006B8AA0 /* TemplatesViewController.swift */,
+			);
+			path = Templates;
 			sourceTree = "<group>";
 		};
 		254A84C4234F8F1700B35EF0 /* Home */ = {
@@ -851,6 +882,7 @@
 				71917E8B21ECBC6A0077ADF4 /* SuccessViewController.xib in Resources */,
 				254A84D6234F97DE00B35EF0 /* SideMenuTableViewCell.xib in Resources */,
 				71D444AA21ECF5AE00BD1AB1 /* LaunchScreen.storyboard in Resources */,
+				25348D9623655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.xib in Resources */,
 				250C114B2351C64600758B04 /* CardInnerCollectionViewCell.xib in Resources */,
 				25FEE080234E483300BF002A /* Poppins-ExtraLight.otf in Resources */,
 				7199ADDA21EC8B380066B969 /* Assets.xcassets in Resources */,
@@ -935,6 +967,7 @@
 				250C113B2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.swift in Sources */,
 				71D444B821ECF8BB00BD1AB1 /* KPActionSheet.swift in Sources */,
 				25FEE077234E483300BF002A /* Fynzo+NavigationItem.swift in Sources */,
+				25348D9223655A6F006B8AA0 /* ImportTemplateSurveyViewController.swift in Sources */,
 				7199ADD021EC8AD70066B969 /* CommonTableViewCell.swift in Sources */,
 				254A84D2234F95AA00B35EF0 /* SideMenuViewController.swift in Sources */,
 				25FEE078234E483300BF002A /* Fynzo+Constant.swift in Sources */,
@@ -950,6 +983,7 @@
 				71917E8321ECB8CE0077ADF4 /* UITableView+Reusable.swift in Sources */,
 				25FEE074234E483300BF002A /* Fynzo.swift in Sources */,
 				71917E8221ECB8CE0077ADF4 /* Reusable.swift in Sources */,
+				25E750F9236841F0008F5A90 /* Category.swift in Sources */,
 				254A84DE234F9EE500B35EF0 /* SettingTableViewCell.swift in Sources */,
 				7199ADD521EC8AD70066B969 /* ForgotPasswordViewController.swift in Sources */,
 				2517C7D52359CC1400E7866B /* PickerView.swift in Sources */,
@@ -961,6 +995,7 @@
 				7165961121ECEAAD00D55A14 /* SCLAlertView.swift in Sources */,
 				25067C1723531630005F7115 /* FynzoWebServices.swift in Sources */,
 				25230790236415B6002A6A24 /* ReportViewController.swift in Sources */,
+				25348D992365620A006B8AA0 /* TemplatesViewController.swift in Sources */,
 				71917E8421ECB8CE0077ADF4 /* UIView+Nib.swift in Sources */,
 				71917E9321ECBFD90077ADF4 /* UIImage+Color.swift in Sources */,
 				7199ADAD21EC8A1D0066B969 /* AppDelegate.swift in Sources */,
@@ -976,6 +1011,7 @@
 				250C111F2351A10400758B04 /* FirstCollectionViewCell.swift in Sources */,
 				71917E7F21ECB8CE0077ADF4 /* UIViewController+NavigationBar.swift in Sources */,
 				2523079C23642655002A6A24 /* ResponseDetailViewController.swift in Sources */,
+				25348D9523655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.swift in Sources */,
 				2523079823642295002A6A24 /* ResponseTableViewCell.swift in Sources */,
 				254A84E2234FA9D800B35EF0 /* HomeTableViewCell.swift in Sources */,
 				7165960D21ECEA9000D55A14 /* SwifterSwift.swift in Sources */,

@@ -50,6 +50,11 @@ class HomeViewController: UIViewController {
         }
     }
     
+    private func handleSurveyFormsSuccess(_ json: JSON) {
+        forms = Form.models(from: json.arrayValue)
+        tableView.reloadData()
+    }
+    
     func openPicker(_ sender: UIButton) {
         var croppingParameters: CroppingParameters {
             return CroppingParameters(isEnabled: true, allowResizing: true, allowMoving: true, minimumSize: CGSize(width: 60, height: 60))
@@ -90,20 +95,16 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    private func handleSurveyFormsSuccess(_ json: JSON) {
-        forms = Form.models(from: json.arrayValue)
-        tableView.reloadData()
-    }
-    
     private func addFloatingButton() {
         let actionButton = JJFloatingActionButton()
         
         actionButton.addItem(title: "Create New Survey", image: UIImage(named: "First")?.withRenderingMode(.alwaysTemplate)) { item in
-            // do something
+            
         }
         
         actionButton.addItem(title: "Import Survey From Templates", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in
-            // do something
+            let controller = ImportTemplateSurveyViewController.instantiate(fromAppStoryboard: .Home)
+            self.navigationController?.pushViewController(controller, animated: true)
         }
         
         actionButton.display(inView: self.view)
@@ -111,7 +112,6 @@ class HomeViewController: UIViewController {
     }
     
     @objc func startButtonAction(_ sender: UIButton) {
-        //openPicker(sender)
         openPicker(sender)
     }
 

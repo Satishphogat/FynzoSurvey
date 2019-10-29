@@ -24,6 +24,7 @@ class FynzoWebServices: UIViewController {
         case changePassword          = "auth/resetPassword"
         case forgotPassword          = "auth/resetPasswordRequest"
         case surveyForms     = "surveyforms"
+        case getCategory = "categories"
 
         var latestUrl: String {
             return "\(AppConfiguration.baseUrl)\(self.rawValue)"
@@ -61,6 +62,16 @@ extension FynzoWebServices {
     func getQuestionnaire(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
         
         postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: "https://survey.fynzo.com/webservices/surveyform", controller: controller, parameters: parameters, headers: [:], completion: completion)
+    }
+    
+    func getCategories(controller: UIViewController, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
+        
+        postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: "https://survey.fynzo.com/webservices/categories", controller: controller, parameters: [:], headers: [:], completion: completion)
+    }
+    
+    func getCategoryTemplate(controller: UIViewController, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
+        
+        postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: "https://survey.fynzo.com/webservices/category_templates", controller: controller, parameters: [:], headers: [:], completion: completion)
     }
     
     func forgotPassword(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock) {
