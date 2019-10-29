@@ -35,6 +35,7 @@ struct UserInfo {
         baseUserId       = json[Fynzo.ApiKey.baseUserId].stringValue
         firstName         = json[Fynzo.ApiKey.firstName].stringValue
         lastName   = json[Fynzo.ApiKey.lastName].stringValue
+        name = firstName + " " + lastName
         image       = json[Fynzo.ApiKey.image].stringValue
         email         = json[Fynzo.ApiKey.email].stringValue
         password          = json[Fynzo.ApiKey.password].stringValue

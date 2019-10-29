@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ContactUsViewController: UIViewController {
     
@@ -19,6 +20,11 @@ class ContactUsViewController: UIViewController {
     
     @IBAction func submitButtonAction() {
         view.endEditing(true)
+        if textView.text.isEmpty || textView.text == Fynzo.LabelText.writeFeedBack {
+            customizedAlert(withTitle: "", message: "Please enter some text", completion: nil)
+        } else {
+            contactUsApi()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +35,21 @@ class ContactUsViewController: UIViewController {
     
     @objc func leftButtonAction() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    private func contactUsApi() {
+        let parameter = ["name": AppUserDefaults.value(forKey: .fullName, fallBackValue: false) as? String ?? "", "email": AppUserDefaults.value(forKey: .email, fallBackValue: false) as? String ?? "", "message": textView.text ?? ""] as [String : Any]
+        FynzoWebServices.shared.contactUs(controller: self, parameter: parameter) { [weak self](json, error) in
+            guard let `self` = self else { return }
+            
+            self.handleContactUsApi(json)
+        }
+    }
+    
+    private func handleContactUsApi(_ json: JSON) {
+        customizedAlert(withTitle: "Alert!", message: "Contact Form Submitted successfully and Email has alse been sent", buttonTitles: ["Ok"], afterDelay: 0.5) { (_) in
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 
 }

@@ -28,6 +28,7 @@ class FynzoWebServices: UIViewController {
         case getCategory = "webservices/categories"
         case importSurvey = "webservices/surveyform_copy"
         case categoryTemplates = "webservices/category_templates"
+        case contactform = "webservices/contactform"
 
         var latestUrl: String {
             return "\(AppConfiguration.baseUrl)\(self.rawValue)"
@@ -84,6 +85,11 @@ extension FynzoWebServices {
     
     func forgotPassword(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock) {
         postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: EndPoint.forgotPassword.latestUrl, controller: controller, parameters: parameters, headers: [:], completion: completion)
+    }
+    
+    func contactUs(controller: UIViewController, isSocialLogin: Bool = false, parameter: JSONDictionary, completion: @escaping CompletionBlock) {
+        
+        postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: AppConfiguration.appUrl + EndPoint.contactform.rawValue, controller: controller, parameters: parameter, headers: [:], completion: completion)
     }
     
     func postRequest(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, endPoint: String, controller: UIViewController, parameters: JSONDictionary, imageData: Data = Data(), imageKey: String = "", headers: JSONDictionary, completion: @escaping CompletionBlock) {

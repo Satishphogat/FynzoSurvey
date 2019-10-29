@@ -108,6 +108,8 @@ class LoginViewController: UIViewController {
     private func handleLoginSuccess(_ json: JSON) {
         userInfo = UserInfo(json: json)
         AppUserDefaults.save(value: userInfo.id, forKey: .id)
+        AppUserDefaults.save(value: userInfo.name, forKey: .fullName)
+        AppUserDefaults.save(value: userInfo.email, forKey: .email)
         let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
         navigationController?.pushViewController(controller, animated: true)
     }
