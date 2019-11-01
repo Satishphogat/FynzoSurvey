@@ -68,6 +68,7 @@ extension SideMenuViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(cellType: SideMenuTableViewCell.self)
         
         cell.titleLabel.text = titleArray[indexPath.row]
+        cell.icomImageView.image = UIImage(named: titleArray[indexPath.row])!
         
         return cell
     }

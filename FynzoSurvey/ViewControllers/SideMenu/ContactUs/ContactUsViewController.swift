@@ -30,11 +30,11 @@ class ContactUsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        configureNavigationBar(withTitle: "Contact Us", leftBarImage: #imageLiteral(resourceName: "leftArrowWhite"), leftSelector: #selector(leftButtonAction))
+        configureNavigationBar(withTitle: "Contact Us", leftBarImage: #imageLiteral(resourceName: "ic_menu"), leftSelector: #selector(leftButtonAction))
     }
     
     @objc func leftButtonAction() {
-        navigationController?.popViewController(animated: true)
+        openMenu()
     }
     
     private func contactUsApi() {

@@ -34,7 +34,7 @@
                         <color key="textColor" name="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_newride_gray" translatesAutoresizingMaskIntoConstraints="NO" id="vEV-UN-HGC">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Help" translatesAutoresizingMaskIntoConstraints="NO" id="vEV-UN-HGC">
                         <rect key="frame" x="15" y="9.5" width="25" height="25"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -60,7 +60,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_newride_gray" width="23" height="23"/>
+        <image name="Help" width="64" height="64"/>
         <namedColor name="textColor">
             <color red="0.35686274509803922" green="0.35294117647058826" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

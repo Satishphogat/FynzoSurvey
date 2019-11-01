@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        IQKeyboardManager.shared.enable = true
 //        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        if !(AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? "").isEmpty {
+            moveToDashboard()
+        }
        
         return true
     }
@@ -59,6 +62,13 @@ extension AppDelegate {
     func moveToLogin() {
         let navController = UINavigationController.instantiate(fromAppStoryboard: .Authentication)
         navController.viewControllers = [LoginViewController.instantiate(fromAppStoryboard: .Authentication)]
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+    }
+    
+    func moveToDashboard() {
+        let navController = UINavigationController.instantiate(fromAppStoryboard: .Authentication)
+        navController.viewControllers = [HomeViewController.instantiate(fromAppStoryboard: .Home)]
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
