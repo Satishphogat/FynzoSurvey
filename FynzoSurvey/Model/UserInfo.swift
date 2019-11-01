@@ -29,13 +29,15 @@ struct UserInfo {
     var showConfirmPassword = false
     var company = ""
     var phone = ""
+    var plan = Plan()
+    
     
     init(json: JSON = JSON.null) {
         id          = json[Fynzo.ApiKey.id].stringValue
         baseUserId       = json[Fynzo.ApiKey.baseUserId].stringValue
         firstName         = json[Fynzo.ApiKey.firstName].stringValue
         lastName   = json[Fynzo.ApiKey.lastName].stringValue
-        name = firstName + " " + lastName
+        name = (firstName + " " + lastName).trim()
         image       = json[Fynzo.ApiKey.image].stringValue
         email         = json[Fynzo.ApiKey.email].stringValue
         password          = json[Fynzo.ApiKey.password].stringValue
@@ -44,6 +46,8 @@ struct UserInfo {
         createTime          = json[Fynzo.ApiKey.createTime].stringValue
         updateTime          = json[Fynzo.ApiKey.updateTime].stringValue
         signup          = json[Fynzo.ApiKey.signup].stringValue
+        id          = json[Fynzo.ApiKey.id].stringValue
+        plan          = Plan.init(json: json["active_plan"])
     }
     
     static func models(from jsonArray: [JSON]) -> [UserInfo] {

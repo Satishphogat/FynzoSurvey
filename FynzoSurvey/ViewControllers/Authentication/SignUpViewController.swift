@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SignUpViewController: UIViewController {
     
@@ -29,11 +30,34 @@ class SignUpViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func next(_ sender: Any) {
+    @IBAction func login(_ sender: Any) {
         view.endEditing(true)
         
-        if isValidate() {
+        if !(navigationController?.viewControllers.filter({$0.isKind(of: LoginViewController.self)}) ?? []).isEmpty {
 
+            for controller in self.navigationController!.viewControllers as Array where controller.isKind(of: LoginViewController.self) {
+                self.navigationController!.popToViewController(controller, animated: true)
+                break
+            }
+        } else {
+            let controller = LoginViewController.instantiate(fromAppStoryboard: .Authentication)
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+    private func signUpApi() {
+        let parameters = ["first_name":userInfo.name,"last_name":"","phone":userInfo.phone,"countrycode":"IND","email":userInfo.email,"password":userInfo.password,"company_name":userInfo.company,"category_id":"","service": "survey"]
+        FynzoWebServices.shared.signUp(controller: self, parameters: parameters) { [weak self](json, error) in
+            guard let `self` = self else { return }
+            
+            self.handleSignUpSuccess(json)
+        }
+    }
+    
+    private func handleSignUpSuccess(_ json: JSON) {
+        customizedAlert(withTitle: "Success", message: json["msg"].stringValue, iconImage: #imageLiteral(resourceName: "ic_success"), buttonTitles: ["Ok"], afterDelay: 0.5) { (_) in
+            let controller = LoginViewController.instantiate(fromAppStoryboard: .Authentication)
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     
@@ -46,15 +70,13 @@ class SignUpViewController: UIViewController {
             customizedAlert(message: "Please enter email id")
         } else if !userInfo.email.isEmail() {
             customizedAlert(message: "Please enter valid email id.")
-        } else if userInfo.password.isEmpty {
-            customizedAlert(message: "Please enter Password")
-        } else if userInfo.password.count < 8 {
-            customizedAlert(message: "Password must contain atleast 8 characters")
-        } else if userInfo.confirmPassword.isEmpty {
-            customizedAlert(message: "Please enter confirm password")
-        } else if userInfo.password != userInfo.confirmPassword {
-            customizedAlert(message: "Password and confirm password did not matched")
-        } else {
+        }
+//        else if userInfo.password.isEmpty {
+//            customizedAlert(message: "Please enter Password")
+//        } else if userInfo.password.count < 8 {
+//            customizedAlert(message: "Password must contain atleast 8 characters")
+//        }
+        else {
             verify = true
         }
         
@@ -71,13 +93,27 @@ class SignUpViewController: UIViewController {
         tableView.reloadData()
     }
     
-    @IBAction func loginButtonAction(_ sender: UIButton) {
-//        if ((navigationController?.viewControllers.filter({$0.isKind(of: LoginViewController.self)})) != nil) {
-//            navigationController?.popViewController(animated: true)
-//        } else {
-            let controller = LoginViewController.instantiate(fromAppStoryboard: .Authentication)
-            navigationController?.pushViewController(controller, animated: true)
-//        }
+    @IBAction func signUpButtonAction(_ sender: UIButton) {
+        view.endEditing(true)
+        if isValidate() {
+            signUpApi()
+        }
+    }
+    
+    @IBAction func termsAndConditionAction(_ sender: UIButton) {
+        openUrl()
+    }
+    
+    func openUrl() {
+        guard let url = URL(string: "https://www.fynzo.com/terms") else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
 }
 
@@ -109,7 +145,7 @@ extension SignUpViewController: UITableViewDataSource {
             cell.textField.keyboardType = .emailAddress
             cell.textField.textContentType = .emailAddress
         case "Phone":
-            cell.textField.text = userInfo.email
+            cell.textField.text = userInfo.phone
             cell.textField.keyboardType = .emailAddress
             cell.textField.textContentType = .emailAddress
         case "Password":
@@ -180,3 +216,11 @@ extension SignUpViewController: UITextFieldDelegate {
         return range.location < 50 && string != " "
     }
 }
+
+//extension SignUpViewController: UITextViewDelegate {
+//
+//    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+//        UIApplication.shared.open(URL)
+//        return false
+//    }
+//}

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class UserManager {
+class UserManager: UIViewController {
     
     static let shared = UserManager()
     var userInfo = UserInfo()
@@ -27,6 +27,7 @@ class UserManager {
     func moveToHomeViewController() {
         let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
         let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.navigationBar.barTintColor = AppDelegate.shared.appThemeColor
         AppDelegate.shared.window?.rootViewController = navigationController
         AppDelegate.shared.window?.makeKeyAndVisible()
     }

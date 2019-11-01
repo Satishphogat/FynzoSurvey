@@ -80,16 +80,29 @@ class LoginViewController: UIViewController {
     
     @IBAction func signUpButtonAction(_ sender: UIButton) {
         view.endEditing(true)
-//        if ((navigationController?.viewControllers.filter({$0.isKind(of: SignUpViewController.self)})) != nil)  {
-//            navigationController?.popViewController(animated: true)
-//        } else {
-        navigationController?.pushViewController(SignUpViewController.instantiate(fromAppStoryboard: .Authentication), animated: true)
-//        }
+        if !(navigationController?.viewControllers.filter({$0.isKind(of: SignUpViewController.self)}) ?? []).isEmpty {
+            
+            for controller in self.navigationController!.viewControllers as Array where controller.isKind(of: SignUpViewController.self) {
+                self.navigationController!.popToViewController(controller, animated: true)
+                break
+            }
+        } else {
+            let controller = SignUpViewController.instantiate(fromAppStoryboard: .Authentication)
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     @IBAction func forgotPasswordButtonAction(_ sender: UIButton) {
         view.endEditing(true)
-        navigationController?.pushViewController(ForgotPasswordViewController.instantiate(fromAppStoryboard: .Authentication), animated: true)
+        if !(navigationController?.viewControllers.filter({$0.isKind(of: ForgotPasswordViewController.self)}) ?? []).isEmpty {
+            for controller in self.navigationController!.viewControllers as Array where controller.isKind(of: ForgotPasswordViewController.self) {
+                self.navigationController!.popToViewController(controller, animated: true)
+                break
+            }
+        } else {
+            let controller = ForgotPasswordViewController.instantiate(fromAppStoryboard: .Authentication)
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     @objc func showHidePasswordAction(_ sender: UIButton) {
@@ -110,8 +123,7 @@ class LoginViewController: UIViewController {
         AppUserDefaults.save(value: userInfo.id, forKey: .id)
         AppUserDefaults.save(value: userInfo.name, forKey: .fullName)
         AppUserDefaults.save(value: userInfo.email, forKey: .email)
-        let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
-        navigationController?.pushViewController(controller, animated: true)
+        UserManager.shared.moveToHomeViewController()
     }
 }
 

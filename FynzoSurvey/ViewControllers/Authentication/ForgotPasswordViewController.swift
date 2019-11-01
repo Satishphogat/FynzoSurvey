@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ForgotPasswordViewController: UIViewController {
     
@@ -31,6 +32,22 @@ class ForgotPasswordViewController: UIViewController {
         } else if !(emailTextField.text ?? "").isEmail() {
             customizedAlert(message: "Please enter valid email id")
         } else {
+            forgotPasswordApi()
+        }
+    }
+    
+    private func forgotPasswordApi() {
+        let parameters = ["email":emailTextField.text ?? "","service": "survey"]
+        FynzoWebServices.shared.forgotPassword(controller: self, parameters: parameters) { [weak self](json, error) in
+            guard let `self` = self else { return }
+            
+            self.handleForgotPasswordSuccess(json)
+        }
+    }
+    
+    private func handleForgotPasswordSuccess(_ json: JSON) {
+        customizedAlert(withTitle: "Success", message: json.dictionaryValue["msg"]?.stringValue ?? "", iconImage: #imageLiteral(resourceName: "ic_success"), afterDelay: 0.5) { (_) in
+            AppDelegate.shared.moveToLogin()
         }
     }
 }

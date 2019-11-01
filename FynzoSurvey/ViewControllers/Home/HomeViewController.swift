@@ -19,9 +19,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    var dataArray = [Fynzo.LabelText.Email, Fynzo.LabelText.name, Fynzo.LabelText.startDate, Fynzo.LabelText.endDate, Fynzo.LabelText.version, Fynzo.LabelText.autoUpload]
-    var pickerViewDataArray = ["Open Without Lock", "Open With Lock(Kiosk Mode)", "Share Survey URL", "Response Report", "Edit"]
-    
+    var isDemoSurvey = false
     var forms = [Form]()
     
     override func viewDidLoad() {
@@ -39,11 +37,16 @@ class HomeViewController: UIViewController {
     }
     
     @objc func leftButtonAction() {
-        openMenu()
+        if isDemoSurvey {
+            navigationController?.popViewController(animated: true)
+        } else {
+            openMenu()
+        }
     }
     
     private func getFormsApi() {
-        FynzoWebServices.shared.surveyForms(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""]) { [weak self](json, error) in
+        let id = isDemoSurvey ? "1" : AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""
+        FynzoWebServices.shared.surveyForms(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: id]) { [weak self](json, error) in
             guard let `self` = self else { return }
             
             self.handleSurveyFormsSuccess(json)
@@ -52,6 +55,9 @@ class HomeViewController: UIViewController {
     
     private func handleSurveyFormsSuccess(_ json: JSON) {
         forms = Form.models(from: json.arrayValue)
+        if forms.isEmpty {
+            customizedAlert(message: "No Survey found")
+        }
         tableView.reloadData()
     }
     
@@ -112,7 +118,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func startButtonAction(_ sender: UIButton) {
-        openPicker(sender)
+        isDemoSurvey  ? openForm(sender.tag) : openPicker(sender)
     }
 
 }

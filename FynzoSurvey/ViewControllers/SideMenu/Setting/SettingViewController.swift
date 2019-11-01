@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SettingViewController: UIViewController {
     
@@ -18,7 +19,18 @@ class SettingViewController: UIViewController {
     
     var sections = [Fynzo.LabelText.account, Fynzo.LabelText.plan, Fynzo.LabelText.app, Fynzo.LabelText.uploadSetting]
     
-    var dataArray = [[Fynzo.LabelText.Email], [Fynzo.LabelText.name, Fynzo.LabelText.startDate, Fynzo.LabelText.endDate], [Fynzo.LabelText.version], [Fynzo.LabelText.autoUpload]]
+    var placeholderArray = [[Fynzo.LabelText.Email], [Fynzo.LabelText.name, Fynzo.LabelText.startDate, Fynzo.LabelText.endDate], [Fynzo.LabelText.version], [Fynzo.LabelText.autoUpload]]
+    
+    var userInfo = UserInfo()
+    
+    var dataArray = [[String]]()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        getUserDetailApi()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,6 +42,21 @@ class SettingViewController: UIViewController {
     @objc func leftButtonAction() {
         openMenu()
     }
+    
+    private func getUserDetailApi() {
+        FynzoWebServices.shared.settings(controller: self, parameters: ["user_id": AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""]) { [weak self](json, error) in
+            guard let `self` = self else { return }
+            
+            self.handleSignUpSuccess(json)
+        }
+    }
+    
+    private func handleSignUpSuccess(_ json: JSON) {
+        print(json)
+        userInfo = UserInfo(json: json)
+        dataArray = [[userInfo.email], [userInfo.name, userInfo.plan.startDate, userInfo.plan.endDate], [""], ["False"]]
+        tableView.reloadData()
+    }
 }
 
 extension SettingViewController: UITableViewDataSource {
@@ -39,7 +66,7 @@ extension SettingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArray[section].count
+        return placeholderArray[section].count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -49,9 +76,15 @@ extension SettingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SettingTableViewCell.self)
         
-        cell.titleLabel.text = dataArray[indexPath.section][indexPath.row]
-        cell.separator.isHidden = !(indexPath.row ==  dataArray[indexPath.section].count - 1)
         
+        cell.titleLabel.text = placeholderArray[indexPath.section][indexPath.row]
+        cell.separator.isHidden = !(indexPath.row ==  placeholderArray[indexPath.section].count - 1)
+        
+        if dataArray.isEmpty {
+            return cell
+        }
+        cell.subTitleLabel.text = dataArray[indexPath.section][indexPath.row]
+
         return cell
     }
 }

@@ -337,8 +337,8 @@
                                                                 <constraint firstAttribute="height" constant="30" id="tUv-bL-Nzd"/>
                                                             </constraints>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with Terms &amp; Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McG-mk-Wyq">
-                                                            <rect key="frame" x="48" y="14.5" width="237" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McG-mk-Wyq">
+                                                            <rect key="frame" x="48" y="14.5" width="83.5" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Ip6-tf-18O"/>
                                                             </constraints>
@@ -346,14 +346,22 @@
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evF-5J-DAD">
+                                                            <rect key="frame" x="131.5" y="10" width="135" height="30"/>
+                                                            <state key="normal" title="Terms &amp; Conditions"/>
+                                                            <connections>
+                                                                <action selector="termsAndConditionAction:" destination="Vem-PS-7nD" eventType="touchUpInside" id="NDP-MV-v6U"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="Gyr-TJ-IVH" firstAttribute="centerY" secondItem="p6k-2P-Z1C" secondAttribute="centerY" id="1uv-vS-svY"/>
                                                         <constraint firstItem="Gyr-TJ-IVH" firstAttribute="leading" secondItem="p6k-2P-Z1C" secondAttribute="leading" constant="8" id="JlA-OV-2Ao"/>
+                                                        <constraint firstItem="evF-5J-DAD" firstAttribute="centerY" secondItem="McG-mk-Wyq" secondAttribute="centerY" id="Vi6-yg-E2y"/>
                                                         <constraint firstItem="McG-mk-Wyq" firstAttribute="centerY" secondItem="Gyr-TJ-IVH" secondAttribute="centerY" id="Vtk-Xf-j76"/>
                                                         <constraint firstItem="McG-mk-Wyq" firstAttribute="leading" secondItem="Gyr-TJ-IVH" secondAttribute="trailing" constant="10" id="cYa-5x-MWT"/>
-                                                        <constraint firstAttribute="trailing" secondItem="McG-mk-Wyq" secondAttribute="trailing" constant="10" id="sgj-kd-KcD"/>
+                                                        <constraint firstItem="evF-5J-DAD" firstAttribute="leading" secondItem="McG-mk-Wyq" secondAttribute="trailing" id="sXr-cI-8ZA"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTY-eb-QAs">
@@ -372,7 +380,7 @@
                                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="24"/>
                                                     </variation>
                                                     <connections>
-                                                        <action selector="signInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2o0-OS-70S"/>
+                                                        <action selector="signUpButtonAction:" destination="Vem-PS-7nD" eventType="touchUpInside" id="z29-sD-sh3"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJC-Sg-rHk">
@@ -460,7 +468,7 @@
                                                         <color key="titleColor" name="textColor"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="loginButtonAction:" destination="Vem-PS-7nD" eventType="touchUpInside" id="1yN-FP-71I"/>
+                                                        <action selector="login:" destination="Vem-PS-7nD" eventType="touchUpInside" id="EDA-yD-SbG"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -541,7 +549,7 @@
                                         <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                                     </constraint>
                                 </constraints>
-                                <color key="textColor" name="appThemeColor"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <userDefinedRuntimeAttributes>

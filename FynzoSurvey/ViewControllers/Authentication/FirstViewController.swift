@@ -26,7 +26,8 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func demoSurveyButtonAction() {
-        let controller = FormViewController.instantiate(fromAppStoryboard: .Home)
+        let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
+        controller.isDemoSurvey = true
         navigationController?.pushViewController(controller, animated: true)
     }
     

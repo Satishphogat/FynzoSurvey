@@ -138,7 +138,14 @@ enum FynzoAPIManager {
                 failure(err)
             } else {
                 if let value1 = value as? NSDictionary {
-                    success(JSON(value1["data"]))
+                    if let result = value1["data"] as? [Any], !result.isEmpty {
+                        success(JSON(result))
+                    } else {
+                        var temp = value1["data"] as? [String: Any] ?? [:]
+                        temp["msg"] = value1["msg"] as? String ?? ""
+                        temp["status"] = value1["status"] as? Bool ?? false
+                        success(JSON(temp))
+                    }
                 }
             }
         case .failure(let error):

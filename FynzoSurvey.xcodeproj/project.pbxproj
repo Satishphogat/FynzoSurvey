@@ -43,6 +43,7 @@
 		2517C7D12359C61000E7866B /* DropDownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2517C7CF2359C61000E7866B /* DropDownTableViewCell.xib */; };
 		2517C7D52359CC1400E7866B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2517C7D32359CC1400E7866B /* PickerView.swift */; };
 		2517C7D62359CC1400E7866B /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2517C7D42359CC1400E7866B /* PickerView.xib */; };
+		251A6BFC2369A802006DE211 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251A6BFB2369A802006DE211 /* Plan.swift */; };
 		2523078E23641109002A6A24 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523078D23641109002A6A24 /* ShareViewController.swift */; };
 		25230790236415B6002A6A24 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523078F236415B6002A6A24 /* ReportViewController.swift */; };
 		2523079523642282002A6A24 /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523079423642282002A6A24 /* ResponseViewController.swift */; };
@@ -176,6 +177,7 @@
 		2517C7CF2359C61000E7866B /* DropDownTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownTableViewCell.xib; sourceTree = "<group>"; };
 		2517C7D32359CC1400E7866B /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		2517C7D42359CC1400E7866B /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
+		251A6BFB2369A802006DE211 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		2523078D23641109002A6A24 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		2523078F236415B6002A6A24 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		2523079423642282002A6A24 /* ResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				251596DD2354ECCA00E69D95 /* Questionnaire.swift */,
 				251596D92354E2D000E69D95 /* Form.swift */,
 				25E750F8236841F0008F5A90 /* Category.swift */,
+				251A6BFB2369A802006DE211 /* Plan.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -964,6 +967,7 @@
 				71917E8721ECB93A0077ADF4 /* AttributtedString+Foundation.swift in Sources */,
 				7199ADD721EC8AD70066B969 /* LoginViewController.swift in Sources */,
 				252307AA2364984C002A6A24 /* HelpTableViewCell.swift in Sources */,
+				251A6BFC2369A802006DE211 /* Plan.swift in Sources */,
 				250C113B2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.swift in Sources */,
 				71D444B821ECF8BB00BD1AB1 /* KPActionSheet.swift in Sources */,
 				25FEE077234E483300BF002A /* Fynzo+NavigationItem.swift in Sources */,

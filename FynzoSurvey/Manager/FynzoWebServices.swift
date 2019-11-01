@@ -19,16 +19,17 @@ class FynzoWebServices: UIViewController {
     
     enum EndPoint: String {
         case authToken          = "basic-auth"
-        case signUp          = "auth/register"
         case login          = "login"
+        case register          = "register"
         case changePassword          = "auth/resetPassword"
-        case forgotPassword          = "auth/resetPasswordRequest"
+        case forgotPassword          = "forgotpassword"
         case surveyForms     = "webservices/surveyforms"
         case surveyForm     = "webservices/surveyform"
         case getCategory = "webservices/categories"
         case importSurvey = "webservices/surveyform_copy"
         case categoryTemplates = "webservices/category_templates"
         case contactform = "webservices/contactform"
+        case setting = "webservices/user"
 
         var latestUrl: String {
             return "\(AppConfiguration.baseUrl)\(self.rawValue)"
@@ -49,14 +50,23 @@ extension NSError {
 
 extension FynzoWebServices {
     
-    func signUp(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock) {
-        postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: EndPoint.signUp.latestUrl, controller: controller, parameters: parameters, headers: [:], completion: completion)
+    func signUp(controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock) {
+        postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: AppConfiguration.baseUrl + EndPoint.register.rawValue, controller: controller, parameters: parameters, headers: [:], completion: completion)
     }
     
     func login(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
         
         postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: EndPoint.login.latestUrl, controller: controller, parameters: parameters, headers: [:], completion: completion)
     }
+    
+    func forgotPassword(controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock) {
+        postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: AppConfiguration.baseUrl + EndPoint.forgotPassword.rawValue, controller: controller, parameters: parameters, headers: [:], completion: completion)
+    }
+    
+    func settings(controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock) {
+        postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: AppConfiguration.appUrl + EndPoint.setting.rawValue, controller: controller, parameters: parameters, headers: [:], completion: completion)
+    }
+    
     
     func surveyForms(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
         

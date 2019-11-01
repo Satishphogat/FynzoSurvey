@@ -11,8 +11,16 @@ import UIKit
 class SideMenuViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel! {
+        didSet {
+            nameLabel.text = AppUserDefaults.value(forKey: .fullName, fallBackValue: false) as? String ?? ""
+        }
+    }
+    @IBOutlet weak var emailLabel: UILabel! {
+        didSet {
+            emailLabel.text = AppUserDefaults.value(forKey: .email, fallBackValue: false) as? String ?? ""
+        }
+    }
     @IBOutlet weak var legalTitleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
