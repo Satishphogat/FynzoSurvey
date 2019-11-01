@@ -66,9 +66,9 @@ class LoginViewController: UIViewController {
     @IBAction func signInButtonAction(_ sender: UIButton) {
         view.endEditing(true)
         
-        //if isValidate() {
+        if isValidate() {
             login()
-        //}
+        }
     }
     
     @IBAction func surveyorButtonAction(_ sender: UIButton) {

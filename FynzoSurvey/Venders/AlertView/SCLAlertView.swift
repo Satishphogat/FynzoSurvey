@@ -538,7 +538,7 @@ open class SCLAlertView: UIViewController {
         btn.layer.masksToBounds = true
         btn.setTitle(title, for: UIControlState())
         btn.titleLabel?.font = appearance.kButtonFont
-        btn.customBackgroundColor = backgroundColor
+        btn.customBackgroundColor = AppDelegate.shared.appThemeColor
         btn.customTextColor = textColor
         btn.initialTitle = title
         btn.showTimeout = showTimeout

@@ -20,6 +20,7 @@ class UserManager: UIViewController {
     func moveToRootViewController() {
         let loginController = LoginViewController.instantiate(fromAppStoryboard: .Authentication)
         let navigationController = UINavigationController(rootViewController: loginController)
+        navigationController.navigationBar.barTintColor = AppDelegate.shared.appThemeColor
         AppDelegate.shared.window?.rootViewController = navigationController
         AppDelegate.shared.window?.makeKeyAndVisible()
     }

@@ -138,6 +138,7 @@
 		C90A34AB23432DD7004092CF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A34AA23432DD7004092CF /* FirstViewController.swift */; };
 		C90A34AD23433BBD004092CF /* ORDesinables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A34AC23433BBD004092CF /* ORDesinables.swift */; };
 		C90A34AF23434E7C004092CF /* SurveyorLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A34AE23434E7C004092CF /* SurveyorLoginViewController.swift */; };
+		C975C539236C2C030078D5FD /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C975C538236C2C030078D5FD /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -279,6 +280,7 @@
 		C90A34AA23432DD7004092CF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		C90A34AC23433BBD004092CF /* ORDesinables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ORDesinables.swift; sourceTree = "<group>"; };
 		C90A34AE23434E7C004092CF /* SurveyorLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyorLoginViewController.swift; sourceTree = "<group>"; };
+		C975C538236C2C030078D5FD /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -644,6 +646,7 @@
 			children = (
 				71917E9621ECC0A70077ADF4 /* UIViewExtensions.swift */,
 				254A84D7234F99B600B35EF0 /* UIViewController+SideMenu.swift */,
+				C975C538236C2C030078D5FD /* DateFormatter.swift */,
 				C90A34AC23433BBD004092CF /* ORDesinables.swift */,
 				71917E9421ECC08C0077ADF4 /* String+CoreFoundation.swift */,
 				71917E9221ECBFD90077ADF4 /* UIImage+Color.swift */,
@@ -945,6 +948,7 @@
 			files = (
 				25FEE079234E483300BF002A /* Fynzo+Image.swift in Sources */,
 				250C112C2351A86B00758B04 /* StarTableViewCell.swift in Sources */,
+				C975C539236C2C030078D5FD /* DateFormatter.swift in Sources */,
 				252307A323649428002A6A24 /* ContactUsViewController.swift in Sources */,
 				7165961221ECEAAD00D55A14 /* SCLExtensions.swift in Sources */,
 				250C11462351C4D300758B04 /* CardCollectionViewCell.swift in Sources */,

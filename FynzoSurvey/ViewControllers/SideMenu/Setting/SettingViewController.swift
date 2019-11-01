@@ -22,6 +22,7 @@ class SettingViewController: UIViewController {
     var placeholderArray = [[Fynzo.LabelText.Email], [Fynzo.LabelText.name, Fynzo.LabelText.startDate, Fynzo.LabelText.endDate], [Fynzo.LabelText.version], [Fynzo.LabelText.autoUpload]]
     
     var userInfo = UserInfo()
+    var versionNumber = ""
     
     var dataArray = [[String]]()
     
@@ -30,6 +31,10 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         
         getUserDetailApi()
+        
+        if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String, let build = Bundle.main.infoDictionary!["CFBundleVersion"] as? String {
+            versionNumber = version + "." + build
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +59,7 @@ class SettingViewController: UIViewController {
     private func handleSignUpSuccess(_ json: JSON) {
         print(json)
         userInfo = UserInfo(json: json)
-        dataArray = [[userInfo.email], [userInfo.name, userInfo.plan.startDate, userInfo.plan.endDate], [""], ["False"]]
+        dataArray = [[userInfo.email], [userInfo.name, userInfo.plan.startDate.getCustomizedDate(), userInfo.plan.endDate.getCustomizedDate()], [versionNumber], ["False"]]
         tableView.reloadData()
     }
 }
