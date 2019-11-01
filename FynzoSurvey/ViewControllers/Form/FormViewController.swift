@@ -83,6 +83,12 @@ class FormViewController: UIViewController {
         let form = Form(json: json[Fynzo.ApiKey.surveyForm])
         //manageBackGroundData(form)
 
+        if let url = URL(string: AppConfiguration.appUrl + form.logo) {
+            logoImageView.kf.setImage(with: url)
+        }
+        if let url = URL(string: AppConfiguration.appUrl + form.backgroundImage) {
+            backgroundImageView.kf.setImage(with: url)
+        }
         let questionnaire = Questionnaire.models(from: json[Fynzo.ApiKey.questionnaire].arrayValue)
         let screens = Set(questionnaire.map({$0.screenNo})).sortedNumerically(.orderedAscending)
         questionnairies.removeFirst()
