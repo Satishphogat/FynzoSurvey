@@ -33,7 +33,7 @@ extension SquareCollectionViewCell: UICollectionViewDataSource {
         
         let question = questionary.questions[indexPath.item]
         
-        cell.titleButton.setTitle(question.choice, for: .normal)
+        cell.title.text = question.choice
         
         return cell
     }

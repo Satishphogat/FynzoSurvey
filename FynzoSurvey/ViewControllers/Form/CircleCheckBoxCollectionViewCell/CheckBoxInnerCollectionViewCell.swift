@@ -10,5 +10,6 @@ import UIKit
 
 class CheckBoxInnerCollectionViewCell: UICollectionViewCell, NibReusable {
 
-    @IBOutlet weak var titleButton: FormButton!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
 }
