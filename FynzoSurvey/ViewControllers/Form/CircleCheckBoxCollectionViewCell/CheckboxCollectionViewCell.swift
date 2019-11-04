@@ -19,6 +19,7 @@ class CheckboxCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     var questionary = Questionnaire()
+    var completion: (() -> Void)?
 }
 
 extension CheckboxCollectionViewCell: UICollectionViewDataSource {
@@ -31,10 +32,20 @@ extension CheckboxCollectionViewCell: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CheckBoxInnerCollectionViewCell.self)
         
         let question = questionary.questions[indexPath.item]
-        
-        cell.titleButton.setTitle(question.choice, for: .normal)
+        cell.title.text = question.choice
+        cell.imageView.image = question.isSelected ? Fynzo.Image.radioFilled.imageWithColor(color: .white) : Fynzo.Image.radioEmpty.imageWithColor(color: .white)
             
             return cell
+    }
+}
+
+extension CheckboxCollectionViewCell: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //questionary.questions = questionary.questions.map({$0.isSelected = false})
+        questionary.questions[indexPath.item].isSelected = true
+        collectionView.reloadData()
+        completion?()
     }
 }
 

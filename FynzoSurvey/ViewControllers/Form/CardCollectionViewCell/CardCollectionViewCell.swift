@@ -20,7 +20,7 @@ class CardCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     var questionnaire = Questionnaire()
-    
+    var completion: (() -> Void)?
 }
 
 extension CardCollectionViewCell: UICollectionViewDataSource {
@@ -32,9 +32,22 @@ extension CardCollectionViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CardInnerCollectionViewCell.self)
         
-        cell.titleButton.setTitle(String(indexPath.item), for: .normal)
+        cell.label.text = String(indexPath.item)
+        cell.backgroundColor = indexPath.item == questionnaire.question.selectedScale ? .white : .clear
+        cell.label.textColor = indexPath.item == questionnaire.question.selectedScale ? .black : .white
+
         
         return cell
+    }
+}
+
+extension CardCollectionViewCell: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //questionary.questions = questionary.questions.map({$0.isSelected = false})
+        questionnaire.question.selectedScale = indexPath.item
+        collectionView.reloadData()
+        completion?()
     }
 }
 

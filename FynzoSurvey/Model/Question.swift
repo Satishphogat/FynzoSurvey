@@ -18,6 +18,8 @@ struct Question {
     var labels = ""
     var scale = ""
     var isNps = ""
+    var isSelected = false
+    var selectedScale = -1
     
     init(json: JSON = JSON.null) {
         id          = json[Fynzo.ApiKey.id].stringValue

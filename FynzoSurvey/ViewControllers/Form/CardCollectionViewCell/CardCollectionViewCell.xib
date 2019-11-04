@@ -56,15 +56,39 @@
                             <outlet property="delegate" destination="gTV-IL-0wX" id="L0A-Vo-QWD"/>
                         </connections>
                     </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Very Unlikely" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwW-bs-Soh">
+                        <rect key="frame" x="20" y="174" width="100" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Ckc-jX-78S"/>
+                            <constraint firstAttribute="width" constant="100" id="OBQ-wG-p2N"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Very Likely" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdU-gs-Lpa">
+                        <rect key="frame" x="180" y="174" width="100" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="NUq-K6-9J6"/>
+                            <constraint firstAttribute="width" constant="100" id="yHe-i4-1Rn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="hzo-QH-VdV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="05f-PT-1sq"/>
                 <constraint firstItem="an2-7I-F8x" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6Eh-XX-dH1"/>
                 <constraint firstAttribute="trailing" secondItem="hzo-QH-VdV" secondAttribute="trailing" constant="20" id="7w7-JO-pjc"/>
+                <constraint firstItem="DwW-bs-Soh" firstAttribute="top" secondItem="hzo-QH-VdV" secondAttribute="bottom" constant="4" id="8rs-1b-ugX"/>
                 <constraint firstItem="an2-7I-F8x" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8vy-FQ-mqb"/>
+                <constraint firstItem="IdU-gs-Lpa" firstAttribute="centerY" secondItem="DwW-bs-Soh" secondAttribute="centerY" id="dAI-pz-aUe"/>
                 <constraint firstItem="hzo-QH-VdV" firstAttribute="top" secondItem="an2-7I-F8x" secondAttribute="bottom" id="lzX-t8-mdf"/>
                 <constraint firstAttribute="trailing" secondItem="an2-7I-F8x" secondAttribute="trailing" id="mLE-nI-r9T"/>
+                <constraint firstItem="IdU-gs-Lpa" firstAttribute="trailing" secondItem="hzo-QH-VdV" secondAttribute="trailing" id="oZF-7d-flP"/>
+                <constraint firstItem="DwW-bs-Soh" firstAttribute="leading" secondItem="hzo-QH-VdV" secondAttribute="leading" id="vCh-ST-WH2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
