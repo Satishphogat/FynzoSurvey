@@ -18,6 +18,7 @@ class StarCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     var questionaries = [Questionnaire]()
+    var completion: (() -> Void)?
 }
 
 extension StarCollectionViewCell: UITableViewDataSource {
@@ -31,7 +32,10 @@ extension StarCollectionViewCell: UITableViewDataSource {
         
         cell.label.text = questionaries.count  == 1 ? "" : questionaries[indexPath.row].questingText
         cell.ratingView.didFinishTouchingCosmos = { rating in
-            
+            self.questionaries[indexPath.row].selectedStars = Int(rating)
+            if (self.questionaries.filter({$0.selectedStars == 0})).isEmpty {
+                self.completion?()
+            }
         }
         
         return cell
