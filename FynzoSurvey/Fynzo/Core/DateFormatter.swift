@@ -108,6 +108,18 @@ extension String {
         return utcToLocale(currentFormat: currentFormat, requiredFormat: format)
     }
     
+    func getRequiredDate(_ withFormate: String = "d MMM, yyyy") -> String {
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        if let date = formatter.date(from: self) {
+            formatter.dateFormat = withFormate
+            return formatter.string(from: date)
+        }
+        
+        return self
+    }
+    
     func hasEventStarted() -> Bool {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"

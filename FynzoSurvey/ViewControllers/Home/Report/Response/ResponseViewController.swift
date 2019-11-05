@@ -13,8 +13,11 @@ class ResponseViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(cellType: ResponseTableViewCell.self)
+            tableView.tableFooterView = UIView()
         }
     }
+    
+    var responseDetails = [Category]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,13 +34,13 @@ class ResponseViewController: UIViewController {
 extension ResponseViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return responseDetails.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ResponseTableViewCell.self)
-        
-        
+        cell.titleLabel.text = "Response \(indexPath.row + 1)"
+        cell.dateLabel.text = responseDetails[indexPath.row].startedOn.getRequiredDate("dd-MMM yy, hh:mm a")
         
         return cell
     }

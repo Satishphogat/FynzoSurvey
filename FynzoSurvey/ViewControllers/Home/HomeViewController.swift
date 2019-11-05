@@ -93,11 +93,13 @@ class HomeViewController: UIViewController {
     
     private func openShareScreen(_ index: Int) {
         let controller = ShareViewController.instantiate(fromAppStoryboard: .Home)
+        controller.shareUrl = AppConfiguration.appUrl + forms[index].uniqueKey
         navigationController?.pushViewController(controller, animated: true)
     }
     
     private func openReportScreen(_ index: Int) {
         let controller = ReportViewController.instantiate(fromAppStoryboard: .Home)
+        controller.form = forms[index]
         navigationController?.pushViewController(controller, animated: true)
     }
     
