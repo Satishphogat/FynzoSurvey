@@ -19,7 +19,7 @@ DEPENDENCIES:
   - SwiftyJSON (= 4.0.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - ALCameraViewController
     - Cosmos
@@ -39,4 +39,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5cfe78b316171ca9f54a73e1d1aed16057878aa2
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.8.4

@@ -199,8 +199,13 @@
                                             <constraint firstAttribute="height" constant="70" id="MfF-dp-yy6"/>
                                         </constraints>
                                     </imageView>
+<<<<<<< HEAD
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cac-IZ-YBP">
+                                        <rect key="frame" x="250" y="-5" width="70" height="70"/>
+=======
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cac-IZ-YBP">
                                         <rect key="frame" x="369" y="0.0" width="30" height="30"/>
+>>>>>>> dev
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKT-kO-KqU">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -723,6 +728,12 @@
         <image name="uploadLoacal" width="128" height="128"/>
         <namedColor name="appThemeColor">
             <color red="0.27058823529411763" green="0.59999999999999998" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<<<<<<< HEAD
+        </namedColor>
+        <namedColor name="borderColor">
+            <color red="0.67450980392156867" green="0.67450980392156867" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+=======
+>>>>>>> dev
         </namedColor>
         <namedColor name="textColor">
             <color red="0.35686274509803922" green="0.35294117647058826" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
