@@ -26,10 +26,12 @@ class FormViewController: UIViewController {
     }
     
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var nextArrowButton: UIButton!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var previousButton: UIButton!
-    
+    @IBOutlet weak var previousArrowButton: UIButton!
+
     var form = Form()
     var questionnairies: [[Questionnaire]] = [[]]
     
@@ -166,6 +168,10 @@ class FormViewController: UIViewController {
     }
     
     @IBAction func nextButtonAction() {
+        moveForword()
+    }
+    
+    private func moveForword() {
         let collectionBounds = collectionView.bounds
         let contentOffset = CGFloat(floor(self.collectionView.contentOffset.x + collectionBounds.size.width))
         moveCollectionToFrame(contentOffset: contentOffset)
@@ -197,6 +203,11 @@ extension FormViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let questionary = questionnairies[indexPath.item]
         
+//        previousButton.isHidden = indexPath.item == 0
+//        previousArrowButton.isHidden = indexPath.item == 0
+//        nextButton.isHidden = indexPath.item == questionnairies.count - 1
+//        nextArrowButton.isHidden = indexPath.item == questionnairies.count - 1
+
         if questionary.isEmpty {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: FirstCollectionViewCell.self)
             
@@ -215,7 +226,9 @@ extension FormViewController: UICollectionViewDataSource {
             
             cell.label.text = questionary.count == 1 ? questionary.first?.questingText : questionary.filter({$0.questionTypeId == "0"}).first?.questingText
             cell.questionaries = questionary.filter({$0.questionTypeId == "5" && $0.question.isNps == "0"})
-            
+            cell.completion = {
+                self.moveForword()
+            }
             cell.tableView.reloadData()
             
             return cell
@@ -225,6 +238,9 @@ extension FormViewController: UICollectionViewDataSource {
             cell.titleLabel.text = questionnairies[indexPath.item].first?.questingText
             cell.questionary = questionary.filter({$0.questionTypeId == "3"}).first ?? Questionnaire()
             cell.collectionView.reloadData()
+            cell.completion = {
+                self.moveForword()
+            }
             
             return cell
         } else if questionary.last?.questionTypeId == "2" {
@@ -249,6 +265,9 @@ extension FormViewController: UICollectionViewDataSource {
             
             cell.questionnaire = questionary.first!
             cell.collectionView.reloadData()
+            cell.completion = {
+                self.moveForword()
+            }
             
             return cell
         } else if questionary.last?.questionTypeId == "1" {

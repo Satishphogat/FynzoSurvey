@@ -10,5 +10,5 @@ import UIKit
 
 class CardInnerCollectionViewCell: UICollectionViewCell, NibReusable {
     
-    @IBOutlet weak var titleButton: FormButton! 
+    @IBOutlet weak var label: UILabel!
 }
