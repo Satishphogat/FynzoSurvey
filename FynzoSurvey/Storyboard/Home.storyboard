@@ -623,7 +623,7 @@
         <image name="forward" width="225" height="225"/>
         <image name="profileImage" width="306" height="331"/>
         <namedColor name="appThemeColor">
-            <color red="0.0" green="0.5607843137254902" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.27058823529411763" green="0.59999999999999998" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColor">
             <color red="0.35686274509803922" green="0.35294117647058826" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -226,7 +226,9 @@ extension FormViewController: UICollectionViewDataSource {
             
             cell.label.text = questionary.count == 1 ? questionary.first?.questingText : questionary.filter({$0.questionTypeId == "0"}).first?.questingText
             cell.questionaries = questionary.filter({$0.questionTypeId == "5" && $0.question.isNps == "0"})
-            
+            cell.completion = {
+                self.moveForword()
+            }
             cell.tableView.reloadData()
             
             return cell
