@@ -22,6 +22,7 @@ struct Category {
     var status = ""
     var createTime = ""
     var updateTime = ""
+    var startedOn = ""
 
     init(json: JSON = JSON.null) {
         id = json["id"].stringValue
@@ -33,7 +34,7 @@ struct Category {
         categoryId = json["category_id"].stringValue
         status = json["status"].stringValue
         createTime = json["createTime"].stringValue
-
+        startedOn = json["started_on"].stringValue
     }
     
     static func models(from jsonArray: [JSON]) -> [Category] {

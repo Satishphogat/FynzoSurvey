@@ -103,6 +103,7 @@
 		25FEE08D234E483300BF002A /* Poppins-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE055234E483300BF002A /* Poppins-BlackItalic.otf */; };
 		25FEE08E234E483300BF002A /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE056234E483300BF002A /* Poppins-Regular.otf */; };
 		25FEE08F234E483300BF002A /* Poppins-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */; };
+		4CAA0E3223718782008BB432 /* SurveyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA0E3123718782008BB432 /* SurveyResponse.swift */; };
 		5F8B092C3BC88E536F11BF7A /* Pods_FynzoSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AED3BE15D3413B80E12E8F3 /* Pods_FynzoSurvey.framework */; };
 		7165960D21ECEA9000D55A14 /* SwifterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165960C21ECEA9000D55A14 /* SwifterSwift.swift */; };
 		7165961121ECEAAD00D55A14 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165960F21ECEAAD00D55A14 /* SCLAlertView.swift */; };
@@ -239,6 +240,7 @@
 		25FEE056234E483300BF002A /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
 		25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.otf"; sourceTree = "<group>"; };
 		457444D65E7D507BC1774A41 /* Pods-MyMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayer/Pods-MyMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		4CAA0E3123718782008BB432 /* SurveyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResponse.swift; sourceTree = "<group>"; };
 		5660DA197C549C5D7488CB83 /* Pods-FynzoSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FynzoSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey.release.xcconfig"; sourceTree = "<group>"; };
 		5AED3BE15D3413B80E12E8F3 /* Pods_FynzoSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FynzoSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7165960C21ECEA9000D55A14 /* SwifterSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSwift.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				251596D92354E2D000E69D95 /* Form.swift */,
 				25E750F8236841F0008F5A90 /* Category.swift */,
 				251A6BFB2369A802006DE211 /* Plan.swift */,
+				4CAA0E3123718782008BB432 /* SurveyResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -978,6 +981,7 @@
 				25348D9223655A6F006B8AA0 /* ImportTemplateSurveyViewController.swift in Sources */,
 				7199ADD021EC8AD70066B969 /* CommonTableViewCell.swift in Sources */,
 				254A84D2234F95AA00B35EF0 /* SideMenuViewController.swift in Sources */,
+				4CAA0E3223718782008BB432 /* SurveyResponse.swift in Sources */,
 				25FEE078234E483300BF002A /* Fynzo+Constant.swift in Sources */,
 				250C11282351A78C00758B04 /* StarCollectionViewCell.swift in Sources */,
 				254A84CB234F91D600B35EF0 /* AppUserDefaultManager.swift in Sources */,
