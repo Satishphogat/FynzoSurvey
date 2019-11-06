@@ -28,10 +28,8 @@ extension TextfieldCollectionViewCell: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: TextfieldTableViewCell.self)
-        
         cell.label.text = questionnaries[indexPath.row].questingText
         cell.textField.tag = indexPath.row
-        self.completion?(self.questionnaries)
         cell.textField.delegate = self
         
         return cell

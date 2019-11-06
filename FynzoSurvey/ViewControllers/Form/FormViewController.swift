@@ -187,7 +187,17 @@ class FormViewController: UIViewController {
     
     @objc func submitButtonAction() {
         view.endEditing(true)
-
+        
+        formSubmitApi()
+    }
+    
+    private func formSubmitApi() {
+        let parameter = ["surveyform_id": form.id,"start_time":"2019-12-26 23:53:15","device_id":"411d5d87a9312445_4e57c43c","answer": [""]] as [String : Any]
+        FynzoWebServices.shared.submitForm(controller: self, parameters: parameter) { [weak self](json, error) in
+            guard let `self` = self else { return }
+            
+            print(json)
+        }
     }
 }
 
@@ -236,7 +246,7 @@ extension FormViewController: UICollectionViewDataSource {
                     self.moveForword()
                 }
             }
-            cell.tableView.reloadData()
+            //cell.tableView.reloadData()
             
             return cell
         } else if questionary.last?.questionTypeId == "3" {
@@ -259,7 +269,7 @@ extension FormViewController: UICollectionViewDataSource {
 
             cell.titleLabel.text = questionnairies[indexPath.item].first?.questingText
             cell.questionary = questionary.filter({$0.questionTypeId == "2"}).first ?? Questionnaire()
-            cell.collectionView.reloadData()
+            //cell.collectionView.reloadData()
 
             return cell
         } else if questionary.last?.questionTypeId == "4" {
@@ -268,7 +278,7 @@ extension FormViewController: UICollectionViewDataSource {
 
             cell.questionaries = questionary
             cell.label.text = questionary.first?.questingText
-            cell.tableView.reloadData()
+            //cell.tableView.reloadData()
             cell.completion = { questionaries in
                 if let index = index {
                     self.questionnairies[index] = questionaries
@@ -283,7 +293,7 @@ extension FormViewController: UICollectionViewDataSource {
             let index = questionnairies.firstIndex(where: {$0.last?.questionTypeId == "5" && (($0.last?.question ?? Question()).isNps == "1")})
 
             cell.questionnaire = questionary.first!
-            cell.collectionView.reloadData()
+            //cell.collectionView.reloadData()
             cell.completion = { questionaries in
                 if let index = index {
                 self.questionnairies[index] = [questionaries]
@@ -303,7 +313,7 @@ extension FormViewController: UICollectionViewDataSource {
                     self.moveForword()
                 }
             }
-            cell.tableView.reloadData()
+            //cell.tableView.reloadData()
             
             return cell
         } else if indexPath.item == questionnairies.count - 1 {
