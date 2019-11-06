@@ -42,6 +42,9 @@
                             <constraint firstAttribute="height" constant="1" id="klQ-KQ-PqG"/>
                         </constraints>
                     </view>
+                    <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6UW-DT-qFf">
+                        <rect key="frame" x="256" y="13" width="51" height="31"/>
+                    </switch>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="fmL-jH-qsr" secondAttribute="bottom" constant="0.5" id="0EG-Y7-LCH"/>
@@ -50,14 +53,17 @@
                     <constraint firstAttribute="bottom" secondItem="63k-eT-1pg" secondAttribute="bottom" constant="15" id="8p3-Nz-KF3"/>
                     <constraint firstItem="fmL-jH-qsr" firstAttribute="leading" secondItem="HFj-lL-c3o" secondAttribute="leading" id="FmJ-Nw-3OT"/>
                     <constraint firstItem="HFj-lL-c3o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="OMA-qU-GDa"/>
+                    <constraint firstItem="6UW-DT-qFf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PPb-ie-bqJ"/>
                     <constraint firstItem="63k-eT-1pg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="eFq-qc-A5y"/>
                     <constraint firstItem="63k-eT-1pg" firstAttribute="leading" secondItem="HFj-lL-c3o" secondAttribute="trailing" constant="15" id="fTe-ys-rJp"/>
+                    <constraint firstItem="6UW-DT-qFf" firstAttribute="trailing" secondItem="63k-eT-1pg" secondAttribute="trailing" id="jlh-e1-jQZ"/>
                     <constraint firstAttribute="bottom" secondItem="HFj-lL-c3o" secondAttribute="bottom" constant="16" id="sNY-HI-G5W"/>
                     <constraint firstAttribute="trailing" secondItem="63k-eT-1pg" secondAttribute="trailing" constant="15" id="tBo-Ch-1ni"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="mySwitch" destination="6UW-DT-qFf" id="rMl-AC-t51"/>
                 <outlet property="separator" destination="fmL-jH-qsr" id="c1d-xh-RBi"/>
                 <outlet property="subTitleLabel" destination="63k-eT-1pg" id="Iem-dc-YcP"/>
                 <outlet property="titleLabel" destination="HFj-lL-c3o" id="gOv-1C-N5h"/>

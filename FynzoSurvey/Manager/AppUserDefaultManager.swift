@@ -18,6 +18,7 @@ class AppUserDefaults {
         case fullName
         case image
         case phone
+        case homeRefreshTime
     }
 }
 

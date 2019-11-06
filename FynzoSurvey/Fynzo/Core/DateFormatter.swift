@@ -183,9 +183,9 @@ extension Date {
         return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
     }
     
-    func getDateString() -> String {
+    func getDateString(_ withFormate: String = "MM/yyy") -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/yyy"
+        formatter.dateFormat = withFormate
         
         return formatter.string(from: self)
     }

@@ -59,7 +59,7 @@ class SettingViewController: UIViewController {
     private func handleSignUpSuccess(_ json: JSON) {
         print(json)
         userInfo = UserInfo(json: json)
-        dataArray = [[userInfo.email], [userInfo.name, userInfo.plan.startDate.getCustomizedDate(), userInfo.plan.endDate.getCustomizedDate()], [versionNumber], ["False"]]
+        dataArray = [[userInfo.email], [userInfo.plan.name, userInfo.plan.startDate.getCustomizedDate(), userInfo.plan.endDate.getCustomizedDate()], [versionNumber], ["False"]]
         tableView.reloadData()
     }
 }
@@ -81,12 +81,18 @@ extension SettingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SettingTableViewCell.self)
         
-        
         cell.titleLabel.text = placeholderArray[indexPath.section][indexPath.row]
         cell.separator.isHidden = !(indexPath.row ==  placeholderArray[indexPath.section].count - 1)
+        cell.mySwitch.isHidden = true
+        cell.subTitleLabel.isHidden = false
         
         if dataArray.isEmpty {
             return cell
+        }
+        if placeholderArray[indexPath.section][indexPath.row] == Fynzo.LabelText.autoUpload {
+            cell.mySwitch.isHidden = false
+            cell.subTitleLabel.isHidden = true
+            cell.mySwitch.isOn = dataArray[indexPath.section][indexPath.row] == "true"
         }
         cell.subTitleLabel.text = dataArray[indexPath.section][indexPath.row]
 

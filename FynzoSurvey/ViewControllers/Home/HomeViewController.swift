@@ -18,6 +18,28 @@ class HomeViewController: UIViewController {
             tableView.register(cellType: HomeTableViewCell.self)
         }
     }
+    @IBOutlet weak var lastUpdateTime: UILabel! {
+        didSet {
+            let updatedTime = AppUserDefaults.value(forKey: .homeRefreshTime, fallBackValue: "") as? String ?? ""
+            if !updatedTime.isEmpty {
+                lastUpdateTime.text = "Last Updated " + updatedTime
+            } else {
+                lastUpdateTime.text = ""
+            }
+        }
+    }
+    @IBOutlet weak var localDataLabel: UILabel!
+    @IBOutlet weak var localFormImageView: UIImageView! {
+        didSet {
+            localFormImageView.image = #imageLiteral(resourceName: "referesh").imageWithColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        }
+    }
+    @IBOutlet weak var uploadDataImageView: UIImageView! {
+        didSet {
+            uploadDataImageView.image = #imageLiteral(resourceName: "uploadLoacal").imageWithColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        }
+    }
+    @IBOutlet weak var bgView: UIView!
     
     var isDemoSurvey = false
     var forms = [Form]()
@@ -54,6 +76,8 @@ class HomeViewController: UIViewController {
     }
     
     private func handleSurveyFormsSuccess(_ json: JSON) {
+        AppUserDefaults.save(value: Date().getDateString("dd-MMM-yy, hh:mm a"), forKey: .homeRefreshTime)
+        lastUpdateTime.text = "Last Updated " + Date().getDateString("dd-MMM-yy, hh:mm a")
         forms = Form.models(from: json.arrayValue)
         if forms.isEmpty {
             customizedAlert(message: "No Survey found")
@@ -115,14 +139,21 @@ class HomeViewController: UIViewController {
             self.navigationController?.pushViewController(controller, animated: true)
         }
         
-        actionButton.display(inView: self.view)
-        view.addSubview(actionButton)
+        actionButton.display(inView: bgView)
+        bgView.addSubview(actionButton)
     }
     
     @objc func startButtonAction(_ sender: UIButton) {
         isDemoSurvey  ? openForm(sender.tag) : openPicker(sender)
     }
+    
+    @IBAction func updateSurveyButtonAction(_ sender: UIButton) {
+        getFormsApi()
+    }
 
+    @IBAction func uploadLocalDataButtonAction(_ sender: UIButton) {
+        
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
