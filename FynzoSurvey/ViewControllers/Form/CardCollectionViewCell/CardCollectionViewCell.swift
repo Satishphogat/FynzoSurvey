@@ -20,7 +20,7 @@ class CardCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     var questionnaire = Questionnaire()
-    var completion: (() -> Void)?
+    var completion: ((Questionnaire) -> Void)?
 }
 
 extension CardCollectionViewCell: UICollectionViewDataSource {
@@ -35,6 +35,7 @@ extension CardCollectionViewCell: UICollectionViewDataSource {
         cell.label.text = String(indexPath.item)
         cell.backgroundColor = indexPath.item == questionnaire.question.selectedScale ? .white : .clear
         cell.label.textColor = indexPath.item == questionnaire.question.selectedScale ? .black : .white
+        completion?(questionnaire)
 
         
         return cell
@@ -47,7 +48,7 @@ extension CardCollectionViewCell: UICollectionViewDelegate {
         //questionary.questions = questionary.questions.map({$0.isSelected = false})
         questionnaire.question.selectedScale = indexPath.item
         collectionView.reloadData()
-        completion?()
+        completion?(questionnaire)
     }
 }
 

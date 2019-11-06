@@ -162,12 +162,14 @@ class FormViewController: UIViewController {
     }
     
     @IBAction func previousButtonAction() {
+        view.endEditing(true)
         let collectionBounds = collectionView.bounds
         let contentOffset = CGFloat(floor(self.collectionView.contentOffset.x - collectionBounds.size.width))
         moveCollectionToFrame(contentOffset: contentOffset)
     }
     
     @IBAction func nextButtonAction() {
+        view.endEditing(true)
         moveForword()
     }
     
@@ -184,7 +186,8 @@ class FormViewController: UIViewController {
     }
     
     @objc func submitButtonAction() {
-    
+        view.endEditing(true)
+
     }
 }
 
@@ -222,30 +225,38 @@ extension FormViewController: UICollectionViewDataSource {
         
         return cell
         } else if questionary.last?.questionTypeId == "5" && ((questionary.last?.question ?? Question()).isNps == "0") {
+            let index = questionnairies.firstIndex(where: {$0.last?.questionTypeId == "5" && (($0.last?.question ?? Question()).isNps == "0")})
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: StarCollectionViewCell.self)
             
             cell.label.text = questionary.count == 1 ? questionary.first?.questingText : questionary.filter({$0.questionTypeId == "0"}).first?.questingText
             cell.questionaries = questionary.filter({$0.questionTypeId == "5" && $0.question.isNps == "0"})
-            cell.completion = {
-                self.moveForword()
+            cell.completion = { questionaries in
+                if let index = index {
+                    self.questionnairies[index] = questionaries
+                    self.moveForword()
+                }
             }
             cell.tableView.reloadData()
             
             return cell
         } else if questionary.last?.questionTypeId == "3" {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CheckboxCollectionViewCell.self)
-            
+            let index = questionnairies.firstIndex(where: {$0.last?.questionTypeId == "3"})
             cell.titleLabel.text = questionnairies[indexPath.item].first?.questingText
             cell.questionary = questionary.filter({$0.questionTypeId == "3"}).first ?? Questionnaire()
             cell.collectionView.reloadData()
-            cell.completion = {
-                self.moveForword()
+            cell.completion = { questionaries in
+                if let index = index {
+                    self.questionnairies[index] = [questionaries]
+                    self.moveForword()
+                }
             }
             
             return cell
         } else if questionary.last?.questionTypeId == "2" {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SquareCollectionViewCell.self)
-            
+            let index = questionnairies.firstIndex(where: {$0.last?.questionTypeId == "2"})
+
             cell.titleLabel.text = questionnairies[indexPath.item].first?.questingText
             cell.questionary = questionary.filter({$0.questionTypeId == "2"}).first ?? Questionnaire()
             cell.collectionView.reloadData()
@@ -253,27 +264,45 @@ extension FormViewController: UICollectionViewDataSource {
             return cell
         } else if questionary.last?.questionTypeId == "4" {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: DropDownCollectionViewCell.self)
-            
+            let index = questionnairies.firstIndex(where: {$0.last?.questionTypeId == "4"})
+
             cell.questionaries = questionary
             cell.label.text = questionary.first?.questingText
             cell.tableView.reloadData()
+            cell.completion = { questionaries in
+                if let index = index {
+                    self.questionnairies[index] = questionaries
+                    self.moveForword()
+                }
+            }
             
             return cell
         }
         else if questionary.last?.questionTypeId == "5" && ((questionary.last?.question ?? Question()).isNps == "1") {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CardCollectionViewCell.self)
-            
+            let index = questionnairies.firstIndex(where: {$0.last?.questionTypeId == "5" && (($0.last?.question ?? Question()).isNps == "1")})
+
             cell.questionnaire = questionary.first!
             cell.collectionView.reloadData()
-            cell.completion = {
-                self.moveForword()
+            cell.completion = { questionaries in
+                if let index = index {
+                self.questionnairies[index] = [questionaries]
+                    self.moveForword()
+                }
             }
             
             return cell
         } else if questionary.last?.questionTypeId == "1" {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TextfieldCollectionViewCell.self)
-            
+            let index = questionnairies.firstIndex(where: {$0.last?.questionTypeId == "1"})
+
             cell.questionnaries = questionary.filter({$0.questionTypeId == "1"})
+            cell.completion = { questionaries in
+                if let index = index {
+                    self.questionnairies[index] = questionaries
+                    self.moveForword()
+                }
+            }
             cell.tableView.reloadData()
             
             return cell

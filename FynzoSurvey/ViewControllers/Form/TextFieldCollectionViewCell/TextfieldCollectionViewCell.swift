@@ -17,6 +17,7 @@ class TextfieldCollectionViewCell: UICollectionViewCell, NibReusable {
         }
     }
     var questionnaries = [Questionnaire]()
+    var completion: (([Questionnaire]) -> Void)?
 }
 
 extension TextfieldCollectionViewCell: UITableViewDataSource {
@@ -29,6 +30,9 @@ extension TextfieldCollectionViewCell: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: TextfieldTableViewCell.self)
         
         cell.label.text = questionnaries[indexPath.row].questingText
+        cell.textField.tag = indexPath.row
+        self.completion?(self.questionnaries)
+        cell.textField.delegate = self
         
         return cell
     }
@@ -38,6 +42,16 @@ extension TextfieldCollectionViewCell: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+}
+
+extension TextfieldCollectionViewCell: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        questionnaries[textField.tag].answer = textField.text ?? ""
+        if textField.tag == 1 {
+          completion?(questionnaries)
+        }
     }
 }
 

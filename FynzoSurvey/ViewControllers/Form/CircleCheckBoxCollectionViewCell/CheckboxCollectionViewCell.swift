@@ -19,7 +19,7 @@ class CheckboxCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     var questionary = Questionnaire()
-    var completion: (() -> Void)?
+    var completion: ((Questionnaire) -> Void)?
 }
 
 extension CheckboxCollectionViewCell: UICollectionViewDataSource {
@@ -45,7 +45,7 @@ extension CheckboxCollectionViewCell: UICollectionViewDelegate {
         //questionary.questions = questionary.questions.map({$0.isSelected = false})
         questionary.questions[indexPath.item].isSelected = true
         collectionView.reloadData()
-        completion?()
+        completion?(questionary)
     }
 }
 

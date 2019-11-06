@@ -27,6 +27,7 @@ struct Questionnaire {
     var questionText = ""
     var question = Question()
     var selectedStars = 0
+    var answer = ""
     
     init(json: JSON = JSON.null) {
         id          = json[Fynzo.ApiKey.id].stringValue

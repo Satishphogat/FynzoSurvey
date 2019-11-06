@@ -20,11 +20,14 @@ class DropDownCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     var questionaries = [Questionnaire]()
+    var completion: (([Questionnaire]) -> Void)?
     
     @IBAction func openPicker(_ sender: UIButton) {
         PickerView.shared.showPicker(questionaries.first?.questions.map({$0.choice}) ?? [""]) { (item) in
             
             self.questionaries[sender.tag].question.choice = item as? String ?? ""
+            self.questionaries[sender.tag].question.isSelected = !self.questionaries[sender.tag].question.isSelected
+            self.completion?(self.questionaries)
             self.tableView.reloadData()
         }
     }

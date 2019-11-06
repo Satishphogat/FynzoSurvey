@@ -39,6 +39,13 @@ extension SquareCollectionViewCell: UICollectionViewDataSource {
     }
 }
 
+extension SquareCollectionViewCell: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        questionary.questions[indexPath.item].isSelected = !questionary.questions[indexPath.item].isSelected
+    }
+}
+
 extension SquareCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
