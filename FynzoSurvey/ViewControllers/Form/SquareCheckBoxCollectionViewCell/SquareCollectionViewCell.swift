@@ -20,6 +20,11 @@ class SquareCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     var questionary = Questionnaire()
+    var completion: ((Questionnaire) -> Void)?
+    
+    override func endEditing(_ force: Bool) -> Bool {
+        return true
+    }
 }
 
 extension SquareCollectionViewCell: UICollectionViewDataSource {
@@ -34,6 +39,7 @@ extension SquareCollectionViewCell: UICollectionViewDataSource {
         let question = questionary.questions[indexPath.item]
         
         cell.title.text = question.choice
+        cell.imageView.image = question.isSelected ? Fynzo.Image.filledCheckbox.imageWithColor(color: .white) : Fynzo.Image.emptyCheckbox.imageWithColor(color: .white)
         
         return cell
     }
@@ -43,6 +49,8 @@ extension SquareCollectionViewCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         questionary.questions[indexPath.item].isSelected = !questionary.questions[indexPath.item].isSelected
+        collectionView.reloadData()
+        completion?(questionary)
     }
 }
 

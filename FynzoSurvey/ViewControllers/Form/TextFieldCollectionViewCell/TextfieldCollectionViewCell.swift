@@ -47,7 +47,7 @@ extension TextfieldCollectionViewCell: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         questionnaries[textField.tag].answer = textField.text ?? ""
-        if textField.tag == 1 {
+        if textField.tag == questionnaries.count - 1 {
           completion?(questionnaries)
         }
     }

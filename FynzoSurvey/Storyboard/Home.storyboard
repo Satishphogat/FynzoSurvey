@@ -176,6 +176,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="form_background" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-r1-Llu">
                                 <rect key="frame" x="0.0" y="10" width="320" height="558"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N05-Ha-I99">
+                                <rect key="frame" x="0.0" y="10" width="320" height="558"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nog-bE-7P1">
                                 <rect key="frame" x="0.0" y="20" width="320" height="60"/>
                                 <subviews>
@@ -295,11 +299,15 @@
                             <constraint firstItem="Afg-r1-Llu" firstAttribute="leading" secondItem="sQG-93-ZNl" secondAttribute="leading" id="Bb8-va-F6R"/>
                             <constraint firstItem="Afg-r1-Llu" firstAttribute="top" secondItem="nog-bE-7P1" secondAttribute="bottom" constant="-70" id="Lkq-v8-Ul5"/>
                             <constraint firstItem="zyE-JS-g2v" firstAttribute="leading" secondItem="sQG-93-ZNl" secondAttribute="leading" id="Q3q-j6-uoO"/>
+                            <constraint firstItem="N05-Ha-I99" firstAttribute="centerX" secondItem="Afg-r1-Llu" secondAttribute="centerX" id="TP4-iX-Nsw"/>
                             <constraint firstItem="sQG-93-ZNl" firstAttribute="trailing" secondItem="zyE-JS-g2v" secondAttribute="trailing" id="XaO-Bs-9Nn"/>
+                            <constraint firstItem="N05-Ha-I99" firstAttribute="centerY" secondItem="Afg-r1-Llu" secondAttribute="centerY" id="Ymc-lJ-60J"/>
                             <constraint firstItem="nog-bE-7P1" firstAttribute="top" secondItem="sQG-93-ZNl" secondAttribute="top" id="ZXy-0f-oam"/>
                             <constraint firstItem="nog-bE-7P1" firstAttribute="leading" secondItem="sQG-93-ZNl" secondAttribute="leading" id="Zdq-xy-OBC"/>
                             <constraint firstItem="sQG-93-ZNl" firstAttribute="trailing" secondItem="Afg-r1-Llu" secondAttribute="trailing" id="dar-lp-3fW"/>
                             <constraint firstAttribute="bottom" secondItem="zyE-JS-g2v" secondAttribute="bottom" id="eUf-3R-lbd"/>
+                            <constraint firstItem="N05-Ha-I99" firstAttribute="width" secondItem="Afg-r1-Llu" secondAttribute="width" id="g2W-d5-wCo"/>
+                            <constraint firstItem="N05-Ha-I99" firstAttribute="height" secondItem="Afg-r1-Llu" secondAttribute="height" id="s5t-cO-ech"/>
                             <constraint firstItem="sQG-93-ZNl" firstAttribute="trailing" secondItem="nog-bE-7P1" secondAttribute="trailing" id="ydq-T1-VLS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sQG-93-ZNl"/>

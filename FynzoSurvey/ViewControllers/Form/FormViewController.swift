@@ -195,7 +195,7 @@ class FormViewController: UIViewController {
         //star cell
         var parameter = ["surveyform_id": form.id,"start_time":"2019-12-26 23:53:15","device_id":"411d5d87a9312445_4e57c43c"] as [String : Any]
 
-        var dict = [String: String]()
+        var dict = [String: Any]()
         if questionnairies.contains(where: { $0.last?.questionTypeId == "5" && (($0.last?.question ?? Question()).isNps == "0")}) {
             let obj = questionnairies.filter({ $0.last?.questionTypeId == "5" && (($0.last?.question ?? Question()).isNps == "0")} )
             let keys = obj.first?.map({$0.id}) ?? []
@@ -209,14 +209,20 @@ class FormViewController: UIViewController {
             let obj = questionnairies.filter({$0.last?.questionTypeId == "3"} )
             
             let keys = obj.first?.map({$0.id}) ?? []
-            let values = obj.first?.map({$0.questions.filter({$0.isSelected})}).first ?? [Question]()
+            let values = (obj.first?.map({$0.questions.filter({$0.isSelected})}).first ?? [Question]()).map({$0.id})
             for index in 0..<keys.count {
-                dict["\(keys[index])"] = "\(values[index].id)"
+                dict["\(keys[index])"] = values.isEmpty ? "" : values[index]
             }
         }
         // square checkbox
         if questionnairies.contains(where: {$0.last?.questionTypeId == "2"}) {
+            let obj = questionnairies.filter({ $0.last?.questionTypeId == "2"} )
             
+            let keys = obj.first?.map({$0.id}) ?? []
+            let values = (((obj.first?.map({$0.questions.filter({$0.isSelected})}) ?? [])?.first) ?? []).map({$0.id})  // array of id of selected questions
+            for index in 0..<keys.count {
+                dict["\(keys[index])"] = values
+            }
         }
         
         // dropdown checkbox
@@ -336,6 +342,11 @@ extension FormViewController: UICollectionViewDataSource {
             cell.titleLabel.text = questionnairies[indexPath.item].first?.questingText
             cell.questionary = questionary.filter({$0.questionTypeId == "2"}).first ?? Questionnaire()
             //cell.collectionView.reloadData()
+            cell.completion = { questionaries in
+                if let index = index {
+                    self.questionnairies[index] = [questionaries]
+                }
+            }
 
             return cell
         } else if questionary.last?.questionTypeId == "4" {
