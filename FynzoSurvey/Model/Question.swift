@@ -20,6 +20,10 @@ struct Question {
     var isNps = ""
     var isSelected = false
     var selectedScale = -1
+    var detailResponseAnswer = ""
+    var questionText = ""
+    var screenNo = 0
+    var questingNo = 0
     
     init(json: JSON = JSON.null) {
         id          = json[Fynzo.ApiKey.id].stringValue
@@ -31,6 +35,9 @@ struct Question {
         labels = json[Fynzo.ApiKey.updateTime].stringValue
         scale = json[Fynzo.ApiKey.scale].stringValue
         isNps = json[Fynzo.ApiKey.isNps].stringValue
+        questionText = json["question_text"].stringValue
+        screenNo = Int(json[Fynzo.ApiKey.screenNo].stringValue) ?? 0
+        questingNo   = Int(json[Fynzo.ApiKey.questionNo].stringValue) ?? 0
     }
     
     static func models(from jsonArray: [JSON]) -> [Question] {

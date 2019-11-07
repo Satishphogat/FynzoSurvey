@@ -174,11 +174,6 @@ extension TemplatesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = ResponseDetailViewController.instantiate(fromAppStoryboard: .Home)
-        navigationController?.pushViewController(controller, animated: true)
-    }
 }
 
 

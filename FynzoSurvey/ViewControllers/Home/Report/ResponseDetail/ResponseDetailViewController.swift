@@ -16,6 +16,8 @@ class ResponseDetailViewController: UIViewController {
         }
     }
     
+    var questionResponse = [Question]()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -30,12 +32,25 @@ class ResponseDetailViewController: UIViewController {
 
 extension ResponseDetailViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return questionResponse.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "\(section + 1). " + questionResponse[section].questionText
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ResponseDetailTableViewCell.self)
+        cell.titleLabel.text = questionResponse[indexPath.section].questionText
         
         return cell
     }

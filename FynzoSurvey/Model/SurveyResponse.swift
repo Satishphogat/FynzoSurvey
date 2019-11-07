@@ -22,9 +22,11 @@ struct GraphReportResponse {
     
     var surverResponse = SurveyResponse()
     var surveyForms = [Form]()
+    var questions = [String: Any]()
     
     init(json: JSON = JSON.null) {
         surverResponse = SurveyResponse(json: json["surveyrespones"])
         surveyForms = Form.models(from: json["surveyforms"].arrayValue)
+        questions = json["qquestions"].dictionaryValue
     }
 }
