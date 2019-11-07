@@ -32,7 +32,7 @@ extension CardCollectionViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CardInnerCollectionViewCell.self)
         
-        cell.label.text = String(indexPath.item + 1)
+        cell.label.text = (Int(questionnaire.question.scale) ?? 0) >= 10 ? String(indexPath.item) : String(indexPath.item + 1)
         cell.backgroundColor = indexPath.item == questionnaire.question.selectedScale ? .white : .clear
         cell.label.textColor = indexPath.item == questionnaire.question.selectedScale ? .black : .white
         completion?(questionnaire)
