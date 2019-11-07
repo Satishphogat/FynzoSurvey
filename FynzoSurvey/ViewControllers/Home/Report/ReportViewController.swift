@@ -58,7 +58,7 @@ class ReportViewController: UIViewController {
     
     @IBAction func detailedReportButtonAction() {
         let controller = ResponseViewController.instantiate(fromAppStoryboard: .Home)
-        controller.responseDetails = graphReport.surverResponse.allResponses
+        controller.graphReport = graphReport
         navigationController?.pushViewController(controller, animated: true)
     }
 }
