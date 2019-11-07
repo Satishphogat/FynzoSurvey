@@ -36,7 +36,6 @@ struct Questionnaire {
         questingNo   = json[Fynzo.ApiKey.questionNo].stringValue
         questingText       = json[Fynzo.ApiKey.questionText].stringValue
         isCompulsory         = json[Fynzo.ApiKey.isCompulsory].stringValue
-        questionTypeId          = json[Fynzo.ApiKey.questionTypeId].stringValue
         groupingParentQqid          = json[Fynzo.ApiKey.groupingParentQqid].stringValue
         clubbingParentQqid          = json[Fynzo.ApiKey.clubbingParentQqid].stringValue
         status          = json[Fynzo.ApiKey.status].stringValue
@@ -46,7 +45,7 @@ struct Questionnaire {
         dequesting          = json[Fynzo.ApiKey.dquestion].stringValue
         questingText          = json[Fynzo.ApiKey.questionText].stringValue
         question          = Question(json: json[Fynzo.ApiKey.question])
-
+        questionTypeId          = json[Fynzo.ApiKey.questionTypeId].stringValue
     }
     
     static func models(from jsonArray: [JSON]) -> [Questionnaire] {

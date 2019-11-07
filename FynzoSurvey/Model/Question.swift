@@ -24,6 +24,7 @@ struct Question {
     var questionText = ""
     var screenNo = 0
     var questingNo = 0
+    var questionTypeId = ""
     
     init(json: JSON = JSON.null) {
         id          = json[Fynzo.ApiKey.id].stringValue
@@ -38,6 +39,7 @@ struct Question {
         questionText = json["question_text"].stringValue
         screenNo = Int(json[Fynzo.ApiKey.screenNo].stringValue) ?? 0
         questingNo   = Int(json[Fynzo.ApiKey.questionNo].stringValue) ?? 0
+        questionTypeId          = json[Fynzo.ApiKey.questionTypeId].stringValue
     }
     
     static func models(from jsonArray: [JSON]) -> [Question] {
