@@ -192,10 +192,76 @@ class FormViewController: UIViewController {
     }
     
     private func formSubmitApi() {
-        let parameter = ["surveyform_id": form.id,"start_time":"2019-12-26 23:53:15","device_id":"411d5d87a9312445_4e57c43c","answer": [""]] as [String : Any]
+        //star cell
+        var parameter = ["surveyform_id": form.id,"start_time":"2019-12-26 23:53:15","device_id":"411d5d87a9312445_4e57c43c"] as [String : Any]
+
+        var dict = [String: String]()
+        if questionnairies.contains(where: { $0.last?.questionTypeId == "5" && (($0.last?.question ?? Question()).isNps == "0")}) {
+            let obj = questionnairies.filter({ $0.last?.questionTypeId == "5" && (($0.last?.question ?? Question()).isNps == "0")} )
+            let keys = obj.first?.map({$0.id}) ?? []
+            let values = obj.first?.map({$0.selectedStars}) ?? []
+            for index in 0..<keys.count {
+                dict["\(keys[index])"] = "\(values[index])"
+            }
+        }
+        // circle checkbox
+        if questionnairies.contains(where: {$0.last?.questionTypeId == "3"}) {
+            let obj = questionnairies.filter({$0.last?.questionTypeId == "3"} )
+            
+            let keys = obj.first?.map({$0.id}) ?? []
+            let values = obj.first?.map({$0.questions.filter({$0.isSelected})}).first ?? [Question]()
+            for index in 0..<keys.count {
+                dict["\(keys[index])"] = "\(values[index].id)"
+            }
+        }
+        // square checkbox
+        if questionnairies.contains(where: {$0.last?.questionTypeId == "2"}) {
+            
+        }
+        
+        // dropdown checkbox
+        if questionnairies.contains(where: {$0.last?.questionTypeId == "4"}) {
+            let obj = questionnairies.filter({ $0.last?.questionTypeId == "4"} )
+            
+            let keys = obj.first?.map({$0.id}) ?? []
+            let values = obj.first?.map({$0.questions.filter({$0.isSelected})}) ?? []
+            for index in 0..<keys.count {
+                dict["\(keys[index])"] = "\(values[index])"
+            }
+        }
+        // card checkbox
+
+        if questionnairies.contains(where: { $0.last?.questionTypeId == "5" && (($0.last?.question ?? Question()).isNps == "1")}) {
+            let obj = questionnairies.filter({ $0.last?.questionTypeId == "5" && (($0.last?.question ?? Question()).isNps == "1")} )
+            
+            let keys = obj.first?.map({$0.id}) ?? []
+            let values = obj.first?.map({$0.question.selectedScale}) ?? []
+            for index in 0..<keys.count {
+                dict["\(keys[index])"] = "\(values[index])"
+            }
+            
+        }
+        
+        // textfield checkbox
+        if questionnairies.contains(where: {$0.last?.questionTypeId == "1"}) {
+            let obj = questionnairies.filter({ $0.last?.questionTypeId == "1"} )
+            
+            let keys = obj.first?.map({$0.id}) ?? []
+            let values = obj.first?.map({$0.answer.capitalized}) ?? []
+            for index in 0..<keys.count {
+                dict["\(keys[index])"] = "\(values[index])"
+            }
+        }
+        
+        parameter["answer"] = dict
         FynzoWebServices.shared.submitForm(controller: self, parameters: parameter) { [weak self](json, error) in
             guard let `self` = self else { return }
             
+            self.customizedAlert(withTitle: "", message: json["msg"].stringValue, afterDelay: 0.5, completion: { (_) in
+                if json["status"].boolValue {
+                    AppDelegate.shared.moveToDashboard()
+                }
+            })
             print(json)
         }
     }
