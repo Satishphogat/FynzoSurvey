@@ -1,10 +1,5 @@
 //
-//  PickerView.swift
-//  TownTrotter
-//
-//  Created by Crownstack on 11/01/18.
-//  Copyright © 2018 Crownstack. All rights reserved.
-//
+
 
 import UIKit
 

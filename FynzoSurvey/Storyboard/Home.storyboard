@@ -205,18 +205,19 @@
                                             <constraint firstAttribute="width" constant="30" id="vuq-zu-529"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVE-8K-5Us" customClass="FormButton" customModule="FynzoSurvey" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsD-8Z-HL6">
                                         <rect key="frame" x="7.5" y="35" width="45" height="25"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="PJj-jT-zRf"/>
-                                            <constraint firstAttribute="width" constant="45" id="UQI-36-cu1"/>
+                                            <constraint firstAttribute="height" constant="25" id="PSk-bS-kmH"/>
+                                            <constraint firstAttribute="width" constant="45" id="nfQ-Bq-vdA"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="PREV">
-                                            <color key="titleColor" name="appThemeColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="previousButtonAction" destination="bZU-e2-4UM" eventType="touchUpInside" id="sbb-gp-8tn"/>
+                                            <action selector="previousButtonAction" destination="bZU-e2-4UM" eventType="touchUpInside" id="PN3-js-CWS"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="y8G-jV-l5M">
@@ -242,27 +243,31 @@
                                             <constraint firstAttribute="height" constant="30" id="Ole-4K-OM9"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWv-AS-Urs" customClass="FormButton" customModule="FynzoSurvey" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sr-90-axH">
                                         <rect key="frame" x="267.5" y="35" width="45" height="25"/>
-                                        <state key="normal" title="NEXT"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="NEXT">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
-                                            <action selector="nextButtonAction" destination="bZU-e2-4UM" eventType="touchUpInside" id="MAv-Lr-CZW"/>
+                                            <action selector="nextButtonAction" destination="bZU-e2-4UM" eventType="touchUpInside" id="o0M-vD-Tfk"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="PWv-AS-Urs" firstAttribute="height" secondItem="CVE-8K-5Us" secondAttribute="height" id="5V2-MR-klL"/>
                                     <constraint firstItem="y8G-jV-l5M" firstAttribute="centerY" secondItem="nog-bE-7P1" secondAttribute="centerY" id="6es-7Q-ab7"/>
-                                    <constraint firstItem="CVE-8K-5Us" firstAttribute="top" secondItem="fQV-fC-h4V" secondAttribute="bottom" constant="5" id="8qG-tm-ynf"/>
-                                    <constraint firstItem="PWv-AS-Urs" firstAttribute="centerX" secondItem="rKT-kO-KqU" secondAttribute="centerX" id="Cxw-dv-eL9"/>
+                                    <constraint firstItem="7sr-90-axH" firstAttribute="centerY" secondItem="wsD-8Z-HL6" secondAttribute="centerY" id="7hk-Ya-E84"/>
                                     <constraint firstItem="cac-IZ-YBP" firstAttribute="centerY" secondItem="fQV-fC-h4V" secondAttribute="centerY" id="H1V-Bs-RuT"/>
-                                    <constraint firstItem="CVE-8K-5Us" firstAttribute="centerX" secondItem="fQV-fC-h4V" secondAttribute="centerX" id="Ixm-gw-AbD"/>
+                                    <constraint firstItem="wsD-8Z-HL6" firstAttribute="centerX" secondItem="fQV-fC-h4V" secondAttribute="centerX" id="Hef-GZ-83k"/>
                                     <constraint firstItem="fQV-fC-h4V" firstAttribute="top" secondItem="nog-bE-7P1" secondAttribute="top" id="Jq4-9X-fs1"/>
+                                    <constraint firstItem="wsD-8Z-HL6" firstAttribute="top" secondItem="fQV-fC-h4V" secondAttribute="bottom" constant="5" id="M6D-uI-aQU"/>
+                                    <constraint firstItem="7sr-90-axH" firstAttribute="width" secondItem="wsD-8Z-HL6" secondAttribute="width" id="Mja-eU-w1k"/>
+                                    <constraint firstItem="7sr-90-axH" firstAttribute="centerX" secondItem="cac-IZ-YBP" secondAttribute="centerX" id="O6H-sH-r7N"/>
+                                    <constraint firstItem="7sr-90-axH" firstAttribute="height" secondItem="wsD-8Z-HL6" secondAttribute="height" id="WEW-xo-qdo"/>
                                     <constraint firstAttribute="height" constant="60" id="cLd-4z-CAR"/>
                                     <constraint firstAttribute="trailing" secondItem="cac-IZ-YBP" secondAttribute="trailing" constant="15" id="f1Q-Gu-0dO"/>
-                                    <constraint firstItem="PWv-AS-Urs" firstAttribute="width" secondItem="CVE-8K-5Us" secondAttribute="width" id="hoz-vc-rwy"/>
-                                    <constraint firstItem="PWv-AS-Urs" firstAttribute="centerY" secondItem="CVE-8K-5Us" secondAttribute="centerY" id="kJN-3m-XIg"/>
                                     <constraint firstItem="y8G-jV-l5M" firstAttribute="centerX" secondItem="nog-bE-7P1" secondAttribute="centerX" id="q3r-IY-hSd"/>
                                     <constraint firstItem="fQV-fC-h4V" firstAttribute="leading" secondItem="nog-bE-7P1" secondAttribute="leading" constant="15" id="vf3-7m-2MA"/>
                                 </constraints>
@@ -317,9 +322,9 @@
                         <outlet property="collectionView" destination="zyE-JS-g2v" id="Uk8-nI-kPH"/>
                         <outlet property="logoImageView" destination="y8G-jV-l5M" id="6F1-ZI-gmY"/>
                         <outlet property="nextArrowButton" destination="rKT-kO-KqU" id="QS4-bY-HNz"/>
-                        <outlet property="nextButton" destination="PWv-AS-Urs" id="lEO-qt-OdQ"/>
+                        <outlet property="nextButton" destination="7sr-90-axH" id="hqe-hy-NH9"/>
                         <outlet property="previousArrowButton" destination="xHU-1E-Auq" id="8P1-Ce-oPf"/>
-                        <outlet property="previousButton" destination="CVE-8K-5Us" id="EJI-aJ-eHU"/>
+                        <outlet property="previousButton" destination="wsD-8Z-HL6" id="s0P-O9-x0i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ox-2B-u2s" userLabel="First Responder" sceneMemberID="firstResponder"/>

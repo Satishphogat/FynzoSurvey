@@ -1,10 +1,5 @@
 //
-//  FlaerWebServices.swift
-//  Flaer
-//
-//  Created by Pushpraj Chaudhary on 17/07/18.
-//  Copyright © 2018 Crownstack. All rights reserved.
-//
+
 
 import Foundation
 import SwiftyJSON

@@ -7,6 +7,6 @@ struct AppConfiguration {
 }
 
 struct AppInfo {
-    static let email = "ios.device@crownstack.com"
+    static let email = ""
     static let password = "password"
 }

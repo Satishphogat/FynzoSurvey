@@ -107,6 +107,7 @@ extension ResponseViewController: UITableViewDelegate {
                 }
                 let controller = ResponseDetailViewController.instantiate(fromAppStoryboard: .Home)
                 controller.questionResponse = emptyArray
+                controller.responseTitle = "Response \(indexPath.row + 1)"
                 self.navigationController?.pushViewController(controller, animated: true)
             } catch let error as NSError {
                 print(error)

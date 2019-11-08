@@ -187,13 +187,12 @@ class FormViewController: UIViewController {
     
     @objc func submitButtonAction() {
         view.endEditing(true)
-        
         formSubmitApi()
     }
     
     private func formSubmitApi() {
         //star cell
-        var parameter = ["surveyform_id": form.id,"start_time":"2019-12-26 23:53:15","device_id":"411d5d87a9312445_4e57c43c"] as [String : Any]
+        var parameter = ["surveyform_id": form.id,"start_time": form.createTime,"device_id":UIDevice.current.identifierForVendor?.uuidString ?? ""] as [String : Any]
 
         var dict = [String: Any]()
         if questionnairies.contains(where: { $0.last?.questionTypeId == "5" && (($0.last?.question ?? Question()).isNps == "0")}) {
@@ -271,6 +270,7 @@ class FormViewController: UIViewController {
             print(json)
         }
     }
+     
 }
 
 public extension Collection where Element: StringProtocol {
@@ -412,8 +412,31 @@ extension FormViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
     }
+   
 }
 
+extension FormViewController {
+    // set collection view cell in center
+    func centerCell () {
+        let centerPoint = CGPoint(x: collectionView.contentOffset.x + collectionView.frame.midX, y: 100)
+        if let path = collectionView.indexPathForItem(at: centerPoint) {
+            collectionView.scrollToItem(at: path, at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    //Set collectionView.delegate = self then add below funcs
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        centerCell()
+    }
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        centerCell()
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            centerCell()
+        }
+    }
+}
 
 class FormBoldLabel: UILabel {
     required init(coder aDecoder: NSCoder) {

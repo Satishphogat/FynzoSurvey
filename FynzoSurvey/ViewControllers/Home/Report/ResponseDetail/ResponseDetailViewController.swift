@@ -17,11 +17,12 @@ class ResponseDetailViewController: UIViewController {
     }
     
     var questionResponse = [Question]()
+    var responseTitle = ""
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        configureNavigationBar(withTitle: "Response", leftBarImage: #imageLiteral(resourceName: "leftArrowWhite"), leftSelector: #selector(leftButtonAction))
+        configureNavigationBar(withTitle: responseTitle, leftBarImage: #imageLiteral(resourceName: "leftArrowWhite"), leftSelector: #selector(leftButtonAction))
         navigationController?.navigationBar.isHidden = false
     }
     
