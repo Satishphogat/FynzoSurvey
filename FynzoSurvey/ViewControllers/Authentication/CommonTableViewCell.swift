@@ -18,4 +18,5 @@ class CommonTableViewCell: UITableViewCell, NibReusable {
         }
     }
     @IBOutlet weak var textFieldLeading: NSLayoutConstraint!
+    @IBOutlet weak var iconImageView: UIImageView!
 }

@@ -25,13 +25,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZJ-W5-Ccb">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZJ-W5-Ccb" customClass="ORDesignableTextField" customModule="FynzoSurvey" customModuleProvider="target">
                         <rect key="frame" x="40" y="5" width="240" height="29.5"/>
                         <color key="backgroundColor" name="textfieldBackgroundColor"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </textField>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z6N-SQ-jDK">
+                        <rect key="frame" x="245" y="10" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="47M-st-0Uk"/>
+                            <constraint firstAttribute="width" constant="20" id="rmT-2b-voy"/>
+                        </constraints>
+                    </imageView>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zps-mS-7y6">
                         <rect key="frame" x="250" y="6" width="30" height="28"/>
                         <constraints>
@@ -49,14 +61,17 @@
                     <constraint firstItem="zps-mS-7y6" firstAttribute="centerY" secondItem="fZJ-W5-Ccb" secondAttribute="centerY" id="409-Y9-Qsk"/>
                     <constraint firstItem="fZJ-W5-Ccb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="9Le-cd-Prk"/>
                     <constraint firstAttribute="trailing" secondItem="fZJ-W5-Ccb" secondAttribute="trailing" constant="40" id="D5j-61-na1"/>
+                    <constraint firstItem="Z6N-SQ-jDK" firstAttribute="centerY" secondItem="zps-mS-7y6" secondAttribute="centerY" id="NNK-9g-ro2"/>
                     <constraint firstItem="zps-mS-7y6" firstAttribute="trailing" secondItem="fZJ-W5-Ccb" secondAttribute="trailing" id="NUV-0s-xit"/>
                     <constraint firstItem="fZJ-W5-Ccb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="RLf-6C-aZC"/>
                     <constraint firstAttribute="bottom" secondItem="fZJ-W5-Ccb" secondAttribute="bottom" constant="5" id="YT4-M5-JyQ"/>
+                    <constraint firstItem="Z6N-SQ-jDK" firstAttribute="centerX" secondItem="zps-mS-7y6" secondAttribute="centerX" constant="-10" id="oGg-ug-kDa"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="iconImageView" destination="Z6N-SQ-jDK" id="obU-tO-JwH"/>
                 <outlet property="passwordShowHide" destination="zps-mS-7y6" id="SA5-QD-0AS"/>
                 <outlet property="textField" destination="fZJ-W5-Ccb" id="Rcf-hr-9Bp"/>
             </connections>

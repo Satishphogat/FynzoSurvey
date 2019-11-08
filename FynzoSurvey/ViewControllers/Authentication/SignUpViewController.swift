@@ -16,6 +16,11 @@ class SignUpViewController: UIViewController {
             tableView.register(cellType: CommonTableViewCell.self)
         }
     }
+    @IBOutlet weak var tickMarkButton: UIButton! {
+        didSet {
+            tickMarkButton.setImage(UIImage(named: "checkbox_c")?.imageWithColor(color: AppDelegate.shared.appThemeColor), for: .normal)
+        }
+    }
     
     let titleArray = ["Name", "Email", "Phone", "Password", "Company/Organization"]
     var userInfo = UserInfo()
@@ -45,7 +50,19 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    @IBAction func tickMarkButtonAction(_ sender: Any) {
+        view.endEditing(true)
+        
+        tickMarkButton.isSelected = !tickMarkButton.isSelected
+        tickMarkButton.setImage(UIImage(named: tickMarkButton.isSelected ? "checkbox_c" : "checkbox_u")?.imageWithColor(color: AppDelegate.shared.appThemeColor), for: .normal)
+    }
+    
     private func signUpApi() {
+        if !tickMarkButton.isSelected {
+            customizedAlert(message: "Please agree with Terms and Conditions")
+            
+            return
+        }
         let parameters = ["first_name":userInfo.name,"last_name":"","phone":userInfo.phone,"countrycode":"IND","email":userInfo.email,"password":userInfo.password,"company_name":userInfo.company,"category_id":"","service": "survey"]
         FynzoWebServices.shared.signUp(controller: self, parameters: parameters) { [weak self](json, error) in
             guard let `self` = self else { return }
@@ -56,8 +73,10 @@ class SignUpViewController: UIViewController {
     
     private func handleSignUpSuccess(_ json: JSON) {
         customizedAlert(withTitle: "Success", message: json["msg"].stringValue, iconImage: #imageLiteral(resourceName: "ic_success"), buttonTitles: ["Ok"], afterDelay: 0.5) { (_) in
-            let controller = LoginViewController.instantiate(fromAppStoryboard: .Authentication)
-            self.navigationController?.pushViewController(controller, animated: true)
+            if json["status"].boolValue {
+                let controller = LoginViewController.instantiate(fromAppStoryboard: .Authentication)
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
         }
     }
     
@@ -170,7 +189,7 @@ extension SignUpViewController: UITableViewDataSource {
 extension SignUpViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 60
     }
 }
 

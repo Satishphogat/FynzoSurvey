@@ -340,13 +340,16 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6k-2P-Z1C">
                                                     <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gyr-TJ-IVH">
+                                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gyr-TJ-IVH">
                                                             <rect key="frame" x="8" y="10" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="cIp-1Y-o3W"/>
                                                                 <constraint firstAttribute="height" constant="30" id="tUv-bL-Nzd"/>
                                                             </constraints>
                                                             <state key="normal" image="checkbox_u"/>
+                                                            <connections>
+                                                                <action selector="tickMarkButtonAction:" destination="Vem-PS-7nD" eventType="touchUpInside" id="8aa-NW-LpQ"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McG-mk-Wyq">
                                                             <rect key="frame" x="48" y="14.5" width="83.5" height="21"/>
@@ -526,6 +529,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="9GK-M7-JMg" id="pFg-cu-cnn"/>
+                        <outlet property="tickMarkButton" destination="Gyr-TJ-IVH" id="fGv-Ge-JAg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tq5-kV-20G" userLabel="First Responder" sceneMemberID="firstResponder"/>

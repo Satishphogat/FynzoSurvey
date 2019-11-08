@@ -119,11 +119,13 @@ class LoginViewController: UIViewController {
     }
     
     private func handleLoginSuccess(_ json: JSON) {
+        if json["status"].boolValue {
         userInfo = UserInfo(json: json)
         AppUserDefaults.save(value: userInfo.id, forKey: .id)
         AppUserDefaults.save(value: userInfo.name, forKey: .fullName)
         AppUserDefaults.save(value: userInfo.email, forKey: .email)
         UserManager.shared.moveToHomeViewController()
+        }
     }
 }
 
@@ -139,11 +141,13 @@ extension LoginViewController: UITableViewDataSource {
         cell.textField.delegate = self
         cell.textField.keyboardType = indexPath.row == 0 ? .emailAddress : .default
         cell.textField.textContentType = indexPath.row == 0 ? .emailAddress : .password
-        cell.textField.layer.borderColor = UIColor.white.cgColor
-        cell.textField.layer.borderWidth = 0.7
+//        cell.textField.layer.borderColor = UIColor.white.cgColor
+//        cell.textField.layer.borderWidth = 0.7
         cell.textField.isSecureTextEntry = indexPath.row == 1
         cell.passwordShowHide.isHidden = true
         cell.textField.placeholder = titleArray[indexPath.row]
+        cell.iconImageView.isHidden = false
+        cell.iconImageView.image = UIImage(named: titleArray[indexPath.row])
         
         if titleArray[indexPath.row] == "Email" {
             cell.textField.text = userInfo.email
@@ -162,7 +166,7 @@ extension LoginViewController: UITableViewDataSource {
 extension LoginViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 60
     }
 }
 
