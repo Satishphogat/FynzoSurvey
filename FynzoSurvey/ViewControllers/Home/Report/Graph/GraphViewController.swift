@@ -17,7 +17,7 @@ class GraphViewController: UIViewController {
         }
     }
 
-    var graphArray = [String: [String]]()
+    var graphArray = [String: [Question]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +51,7 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
         let headerView = GraphHeaderView.instanceFromNib()
         
         guard let graphObj = graphArray["\(Array(graphArray.keys)[section])"] else { return UIView()}
-
-        let count = Array(Set(graphObj.filter({$0 != "<null>"}))).count
+        let count = Array(Set(graphObj.filter({$0.detailResponseAnswer != "<null>"}).map({$0.detailResponseAnswer}))).count
         if count == 0 {
             return UIView()
         }
@@ -85,19 +84,21 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: GraphTableViewCell.self)
         let graphObj = graphArray["\(Array(graphArray.keys)[indexPath.section])"]
         
-        if indexPath.section == 3 {
+        if graphObj?.first?.questionTypeId == "3" {
             cell.titleLabel.isHidden = false
             cell.starView.isHidden = true
-
+            if let questions = graphObj.map({$0.first?.questions.map({$0.choice})}) {
+                cell.titleLabel.text = questions?[indexPath.row] ?? ""
+            }
         } else {
             cell.starView.isHidden = false
             cell.titleLabel.isHidden = true
             cell.starView.rating = Double(indexPath.row + 1)
             if let graphObj = graphObj {
-                let value = graphObj.filter({$0 == String(indexPath.row + 1)}).isEmpty ? "null" : String(graphObj.filter({$0 == String(indexPath.row + 1)}).count)
+                let value = graphObj.filter({$0.detailResponseAnswer == String(indexPath.row + 1)}).isEmpty ? "null" : String(graphObj.filter({$0.detailResponseAnswer == String(indexPath.row + 1)}).count)
                 cell.valueLabel.text = value
                 if cell.valueLabel.text != "null" {
-                    let numberOfValues = graphObj.filter({$0 != "<null>"}).count / (Int(value ) ?? 0)
+                    let numberOfValues = graphObj.filter({$0.detailResponseAnswer != "<null>"}).count / (Int(value ) ?? 0)
                     cell.percentageLabel.text = String(Double(100 / numberOfValues)) + "%"
                 } else {
                     cell.percentageLabel.text = "0.00%"

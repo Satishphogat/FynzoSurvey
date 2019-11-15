@@ -19,7 +19,7 @@ class ReportViewController: UIViewController {
     var form = Form()
     var graphReport = GraphReportResponse()
     var questionResponse = [Question]()
-    var graphArray = [String: [String]]()
+    var graphArray = [String: [Question]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,10 +129,10 @@ class ReportViewController: UIViewController {
         
         if let questionTexts = withoutNameArray.map({$0.map({$0.questionText})}).first {
         for text in questionTexts {
-            var answerArray = [String]()
+            var answerArray = [Question]()
             for obj in withoutNameArray {
                 for specificObj in obj where specificObj.questionText == text && specificObj.questionTypeId != "1" {
-                    answerArray.append(specificObj.detailResponseAnswer)
+                    answerArray.append(specificObj)
                 }
             }
             graphArray["\(text)"] = answerArray
