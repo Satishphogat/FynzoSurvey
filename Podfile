@@ -12,6 +12,8 @@ target 'FynzoSurvey' do
   pod 'SwiftyJSON', '4.0.0'
   pod 'Kingfisher','5.8.3'
   pod 'ALCameraViewController', '3.0.2'
+  pod 'ABGaugeViewKit', '1.0.1'
+
 
   # Pods for FynzoSurvey
 

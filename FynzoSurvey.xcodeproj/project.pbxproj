@@ -103,6 +103,10 @@
 		25FEE08D234E483300BF002A /* Poppins-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE055234E483300BF002A /* Poppins-BlackItalic.otf */; };
 		25FEE08E234E483300BF002A /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE056234E483300BF002A /* Poppins-Regular.otf */; };
 		25FEE08F234E483300BF002A /* Poppins-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */; };
+		4C6866FF237598CF00652837 /* GraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6866FD237598CF00652837 /* GraphTableViewCell.swift */; };
+		4C686700237598CF00652837 /* GraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6866FE237598CF00652837 /* GraphTableViewCell.xib */; };
+		4C68670B23759E3500652837 /* GraphHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68670923759E3400652837 /* GraphHeaderView.swift */; };
+		4C68670C23759E3500652837 /* GraphHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C68670A23759E3500652837 /* GraphHeaderView.xib */; };
 		4CAA0E3223718782008BB432 /* SurveyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA0E3123718782008BB432 /* SurveyResponse.swift */; };
 		5F8B092C3BC88E536F11BF7A /* Pods_FynzoSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AED3BE15D3413B80E12E8F3 /* Pods_FynzoSurvey.framework */; };
 		7165960D21ECEA9000D55A14 /* SwifterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7165960C21ECEA9000D55A14 /* SwifterSwift.swift */; };
@@ -139,6 +143,8 @@
 		C90A34AB23432DD7004092CF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A34AA23432DD7004092CF /* FirstViewController.swift */; };
 		C90A34AD23433BBD004092CF /* ORDesinables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A34AC23433BBD004092CF /* ORDesinables.swift */; };
 		C90A34AF23434E7C004092CF /* SurveyorLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A34AE23434E7C004092CF /* SurveyorLoginViewController.swift */; };
+		C92695D0237591D400783818 /* SimplePieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92695CF237591D400783818 /* SimplePieChartView.swift */; };
+		C92695D32375925800783818 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92695D22375925800783818 /* GraphViewController.swift */; };
 		C975C539236C2C030078D5FD /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C975C538236C2C030078D5FD /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
@@ -240,6 +246,10 @@
 		25FEE056234E483300BF002A /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
 		25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.otf"; sourceTree = "<group>"; };
 		457444D65E7D507BC1774A41 /* Pods-MyMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayer/Pods-MyMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		4C6866FD237598CF00652837 /* GraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTableViewCell.swift; sourceTree = "<group>"; };
+		4C6866FE237598CF00652837 /* GraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphTableViewCell.xib; sourceTree = "<group>"; };
+		4C68670923759E3400652837 /* GraphHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphHeaderView.swift; sourceTree = "<group>"; };
+		4C68670A23759E3500652837 /* GraphHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphHeaderView.xib; sourceTree = "<group>"; };
 		4CAA0E3123718782008BB432 /* SurveyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResponse.swift; sourceTree = "<group>"; };
 		5660DA197C549C5D7488CB83 /* Pods-FynzoSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FynzoSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey.release.xcconfig"; sourceTree = "<group>"; };
 		5AED3BE15D3413B80E12E8F3 /* Pods_FynzoSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FynzoSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,6 +292,8 @@
 		C90A34AA23432DD7004092CF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		C90A34AC23433BBD004092CF /* ORDesinables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ORDesinables.swift; sourceTree = "<group>"; };
 		C90A34AE23434E7C004092CF /* SurveyorLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyorLoginViewController.swift; sourceTree = "<group>"; };
+		C92695CF237591D400783818 /* SimplePieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePieChartView.swift; sourceTree = "<group>"; };
+		C92695D22375925800783818 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		C975C538236C2C030078D5FD /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -438,6 +450,7 @@
 		25230792236415CD002A6A24 /* Report */ = {
 			isa = PBXGroup;
 			children = (
+				C92695D12375921E00783818 /* Graph */,
 				25348D9023655A46006B8AA0 /* ImportSurvey */,
 				2523079A236425EC002A6A24 /* ResponseDetail */,
 				2523079323642277002A6A24 /* Response */,
@@ -518,6 +531,7 @@
 		254A84C7234F91D600B35EF0 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C92695CF237591D400783818 /* SimplePieChartView.swift */,
 				254A84C8234F91D600B35EF0 /* UserManager.swift */,
 				25067C162353162F005F7115 /* FynzoAPIManager.swift */,
 				25067C152353162F005F7115 /* FynzoWebServices.swift */,
@@ -789,6 +803,18 @@
 			path = ActionSheet;
 			sourceTree = "<group>";
 		};
+		C92695D12375921E00783818 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				4C68670923759E3400652837 /* GraphHeaderView.swift */,
+				4C68670A23759E3500652837 /* GraphHeaderView.xib */,
+				C92695D22375925800783818 /* GraphViewController.swift */,
+				4C6866FD237598CF00652837 /* GraphTableViewCell.swift */,
+				4C6866FE237598CF00652837 /* GraphTableViewCell.xib */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -869,6 +895,7 @@
 				25FEE07E234E483300BF002A /* Poppins-SemiBoldItalic.otf in Resources */,
 				250C11472351C4D300758B04 /* CardCollectionViewCell.xib in Resources */,
 				250C115523521EAC00758B04 /* TextfieldTableViewCell.xib in Resources */,
+				4C68670C23759E3500652837 /* GraphHeaderView.xib in Resources */,
 				25FEE083234E483300BF002A /* Poppins-Light.otf in Resources */,
 				250C11292351A78C00758B04 /* StarCollectionViewCell.xib in Resources */,
 				25FEE085234E483300BF002A /* Poppins-Medium.otf in Resources */,
@@ -889,6 +916,7 @@
 				250C113C2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.xib in Resources */,
 				71D444B721ECF8BB00BD1AB1 /* KPItemView.xib in Resources */,
 				71917E8B21ECBC6A0077ADF4 /* SuccessViewController.xib in Resources */,
+				4C686700237598CF00652837 /* GraphTableViewCell.xib in Resources */,
 				254A84D6234F97DE00B35EF0 /* SideMenuTableViewCell.xib in Resources */,
 				71D444AA21ECF5AE00BD1AB1 /* LaunchScreen.storyboard in Resources */,
 				25348D9623655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.xib in Resources */,
@@ -1003,9 +1031,11 @@
 				254A84DA234F9EA700B35EF0 /* SettingViewController.swift in Sources */,
 				25FEE07C234E483300BF002A /* LoaderView.swift in Sources */,
 				254A84C6234F8F2E00B35EF0 /* HomeViewController.swift in Sources */,
+				4C68670B23759E3500652837 /* GraphHeaderView.swift in Sources */,
 				25FEE076234E483300BF002A /* Fynzo+Font.swift in Sources */,
 				7165961121ECEAAD00D55A14 /* SCLAlertView.swift in Sources */,
 				25067C1723531630005F7115 /* FynzoWebServices.swift in Sources */,
+				4C6866FF237598CF00652837 /* GraphTableViewCell.swift in Sources */,
 				25230790236415B6002A6A24 /* ReportViewController.swift in Sources */,
 				25348D992365620A006B8AA0 /* TemplatesViewController.swift in Sources */,
 				71917E8421ECB8CE0077ADF4 /* UIView+Nib.swift in Sources */,
@@ -1015,6 +1045,8 @@
 				71D444B621ECF8BB00BD1AB1 /* KPItem.swift in Sources */,
 				71917E8521ECB8CE0077ADF4 /* CustomizedNavigation.swift in Sources */,
 				250C114A2351C64600758B04 /* CardInnerCollectionViewCell.swift in Sources */,
+				C92695D0237591D400783818 /* SimplePieChartView.swift in Sources */,
+				C92695D32375925800783818 /* GraphViewController.swift in Sources */,
 				250C115023521E7800758B04 /* TextfieldCollectionViewCell.swift in Sources */,
 				254A84D8234F99B600B35EF0 /* UIViewController+SideMenu.swift in Sources */,
 				71D444B921ECF8BB00BD1AB1 /* KPItemView.swift in Sources */,

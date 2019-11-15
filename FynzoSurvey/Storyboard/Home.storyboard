@@ -761,6 +761,40 @@
             </objects>
             <point key="canvasLocation" x="5534.7826086956529" y="124.55357142857142"/>
         </scene>
+        <!--Graph View Controller-->
+        <scene sceneID="6pw-dJ-RU4">
+            <objects>
+                <viewController storyboardIdentifier="GraphViewController" id="uvU-x6-64h" customClass="GraphViewController" customModule="FynzoSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tqi-BE-6Lm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="1ta-xu-vRM">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uvU-x6-64h" id="ieA-J3-bq0"/>
+                                    <outlet property="delegate" destination="uvU-x6-64h" id="b3j-JA-tdH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1ta-xu-vRM" firstAttribute="leading" secondItem="qlc-gl-Dnt" secondAttribute="leading" id="PdX-d6-2Qo"/>
+                            <constraint firstItem="1ta-xu-vRM" firstAttribute="top" secondItem="qlc-gl-Dnt" secondAttribute="top" id="Qdm-xe-yd6"/>
+                            <constraint firstItem="qlc-gl-Dnt" firstAttribute="bottom" secondItem="1ta-xu-vRM" secondAttribute="bottom" id="S4h-WY-aNS"/>
+                            <constraint firstItem="qlc-gl-Dnt" firstAttribute="trailing" secondItem="1ta-xu-vRM" secondAttribute="trailing" id="iSt-40-oox"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qlc-gl-Dnt"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="1ta-xu-vRM" id="oeJ-ve-wKu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zIu-6j-WlT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6315" y="120"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backward" width="225" height="225"/>

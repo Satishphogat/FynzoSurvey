@@ -1,4 +1,5 @@
 PODS:
+  - ABGaugeViewKit (1.0.1)
   - Alamofire (4.6.0)
   - ALCameraViewController (3.0.2)
   - Cosmos (20.0.1)
@@ -10,6 +11,7 @@ PODS:
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
+  - ABGaugeViewKit
   - Alamofire (= 4.6.0)
   - ALCameraViewController (= 3.0.2)
   - Cosmos
@@ -20,6 +22,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ABGaugeViewKit
     - Alamofire
     - ALCameraViewController
     - Cosmos
@@ -29,6 +32,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  ABGaugeViewKit: b69c855c2878e5ba49605b0662d409c1577ed198
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   ALCameraViewController: 1edce3497633f0df138523645ed1228961ee2eab
   Cosmos: b47fddf2102bb48580cd3025d9ce0a5c658a65da
@@ -37,6 +41,6 @@ SPEC CHECKSUMS:
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 5cfe78b316171ca9f54a73e1d1aed16057878aa2
+PODFILE CHECKSUM: 02b637219863cb9c7d0bfccc66a9d3e84ce26b72
 
 COCOAPODS: 1.8.4

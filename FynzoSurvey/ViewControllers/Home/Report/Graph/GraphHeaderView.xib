@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GraphHeaderView" customModule="FynzoSurvey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="372"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WvA-Lj-rhL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="372"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ct-ri-9NG">
+                            <rect key="frame" x="12" y="12" width="351" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="tJU-sb-IcO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nsk-qk-l0L" customClass="SimplePieChartView" customModule="FynzoSurvey" customModuleProvider="target">
+                            <rect key="frame" x="67.5" y="66" width="240" height="240"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="240" id="eJs-u3-O9Q"/>
+                                <constraint firstAttribute="height" constant="240" id="gwu-eK-W1I"/>
+                            </constraints>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXG-8c-Rub">
+                            <rect key="frame" x="47.5" y="66" width="280" height="298"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RP8-Gx-OYf" customClass="ABGaugeView" customModule="ABGaugeViewKit">
+                                    <rect key="frame" x="20" y="0.0" width="240" height="240"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="arcAngle">
+                                            <real key="value" value="1.8"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="needleColor">
+                                            <color key="value" name="appThemeColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundCap" value="NO"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="needleValue">
+                                            <real key="value" value="50"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Net Promoter Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwU-2A-jmR">
+                                    <rect key="frame" x="8" y="263" width="180" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="180" id="S5v-xM-jIG"/>
+                                        <constraint firstAttribute="height" constant="25" id="p6d-1S-4JU"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57t-FM-a3R">
+                                    <rect key="frame" x="193" y="263" width="82" height="25"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="57t-FM-a3R" firstAttribute="leading" secondItem="gwU-2A-jmR" secondAttribute="trailing" constant="5" id="1kz-ll-MZa"/>
+                                <constraint firstItem="gwU-2A-jmR" firstAttribute="leading" secondItem="GXG-8c-Rub" secondAttribute="leading" constant="8" id="FJG-NP-FOL"/>
+                                <constraint firstAttribute="bottom" secondItem="gwU-2A-jmR" secondAttribute="bottom" constant="10" id="FqL-Fd-fUw"/>
+                                <constraint firstAttribute="trailing" secondItem="57t-FM-a3R" secondAttribute="trailing" constant="5" id="eXV-mR-9DW"/>
+                                <constraint firstItem="57t-FM-a3R" firstAttribute="height" secondItem="gwU-2A-jmR" secondAttribute="height" id="hdt-mH-FSj"/>
+                                <constraint firstItem="57t-FM-a3R" firstAttribute="centerY" secondItem="gwU-2A-jmR" secondAttribute="centerY" id="svv-Fh-Vm1"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="RP8-Gx-OYf" firstAttribute="width" secondItem="Nsk-qk-l0L" secondAttribute="width" id="38Z-AM-2yh"/>
+                        <constraint firstItem="Nsk-qk-l0L" firstAttribute="centerX" secondItem="WvA-Lj-rhL" secondAttribute="centerX" id="41x-tg-79q"/>
+                        <constraint firstItem="GXG-8c-Rub" firstAttribute="leading" secondItem="Nsk-qk-l0L" secondAttribute="leading" constant="-20" id="FUP-K7-xWs"/>
+                        <constraint firstAttribute="trailing" secondItem="3Ct-ri-9NG" secondAttribute="trailing" constant="12" id="GvW-0n-dx4"/>
+                        <constraint firstItem="RP8-Gx-OYf" firstAttribute="centerX" secondItem="Nsk-qk-l0L" secondAttribute="centerX" id="Gyp-8P-g2k"/>
+                        <constraint firstItem="GXG-8c-Rub" firstAttribute="trailing" secondItem="Nsk-qk-l0L" secondAttribute="trailing" constant="20" id="Ijp-U4-bDf"/>
+                        <constraint firstItem="3Ct-ri-9NG" firstAttribute="leading" secondItem="WvA-Lj-rhL" secondAttribute="leading" constant="12" id="Mf7-sE-Bpe"/>
+                        <constraint firstItem="RP8-Gx-OYf" firstAttribute="height" secondItem="Nsk-qk-l0L" secondAttribute="height" id="Qqx-d1-TRY"/>
+                        <constraint firstItem="GXG-8c-Rub" firstAttribute="top" secondItem="Nsk-qk-l0L" secondAttribute="top" id="Rg4-2M-Fg2"/>
+                        <constraint firstItem="RP8-Gx-OYf" firstAttribute="centerY" secondItem="Nsk-qk-l0L" secondAttribute="centerY" id="WKT-0z-jOC"/>
+                        <constraint firstItem="3Ct-ri-9NG" firstAttribute="top" secondItem="WvA-Lj-rhL" secondAttribute="top" constant="12" id="hew-16-S3g"/>
+                        <constraint firstItem="GXG-8c-Rub" firstAttribute="bottom" secondItem="Nsk-qk-l0L" secondAttribute="bottom" constant="58" id="ubQ-u1-Qgx"/>
+                        <constraint firstItem="Nsk-qk-l0L" firstAttribute="centerY" secondItem="WvA-Lj-rhL" secondAttribute="centerY" id="y5E-DY-DI1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="WvA-Lj-rhL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KWS-CY-lQy"/>
+                <constraint firstAttribute="bottom" secondItem="WvA-Lj-rhL" secondAttribute="bottom" id="NbH-9o-TwU"/>
+                <constraint firstItem="WvA-Lj-rhL" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="PpF-xB-Ssf"/>
+                <constraint firstAttribute="trailing" secondItem="WvA-Lj-rhL" secondAttribute="trailing" id="Tbr-dW-gBa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="graphView" destination="Nsk-qk-l0L" id="Owk-Qe-LoP"/>
+                <outlet property="netPromoterTitleLabel" destination="gwU-2A-jmR" id="EKG-AZ-c9M"/>
+                <outlet property="netPromoterValueLabel" destination="57t-FM-a3R" id="sTy-l0-rat"/>
+                <outlet property="speedometerContainerView" destination="GXG-8c-Rub" id="Sao-si-NYu"/>
+                <outlet property="speedometerView" destination="RP8-Gx-OYf" id="8OO-8d-Zlt"/>
+                <outlet property="titleLabel" destination="3Ct-ri-9NG" id="IJf-Ye-nXI"/>
+            </connections>
+            <point key="canvasLocation" x="173.59999999999999" y="597.30134932533736"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="appThemeColor">
+            <color red="0.27058823529411763" green="0.59999999999999998" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
