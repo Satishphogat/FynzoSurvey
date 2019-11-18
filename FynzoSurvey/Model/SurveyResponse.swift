@@ -30,3 +30,9 @@ struct GraphReportResponse {
         questions = json["qquestions"].dictionaryValue
     }
 }
+
+struct GraphDetailView {
+    
+    var questionText = ""
+    var questions = [Question]()
+}

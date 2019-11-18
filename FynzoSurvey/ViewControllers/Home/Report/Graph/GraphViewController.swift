@@ -17,7 +17,7 @@ class GraphViewController: UIViewController {
         }
     }
 
-    var graphArray = [String: [Question]]()
+    var graphArray = [GraphDetailView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class GraphViewController: UIViewController {
 extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return graphArray.keys.count
+        return graphArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -49,60 +49,103 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = GraphHeaderView.instanceFromNib()
+        let dynamicQuestion = (graphArray[section].questions.first ?? Question()).questions
         
-        guard let graphObj = graphArray["\(Array(graphArray.keys)[section])"] else { return UIView()}
-        let count = Array(Set(graphObj.filter({$0.detailResponseAnswer != "<null>"}).map({$0.detailResponseAnswer}))).count
-        if count == 0 {
-            return UIView()
-        }
-        let percentage = Double(100 / count)
         var segments = [Segment]()
         let colors = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow, UIColor.gray, UIColor.blue, UIColor.green]
-        for index in 1...count {
-            let segment = Segment(color: colors[index], value: CGFloat(percentage))
-            segments.append(segment)
-        }
-        
-        headerView.graphView.segments = segments
-        
-        if section == 3 {
-            headerView.speedometerContainerView.isHidden = false
+        if dynamicQuestion.isEmpty {
+            let count = (graphArray[section].questions.filter { $0.detailResponseAnswer != "<null>" || $0.detailResponseAnswer.isEmpty }.map { $0.detailResponseAnswer }).count
+            if count == 0 {
+                return UIView()
+            }
+            let percentage = Double(100 / count)
+            
+            for index in 1...count {
+                let segment = Segment(color: colors[index], value: CGFloat(percentage))
+                segments.append(segment)
+            }
+            
+            headerView.graphView.segments = segments
+            
+            if section == 3 {
+                headerView.speedometerContainerView.isHidden = false
+            } else {
+                headerView.graphView.isHidden = false
+            }
+            
         } else {
+            var graphCounter = 0
+            for item in graphArray[section].questions where !item.rawStringArray.isEmpty {
+                graphCounter += 1
+            }
+            let percentage = Double(100 / graphCounter)
             headerView.graphView.isHidden = false
+            for index in 1...graphCounter {
+                let segment = Segment(color: colors[index], value: CGFloat(percentage))
+                segments.append(segment)
+            }
+            headerView.graphView.segments = segments
         }
-        
-        headerView.titleLabel.text = Array(graphArray.keys)[section]
+        headerView.titleLabel.text = graphArray[section].questionText
         
         return headerView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        let res = (graphArray[section].questions.first ?? Question()).questions
+        
+        return res.isEmpty ? 5 : res.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: GraphTableViewCell.self)
-        let graphObj = graphArray["\(Array(graphArray.keys)[indexPath.section])"]
+        let graphObj = graphArray[indexPath.section].questions
+        let dynamicQuestion = (graphArray[indexPath.section].questions.first ?? Question()).questions
         
-        if graphObj?.first?.questionTypeId == "3" {
+        if !dynamicQuestion.isEmpty {
             cell.titleLabel.isHidden = false
             cell.starView.isHidden = true
-            if let questions = graphObj.map({$0.first?.questions.map({$0.choice})}) {
-                cell.titleLabel.text = questions?[indexPath.row] ?? ""
+            cell.titleLabel.text = dynamicQuestion[indexPath.row].choice
+            
+            let value = graphObj.filter({$0.detailResponseAnswer == String(indexPath.row + 1)}).isEmpty ? "null" : String(graphObj.filter({$0.detailResponseAnswer == String(indexPath.row + 1)}).count)
+            cell.valueLabel.text = value
+            if cell.valueLabel.text != "null" {
+                let numberOfValues = graphObj.filter({$0.detailResponseAnswer != "<null>"}).count / (Int(value ) ?? 0)
+                cell.percentageLabel.text = String(Double(100 / numberOfValues)) + "%"
+            } else {
+                cell.percentageLabel.text = "0.00%"
             }
+            let responseString = graphObj.map({$0.rawStringArray.first ?? ""})
+            var stringArray = [""]
+            for id in responseString {
+                for obj in (graphObj.first?.questions ?? [Question()]) where obj.id == id {
+                    stringArray.append(obj.choice)
+                }
+            }
+            print(stringArray)
+            var numberOfTimeValuePresent = 0
+            for value in stringArray where value == cell.titleLabel.text {
+                numberOfTimeValuePresent += 1
+            }
+            cell.valueLabel.text = String(numberOfTimeValuePresent)
+            if numberOfTimeValuePresent == 0 {
+                cell.percentageLabel.text = "0.00"
+            } else {
+                cell.percentageLabel.text = String(Double(100 / (stringArray.count - 1) / numberOfTimeValuePresent)) + "%"
+            }
+            //let responseValue = graphArray[indexPath.section].questions[indexPath.row].rawStringArray.first ?? ""
+            
         } else {
             cell.starView.isHidden = false
             cell.titleLabel.isHidden = true
             cell.starView.rating = Double(indexPath.row + 1)
-            if let graphObj = graphObj {
-                let value = graphObj.filter({$0.detailResponseAnswer == String(indexPath.row + 1)}).isEmpty ? "null" : String(graphObj.filter({$0.detailResponseAnswer == String(indexPath.row + 1)}).count)
-                cell.valueLabel.text = value
-                if cell.valueLabel.text != "null" {
-                    let numberOfValues = graphObj.filter({$0.detailResponseAnswer != "<null>"}).count / (Int(value ) ?? 0)
-                    cell.percentageLabel.text = String(Double(100 / numberOfValues)) + "%"
-                } else {
-                    cell.percentageLabel.text = "0.00%"
-                }
+            let value = graphObj.filter({$0.detailResponseAnswer == String(indexPath.row + 1)}).isEmpty ? "null" : String(graphObj.filter({$0.detailResponseAnswer == String(indexPath.row + 1)}).count)
+            cell.valueLabel.text = value
+            if cell.valueLabel.text != "null" {
+                let numberOfValues = graphObj.filter({$0.detailResponseAnswer != "<null>"}).count / (Int(value ) ?? 0)
+                cell.percentageLabel.text = String(Double(100 / numberOfValues)) + "%"
+            } else {
+                cell.percentageLabel.text = "0.00%"
             }
         }
         

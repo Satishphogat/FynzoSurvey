@@ -22,6 +22,7 @@ struct Question {
     var selectedScale = -1
     var detailResponseAnswer = ""
     var detailResponseAnswerArray = [String]()
+    var rawStringArray = [String]()
     var questionText = ""
     var screenNo = 0
     var questingNo = 0

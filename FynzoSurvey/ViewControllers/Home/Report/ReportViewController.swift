@@ -19,7 +19,7 @@ class ReportViewController: UIViewController {
     var form = Form()
     var graphReport = GraphReportResponse()
     var questionResponse = [Question]()
-    var graphArray = [String: [Question]]()
+    var graphArray = [GraphDetailView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +39,7 @@ class ReportViewController: UIViewController {
                     if let temp = graphReport.questions[value.key] {
                         var updatedQuestion = Question(json: JSON(temp))
                         if let res = value.value as? [String] {
+                            updatedQuestion.rawStringArray = res
                             for item in res {
                                 let selectedQuestion = updatedQuestion.questions.filter { $0.id == item}.first ?? Question()
                                 updatedQuestion.detailResponseAnswerArray.append(selectedQuestion.choice)
@@ -128,15 +129,18 @@ class ReportViewController: UIViewController {
         }
         
         if let questionTexts = withoutNameArray.map({$0.map({$0.questionText})}).first {
-        for text in questionTexts {
-            var answerArray = [Question]()
-            for obj in withoutNameArray {
-                for specificObj in obj where specificObj.questionText == text && specificObj.questionTypeId != "1" {
-                    answerArray.append(specificObj)
+            for text in questionTexts {
+                var answerArray = [Question]()
+                for obj in withoutNameArray {
+                    for specificObj in obj where specificObj.questionText == text && specificObj.questionTypeId != "1" {
+                        answerArray.append(specificObj)
+                    }
                 }
+                var temp = GraphDetailView()
+                temp.questionText = text
+                temp.questions = answerArray
+                graphArray.append(temp)
             }
-            graphArray["\(text)"] = answerArray
-        }
         }
     }
     
