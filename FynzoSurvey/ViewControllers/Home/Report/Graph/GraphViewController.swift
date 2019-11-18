@@ -19,6 +19,8 @@ class GraphViewController: UIViewController {
 
     var graphArray = [GraphDetailView]()
     
+    var meeterStaticArr = [(title: "Detractors", value: ""), (title: "Passive", value: ""), (title: "Promoters", value: "")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,11 +51,30 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = GraphHeaderView.instanceFromNib()
-        let dynamicQuestion = (graphArray[section].questions.first ?? Question()).questions
-        
+        let dynamicQuestion = graphArray[section].questions.first ?? Question()
+        headerView.speedometerContainerView.isHidden = true
+        headerView.graphView.isHidden = false
+
         var segments = [Segment]()
         let colors = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow, UIColor.gray, UIColor.blue, UIColor.green]
-        if dynamicQuestion.isEmpty {
+        
+        if dynamicQuestion.questionTypeId == "5" && dynamicQuestion.question.isNps == "1" {
+            headerView.speedometerContainerView.isHidden = false
+            headerView.graphView.isHidden = true
+            let ansArray = graphArray[section].questions.map { $0.detailResponseAnswer }
+            var prometrs = 0
+            var detractors = 0
+            for item in ansArray {
+                if (Int(item) ?? 0) >= 9 {
+                    prometrs += 1
+                } else if (Int(item) ?? 0) < 7 {
+                    detractors += 1
+                }
+            }
+            let meterValue = ((prometrs - detractors) / 100) * 100
+            headerView.netPromoterValueLabel.text = "\(meterValue)"
+            headerView.speedometerView.arcAngle = CGFloat(meterValue)
+        } else if dynamicQuestion.questions.isEmpty {
             let count = (graphArray[section].questions.filter { $0.detailResponseAnswer != "<null>" || $0.detailResponseAnswer.isEmpty }.map { $0.detailResponseAnswer }).count
             if count == 0 {
                 return UIView()
@@ -66,20 +87,15 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
             }
             
             headerView.graphView.segments = segments
-            
-            if section == 3 {
-                headerView.speedometerContainerView.isHidden = false
-            } else {
-                headerView.graphView.isHidden = false
-            }
-            
         } else {
             var graphCounter = 0
             for item in graphArray[section].questions where !item.rawStringArray.isEmpty {
                 graphCounter += 1
             }
+            if graphCounter == 0 {
+                graphCounter = 1
+            }
             let percentage = Double(100 / graphCounter)
-            headerView.graphView.isHidden = false
             for index in 1...graphCounter {
                 let segment = Segment(color: colors[index], value: CGFloat(percentage))
                 segments.append(segment)
@@ -93,11 +109,21 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let res = (graphArray[section].questions.first ?? Question()).questions
-        
-        return res.isEmpty ? 5 : res.count
+        let dynamicQuestion = graphArray[section].questions.first ?? Question()
+        if dynamicQuestion.questionTypeId == "5" && dynamicQuestion.question.isNps == "1" {
+            return meeterStaticArr.count
+        } else {
+            return res.isEmpty ? 5 : res.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let headerQuesttype = graphArray[indexPath.section].questions.first ?? Question()
+        if headerQuesttype.questionTypeId == "5" && headerQuesttype.question.isNps == "1" {
+            return meeterCell(indexPath)
+        }
+        
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: GraphTableViewCell.self)
         let graphObj = graphArray[indexPath.section].questions
         let dynamicQuestion = (graphArray[indexPath.section].questions.first ?? Question()).questions
@@ -150,5 +176,33 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
        return cell
+    }
+    
+    private func meeterCell(_ indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: GraphTableViewCell.self)
+        cell.titleLabel.isHidden = false
+        cell.starView.isHidden = true
+        cell.titleLabel.text = meeterStaticArr[indexPath.row].title
+        
+        let ansArray = graphArray[indexPath.section].questions.map { $0.detailResponseAnswer}
+        let arrayWithoutNull = ansArray.filter({$0 != "<null>"})
+        meeterStaticArr[0].value = String(arrayWithoutNull.filter({Int($0) ?? 0 < 7}).count)
+        meeterStaticArr[1].value = String(arrayWithoutNull.filter({Int($0) ?? 0 > 6 && Int($0) ?? 0 < 9}).count)
+        meeterStaticArr[2].value = String(arrayWithoutNull.filter({Int($0) ?? 0 > 8}).count)
+
+        cell.valueLabel.text = meeterStaticArr[indexPath.row].value
+        if var count = Int(meeterStaticArr[indexPath.row].value), count > 0 {
+            count = count == 0 ? 1 : count
+            let arrayCount = arrayWithoutNull.isEmpty ? 1 : arrayWithoutNull.count
+            let temp = arrayCount / count
+            cell.percentageLabel.text = String(100 / temp) + "%"
+        } else {
+            cell.percentageLabel.text =  "0 %"
+
+        }
+//        headerView.netPromoterValueLabel.text = "\(meterValue)"
+//        headerView.speedometerView.arcAngle = CGFloat(meterValue)
+        
+        return cell
     }
 }

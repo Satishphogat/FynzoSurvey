@@ -28,6 +28,7 @@ struct Question {
     var questingNo = 0
     var questionTypeId = ""
     var questions = [Question]()
+    var question = NpsCheck()
     
     init(json: JSON = JSON.null) {
         id          = json[Fynzo.ApiKey.id].stringValue
@@ -44,6 +45,7 @@ struct Question {
         questingNo   = Int(json[Fynzo.ApiKey.questionNo].stringValue) ?? 0
         questionTypeId          = json[Fynzo.ApiKey.questionTypeId].stringValue
         questions          = Question.models(from: json["question"].arrayValue)
+        question = NpsCheck(json["question"])
     }
     
     static func models(from jsonArray: [JSON]) -> [Question] {
@@ -52,5 +54,15 @@ struct Question {
             models.append(Question(json: json))
         }
         return models
+    }
+}
+
+
+struct NpsCheck {
+    
+    var isNps = ""
+    
+    init(_ json: JSON = JSON.null) {
+        isNps = json["isNps"].stringValue
     }
 }
