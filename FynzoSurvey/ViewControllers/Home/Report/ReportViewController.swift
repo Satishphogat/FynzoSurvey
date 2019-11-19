@@ -155,7 +155,17 @@ class ReportViewController: UIViewController {
     }
     
     @IBAction func graphReportButtonAction() {
+        if graphArray.isEmpty {
+            customizedAlert(message: "No Response Available")
+            
+            return
+        }
         let controller = GraphViewController.instantiate(fromAppStoryboard: .Home)
+        if graphArray.isEmpty {
+            customizedAlert(message: "No Response Available")
+            
+            return
+        }
         controller.graphArray = graphArray
         navigationController?.pushViewController(controller, animated: true)
     }

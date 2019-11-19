@@ -73,7 +73,7 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
             }
             let meterValue = ((prometrs - detractors) / 100) * 100
             headerView.netPromoterValueLabel.text = "\(meterValue)"
-            headerView.speedometerView.arcAngle = CGFloat(meterValue)
+            headerView.speedometerView.needleValue = CGFloat((meterValue == 0 ? 1 : meterValue) / 2 + 50)
         } else if dynamicQuestion.questions.isEmpty {
             let count = (graphArray[section].questions.filter { $0.detailResponseAnswer != "<null>" || $0.detailResponseAnswer.isEmpty }.map { $0.detailResponseAnswer }).count
             if count == 0 {
