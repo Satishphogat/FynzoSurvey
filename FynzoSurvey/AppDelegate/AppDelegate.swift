@@ -8,6 +8,8 @@
 
 import UIKit
 //import IQKeyboardManagerSwift
+import Realm
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !(AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? "").isEmpty {
             moveToDashboard()
         }
+        
+
        
         return true
     }

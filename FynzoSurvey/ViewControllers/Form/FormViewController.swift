@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Kingfisher
+import RealmSwift
 
 class FormViewController: UIViewController {
     
@@ -187,6 +188,50 @@ class FormViewController: UIViewController {
     
     @objc func submitButtonAction() {
         view.endEditing(true)
+        
+        
+//        do {
+//            let realm = try Realm()
+//
+//            do {
+//                try realm.write {
+//                    let test = TestRealm.init(value: "Satish")
+//                    realm.add(test)
+//                }
+//            } catch {
+//                print("Could not write to database: ", error)
+//            }
+//        } catch let error as NSError {
+//            // handle error
+//        }
+        let realm = try! Realm()
+        let test = TestRealm()
+
+        do {
+            test.name = "Maruf"
+            try! realm.write {
+                realm.add(test)
+            }
+        } catch let exp {
+            print(exp)
+        }
+        for obj in realm.objects(test.self) {
+            
+        }
+        
+//        if let user = realm.objects(form).first
+//        {
+//            try! realm.write {
+//                user.name = "James"
+//
+//                if let pet = user.pet
+//                {
+//                    pet.name = "Jack"
+//                }
+//            }
+//
+//            print(realm.objects(User.self).first)
+//        }
         formSubmitApi()
     }
     
@@ -491,4 +536,9 @@ class FormButton: UIButton {
         tintColor = .white
     }
     
+}
+
+class TestRealm: Object {
+    @objc dynamic var name = ""
+    @objc dynamic var id = 0
 }
