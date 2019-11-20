@@ -13,6 +13,7 @@ class AppUserDefaults {
         case image
         case phone
         case homeRefreshTime
+        case form
     }
 }
 

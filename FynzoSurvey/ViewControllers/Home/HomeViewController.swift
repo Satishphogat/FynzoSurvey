@@ -28,7 +28,15 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    @IBOutlet weak var localDataLabel: UILabel!
+    @IBOutlet weak var localDataLabel: UILabel! {
+        didSet {
+            if let updatedTime = AppUserDefaults.value(forKey: .form, fallBackValue: "") as? [[String: Any]] {
+                localDataLabel.text = "\(updatedTime.count) stored locally"
+            } else {
+                localDataLabel.text = "0 stored locally"
+            }
+        }
+    }
     @IBOutlet weak var localFormImageView: UIImageView! {
         didSet {
             localFormImageView.image = #imageLiteral(resourceName: "referesh").imageWithColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
@@ -43,12 +51,16 @@ class HomeViewController: UIViewController {
     
     var isDemoSurvey = false
     var forms = [Form]()
+    var refreshControl = UIRefreshControl()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getFormsApi()
         addFloatingButton()
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +76,11 @@ class HomeViewController: UIViewController {
         } else {
             openMenu()
         }
+    }
+    
+    @objc func pullToRefresh() {
+        getFormsApi()
+        refreshControl.endRefreshing()
     }
     
     private func getFormsApi() {
@@ -152,9 +169,19 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func uploadLocalDataButtonAction(_ sender: UIButton) {
-        
+        if var updatedTime = AppUserDefaults.value(forKey: .form, fallBackValue: "") as? [[String: Any]] {
+            localDataLabel.text = "\(updatedTime.count) stored locally"
+            for index in 0..<updatedTime.count {
+                FynzoWebServices.shared.submitForm(controller: self, parameters: updatedTime[index]) { [weak self](json, error) in
+                    guard let `self` = self else { return }
+                    
+                    AppUserDefaults.removeValue(forKey: .form)
+                    self.localDataLabel.text = "0 stored locally"
+                }
+            }
+        }
     }
-}
+ }
 
 extension HomeViewController: UITableViewDataSource {
     

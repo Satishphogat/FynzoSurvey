@@ -18,7 +18,7 @@ class GraphViewController: UIViewController {
     }
 
     var graphArray = [GraphDetailView]()
-    
+    let starColors = [#colorLiteral(red: 0.3098039216, green: 0.5137254902, blue: 0.7254901961, alpha: 1), #colorLiteral(red: 0.7490196078, green: 0.3098039216, blue: 0.3137254902, alpha: 1), #colorLiteral(red: 0.6117647059, green: 0.7294117647, blue: 0.3764705882, alpha: 1), #colorLiteral(red: 0.1725490196, green: 0.7490196078, blue: 0.6705882353, alpha: 1), #colorLiteral(red: 0.4862745098, green: 0.4039215686, blue: 0.6235294118, alpha: 1), #colorLiteral(red: 0.9647058824, green: 0.5803921569, blue: 0.3137254902, alpha: 1), #colorLiteral(red: 0.3098039216, green: 0.5137254902, blue: 0.7254901961, alpha: 1), #colorLiteral(red: 0.7490196078, green: 0.3098039216, blue: 0.3137254902, alpha: 1), #colorLiteral(red: 0.6117647059, green: 0.7294117647, blue: 0.3764705882, alpha: 1), #colorLiteral(red: 0.1725490196, green: 0.7490196078, blue: 0.6705882353, alpha: 1), #colorLiteral(red: 0.4862745098, green: 0.4039215686, blue: 0.6235294118, alpha: 1)]
     var meeterStaticArr = [(title: "Detractors", value: ""), (title: "Passive", value: ""), (title: "Promoters", value: "")]
     
     override func viewDidLoad() {
@@ -56,7 +56,6 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
         headerView.graphView.isHidden = false
 
         var segments = [Segment]()
-        let colors = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow, UIColor.gray, UIColor.blue, UIColor.green]
         
         if dynamicQuestion.questionTypeId == "5" && dynamicQuestion.question.isNps == "1" {
             headerView.speedometerContainerView.isHidden = false
@@ -75,29 +74,47 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
             headerView.netPromoterValueLabel.text = "\(meterValue)"
             headerView.speedometerView.needleValue = CGFloat((meterValue == 0 ? 1 : meterValue) / 2 + 50)
         } else if dynamicQuestion.questions.isEmpty {
-            let count = (graphArray[section].questions.filter { $0.detailResponseAnswer != "<null>" || $0.detailResponseAnswer.isEmpty }.map { $0.detailResponseAnswer }).count
-            if count == 0 {
-                return UIView()
+            let ansArray = graphArray[section].questions.map { $0.detailResponseAnswer }
+            var starArray = [false, false, false, false, false, false]
+            for item in ansArray {
+                let val = Int(item) ?? 0
+                if val < 6 {
+                    starArray[val] = true
+                }
             }
-            let percentage = Double(100 / count)
-            
-            for index in 1...count {
+            starArray.removeFirst()
+            let percentage = Double(100 / (starArray.filter {$0}.count))
+            var colors = [UIColor]()
+            for index in (0..<starArray.count) {
+                if starArray[index] {
+                    colors.append(starColors[index])
+                }
+            }
+            for index in (0..<starArray.filter {$0}.count) {
                 let segment = Segment(color: colors[index], value: CGFloat(percentage))
                 segments.append(segment)
             }
             
             headerView.graphView.segments = segments
         } else {
-            var graphCounter = 0
-            for item in graphArray[section].questions where !item.rawStringArray.isEmpty {
-                graphCounter += 1
+            let graphObj = graphArray[section].questions
+            let responseString = graphObj.map({$0.rawStringArray.first ?? ""})
+            var stringArray = [String]()
+            for id in responseString {
+                for obj in (graphObj.first?.questions ?? [Question()]) where obj.id == id {
+                    stringArray.append(obj.choice)
+                }
             }
-            if graphCounter == 0 {
-                graphCounter = 1
+            var colors = [UIColor]()
+            let questionTitles = (graphArray[section].questions.first ?? Question()).questions
+            for index in (0..<(questionTitles.map { $0.choice }).count) {
+                if stringArray.contains((questionTitles.map { $0.choice })[index]) {
+                    colors.append(starColors[index])
+                }
             }
-            let percentage = Double(100 / graphCounter)
-            for index in 1...graphCounter {
-                let segment = Segment(color: colors[index], value: CGFloat(percentage))
+            let percentage = Double(100 / colors.count)
+            for item in colors {
+                let segment = Segment(color: item, value: CGFloat(percentage))
                 segments.append(segment)
             }
             headerView.graphView.segments = segments
@@ -127,7 +144,7 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: GraphTableViewCell.self)
         let graphObj = graphArray[indexPath.section].questions
         let dynamicQuestion = (graphArray[indexPath.section].questions.first ?? Question()).questions
-        
+        cell.sideIndecatorLabel.backgroundColor = starColors[indexPath.row]
         if !dynamicQuestion.isEmpty {
             cell.titleLabel.isHidden = false
             cell.starView.isHidden = true
@@ -159,8 +176,6 @@ extension GraphViewController: UITableViewDataSource, UITableViewDelegate {
             } else {
                 cell.percentageLabel.text = String(Double(100 / (stringArray.count - 1) / numberOfTimeValuePresent)) + "%"
             }
-            //let responseValue = graphArray[indexPath.section].questions[indexPath.row].rawStringArray.first ?? ""
-            
         } else {
             cell.starView.isHidden = false
             cell.titleLabel.isHidden = true

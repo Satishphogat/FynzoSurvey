@@ -20,6 +20,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opb-XG-qrm">
+                        <rect key="frame" x="0.0" y="0.0" width="8" height="49.5"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="8" id="y79-1p-NI6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1sg-s2-SuK" customClass="CosmosView" customModule="Cosmos">
                         <rect key="frame" x="15" y="15" width="128" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,6 +99,7 @@
                     <constraint firstItem="4BC-B9-1fk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Btg-lr-Bwd"/>
                     <constraint firstItem="1sg-s2-SuK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="G3S-GT-GiB"/>
                     <constraint firstItem="GU4-um-p8h" firstAttribute="leading" secondItem="4BC-B9-1fk" secondAttribute="trailing" constant="15" id="JQ2-fO-67z"/>
+                    <constraint firstItem="opb-XG-qrm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Rzk-iH-LQo"/>
                     <constraint firstItem="1RF-l8-vNf" firstAttribute="height" secondItem="1sg-s2-SuK" secondAttribute="height" id="Swi-LX-luG"/>
                     <constraint firstItem="1RF-l8-vNf" firstAttribute="centerY" secondItem="1sg-s2-SuK" secondAttribute="centerY" id="XFX-Re-YVf"/>
                     <constraint firstItem="4BC-B9-1fk" firstAttribute="leading" secondItem="1sg-s2-SuK" secondAttribute="trailing" constant="15" id="i8Y-T5-chO"/>
@@ -96,11 +107,14 @@
                     <constraint firstItem="4BC-B9-1fk" firstAttribute="leading" secondItem="1RF-l8-vNf" secondAttribute="trailing" constant="15" id="rfi-ke-pPY"/>
                     <constraint firstItem="GU4-um-p8h" firstAttribute="centerY" secondItem="4BC-B9-1fk" secondAttribute="centerY" id="tj0-V7-Bpj"/>
                     <constraint firstItem="1sg-s2-SuK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="tsT-sq-MLY"/>
+                    <constraint firstItem="opb-XG-qrm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tze-zE-vg4"/>
+                    <constraint firstItem="opb-XG-qrm" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="xS7-3w-TJr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="percentageLabel" destination="4BC-B9-1fk" id="XzO-zh-xW2"/>
+                <outlet property="sideIndecatorLabel" destination="opb-XG-qrm" id="2jN-Ak-ZYW"/>
                 <outlet property="starView" destination="1sg-s2-SuK" id="Kgv-D3-em9"/>
                 <outlet property="titleLabel" destination="1RF-l8-vNf" id="RsH-6c-1jZ"/>
                 <outlet property="valueLabel" destination="GU4-um-p8h" id="H0u-8m-vMh"/>

@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import Kingfisher
 import RealmSwift
+import Alamofire
 
 class FormViewController: UIViewController {
     
@@ -189,49 +190,6 @@ class FormViewController: UIViewController {
     @objc func submitButtonAction() {
         view.endEditing(true)
         
-        
-//        do {
-//            let realm = try Realm()
-//
-//            do {
-//                try realm.write {
-//                    let test = TestRealm.init(value: "Satish")
-//                    realm.add(test)
-//                }
-//            } catch {
-//                print("Could not write to database: ", error)
-//            }
-//        } catch let error as NSError {
-//            // handle error
-//        }
-        let realm = try! Realm()
-        let test = TestRealm()
-
-        do {
-            test.name = "Maruf"
-            try! realm.write {
-                realm.add(test)
-            }
-        } catch let exp {
-            print(exp)
-        }
-        for obj in realm.objects(test.self) {
-            
-        }
-        
-//        if let user = realm.objects(form).first
-//        {
-//            try! realm.write {
-//                user.name = "James"
-//
-//                if let pet = user.pet
-//                {
-//                    pet.name = "Jack"
-//                }
-//            }
-//
-//            print(realm.objects(User.self).first)
-//        }
         formSubmitApi()
     }
     
@@ -255,7 +213,7 @@ class FormViewController: UIViewController {
             let keys = obj.first?.map({$0.id}) ?? []
             let values = (obj.first?.map({$0.questions.filter({$0.isSelected})}).first ?? [Question]()).map({$0.id})
             for index in 0..<keys.count {
-                dict["\(keys[index])"] = values.isEmpty ? "" : values[index]
+                dict["\(keys[index])"] = values.isEmpty ? "" : values[index]//
             }
         }
         // square checkbox
@@ -265,7 +223,7 @@ class FormViewController: UIViewController {
             let keys = obj.first?.map({$0.id}) ?? []
             let values = (((obj.first?.map({$0.questions.filter({$0.isSelected})}) ?? [])?.first) ?? []).map({$0.id})  // array of id of selected questions
             for index in 0..<keys.count {
-                dict["\(keys[index])"] = values
+                dict["\(keys[index])"] = values//
             }
         }
         
@@ -304,6 +262,24 @@ class FormViewController: UIViewController {
         }
         
         parameter["answer"] = dict
+        
+        
+        if !Connectivity.isConnectedToInternet {
+            if var arrayOfSavedForms = AppUserDefaults.value(forKey: AppUserDefaults.Key.form, fallBackValue: false) as? [[String: Any]] {
+                arrayOfSavedForms.append(parameter)
+                AppUserDefaults.save(value: arrayOfSavedForms, forKey: AppUserDefaults.Key.form)
+            } else {
+                AppUserDefaults.save(value: [parameter], forKey: AppUserDefaults.Key.form)
+            }
+            self.customizedAlert(withTitle: "", message: "Form detail saved locally.", completion: { (_) in
+                AppDelegate.shared.moveToDashboard()
+            })
+        } else {
+            submitFormApi(parameter)
+        }
+    }
+    
+    private func submitFormApi(_ parameter: [String: Any]) {
         FynzoWebServices.shared.submitForm(controller: self, parameters: parameter) { [weak self](json, error) in
             guard let `self` = self else { return }
             
@@ -538,7 +514,10 @@ class FormButton: UIButton {
     
 }
 
-class TestRealm: Object {
-    @objc dynamic var name = ""
-    @objc dynamic var id = 0
+struct Connectivity {
+    static let sharedInstance = NetworkReachabilityManager()!
+    static var isConnectedToInternet:Bool {
+        return self.sharedInstance.isReachable
+    }
 }
+

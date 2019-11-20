@@ -52,6 +52,8 @@
                                         <userDefinedRuntimeAttribute type="number" keyPath="needleValue">
                                             <real key="value" value="50"/>
                                         </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="colorCodes" value="BF4F50,F69450,9CBA60"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="areas" value="33,34,33"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Net Promoter Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwU-2A-jmR">
