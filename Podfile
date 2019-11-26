@@ -14,7 +14,7 @@ target 'FynzoSurvey' do
   pod 'ALCameraViewController', '3.0.2'
   pod 'ABGaugeViewKit', '1.0.1'
   pod ‘RealmSwift’
-
+  pod 'IQKeyboardManagerSwift','6.2.0'
 
 
   # Pods for FynzoSurvey

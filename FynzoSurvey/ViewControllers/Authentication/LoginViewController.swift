@@ -111,7 +111,7 @@ class LoginViewController: UIViewController {
     }
     
     private func login() {
-        FynzoWebServices.shared.login(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.email: "user@gmail.com", Fynzo.ApiKey.password: "12345", Fynzo.ApiKey.service: Fynzo.ApiKey.survey]) { [weak self](json, error) in
+        FynzoWebServices.shared.login(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.email: userInfo.email, Fynzo.ApiKey.password: userInfo.password, Fynzo.ApiKey.service: Fynzo.ApiKey.survey]) { [weak self](json, error) in
             guard let `self` = self else { return }
             
             self.handleLoginSuccess(json)
@@ -120,11 +120,13 @@ class LoginViewController: UIViewController {
     
     private func handleLoginSuccess(_ json: JSON) {
         if json["status"].boolValue {
-        userInfo = UserInfo(json: json)
-        AppUserDefaults.save(value: userInfo.id, forKey: .id)
-        AppUserDefaults.save(value: userInfo.name, forKey: .fullName)
-        AppUserDefaults.save(value: userInfo.email, forKey: .email)
-        UserManager.shared.moveToHomeViewController()
+            userInfo = UserInfo(json: json)
+            AppUserDefaults.save(value: userInfo.id, forKey: .id)
+            AppUserDefaults.save(value: userInfo.name, forKey: .fullName)
+            AppUserDefaults.save(value: userInfo.email, forKey: .email)
+            UserManager.shared.moveToHomeViewController()
+        } else {
+            customizedAlert(message: json["msg"].stringValue)
         }
     }
 }

@@ -89,12 +89,17 @@ class SignUpViewController: UIViewController {
             customizedAlert(message: "Please enter email id")
         } else if !userInfo.email.isEmail() {
             customizedAlert(message: "Please enter valid email id.")
+        } else if userInfo.phone.isEmpty {
+            customizedAlert(message: "Please enter Mobile number")
+        } else if userInfo.phone.count < 10 {
+            customizedAlert(message: "Please enter correct Mobile number")
+        } else if userInfo.password.isEmpty {
+            customizedAlert(message: "Please enter Password")
+        } else if userInfo.password.count < 5 {
+            customizedAlert(message: "Password must contain atleast 5 characters")
+        } else if userInfo.company.count < 5 {
+            customizedAlert(message: "Please enter Company/Organization")
         }
-//        else if userInfo.password.isEmpty {
-//            customizedAlert(message: "Please enter Password")
-//        } else if userInfo.password.count < 8 {
-//            customizedAlert(message: "Password must contain atleast 8 characters")
-//        }
         else {
             verify = true
         }
@@ -165,7 +170,7 @@ extension SignUpViewController: UITableViewDataSource {
             cell.textField.textContentType = .emailAddress
         case "Phone":
             cell.textField.text = userInfo.phone
-            cell.textField.keyboardType = .emailAddress
+            cell.textField.keyboardType = .phonePad
             cell.textField.textContentType = .emailAddress
         case "Password":
             cell.textField.text = userInfo.password
@@ -235,11 +240,3 @@ extension SignUpViewController: UITextFieldDelegate {
         return range.location < 50 && string != " "
     }
 }
-
-//extension SignUpViewController: UITextViewDelegate {
-//
-//    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-//        UIApplication.shared.open(URL)
-//        return false
-//    }
-//}

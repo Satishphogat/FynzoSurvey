@@ -10,6 +10,7 @@ import UIKit
 import JJFloatingActionButton
 import SwiftyJSON
 import ALCameraViewController
+import LocalAuthentication
 
 class HomeViewController: UIViewController {
     
@@ -111,6 +112,7 @@ class HomeViewController: UIViewController {
                 self.openForm(sender.tag)
             }),
             KPItem(title: Fynzo.ButtonTitle.openWithLock, titleColor: Fynzo.ColorCode.black, onTap: {
+                self.openWithLock(sender.tag)
             }),
             KPItem(title: Fynzo.ButtonTitle.shareUrl, titleColor: Fynzo.ColorCode.black, onTap: {
                 self.openShareScreen(sender.tag)
@@ -124,6 +126,10 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async {
             self.present(actionSheet, animated: true, completion: nil)
         }
+    }
+    
+    private func openWithLock(_ index: Int) {
+        authenticationWithTouchID(true, index)
     }
     
     private func openForm(_ index: Int) {
@@ -161,7 +167,15 @@ class HomeViewController: UIViewController {
     }
     
     @objc func startButtonAction(_ sender: UIButton) {
-        isDemoSurvey  ? openForm(sender.tag) : openPicker(sender)
+        let savedData = UserDefaults.standard.value(forKey: "Auth" + self.forms[sender.tag].id) as? Bool ?? false
+        
+        if isDemoSurvey {
+            openForm(sender.tag)
+        } else if savedData {
+            authenticationWithTouchID(false, sender.tag)
+        } else {
+            openPicker(sender)
+        }
     }
     
     @IBAction func updateSurveyButtonAction(_ sender: UIButton) {
@@ -204,5 +218,31 @@ extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
+    }
+}
+
+extension HomeViewController {
+    
+    func authenticationWithTouchID(_ isSaveSurvey: Bool, _ index: Int) {
+        let localAuthenticationContext = LAContext()
+        localAuthenticationContext.localizedFallbackTitle = "Enter Passcode"
+        
+        var authError: NSError?
+        let reasonString = "To secure this survey with your passcode"
+        
+        if localAuthenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
+            
+            localAuthenticationContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reasonString) { success, evaluateError in
+                
+                if success {
+                    if isSaveSurvey {
+                        UserDefaults.standard.set(true, forKey: "Auth" + self.forms[index].id)
+                    }
+                    self.openForm(index)
+                }
+            }
+        } else {
+            customizedAlert(message: "Your device does not support Touch Id.")
+        }
     }
 }

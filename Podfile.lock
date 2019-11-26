@@ -3,6 +3,7 @@ PODS:
   - Alamofire (4.6.0)
   - ALCameraViewController (3.0.2)
   - Cosmos (20.0.1)
+  - IQKeyboardManagerSwift (6.2.0)
   - JJFloatingActionButton (2.1.0)
   - Kingfisher (5.8.3):
     - Kingfisher/Core (= 5.8.3)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Alamofire (= 4.6.0)
   - ALCameraViewController (= 3.0.2)
   - Cosmos
+  - IQKeyboardManagerSwift (= 6.2.0)
   - JJFloatingActionButton
   - Kingfisher (= 5.8.3)
   - RealmSwift
@@ -32,6 +34,7 @@ SPEC REPOS:
     - Alamofire
     - ALCameraViewController
     - Cosmos
+    - IQKeyboardManagerSwift
     - JJFloatingActionButton
     - Kingfisher
     - Realm
@@ -44,6 +47,7 @@ SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   ALCameraViewController: 1edce3497633f0df138523645ed1228961ee2eab
   Cosmos: b47fddf2102bb48580cd3025d9ce0a5c658a65da
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   JJFloatingActionButton: 26805f87c7e9f68c6a91bd9f3f09c2e6b904a84f
   Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
   Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
@@ -51,6 +55,6 @@ SPEC CHECKSUMS:
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 57a2654950dcbcfb34aa65dcebe9d6a369dc752c
+PODFILE CHECKSUM: 57b62b375690007192912690a1b27176808d245f
 
 COCOAPODS: 1.8.4

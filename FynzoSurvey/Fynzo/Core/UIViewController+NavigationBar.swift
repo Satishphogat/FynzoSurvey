@@ -14,7 +14,9 @@ extension UIViewController {
     func configureNavigationBar(withTitle title: String = "", leftBarButtonTitle leftTitle: String = "", leftBarImage leftImage: UIImage = UIImage(), rightBarImage rightImage: UIImage = UIImage(), leftSelector leftAction: Selector? = nil, rightSelector rightAction: Selector? = nil, titleColor color: UIColor = .white, shouldShowBackground showBackground: Bool = true, rightBarButtonTitle: String = "") {
         navigationController?.navigationBar.isHidden = false
         if let selector = leftAction {
-            navigationItem.leftBarButtonItem = leftTitle == "" ? CustomNavigationItem.backButton(self, image: leftImage, action: selector) : CustomNavigationItem.leftBarButtonWithTitle(self, buttonTitle: leftTitle, action: selector)
+            let leftButton = leftTitle == "" ? CustomNavigationItem.backButton(self, image: leftImage, action: selector) : CustomNavigationItem.leftBarButtonWithTitle(self, buttonTitle: leftTitle, action: selector)
+            let titleButton = CustomNavigationItem.leftBarButtonWithTitle(self, buttonTitle: title, action: #selector(emptyFunc))
+            navigationItem.leftBarButtonItems = [leftButton, titleButton]
         } else {
             navigationItem.leftBarButtonItem = nil
             navigationItem.hidesBackButton = true
@@ -24,7 +26,9 @@ extension UIViewController {
         } else {
             navigationItem.rightBarButtonItem = nil
         }
-        navigationItem.title = title
+        if leftAction == nil {
+            navigationItem.title = title
+        }
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)]
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.view.backgroundColor = AppDelegate.shared.appThemeColor
@@ -36,6 +40,10 @@ extension UIViewController {
             navigationController?.view.backgroundColor = .clear
             navigationController?.navigationBar.backgroundColor = .clear
         }
+    }
+    
+    @objc func emptyFunc() {
+        
     }
 }
 

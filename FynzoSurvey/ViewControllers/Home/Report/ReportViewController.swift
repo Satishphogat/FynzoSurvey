@@ -11,6 +11,11 @@ import SwiftyJSON
 
 class ReportViewController: UIViewController {
     
+    @IBOutlet weak var reportHeadingLabel: UILabel! {
+        didSet {
+            reportHeadingLabel.text = form.name
+        }
+    }
     @IBOutlet weak var reponseCollectedLabel: UILabel!
     @IBOutlet weak var surveyStatusLabel: UILabel!
     @IBOutlet weak var createdOn: UILabel!
@@ -20,6 +25,12 @@ class ReportViewController: UIViewController {
     var graphReport = GraphReportResponse()
     var questionResponse = [Question]()
     var graphArray = [GraphDetailView]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavigationBar(withTitle: "Report", leftBarImage: #imageLiteral(resourceName: "leftArrowWhite"), leftSelector: #selector(leftButtonAction))
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,12 +153,6 @@ class ReportViewController: UIViewController {
                 graphArray.append(temp)
             }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        configureNavigationBar(withTitle: "Report", leftBarImage: #imageLiteral(resourceName: "leftArrowWhite"), leftSelector: #selector(leftButtonAction))
     }
     
     @objc func leftButtonAction() {
