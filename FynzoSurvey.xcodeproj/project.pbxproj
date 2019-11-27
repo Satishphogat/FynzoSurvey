@@ -252,6 +252,7 @@
 		4C6866FE237598CF00652837 /* GraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphTableViewCell.xib; sourceTree = "<group>"; };
 		4C68670923759E3400652837 /* GraphHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphHeaderView.swift; sourceTree = "<group>"; };
 		4C68670A23759E3500652837 /* GraphHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphHeaderView.xib; sourceTree = "<group>"; };
+		4C948684238E9ABB0038588D /* FynzoSurvey-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FynzoSurvey-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CAA0E3123718782008BB432 /* SurveyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResponse.swift; sourceTree = "<group>"; };
 		5660DA197C549C5D7488CB83 /* Pods-FynzoSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FynzoSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey.release.xcconfig"; sourceTree = "<group>"; };
 		5AED3BE15D3413B80E12E8F3 /* Pods_FynzoSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FynzoSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -539,6 +540,7 @@
 				25067C162353162F005F7115 /* FynzoAPIManager.swift */,
 				25067C152353162F005F7115 /* FynzoWebServices.swift */,
 				254A84C9234F91D600B35EF0 /* AppUserDefaultManager.swift */,
+				4C948684238E9ABB0038588D /* FynzoSurvey-Bridging-Header.h */,
 			);
 			name = Manager;
 			path = FynzoSurvey/Manager;
@@ -831,6 +833,7 @@
 				7199ADA621EC8A1D0066B969 /* Frameworks */,
 				7199ADA721EC8A1D0066B969 /* Resources */,
 				81347DBD433104B13B4D8A30 /* [CP] Embed Pods Frameworks */,
+				8557F0A99B647155BECD8D8C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -853,6 +856,7 @@
 				TargetAttributes = {
 					7199ADA821EC8A1D0066B969 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -950,6 +954,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8557F0A99B647155BECD8D8C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FynzoSurvey/Pods-FynzoSurvey-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BE8E412CBD73AD5D584069C7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1196,6 +1217,7 @@
 			baseConfigurationReference = BFE68A6C5CE2CE08DFC81848 /* Pods-FynzoSurvey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 994Y4LVL39;
 				INFOPLIST_FILE = FynzoSurvey/Info.plist;
@@ -1205,6 +1227,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fynzo.feedback;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FynzoSurvey/Manager/FynzoSurvey-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1215,6 +1239,7 @@
 			baseConfigurationReference = 5660DA197C549C5D7488CB83 /* Pods-FynzoSurvey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 994Y4LVL39;
 				INFOPLIST_FILE = FynzoSurvey/Info.plist;
@@ -1224,6 +1249,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fynzo.feedback;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FynzoSurvey/Manager/FynzoSurvey-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

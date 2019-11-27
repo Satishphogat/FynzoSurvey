@@ -47,6 +47,7 @@ struct UserInfo {
         updateTime          = json[Fynzo.ApiKey.updateTime].stringValue
         signup          = json[Fynzo.ApiKey.signup].stringValue
         id          = json[Fynzo.ApiKey.id].stringValue
+        phone          = json[Fynzo.ApiKey.phone].stringValue
         plan          = Plan.init(json: json["active_plan"])
     }
     

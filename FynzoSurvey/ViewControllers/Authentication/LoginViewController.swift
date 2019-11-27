@@ -124,6 +124,7 @@ class LoginViewController: UIViewController {
             AppUserDefaults.save(value: userInfo.id, forKey: .id)
             AppUserDefaults.save(value: userInfo.name, forKey: .fullName)
             AppUserDefaults.save(value: userInfo.email, forKey: .email)
+            AppUserDefaults.save(value: userInfo.phone, forKey: .phone)
             UserManager.shared.moveToHomeViewController()
         } else {
             customizedAlert(message: json["msg"].stringValue)

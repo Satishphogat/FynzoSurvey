@@ -15,12 +15,6 @@ target 'FynzoSurvey' do
   pod 'ABGaugeViewKit', '1.0.1'
   pod ‘RealmSwift’
   pod 'IQKeyboardManagerSwift','6.2.0'
-
-
-  # Pods for FynzoSurvey
-
-#  pod 'IQKeyboardManagerSwift','6.2.0'
-#  pod 'Alamofire','4.7.3'
-#  pod 'AlamofireObjectMapper', '5.2.0'
+  pod 'FreshchatSDK'
 
 end
