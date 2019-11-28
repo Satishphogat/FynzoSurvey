@@ -104,6 +104,7 @@
 		25FEE08E234E483300BF002A /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE056234E483300BF002A /* Poppins-Regular.otf */; };
 		25FEE08F234E483300BF002A /* Poppins-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */; };
 		4C3EA753238D26E000AE5491 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3EA752238D26E000AE5491 /* LocalAuthentication.framework */; };
+		4C633A29238FD50F001257B9 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C633A28238FD50F001257B9 /* ThankYouViewController.swift */; };
 		4C6866FF237598CF00652837 /* GraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6866FD237598CF00652837 /* GraphTableViewCell.swift */; };
 		4C686700237598CF00652837 /* GraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6866FE237598CF00652837 /* GraphTableViewCell.xib */; };
 		4C68670B23759E3500652837 /* GraphHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68670923759E3400652837 /* GraphHeaderView.swift */; };
@@ -248,6 +249,7 @@
 		25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.otf"; sourceTree = "<group>"; };
 		457444D65E7D507BC1774A41 /* Pods-MyMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayer/Pods-MyMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		4C3EA752238D26E000AE5491 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		4C633A28238FD50F001257B9 /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		4C6866FD237598CF00652837 /* GraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTableViewCell.swift; sourceTree = "<group>"; };
 		4C6866FE237598CF00652837 /* GraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphTableViewCell.xib; sourceTree = "<group>"; };
 		4C68670923759E3400652837 /* GraphHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphHeaderView.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				250C11242351A74D00758B04 /* FirstCollectionViewCell */,
 				250892A9235D76BE008E1E30 /* SubmitCollectionViewCell */,
 				250C111B2351A03500758B04 /* FormViewController.swift */,
+				4C633A28238FD50F001257B9 /* ThankYouViewController.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -1070,6 +1073,7 @@
 				71D444B621ECF8BB00BD1AB1 /* KPItem.swift in Sources */,
 				71917E8521ECB8CE0077ADF4 /* CustomizedNavigation.swift in Sources */,
 				250C114A2351C64600758B04 /* CardInnerCollectionViewCell.swift in Sources */,
+				4C633A29238FD50F001257B9 /* ThankYouViewController.swift in Sources */,
 				C92695D0237591D400783818 /* SimplePieChartView.swift in Sources */,
 				C92695D32375925800783818 /* GraphViewController.swift in Sources */,
 				250C115023521E7800758B04 /* TextfieldCollectionViewCell.swift in Sources */,

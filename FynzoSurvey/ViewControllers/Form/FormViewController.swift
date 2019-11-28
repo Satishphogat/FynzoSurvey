@@ -502,7 +502,6 @@ class FormLabel: UILabel {
 
 class FormButton: UIButton {
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
