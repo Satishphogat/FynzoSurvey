@@ -129,6 +129,7 @@ class TemplatesViewController: UIViewController {
     private func preview(_ form: Form) {
         let controller = FormViewController.instantiate(fromAppStoryboard: .Home)
         controller.form = form
+        controller.isTemplet = true
         navigationController?.pushViewController(controller, animated: true)
     }
     

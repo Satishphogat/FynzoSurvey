@@ -36,6 +36,7 @@ class FormViewController: UIViewController {
 
     var form = Form()
     var questionnairies: [[Questionnaire]] = [[]]
+    var isTemplet = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -186,9 +187,10 @@ class FormViewController: UIViewController {
     }
     
     func moveCollectionToFrame(contentOffset : CGFloat) {
-        
-        let frame: CGRect = CGRect(x : contentOffset ,y : collectionView.contentOffset.y ,width : collectionView.frame.width,height : collectionView.frame.height)
-        collectionView.scrollRectToVisible(frame, animated: true)
+        DispatchQueue.main.async {
+            let frame: CGRect = CGRect(x : contentOffset ,y : self.collectionView.contentOffset.y ,width : self.collectionView.frame.width,height : self.collectionView.frame.height)
+            self.collectionView.scrollRectToVisible(frame, animated: false)
+        }
     }
     
     @objc func submitButtonAction() {
@@ -275,30 +277,32 @@ class FormViewController: UIViewController {
             } else {
                 AppUserDefaults.save(value: [parameter], forKey: AppUserDefaults.Key.form)
             }
-            self.customizedAlert(withTitle: "", message: "Form detail saved locally.", completion: { (_) in
-                AppDelegate.shared.moveToDashboard()
-            })
+            moveToThankPage(.offline)
         } else {
             submitFormApi(parameter)
         }
     }
     
+    private func moveToThankPage(_ thankType: ThankType) {
+        let controller = ThankYouViewController.instantiate(fromAppStoryboard: .Home)
+        controller.thankType = thankType
+        controller.logoImageUrl = form.logo
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     private func submitFormApi(_ parameter: [String: Any]) {
-        FynzoWebServices.shared.submitForm(controller: self, parameters: parameter) { [weak self](json, error) in
+        FynzoWebServices.shared.submitForm(controller: self, parameters: parameter) { [weak self] (json, error) in
             guard let `self` = self else { return }
             
-            self.customizedAlert(withTitle: "", message: json["msg"].stringValue, afterDelay: 0.5, completion: { (_) in
-                if json["status"].boolValue {
-                    if (AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? "").isEmpty {
-                        UserManager.shared.moveToLogin(true)
-                    } else {
-                        AppDelegate.shared.moveToDashboard()
-                    }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                if (AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? "").isEmpty {
+                    self.moveToThankPage(.demo)
+                } else {
+                    self.moveToThankPage(.loggedIn)
                 }
             })
         }
     }
-     
 }
 
 public extension Collection where Element: StringProtocol {

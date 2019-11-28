@@ -71,7 +71,6 @@ class HomeViewController: UIViewController {
     var isDemoSurvey = false
     var forms = [Form]()
     var refreshControl = UIRefreshControl()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,11 +150,8 @@ class HomeViewController: UIViewController {
     }
     
     private func openForm(_ index: Int) {
-//        let controller = FormViewController.instantiate(fromAppStoryboard: .Home)
-//        controller.form = forms[index]
-//        navigationController?.pushViewController(controller, animated: true)
-        let controller = ThankYouViewController.instantiate(fromAppStoryboard: .Home)
-        //controller.form = forms[index]
+        let controller = FormViewController.instantiate(fromAppStoryboard: .Home)
+        controller.form = forms[index]
         navigationController?.pushViewController(controller, animated: true)
     }
     
