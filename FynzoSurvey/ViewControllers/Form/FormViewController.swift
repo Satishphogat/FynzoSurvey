@@ -76,7 +76,11 @@ class FormViewController: UIViewController {
     }
     
     private func getFormsApi() {
-        FynzoWebServices.shared.getQuestionnaire(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? "", Fynzo.ApiKey.surveyform_id: form.id]) { [weak self](json, error) in
+        var id = AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""
+        if id.isEmpty {
+            id = "18"
+        }
+        FynzoWebServices.shared.getQuestionnaire(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: id, Fynzo.ApiKey.surveyform_id: form.id]) { [weak self](json, error) in
             guard let `self` = self else { return }
             
             self.handleSurveyFormsSuccess(json)
@@ -245,7 +249,7 @@ class FormViewController: UIViewController {
             let keys = obj.first?.map({$0.id}) ?? []
             let values = obj.first?.map({$0.question.selectedScale}) ?? []
             for index in 0..<keys.count {
-                dict["\(keys[index])"] = "\(values[index])"
+                dict["\(keys[index])"] = "\(values[index] ?? 0)"
             }
             
         }
@@ -285,10 +289,13 @@ class FormViewController: UIViewController {
             
             self.customizedAlert(withTitle: "", message: json["msg"].stringValue, afterDelay: 0.5, completion: { (_) in
                 if json["status"].boolValue {
-                    AppDelegate.shared.moveToDashboard()
+                    if (AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? "").isEmpty {
+                        UserManager.shared.moveToLogin(true)
+                    } else {
+                        AppDelegate.shared.moveToDashboard()
+                    }
                 }
             })
-            print(json)
         }
     }
      

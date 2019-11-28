@@ -49,7 +49,25 @@ class HomeViewController: UIViewController {
         }
     }
     @IBOutlet weak var bgView: UIView!
-    
+    @IBOutlet weak var bottomView: UIView! {
+        didSet {
+            bottomView.isHidden = isDemoSurvey
+        }
+    }
+    @IBOutlet weak var bottomViewHeight: NSLayoutConstraint! {
+        didSet {
+            if isDemoSurvey {
+                bottomViewHeight.constant = 0
+            }
+        }
+    }
+    @IBOutlet weak var chatButton: UIButton! {
+        didSet {
+            chatButton.setImage(#imageLiteral(resourceName: "Chat With Us").imageWithColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), for: .normal)
+            chatButton.isHidden = !isDemoSurvey
+        }
+    }
+        
     var isDemoSurvey = false
     var forms = [Form]()
     var refreshControl = UIRefreshControl()
@@ -59,7 +77,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         getFormsApi()
-        addFloatingButton()
+        isDemoSurvey ? () : addFloatingButton()
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: UIControl.Event.valueChanged)
         tableView.addSubview(refreshControl)
     }
@@ -67,7 +85,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        configureNavigationBar(withTitle: "Fynzo Survey", leftBarImage: #imageLiteral(resourceName: "ic_menu"), leftSelector: #selector(leftButtonAction))
+        configureNavigationBar(withTitle: "Fynzo Survey", leftBarImage: isDemoSurvey ? #imageLiteral(resourceName: "ic_back") : #imageLiteral(resourceName: "ic_menu"), leftSelector: #selector(leftButtonAction))
         navigationController?.navigationBar.isHidden = false
     }
     
@@ -85,7 +103,7 @@ class HomeViewController: UIViewController {
     }
     
     private func getFormsApi() {
-        let id = isDemoSurvey ? "1" : AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""
+        let id = isDemoSurvey ? "18" : AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""
         FynzoWebServices.shared.surveyForms(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: id]) { [weak self](json, error) in
             guard let `self` = self else { return }
             
@@ -176,6 +194,10 @@ class HomeViewController: UIViewController {
         } else {
             openPicker(sender)
         }
+    }
+    
+    @IBAction func chatButtonAction(_ sender: UIButton) {
+    
     }
     
     @IBAction func updateSurveyButtonAction(_ sender: UIButton) {

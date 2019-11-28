@@ -19,7 +19,7 @@ struct Question {
     var scale = ""
     var isNps = ""
     var isSelected = false
-    var selectedScale = -1
+    var selectedScale: Int?
     var detailResponseAnswer = ""
     var detailResponseAnswerArray = [String]()
     var rawStringArray = [String]()

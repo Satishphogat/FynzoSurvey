@@ -923,6 +923,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTI-1j-ina">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                <color key="backgroundColor" red="0.26873591540000002" green="0.58923929929999996" blue="0.95227795839999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_page" translatesAutoresizingMaskIntoConstraints="NO" id="dyw-Bg-92l">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="455"/>
                             </imageView>
@@ -975,16 +982,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Tu4-v1-E3L" secondAttribute="bottom" constant="10" id="1eo-e2-JVW"/>
+                            <constraint firstItem="DeX-gh-UnG" firstAttribute="bottom" secondItem="Tu4-v1-E3L" secondAttribute="bottom" constant="10" id="1eo-e2-JVW"/>
                             <constraint firstItem="dyw-Bg-92l" firstAttribute="top" secondItem="DeX-gh-UnG" secondAttribute="top" id="ADE-iy-mP0"/>
                             <constraint firstItem="mSx-Ao-sUL" firstAttribute="top" secondItem="dyw-Bg-92l" secondAttribute="bottom" constant="10" id="ERU-Mj-1Rq"/>
                             <constraint firstItem="mSx-Ao-sUL" firstAttribute="trailing" secondItem="DeX-gh-UnG" secondAttribute="trailing" constant="-10" id="HE8-LS-CUD"/>
                             <constraint firstItem="dyw-Bg-92l" firstAttribute="leading" secondItem="DeX-gh-UnG" secondAttribute="leading" id="VkE-v2-1T8"/>
+                            <constraint firstItem="dyw-Bg-92l" firstAttribute="top" secondItem="wTI-1j-ina" secondAttribute="bottom" id="XHj-Pa-NFR"/>
+                            <constraint firstItem="wTI-1j-ina" firstAttribute="leading" secondItem="czZ-Ot-MSQ" secondAttribute="leading" id="XaY-aX-Gps"/>
                             <constraint firstItem="Tu4-v1-E3L" firstAttribute="width" secondItem="mSx-Ao-sUL" secondAttribute="width" id="hJj-TS-al8"/>
                             <constraint firstItem="Tu4-v1-E3L" firstAttribute="height" secondItem="mSx-Ao-sUL" secondAttribute="height" id="kiW-gQ-vNd"/>
                             <constraint firstItem="mSx-Ao-sUL" firstAttribute="leading" secondItem="DeX-gh-UnG" secondAttribute="leading" constant="10" id="oK2-Ax-sxl"/>
                             <constraint firstItem="Tu4-v1-E3L" firstAttribute="leading" secondItem="mSx-Ao-sUL" secondAttribute="leading" id="oWb-Yp-ylU"/>
                             <constraint firstItem="Tu4-v1-E3L" firstAttribute="trailing" secondItem="mSx-Ao-sUL" secondAttribute="trailing" id="urw-1d-aIv"/>
+                            <constraint firstItem="wTI-1j-ina" firstAttribute="top" secondItem="czZ-Ot-MSQ" secondAttribute="top" id="uuS-bq-WH4"/>
+                            <constraint firstAttribute="trailing" secondItem="wTI-1j-ina" secondAttribute="trailing" id="wP1-ue-Kk3"/>
                             <constraint firstItem="DeX-gh-UnG" firstAttribute="trailing" secondItem="dyw-Bg-92l" secondAttribute="trailing" id="x2u-46-WZb"/>
                             <constraint firstItem="Tu4-v1-E3L" firstAttribute="top" secondItem="mSx-Ao-sUL" secondAttribute="bottom" constant="8" id="zWr-ir-sFS"/>
                         </constraints>

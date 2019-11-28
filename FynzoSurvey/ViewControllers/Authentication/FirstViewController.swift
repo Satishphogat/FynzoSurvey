@@ -10,12 +10,15 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
+    var isDemo = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if !(AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? "").isEmpty {
+        if !(AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? "").isEmpty || isDemo {
             let controller = HomeViewController.instantiate(fromAppStoryboard: .Home)
-            navigationController?.pushViewController(controller, animated: true)
+            controller.isDemoSurvey = isDemo
+            navigationController?.pushViewController(controller, animated: isDemo ? false : true)
         }
     }
 
