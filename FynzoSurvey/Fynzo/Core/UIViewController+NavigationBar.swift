@@ -15,19 +15,19 @@ extension UIViewController {
         navigationController?.navigationBar.isHidden = false
         if let selector = leftAction {
             let leftButton = leftTitle == "" ? CustomNavigationItem.backButton(self, image: leftImage, action: selector) : CustomNavigationItem.leftBarButtonWithTitle(self, buttonTitle: leftTitle, action: selector)
-            let titleButton = CustomNavigationItem.leftBarButtonWithTitle(self, buttonTitle: title, action: #selector(emptyFunc))
+            let titleButton = CustomNavigationItem.leftBarButtonWithTitle(self, size: 16, buttonTitle: title, action: #selector(emptyFunc))
             navigationItem.leftBarButtonItems = [leftButton, titleButton]
-        } else {
+        } else if title.isEmpty {
             navigationItem.leftBarButtonItem = nil
             navigationItem.hidesBackButton = true
+        } else {
+            let titleButton = CustomNavigationItem.leftBarButtonWithTitle(self, size: 16, buttonTitle: title, action: #selector(emptyFunc))
+            navigationItem.leftBarButtonItems = [titleButton]
         }
         if let selector = rightAction {
             navigationItem.rightBarButtonItem = rightBarButtonTitle == "" ? CustomNavigationItem.rightBarButton(self, buttonImage: rightImage, action: selector) : CustomNavigationItem.rightBarButtonWithTitle(self, buttonTitle: rightBarButtonTitle, action: selector)
         } else {
             navigationItem.rightBarButtonItem = nil
-        }
-        if leftAction == nil {
-            navigationItem.title = title
         }
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)]
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -63,7 +63,7 @@ class CustomNavigationItem {
         return NavigationBar.rightBarButtonWithTitle(controller, buttonTitle: buttonTitle, action: action)
     }
     
-    class func leftBarButtonWithTitle(_ controller: Any, buttonTitle: String, action: Selector) -> UIBarButtonItem {
-        return NavigationBar.leftBarButtonWithTitle(controller, buttonTitle: buttonTitle, action: action)
+    class func leftBarButtonWithTitle(_ controller: Any, size: CGFloat = 14, buttonTitle: String, action: Selector) -> UIBarButtonItem {
+        return NavigationBar.leftBarButtonWithTitle(controller, size: size , buttonTitle: buttonTitle, action: action)
     }
 }

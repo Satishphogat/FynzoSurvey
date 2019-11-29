@@ -45,12 +45,12 @@ open class NavigationBar {
         return barButtonItem
     }
     
-    class func leftBarButtonWithTitle(_ controller: Any, buttonTitle: String, action: Selector) -> UIBarButtonItem {
+    class func leftBarButtonWithTitle(_ controller: Any, size: CGFloat = 14, buttonTitle: String, action: Selector) -> UIBarButtonItem {
         let barButton = UIButton(type: .custom)
         barButton.frame = CGRect(x: 0, y: 0, width: 40.0, height: 30.0)
         barButton.setTitle(buttonTitle, for: .normal)
         barButton.contentHorizontalAlignment = .left
-        barButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        barButton.titleLabel?.font = UIFont.systemFont(ofSize: size)
         barButton.setTitleColor(UIColor.white, for: .normal)
         barButton.addTarget(controller, action: action, for: .touchUpInside)
         let barButtonItem = UIBarButtonItem(customView: barButton)

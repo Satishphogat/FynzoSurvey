@@ -27,6 +27,8 @@ class FynzoWebServices: UIViewController {
         case setting = "webservices/user"
         case graphReport = "webservices/graphreport"
         case submitForm = "webservices/formsubmit"
+        case surveyorLogin = "webservices/surveyor_login"
+        case updateSurveyor = "webservices/update_surveyor"
 
         var latestUrl: String {
             return "\(AppConfiguration.baseUrl)\(self.rawValue)"
@@ -54,6 +56,16 @@ extension FynzoWebServices {
     func login(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
         
         postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: EndPoint.login.latestUrl, controller: controller, parameters: parameters, headers: [:], completion: completion)
+    }
+    
+    func survoyrLogin(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
+        
+        postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: AppConfiguration.appUrl + EndPoint.surveyorLogin.rawValue, controller: controller, parameters: parameters, headers: [:], completion: completion)
+    }
+    
+    func updateSurvoyrLogin(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
+        
+        postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: AppConfiguration.appUrl + EndPoint.updateSurveyor.rawValue, controller: controller, parameters: parameters, headers: [:], completion: completion)
     }
     
     func forgotPassword(controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock) {

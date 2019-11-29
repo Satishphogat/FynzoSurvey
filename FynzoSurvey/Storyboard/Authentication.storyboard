@@ -136,6 +136,9 @@
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="24"/>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="facebookButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sqh-7R-rHE"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wK4-iV-mMm">
                                                     <rect key="frame" x="0.0" y="180" width="295" height="50"/>
@@ -845,9 +848,71 @@
                                     <constraint firstItem="wmP-Zs-s2i" firstAttribute="centerY" secondItem="Oof-OZ-0nv" secondAttribute="centerY" id="wQx-kV-MRo"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="iXX-CF-4S5">
+                                <rect key="frame" x="40" y="240" width="295" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surveyor Key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdt-t0-66r" customClass="ORDesignableTextField" customModule="FynzoSurvey" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="dPv-cI-zkT"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="K7g-Sy-4ck" id="SHv-ek-3z1"/>
+                                        </connections>
+                                    </textField>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxB-Ac-WzZ" customClass="ORDesignableTextField" customModule="FynzoSurvey" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Nuk-NP-Fe0"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="K7g-Sy-4ck" id="zr3-YX-idX"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPq-l4-IOI">
-                                <rect key="frame" x="40" y="310" width="295" height="50"/>
+                                <rect key="frame" x="40" y="320" width="295" height="40"/>
                                 <color key="backgroundColor" name="appThemeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nRk-cU-o5F"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -864,50 +929,24 @@
                                     <action selector="loginButtonAction" destination="K7g-Sy-4ck" eventType="touchUpInside" id="A3w-dn-Cyf"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surveyor Key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdt-t0-66r" customClass="ORDesignableTextField" customModule="FynzoSurvey" customModuleProvider="target">
-                                <rect key="frame" x="40" y="240" width="295" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="dPv-cI-zkT"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="padding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="K7g-Sy-4ck" id="SHv-ek-3z1"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pdt-t0-66r" firstAttribute="top" secondItem="Oof-OZ-0nv" secondAttribute="bottom" constant="30" id="DUB-dc-AH0"/>
-                            <constraint firstItem="UPq-l4-IOI" firstAttribute="height" secondItem="pdt-t0-66r" secondAttribute="height" id="ERc-Ru-1lV"/>
+                            <constraint firstItem="iXX-CF-4S5" firstAttribute="top" secondItem="Oof-OZ-0nv" secondAttribute="bottom" constant="30" id="4AG-fR-tkU"/>
+                            <constraint firstItem="UPq-l4-IOI" firstAttribute="trailing" secondItem="iXX-CF-4S5" secondAttribute="trailing" id="NWp-dZ-kO6"/>
+                            <constraint firstItem="UPq-l4-IOI" firstAttribute="leading" secondItem="iXX-CF-4S5" secondAttribute="leading" id="PvG-PA-2Hn"/>
                             <constraint firstItem="Oof-OZ-0nv" firstAttribute="top" secondItem="6rz-IX-CAP" secondAttribute="top" id="XCH-0M-1Ol"/>
-                            <constraint firstItem="UPq-l4-IOI" firstAttribute="trailing" secondItem="pdt-t0-66r" secondAttribute="trailing" id="Xfj-XE-1fK"/>
+                            <constraint firstItem="UPq-l4-IOI" firstAttribute="top" secondItem="iXX-CF-4S5" secondAttribute="bottom" constant="30" id="Ypa-o4-a0x"/>
                             <constraint firstItem="Oof-OZ-0nv" firstAttribute="leading" secondItem="6rz-IX-CAP" secondAttribute="leading" id="ZOK-kz-Eze"/>
-                            <constraint firstItem="UPq-l4-IOI" firstAttribute="top" secondItem="pdt-t0-66r" secondAttribute="bottom" constant="20" id="ox9-2i-hEv"/>
-                            <constraint firstItem="pdt-t0-66r" firstAttribute="leading" secondItem="xil-ew-plb" secondAttribute="leading" constant="40" id="pcU-R2-2pZ"/>
-                            <constraint firstItem="xil-ew-plb" firstAttribute="trailing" secondItem="pdt-t0-66r" secondAttribute="trailing" constant="40" id="pqf-lO-Au5"/>
+                            <constraint firstItem="iXX-CF-4S5" firstAttribute="leading" secondItem="xil-ew-plb" secondAttribute="leading" constant="40" id="dAw-XN-9mU"/>
+                            <constraint firstItem="xil-ew-plb" firstAttribute="trailing" secondItem="iXX-CF-4S5" secondAttribute="trailing" constant="40" id="dHy-PI-yAg"/>
                             <constraint firstAttribute="trailing" secondItem="Oof-OZ-0nv" secondAttribute="trailing" id="wLi-S1-Ugz"/>
-                            <constraint firstItem="UPq-l4-IOI" firstAttribute="leading" secondItem="pdt-t0-66r" secondAttribute="leading" id="y3e-ax-bUO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xil-ew-plb"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="UPq-l4-IOI" id="W2i-4m-u4N"/>
+                        <outlet property="phoneTextField" destination="kxB-Ac-WzZ" id="GIA-IR-L7E"/>
                         <outlet property="textField" destination="pdt-t0-66r" id="3EY-Jn-Qxg"/>
                     </connections>
                 </viewController>

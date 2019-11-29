@@ -71,12 +71,18 @@ class HomeViewController: UIViewController {
     var isDemoSurvey = false
     var forms = [Form]()
     var refreshControl = UIRefreshControl()
+    var isSurveyor = AppUserDefaults.value(forKey: .isSurveyor, fallBackValue: false) as? Bool ?? false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getFormsApi()
-        isDemoSurvey ? () : addFloatingButton()
+        if isSurveyor {
+            let surverForms = AppUserDefaults.value(forKey: .surveyorData, fallBackValue: [[:]]) as? [[String: Any]] ?? [[String: Any]]()
+            self.handleSurveyFormsSuccess(JSON(surverForms))
+        } else {
+            getFormsApi()
+        }
+        (isDemoSurvey || isSurveyor ) ? () : addFloatingButton()
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: UIControl.Event.valueChanged)
         tableView.addSubview(refreshControl)
     }
@@ -84,8 +90,42 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        configureNavigationBar(withTitle: "Fynzo Survey", leftBarImage: isDemoSurvey ? #imageLiteral(resourceName: "ic_back") : #imageLiteral(resourceName: "ic_menu"), leftSelector: #selector(leftButtonAction))
+        if isSurveyor {
+            configureNavigationBar(withTitle: "Surveys")
+            let barButton = UIButton(type: .custom)
+            barButton.frame = CGRect(x: 0, y: 0, width: 22.0, height: 30.0)
+            barButton.setImage(#imageLiteral(resourceName: "surveyorDown").imageWithColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), for: .normal)
+            barButton.setImage(#imageLiteral(resourceName: "surveyorDown").imageWithColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), for: .selected)
+            barButton.setImage(#imageLiteral(resourceName: "surveyorDown").imageWithColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), for: .highlighted)
+            barButton.addTarget(self, action: #selector(linkButton), for: .touchUpInside)
+            let barButtonItem = UIBarButtonItem(customView: barButton)
+
+            let barButton2 = UIButton(type: .custom)
+            barButton2.frame = CGRect(x: 0, y: 0, width: 22.0, height: 30.0)
+            barButton2.setImage(#imageLiteral(resourceName: "surveyorLogout").imageWithColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), for: .normal)
+            barButton2.setImage(#imageLiteral(resourceName: "surveyorLogout").imageWithColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), for: .selected)
+            barButton2.setImage(#imageLiteral(resourceName: "surveyorLogout").imageWithColor(color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), for: .highlighted)
+            barButton2.addTarget(self, action: #selector(logoutButton), for: .touchUpInside)
+            let barButtonItem2 = UIBarButtonItem(customView: barButton2)
+
+            navigationItem.rightBarButtonItems = [barButtonItem2, barButtonItem]
+        } else {
+            configureNavigationBar(withTitle: "Fynzo Survey", leftBarImage: isDemoSurvey ? #imageLiteral(resourceName: "ic_back") : #imageLiteral(resourceName: "ic_menu"), leftSelector: #selector(leftButtonAction))
+        }
         navigationController?.navigationBar.isHidden = false
+    }
+    
+    @objc func linkButton() {
+    
+    }
+    
+    @objc func logoutButton() {
+        customizedAlert(message: "Are you sure you want to logout?", iconImage: #imageLiteral(resourceName: "caution-sign"), buttonTitles: ["cancel", "logout"]) { (selectedButton) in
+            if selectedButton == 1 {
+                AppUserDefaults.removeAllValues()
+                UserManager.shared.moveToLogin()
+            }
+        }
     }
     
     @objc func leftButtonAction() {
@@ -186,7 +226,7 @@ class HomeViewController: UIViewController {
     @objc func startButtonAction(_ sender: UIButton) {
         let savedData = UserDefaults.standard.value(forKey: "Auth" + self.forms[sender.tag].id) as? Bool ?? false
         
-        if isDemoSurvey {
+        if isDemoSurvey || isSurveyor {
             openForm(sender.tag)
         } else if savedData {
             authenticationWithTouchID(false, sender.tag)

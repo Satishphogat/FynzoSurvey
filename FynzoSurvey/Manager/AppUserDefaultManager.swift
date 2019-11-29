@@ -14,6 +14,8 @@ class AppUserDefaults {
         case phone
         case homeRefreshTime
         case form
+        case isSurveyor
+        case surveyorData
     }
 }
 

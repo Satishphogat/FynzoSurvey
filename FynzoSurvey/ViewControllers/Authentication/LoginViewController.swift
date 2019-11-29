@@ -130,6 +130,34 @@ class LoginViewController: UIViewController {
             customizedAlert(message: json["msg"].stringValue)
         }
     }
+    
+    @IBAction func facebookButtonAction(_ sender: UIButton) {
+        facebookLogin()
+    }
+    
+    func facebookLogin() {
+        FacebookManger.shared.userLogin(self, success: { [weak self] (data) in
+            guard let `self` = self else { return }
+            
+            self.parseFacebookData(data)
+        }) { [weak self] (error) in
+            guard let `self` = self else { return }
+            
+            self.alert(message: error.localizedDescription)
+        }
+    }
+    
+    private func parseFacebookData(_ data: Any) {
+        if let facebookData = data as? JSONDictionary {
+            guard let fbId = facebookData["id"] as? String, let firstName = facebookData["first_name"] as? String, let lastName = facebookData["last_name"] as? String else { return }
+            userInfo.fbId =  fbId
+            userInfo.firstName = firstName
+            userInfo.lastName = lastName
+            userInfo.provider = "Facebook"
+            userInfo.email = facebookData["email"] as? String ?? fbId + "@gmail.com"
+           // loginApi(true)
+        }
+    }
 }
 
 extension LoginViewController: UITableViewDataSource {
@@ -204,6 +232,7 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         textField.clearsOnBeginEditing = false
-        return string != " "
+        
+        return range.location < 50 && string != " "
     }
 }

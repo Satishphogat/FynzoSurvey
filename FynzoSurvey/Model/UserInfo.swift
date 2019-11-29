@@ -30,6 +30,8 @@ struct UserInfo {
     var company = ""
     var phone = ""
     var plan = Plan()
+    var fbId = ""
+    var provider = ""
     
     
     init(json: JSON = JSON.null) {

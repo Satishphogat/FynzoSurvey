@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let buttonColor = #colorLiteral(red: 0, green: 0.5607843137, blue: 0.9333333333, alpha: 1)
     let appDarkGray = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-    let appThemeColor = #colorLiteral(red: 0, green: 0.5607843137, blue: 0.9333333333, alpha: 1)
+    let appThemeColor = #colorLiteral(red: 0.2705882353, green: 0.6, blue: 0.937254902, alpha: 1)
     
     class var shared: AppDelegate {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {

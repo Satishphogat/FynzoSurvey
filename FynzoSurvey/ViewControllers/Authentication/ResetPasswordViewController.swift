@@ -62,6 +62,6 @@ extension ResetPasswordViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        return string != " "
+        return range.location < 50 && string != " "
     }
 }
