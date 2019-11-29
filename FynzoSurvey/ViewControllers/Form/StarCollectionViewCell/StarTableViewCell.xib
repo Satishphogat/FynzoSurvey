@@ -19,8 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRU-Nj-JK7" customClass="FormLabel" customModule="FynzoSurvey" customModuleProvider="target">
-                        <rect key="frame" x="10" y="0.0" width="109.5" height="43.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRU-Nj-JK7" customClass="FormLabel" customModule="FynzoSurvey" customModuleProvider="target">
+                        <rect key="frame" x="10" y="0.0" width="101" height="43.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -55,10 +55,10 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="Dwr-ag-fZa" firstAttribute="leading" secondItem="uRU-Nj-JK7" secondAttribute="trailing" constant="8" id="0LY-mb-CfZ"/>
+                    <constraint firstItem="Dwr-ag-fZa" firstAttribute="leading" secondItem="uRU-Nj-JK7" secondAttribute="trailing" constant="16.5" id="0LY-mb-CfZ"/>
                     <constraint firstAttribute="bottom" secondItem="Dwr-ag-fZa" secondAttribute="bottom" id="7pg-0g-xtz"/>
                     <constraint firstItem="uRU-Nj-JK7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="G7P-ed-1LA"/>
-                    <constraint firstItem="Dwr-ag-fZa" firstAttribute="width" secondItem="uRU-Nj-JK7" secondAttribute="width" multiplier="5:3" id="JF9-KY-5J1"/>
+                    <constraint firstItem="Dwr-ag-fZa" firstAttribute="width" secondItem="uRU-Nj-JK7" secondAttribute="width" multiplier="5:3" constant="14.166666666666657" id="JF9-KY-5J1"/>
                     <constraint firstItem="Dwr-ag-fZa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aWx-vM-5WP"/>
                     <constraint firstAttribute="trailing" secondItem="Dwr-ag-fZa" secondAttribute="trailing" constant="10" id="nsD-gF-Iq4"/>
                     <constraint firstItem="uRU-Nj-JK7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vKc-S5-kbO"/>

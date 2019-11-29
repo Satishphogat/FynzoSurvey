@@ -53,6 +53,7 @@ class ThankYouViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        moveToPortrait()
         startTimer()
     }
     
@@ -66,6 +67,10 @@ class ThankYouViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
     }
     
     private func startTimer() {

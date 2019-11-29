@@ -48,6 +48,8 @@ class FormViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        moveToLandscape()
+
         configureNavigationBar(withTitle: "Fynzo Survey", leftBarImage: #imageLiteral(resourceName: "leftArrowWhite"), leftSelector: #selector(leftButtonAction))
         
     }
@@ -59,21 +61,6 @@ class FormViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
             }
         }
-    }
-    
-    private func moveToLandscape() {
-        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
-    }
-    
-    private func moveToPortrait() {
-        let value = UIInterfaceOrientation.portrait.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
-    }
-    
-    
-    override var shouldAutorotate: Bool {
-        return true
     }
     
     private func getFormsApi() {
@@ -531,3 +518,16 @@ struct Connectivity {
     }
 }
 
+extension UIViewController {
+    
+    func moveToLandscape() {
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+    }
+    
+    func moveToPortrait() {
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+    }
+   
+}

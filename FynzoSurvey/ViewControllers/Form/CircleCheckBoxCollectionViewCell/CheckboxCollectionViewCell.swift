@@ -53,7 +53,7 @@ extension CheckboxCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: (collectionView.bounds.width - 30) / 2, height: 50)
+        return CGSize(width: (collectionView.bounds.width - 100) / 2, height: 50)
     }
     
 }

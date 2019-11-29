@@ -39,7 +39,7 @@
                         </constraints>
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="W3q-rK-Jqg">
-                        <rect key="frame" x="0.0" y="60" width="200" height="90"/>
+                        <rect key="frame" x="35" y="60" width="130" height="90"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RTs-TQ-kN3">
                             <size key="itemSize" width="50" height="50"/>
@@ -56,13 +56,13 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="W3q-rK-Jqg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1wm-kh-OQT"/>
+                <constraint firstItem="W3q-rK-Jqg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="35" id="1wm-kh-OQT"/>
                 <constraint firstAttribute="bottom" secondItem="W3q-rK-Jqg" secondAttribute="bottom" id="51Y-0e-LRX"/>
                 <constraint firstItem="W3q-rK-Jqg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="60" id="R7v-jA-mg7"/>
                 <constraint firstItem="W3q-rK-Jqg" firstAttribute="top" secondItem="Dm1-Yq-Z76" secondAttribute="bottom" id="UbK-Uh-yZr"/>
                 <constraint firstItem="Dm1-Yq-Z76" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wvl-1B-9Pr"/>
                 <constraint firstAttribute="trailing" secondItem="Dm1-Yq-Z76" secondAttribute="trailing" id="hwu-oO-WlS"/>
-                <constraint firstAttribute="trailing" secondItem="W3q-rK-Jqg" secondAttribute="trailing" id="ju8-Cl-88H"/>
+                <constraint firstAttribute="trailing" secondItem="W3q-rK-Jqg" secondAttribute="trailing" constant="35" id="ju8-Cl-88H"/>
                 <constraint firstItem="Dm1-Yq-Z76" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mJk-Dx-ww7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

@@ -20,14 +20,14 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_square_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="COV-gs-2hL">
-                        <rect key="frame" x="15" y="10" width="30" height="30"/>
+                        <rect key="frame" x="55" y="10" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="o1N-au-g0r"/>
                             <constraint firstAttribute="height" constant="30" id="vf5-U3-Dml"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScS-bG-1Qm">
-                        <rect key="frame" x="51" y="5" width="42" height="40"/>
+                        <rect key="frame" x="91" y="5" width="42" height="40"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -37,8 +37,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="ScS-bG-1Qm" secondAttribute="bottom" constant="5" id="BaD-sb-WbI"/>
-                <constraint firstItem="COV-gs-2hL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="CrT-v1-RMV"/>
                 <constraint firstItem="ScS-bG-1Qm" firstAttribute="leading" secondItem="COV-gs-2hL" secondAttribute="trailing" constant="6" id="FAB-Z1-vkf"/>
+                <constraint firstItem="COV-gs-2hL" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" constant="-30" id="Ws6-x0-DLA"/>
                 <constraint firstItem="COV-gs-2hL" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="r2G-r2-M2V"/>
                 <constraint firstItem="ScS-bG-1Qm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="wbo-Cq-qKy"/>
             </constraints>
