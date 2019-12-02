@@ -106,6 +106,10 @@
 		4C3EA753238D26E000AE5491 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3EA752238D26E000AE5491 /* LocalAuthentication.framework */; };
 		4C4376BF2390F22C00A4EEAF /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4376BE2390F22C00A4EEAF /* FacebookManager.swift */; };
 		4C4376C12391204600A4EEAF /* SurveyorUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4376C02391204600A4EEAF /* SurveyorUserInfo.swift */; };
+		4C4376C52391478F00A4EEAF /* PickerViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4376C32391478F00A4EEAF /* PickerViewCollectionViewCell.swift */; };
+		4C4376C62391478F00A4EEAF /* PickerViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4376C42391478F00A4EEAF /* PickerViewCollectionViewCell.xib */; };
+		4C4376C92391487700A4EEAF /* PickerViiewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4376C72391487700A4EEAF /* PickerViiewTableViewCell.swift */; };
+		4C4376CA2391487700A4EEAF /* PickerViiewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4376C82391487700A4EEAF /* PickerViiewTableViewCell.xib */; };
 		4C633A29238FD50F001257B9 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C633A28238FD50F001257B9 /* ThankYouViewController.swift */; };
 		4C6866FF237598CF00652837 /* GraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6866FD237598CF00652837 /* GraphTableViewCell.swift */; };
 		4C686700237598CF00652837 /* GraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6866FE237598CF00652837 /* GraphTableViewCell.xib */; };
@@ -253,6 +257,10 @@
 		4C3EA752238D26E000AE5491 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		4C4376BE2390F22C00A4EEAF /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		4C4376C02391204600A4EEAF /* SurveyorUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyorUserInfo.swift; sourceTree = "<group>"; };
+		4C4376C32391478F00A4EEAF /* PickerViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		4C4376C42391478F00A4EEAF /* PickerViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerViewCollectionViewCell.xib; sourceTree = "<group>"; };
+		4C4376C72391487700A4EEAF /* PickerViiewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViiewTableViewCell.swift; sourceTree = "<group>"; };
+		4C4376C82391487700A4EEAF /* PickerViiewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerViiewTableViewCell.xib; sourceTree = "<group>"; };
 		4C633A28238FD50F001257B9 /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		4C6866FD237598CF00652837 /* GraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTableViewCell.swift; sourceTree = "<group>"; };
 		4C6866FE237598CF00652837 /* GraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphTableViewCell.xib; sourceTree = "<group>"; };
@@ -339,6 +347,7 @@
 		250C111A2351A00300758B04 /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				4C4376C22391475D00A4EEAF /* PickerView */,
 				2517C7C92359C50300E7866B /* DropDownCollectionViewCell */,
 				250C114D23521E5D00758B04 /* TextFieldCollectionViewCell */,
 				250C11432351C49D00758B04 /* CardCollectionViewCell */,
@@ -655,6 +664,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4C4376C22391475D00A4EEAF /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				4C4376C32391478F00A4EEAF /* PickerViewCollectionViewCell.swift */,
+				4C4376C42391478F00A4EEAF /* PickerViewCollectionViewCell.xib */,
+				4C4376C72391487700A4EEAF /* PickerViiewTableViewCell.swift */,
+				4C4376C82391487700A4EEAF /* PickerViiewTableViewCell.xib */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
 		51211FEF55140D2BB6B11FC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -897,6 +917,7 @@
 				7199ADD821EC8AD70066B969 /* CommonTableViewCell.xib in Resources */,
 				25FEE082234E483300BF002A /* Poppins-ExtraLightItalic.otf in Resources */,
 				254A84CF234F954300B35EF0 /* SideMenu.storyboard in Resources */,
+				4C4376C62391478F00A4EEAF /* PickerViewCollectionViewCell.xib in Resources */,
 				2523079923642295002A6A24 /* ResponseTableViewCell.xib in Resources */,
 				250892AD235D76E5008E1E30 /* SubmitCollectionViewCell.xib in Resources */,
 				250C11202351A10400758B04 /* FirstCollectionViewCell.xib in Resources */,
@@ -929,6 +950,7 @@
 				25FEE08F234E483300BF002A /* Poppins-ExtraBold.otf in Resources */,
 				2517C7D12359C61000E7866B /* DropDownTableViewCell.xib in Resources */,
 				25FEE086234E483300BF002A /* Poppins-SemiBold.otf in Resources */,
+				4C4376CA2391487700A4EEAF /* PickerViiewTableViewCell.xib in Resources */,
 				25FEE089234E483300BF002A /* Poppins-MediumItalic.otf in Resources */,
 				250C113C2351BDC600758B04 /* CheckBoxInnerCollectionViewCell.xib in Resources */,
 				71D444B721ECF8BB00BD1AB1 /* KPItemView.xib in Resources */,
@@ -1050,6 +1072,7 @@
 				254A84CB234F91D600B35EF0 /* AppUserDefaultManager.swift in Sources */,
 				252307A723649747002A6A24 /* HelpViewController.swift in Sources */,
 				25067C1823531630005F7115 /* FynzoAPIManager.swift in Sources */,
+				4C4376C92391487700A4EEAF /* PickerViiewTableViewCell.swift in Sources */,
 				250C11412351C20700758B04 /* SquareCollectionViewCell.swift in Sources */,
 				25FEE075234E483300BF002A /* Fynzo+Color.swift in Sources */,
 				250C111C2351A03500758B04 /* FormViewController.swift in Sources */,
@@ -1092,6 +1115,7 @@
 				71917E7F21ECB8CE0077ADF4 /* UIViewController+NavigationBar.swift in Sources */,
 				2523079C23642655002A6A24 /* ResponseDetailViewController.swift in Sources */,
 				25348D9523655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.swift in Sources */,
+				4C4376C52391478F00A4EEAF /* PickerViewCollectionViewCell.swift in Sources */,
 				2523079823642295002A6A24 /* ResponseTableViewCell.swift in Sources */,
 				254A84E2234FA9D800B35EF0 /* HomeTableViewCell.swift in Sources */,
 				7165960D21ECEA9000D55A14 /* SwifterSwift.swift in Sources */,

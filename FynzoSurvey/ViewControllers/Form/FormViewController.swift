@@ -24,6 +24,7 @@ class FormViewController: UIViewController {
             collectionView.register(cellType: TextfieldCollectionViewCell.self)
             collectionView.register(cellType: DropDownCollectionViewCell.self)
             collectionView.register(cellType: SubmitCollectionViewCell.self)
+            collectionView.register(cellType: PickerViewCollectionViewCell.self)
         }
     }
     
@@ -254,6 +255,17 @@ class FormViewController: UIViewController {
             }
         }
         
+        if questionnairies.contains(where: {$0.last?.questionTypeId == "8"}) {
+            let obj = questionnairies.filter({ $0.last?.questionTypeId == "8"} )
+            
+            let keys = obj.first?.map({$0.id}) ?? []
+            let values = obj.first?.map({$0.answer.capitalized}) ?? []
+            for index in 0..<keys.count {
+                dict["\(keys[index])"] = "\(values[index])"
+            }
+        }
+        
+        
         parameter["answer"] = dict
         
         
@@ -412,13 +424,29 @@ extension FormViewController: UICollectionViewDataSource {
             //cell.tableView.reloadData()
             
             return cell
-        } else if indexPath.item == questionnairies.count - 1 {
+        }
+//        else if questionary.last?.questionTypeId == "8" {
+//            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: PickerViewCollectionViewCell.self)
+//            let index = questionnairies.firstIndex(where: {$0.last?.questionTypeId == "8"})
+//
+//            cell.questionnaries = questionary.filter({$0.questionTypeId == "8"})
+//            cell.completion = { questionaries in
+//                if let index = index {
+//                    self.questionnairies[index] = questionaries
+//                    self.moveForword()
+//                }
+//            }
+//            //cell.tableView.reloadData()
+//
+//            return cell
+//        }
+        else if indexPath.item == questionnairies.count - 1 {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SubmitCollectionViewCell.self)
             
             cell.submitButton.addTarget(self, action: #selector(submitButtonAction), for: .touchUpInside)
             
             return cell
-        } else {
+        }  else {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: FirstCollectionViewCell.self)
             
             return cell
