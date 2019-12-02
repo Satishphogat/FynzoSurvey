@@ -289,6 +289,7 @@
                     <navigationItem key="navigationItem" id="l32-UE-Yv6"/>
                     <connections>
                         <outlet property="createAccountButton" destination="HEE-AQ-cUv" id="ILv-Tw-1L7"/>
+                        <outlet property="facebookLoginButton" destination="Zhf-3b-1bl" id="vXQ-Ak-F6q"/>
                         <outlet property="forgotPasswordButton" destination="0UU-kx-K90" id="9dG-eC-IXg"/>
                         <outlet property="headerView" destination="rhS-ng-0hc" id="r7R-ZD-edP"/>
                         <outlet property="signInButton" destination="rzv-hI-o5h" id="cXe-sf-w1q"/>

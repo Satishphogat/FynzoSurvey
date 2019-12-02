@@ -29,6 +29,7 @@ class FynzoWebServices: UIViewController {
         case submitForm = "webservices/formsubmit"
         case surveyorLogin = "webservices/surveyor_login"
         case updateSurveyor = "webservices/update_surveyor"
+        case socialLogin = "sociallogin"
 
         var latestUrl: String {
             return "\(AppConfiguration.baseUrl)\(self.rawValue)"
@@ -56,6 +57,11 @@ extension FynzoWebServices {
     func login(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
         
         postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: EndPoint.login.latestUrl, controller: controller, parameters: parameters, headers: [:], completion: completion)
+    }
+    
+    func socialLogin(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
+        
+        postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: EndPoint.socialLogin.latestUrl, controller: controller, parameters: parameters, headers: [:], completion: completion)
     }
     
     func survoyrLogin(showHud: Bool, showHudText: String, shouldErrorRequired: Bool = false, controller: UIViewController, parameters: JSONDictionary, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {

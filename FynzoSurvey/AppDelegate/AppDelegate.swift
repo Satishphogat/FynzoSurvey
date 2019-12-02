@@ -10,6 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import Realm
 import RealmSwift
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,9 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             moveToDashboard()
         }
         
-
+        
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
        
         return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        // Add any custom logic here.
+        return handled
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

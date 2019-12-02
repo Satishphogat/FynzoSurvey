@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import SwiftyJSON
+import FBSDKLoginKit
 //import ObjectMapper
 
 class LoginViewController: UIViewController {
@@ -21,6 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var facebookLoginButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton! {
         didSet {
             createAccountButton.setAttributedTitle(underline("Create an account", font: UIFont.systemFont(ofSize: 16), color: AppDelegate.shared.appThemeColor), for: .normal)
@@ -132,7 +134,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func facebookButtonAction(_ sender: UIButton) {
-        facebookLogin()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.facebookLogin()
+        }
     }
     
     func facebookLogin() {
@@ -155,7 +159,36 @@ class LoginViewController: UIViewController {
             userInfo.lastName = lastName
             userInfo.provider = "Facebook"
             userInfo.email = facebookData["email"] as? String ?? fbId + "@gmail.com"
-           // loginApi(true)
+            let picture = facebookData["picture"] as? [String: Any] ?? [:]
+            let pictureData = picture["data"] as? [String: Any] ?? [:]
+            userInfo.image = pictureData["url"] as? String ?? ""
+           socialLogin(userInfo)
+        }
+    }
+    
+    private func socialLogin(_ userInfo: UserInfo) {
+        let dict = ["provider_name": userInfo.provider,
+                    "provider_uid": userInfo.fbId,
+                    "service": "survey",
+                    "countrycode": "IN",
+                    "device": [
+                        "osversion": SwifterSwift.appVersion ?? "",
+                        "SDK": "28",
+                        "DEVICE": "iPhone",
+                        "MODEL": UIDevice.current.model,
+                        "PRODUCT": "Apple"],
+                    "device_id": UIDevice.current.identifierForVendor?.description ?? "",
+                    "profile": [
+                        "first_name": userInfo.firstName,
+                        "last_name": userInfo.lastName,
+                        "email": userInfo.email,
+                        "image": userInfo.image,
+                        "phone": ""]
+            ] as [String : Any]
+        FynzoWebServices.shared.socialLogin(showHud: true, showHudText: "", controller: self, parameters: dict) { [weak self] (json, error) in
+            guard let `self` = self else { return }
+            
+            self.handleLoginSuccess(json)
         }
     }
 }

@@ -26,6 +26,7 @@ PODS:
     - Bolts (~> 1.9)
   - FBSDKLoginKit (4.44.1):
     - FBSDKCoreKit
+  - FBSDKMessengerShareKit (1.3.2)
   - FBSDKShareKit (4.44.1):
     - FBSDKCoreKit
   - FreshchatSDK (2.9.0)
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - FacebookCore (= 0.5.0)
   - FacebookLogin (= 0.5.0)
   - FacebookShare (= 0.5.0)
+  - FBSDKMessengerShareKit
   - FreshchatSDK
   - IQKeyboardManagerSwift (= 6.2.0)
   - JJFloatingActionButton
@@ -70,6 +72,7 @@ SPEC REPOS:
     - FacebookShare
     - FBSDKCoreKit
     - FBSDKLoginKit
+    - FBSDKMessengerShareKit
     - FBSDKShareKit
     - FreshchatSDK
     - IQKeyboardManagerSwift
@@ -91,6 +94,7 @@ SPEC CHECKSUMS:
   FacebookShare: 963b4bb1124a64a395b1e428163d70b5774116e8
   FBSDKCoreKit: a823ae35bdb60ebb8d7a7e51abe7c5d87d2bfced
   FBSDKLoginKit: 54ae59987f2a8703021557c90a9aebb9e5c2bef6
+  FBSDKMessengerShareKit: bdd14265f5845e6d1c95a128ab33705a68ca1c21
   FBSDKShareKit: 526d4cfb713d24855fa23d0dd74e191accd3a720
   FreshchatSDK: d14be2f5cabc2ce243b839e9ce9d4f2aa9bf25f5
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
@@ -101,6 +105,6 @@ SPEC CHECKSUMS:
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 07bf3cb4940079c34a0654bc0061e3389bf9556f
+PODFILE CHECKSUM: 26408a9f6aae06ec51100a0c7f0eb2fc94e00fb7
 
 COCOAPODS: 1.8.4

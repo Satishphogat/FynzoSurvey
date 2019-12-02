@@ -20,4 +20,6 @@ target 'FynzoSurvey' do
   pod 'FacebookLogin','0.5.0'
   pod 'FacebookShare','0.5.0'
 
+pod 'FBSDKMessengerShareKit'
+
 end
