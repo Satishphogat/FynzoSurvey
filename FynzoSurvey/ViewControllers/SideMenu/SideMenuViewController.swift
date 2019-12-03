@@ -29,6 +29,7 @@ class SideMenuViewController: UIViewController {
     }
     @IBOutlet weak var versionNumberLabel: UILabel!
     
+    var notificationCount = 0
     static var isFromSideMenu = false
     var userInfo = UserInfo()
     var selectedMenuIndex = 0
@@ -36,7 +37,9 @@ class SideMenuViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         navigationController?.isNavigationBarHidden = true
+        configFreshChat()
     }
     
     @IBAction func profileButtonAction(_ sender: UIButton) {
@@ -56,6 +59,22 @@ class SideMenuViewController: UIViewController {
         AppUserDefaults.removeAllValues()
         UserManager.shared.moveToLogin()
     }
+    
+    private func configFreshChat() {
+        let user = FreshchatUser.sharedInstance();
+        user?.firstName = AppUserDefaults.value(forKey: .fullName, fallBackValue: "") as? String ?? ""
+        user?.lastName = ""
+        user?.email = AppUserDefaults.value(forKey: .email, fallBackValue: "") as? String ?? ""
+        user?.phoneCountryCode = "+91"
+        user?.phoneNumber = AppUserDefaults.value(forKey: .phone, fallBackValue: "") as? String ?? ""
+        Freshchat.sharedInstance().setUser(user)
+        
+        
+        Freshchat.sharedInstance().unreadCount { (count:Int) -> Void in
+            self.notificationCount = count
+            self.tableView.reloadData()
+        }
+    }
 }
 
 extension SideMenuViewController: UITableViewDataSource {
@@ -67,9 +86,13 @@ extension SideMenuViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: SideMenuTableViewCell.self)
         
-        cell.titleLabel.text = titleArray[indexPath.row]
         cell.icomImageView.image = UIImage(named: titleArray[indexPath.row])!
-        
+        if indexPath.row != 4 {
+            cell.titleLabel.text = titleArray[indexPath.row]
+        } else {
+            cell.titleLabel.text = "\(titleArray[indexPath.row]) ( \(notificationCount) )"
+        }
+            
         return cell
     }
 }
@@ -93,6 +116,10 @@ extension SideMenuViewController: UITableViewDelegate {
         } else if indexPath.row == 3 {
             let controller = ContactUsViewController.instantiate(fromAppStoryboard: .SideMenu)
             navigationController?.pushViewController(controller, animated: true)
+        } else if indexPath.row == 4 {
+            DispatchQueue.main.async {
+                Freshchat.sharedInstance().showConversations(self)
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import SwiftyJSON
 import FBSDKLoginKit
+import GoogleSignIn
 //import ObjectMapper
 
 class LoginViewController: UIViewController {
@@ -23,6 +24,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var facebookLoginButton: UIButton!
+    @IBOutlet weak var googleLoginButton: GIDSignInButton!
     @IBOutlet weak var createAccountButton: UIButton! {
         didSet {
             createAccountButton.setAttributedTitle(underline("Create an account", font: UIFont.systemFont(ofSize: 16), color: AppDelegate.shared.appThemeColor), for: .normal)
@@ -37,6 +39,13 @@ class LoginViewController: UIViewController {
         
     var titleArray = ["Email", "Password"]
     var userInfo = UserInfo()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -139,6 +148,12 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func googleButtonAction(_ sender: UIButton) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            GIDSignIn.sharedInstance()?.signIn()
+        }
+    }
+    
     func facebookLogin() {
         FacebookManger.shared.userLogin(self, success: { [weak self] (data) in
             guard let `self` = self else { return }
@@ -190,6 +205,45 @@ class LoginViewController: UIViewController {
             
             self.handleLoginSuccess(json)
         }
+    }
+}
+
+extension LoginViewController: GIDSignInDelegate {
+
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
+            return
+        }
+        userInfo.fbId =  user.userID
+        userInfo.firstName = user.profile.name
+        userInfo.lastName = ""
+        userInfo.provider = "Google"
+        userInfo.email = user.profile.email
+        userInfo.image = ""
+        socialLogin(userInfo)
+    }
+
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+    }
+}
+
+extension LoginViewController: GIDSignInUIDelegate {
+
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        print("dismissing Google SignIn")
+    }
+
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        print("presenting Google SignIn")
     }
 }
 

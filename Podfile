@@ -19,7 +19,7 @@ target 'FynzoSurvey' do
   pod 'FacebookCore','0.5.0'
   pod 'FacebookLogin','0.5.0'
   pod 'FacebookShare','0.5.0'
-
+  pod 'GoogleSignIn','4.1.1'
 pod 'FBSDKMessengerShareKit'
 
 end

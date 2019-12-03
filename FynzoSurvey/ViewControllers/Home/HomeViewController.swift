@@ -211,7 +211,7 @@ class HomeViewController: UIViewController {
         let actionButton = JJFloatingActionButton()
         
         actionButton.addItem(title: "Create New Survey", image: UIImage(named: "First")?.withRenderingMode(.alwaysTemplate)) { item in
-            
+            self.navigationController?.pushViewController(WebKitViewController.instantiate(fromAppStoryboard: .Home), animated: true)
         }
         
         actionButton.addItem(title: "Import Survey From Templates", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in

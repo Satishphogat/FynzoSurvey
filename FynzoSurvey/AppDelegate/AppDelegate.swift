@@ -11,6 +11,7 @@ import IQKeyboardManagerSwift
 import Realm
 import RealmSwift
 import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,17 +37,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             moveToDashboard()
         }
         
-        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-       
+        GIDSignIn.sharedInstance().clientID = "1055448883217-dejbpkpem5gtlrulht1kvatitu716qp1.apps.googleusercontent.com"
+
         return true
     }
     
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
-        // Add any custom logic here.
-        return handled
+        if (url.scheme?.hasPrefix("fb"))! {
+            return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        } else {
+            return GIDSignIn.sharedInstance().handle(url, sourceApplication: nil, annotation: nil)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -110,6 +110,11 @@
 		4C4376C62391478F00A4EEAF /* PickerViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4376C42391478F00A4EEAF /* PickerViewCollectionViewCell.xib */; };
 		4C4376C92391487700A4EEAF /* PickerViiewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4376C72391487700A4EEAF /* PickerViiewTableViewCell.swift */; };
 		4C4376CA2391487700A4EEAF /* PickerViiewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4376C82391487700A4EEAF /* PickerViiewTableViewCell.xib */; };
+		4C5775572395097400463911 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5775562395097400463911 /* credentials.plist */; };
+		4C57755A23952BA500463911 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C57755923952BA500463911 /* WebKitViewController.swift */; };
+		4C577563239538F800463911 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C577562239538F700463911 /* SafariServices.framework */; };
+		4C5775652395390300463911 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5775642395390300463911 /* AuthenticationServices.framework */; };
+		4C5775672395390A00463911 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5775662395390A00463911 /* SystemConfiguration.framework */; };
 		4C633A29238FD50F001257B9 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C633A28238FD50F001257B9 /* ThankYouViewController.swift */; };
 		4C6866FF237598CF00652837 /* GraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6866FD237598CF00652837 /* GraphTableViewCell.swift */; };
 		4C686700237598CF00652837 /* GraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6866FE237598CF00652837 /* GraphTableViewCell.xib */; };
@@ -261,6 +266,11 @@
 		4C4376C42391478F00A4EEAF /* PickerViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerViewCollectionViewCell.xib; sourceTree = "<group>"; };
 		4C4376C72391487700A4EEAF /* PickerViiewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViiewTableViewCell.swift; sourceTree = "<group>"; };
 		4C4376C82391487700A4EEAF /* PickerViiewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerViiewTableViewCell.xib; sourceTree = "<group>"; };
+		4C5775562395097400463911 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		4C57755923952BA500463911 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
+		4C577562239538F700463911 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		4C5775642395390300463911 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		4C5775662395390A00463911 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4C633A28238FD50F001257B9 /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		4C6866FD237598CF00652837 /* GraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTableViewCell.swift; sourceTree = "<group>"; };
 		4C6866FE237598CF00652837 /* GraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphTableViewCell.xib; sourceTree = "<group>"; };
@@ -319,6 +329,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5775672395390A00463911 /* SystemConfiguration.framework in Frameworks */,
+				4C5775652395390300463911 /* AuthenticationServices.framework in Frameworks */,
+				4C577563239538F800463911 /* SafariServices.framework in Frameworks */,
 				4C3EA753238D26E000AE5491 /* LocalAuthentication.framework in Frameworks */,
 				5F8B092C3BC88E536F11BF7A /* Pods_FynzoSurvey.framework in Frameworks */,
 			);
@@ -540,6 +553,7 @@
 		254A84C4234F8F1700B35EF0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4C57755823952B8D00463911 /* WebView */,
 				25230792236415CD002A6A24 /* Report */,
 				2523078C236410DD002A6A24 /* Share */,
 				254A84C5234F8F2E00B35EF0 /* HomeViewController.swift */,
@@ -675,9 +689,20 @@
 			path = PickerView;
 			sourceTree = "<group>";
 		};
+		4C57755823952B8D00463911 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				4C57755923952BA500463911 /* WebKitViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		51211FEF55140D2BB6B11FC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C5775662395390A00463911 /* SystemConfiguration.framework */,
+				4C5775642395390300463911 /* AuthenticationServices.framework */,
+				4C577562239538F700463911 /* SafariServices.framework */,
 				4C3EA752238D26E000AE5491 /* LocalAuthentication.framework */,
 				5AED3BE15D3413B80E12E8F3 /* Pods_FynzoSurvey.framework */,
 			);
@@ -768,6 +793,7 @@
 				7199ADC221EC8A850066B969 /* Assets */,
 				7199ADC021EC8A4F0066B969 /* Storyboard */,
 				7199ADB821EC8A1D0066B969 /* Info.plist */,
+				4C5775562395097400463911 /* credentials.plist */,
 			);
 			path = FynzoSurvey;
 			sourceTree = "<group>";
@@ -961,6 +987,7 @@
 				25348D9623655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.xib in Resources */,
 				250C114B2351C64600758B04 /* CardInnerCollectionViewCell.xib in Resources */,
 				25FEE080234E483300BF002A /* Poppins-ExtraLight.otf in Resources */,
+				4C5775572395097400463911 /* credentials.plist in Resources */,
 				7199ADDA21EC8B380066B969 /* Assets.xcassets in Resources */,
 				254A84E3234FA9D800B35EF0 /* HomeTableViewCell.xib in Resources */,
 				25FEE08A234E483300BF002A /* Poppins-LightItalic.otf in Resources */,
@@ -1081,6 +1108,7 @@
 				71917E8321ECB8CE0077ADF4 /* UITableView+Reusable.swift in Sources */,
 				25FEE074234E483300BF002A /* Fynzo.swift in Sources */,
 				71917E8221ECB8CE0077ADF4 /* Reusable.swift in Sources */,
+				4C57755A23952BA500463911 /* WebKitViewController.swift in Sources */,
 				25E750F9236841F0008F5A90 /* Category.swift in Sources */,
 				254A84DE234F9EE500B35EF0 /* SettingTableViewCell.swift in Sources */,
 				7199ADD521EC8AD70066B969 /* ForgotPasswordViewController.swift in Sources */,
@@ -1258,6 +1286,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 994Y4LVL39;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FynzoSurvey/Venders",
+				);
 				INFOPLIST_FILE = FynzoSurvey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1280,6 +1312,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 994Y4LVL39;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FynzoSurvey/Venders",
+				);
 				INFOPLIST_FILE = FynzoSurvey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

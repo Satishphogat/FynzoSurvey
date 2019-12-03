@@ -155,6 +155,9 @@
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="24"/>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="googleButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hsS-1O-vCt"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnP-5a-FFt">
                                                     <rect key="frame" x="0.0" y="240" width="295" height="50"/>
@@ -291,6 +294,7 @@
                         <outlet property="createAccountButton" destination="HEE-AQ-cUv" id="ILv-Tw-1L7"/>
                         <outlet property="facebookLoginButton" destination="Zhf-3b-1bl" id="vXQ-Ak-F6q"/>
                         <outlet property="forgotPasswordButton" destination="0UU-kx-K90" id="9dG-eC-IXg"/>
+                        <outlet property="googleLoginButton" destination="wK4-iV-mMm" id="6G3-eG-z3v"/>
                         <outlet property="headerView" destination="rhS-ng-0hc" id="r7R-ZD-edP"/>
                         <outlet property="signInButton" destination="rzv-hI-o5h" id="cXe-sf-w1q"/>
                         <outlet property="tableView" destination="GEI-C6-lFV" id="1ZM-Wt-kBl"/>

@@ -27,38 +27,10 @@ class ContactUsViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configFreshChat()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         configureNavigationBar(withTitle: "Contact Us", leftBarImage: #imageLiteral(resourceName: "ic_menu"), leftSelector: #selector(leftButtonAction))
-    }
-    
-    private func configFreshChat() {
-        let user = FreshchatUser.sharedInstance();
-        user?.firstName = AppUserDefaults.value(forKey: .fullName, fallBackValue: "") as? String ?? ""
-        user?.lastName = ""
-        user?.email = AppUserDefaults.value(forKey: .email, fallBackValue: "") as? String ?? ""
-        user?.phoneCountryCode = "+91"
-        user?.phoneNumber = AppUserDefaults.value(forKey: .phone, fallBackValue: "") as? String ?? ""
-        Freshchat.sharedInstance().setUser(user)
-        
-        //TODO: uncomment to open chat window
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            Freshchat.sharedInstance().showConversations(self)
-//        }
-        
-        //TODO: use this code to check message count
-        
-//        Freshchat.sharedInstance().unreadCount { (count:Int) -> Void in
-//            print("Unread count (Async) :\(count)")
-//        }
     }
     
     @objc func leftButtonAction() {
