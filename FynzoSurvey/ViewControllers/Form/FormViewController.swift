@@ -399,9 +399,9 @@ extension FormViewController: UICollectionViewDataSource {
         else if questionary.last?.questionTypeId == "5" && ((questionary.last?.question ?? Question()).isNps == "1") {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CardCollectionViewCell.self)
             let index = questionnairies.firstIndex(where: {$0.last?.questionTypeId == "5" && (($0.last?.question ?? Question()).isNps == "1")})
-
-            cell.questionnaire = questionary.first!
-            //cell.collectionView.reloadData()
+            let question = questionary.last ?? Questionnaire()
+            cell.questionnaire = question
+            cell.label.text = question.questingText
             cell.completion = { questionaries in
                 if let index = index {
                 self.questionnairies[index] = [questionaries]

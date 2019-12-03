@@ -121,11 +121,11 @@
                                                         <constraint firstItem="8U6-kJ-zol" firstAttribute="leading" secondItem="9sA-1J-mQQ" secondAttribute="trailing" id="xmO-Mx-tqg"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhf-3b-1bl">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhf-3b-1bl">
                                                     <rect key="frame" x="0.0" y="120" width="295" height="50"/>
                                                     <color key="backgroundColor" red="0.23385041952133179" green="0.31270617246627808" blue="0.59847694635391235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
-                                                    <state key="normal" title="Sign In with Facebook">
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="60" maxY="10"/>
+                                                    <state key="normal" title="Sign In with Facebook" image="facebook">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -140,11 +140,11 @@
                                                         <action selector="facebookButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sqh-7R-rHE"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wK4-iV-mMm">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wK4-iV-mMm">
                                                     <rect key="frame" x="0.0" y="180" width="295" height="50"/>
                                                     <color key="backgroundColor" red="0.75567477941513062" green="0.26798063516616821" blue="0.22658947110176086" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
-                                                    <state key="normal" title="Sign In with google">
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="60" maxY="10"/>
+                                                    <state key="normal" title="Sign In with google" image="search">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -444,11 +444,11 @@
                                                         <constraint firstItem="0mt-zm-0UV" firstAttribute="centerX" secondItem="xJC-Sg-rHk" secondAttribute="centerX" id="znR-I4-UhT"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHf-Tv-hvR">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHf-Tv-hvR">
                                                     <rect key="frame" x="0.0" y="180" width="295" height="50"/>
                                                     <color key="backgroundColor" red="0.23385041949999999" green="0.31270617249999999" blue="0.59847694640000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
-                                                    <state key="normal" title="Sign In with Facebook">
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="60" maxY="10"/>
+                                                    <state key="normal" title="Sign In with Facebook" image="facebook">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -459,12 +459,15 @@
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="24"/>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="facebookButtonAction:" destination="Vem-PS-7nD" eventType="touchUpInside" id="6QD-xf-emg"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igr-5R-mLw">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igr-5R-mLw">
                                                     <rect key="frame" x="0.0" y="240" width="295" height="50"/>
                                                     <color key="backgroundColor" red="0.75567477940000005" green="0.26798063519999998" blue="0.2265894711" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
-                                                    <state key="normal" title="Sign In with google">
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="60" maxY="10"/>
+                                                    <state key="normal" title="Sign In with google" image="search">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -475,6 +478,9 @@
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="24"/>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="googleButtonAction:" destination="Vem-PS-7nD" eventType="touchUpInside" id="c4e-I6-WGX"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -536,6 +542,8 @@
                         <viewLayoutGuide key="safeArea" id="9kS-TM-BbA"/>
                     </view>
                     <connections>
+                        <outlet property="facebookLoginButton" destination="RHf-Tv-hvR" id="Q3d-EM-vUc"/>
+                        <outlet property="googleLoginButton" destination="igr-5R-mLw" id="e48-aY-aZt"/>
                         <outlet property="tableView" destination="9GK-M7-JMg" id="pFg-cu-cnn"/>
                         <outlet property="tickMarkButton" destination="Gyr-TJ-IVH" id="fGv-Ge-JAg"/>
                     </connections>
@@ -1054,8 +1062,10 @@
     </scenes>
     <resources>
         <image name="checkbox_u" width="64" height="64"/>
+        <image name="facebook" width="35" height="35"/>
         <image name="first_page" width="540" height="728"/>
         <image name="ic_reset_password" width="1024" height="1024"/>
+        <image name="search" width="35" height="35"/>
         <image name="white_logo_with_name" width="500" height="500"/>
         <namedColor name="appThemeColor">
             <color red="0.27058823529411763" green="0.59999999999999998" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

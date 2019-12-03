@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftyJSON
+import FBSDKLoginKit
+import GoogleSignIn
 
 class SignUpViewController: UIViewController {
     
@@ -21,9 +23,18 @@ class SignUpViewController: UIViewController {
             tickMarkButton.setImage(UIImage(named: "checkbox_c")?.imageWithColor(color: AppDelegate.shared.appThemeColor), for: .normal)
         }
     }
-    
+    @IBOutlet weak var facebookLoginButton: UIButton!
+    @IBOutlet weak var googleLoginButton: GIDSignInButton!
+
     let titleArray = ["Name", "Email", "Phone", "Password", "Company/Organization"]
     var userInfo = UserInfo()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -128,6 +139,84 @@ class SignUpViewController: UIViewController {
         openUrl()
     }
     
+    @IBAction func facebookButtonAction(_ sender: UIButton) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.facebookLogin()
+        }
+    }
+    
+    @IBAction func googleButtonAction(_ sender: UIButton) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            GIDSignIn.sharedInstance()?.signIn()
+        }
+    }
+    
+    func facebookLogin() {
+        FacebookManger.shared.userLogin(self, success: { [weak self] (data) in
+            guard let `self` = self else { return }
+            
+            self.parseFacebookData(data)
+        }) { [weak self] (error) in
+            guard let `self` = self else { return }
+            
+            self.alert(message: error.localizedDescription)
+        }
+    }
+    
+    private func parseFacebookData(_ data: Any) {
+        if let facebookData = data as? JSONDictionary {
+            guard let fbId = facebookData["id"] as? String, let firstName = facebookData["first_name"] as? String, let lastName = facebookData["last_name"] as? String else { return }
+            userInfo.fbId =  fbId
+            userInfo.firstName = firstName
+            userInfo.lastName = lastName
+            userInfo.provider = "Facebook"
+            userInfo.email = facebookData["email"] as? String ?? fbId + "@gmail.com"
+            let picture = facebookData["picture"] as? [String: Any] ?? [:]
+            let pictureData = picture["data"] as? [String: Any] ?? [:]
+            userInfo.image = pictureData["url"] as? String ?? ""
+            socialLogin(userInfo)
+        }
+    }
+    
+    private func socialLogin(_ userInfo: UserInfo) {
+        let dict = ["provider_name": userInfo.provider,
+                    "provider_uid": userInfo.fbId,
+                    "service": "survey",
+                    "countrycode": "IN",
+                    "device": [
+                        "osversion": SwifterSwift.appVersion ?? "",
+                        "SDK": "28",
+                        "DEVICE": "iPhone",
+                        "MODEL": UIDevice.current.model,
+                        "PRODUCT": "Apple"],
+                    "device_id": UIDevice.current.identifierForVendor?.description ?? "",
+                    "profile": [
+                        "first_name": userInfo.firstName,
+                        "last_name": userInfo.lastName,
+                        "email": userInfo.email,
+                        "image": userInfo.image,
+                        "phone": ""]
+            ] as [String : Any]
+        FynzoWebServices.shared.socialLogin(showHud: true, showHudText: "", controller: self, parameters: dict) { [weak self] (json, error) in
+            guard let `self` = self else { return }
+            
+            self.handleLoginSuccess(json)
+        }
+    }
+    
+    private func handleLoginSuccess(_ json: JSON) {
+        if json["status"].boolValue {
+            userInfo = UserInfo(json: json)
+            AppUserDefaults.save(value: userInfo.id, forKey: .id)
+            AppUserDefaults.save(value: userInfo.name, forKey: .fullName)
+            AppUserDefaults.save(value: userInfo.email, forKey: .email)
+            AppUserDefaults.save(value: userInfo.phone, forKey: .phone)
+            UserManager.shared.moveToHomeViewController()
+        } else {
+            customizedAlert(message: json["msg"].stringValue)
+        }
+    }
+    
     func openUrl() {
         guard let url = URL(string: "https://www.fynzo.com/terms") else {
             return //be safe
@@ -138,6 +227,42 @@ class SignUpViewController: UIViewController {
         } else {
             UIApplication.shared.openURL(url)
         }
+    }
+}
+
+extension SignUpViewController: GIDSignInDelegate, GIDSignInUIDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
+            return
+        }
+        userInfo.fbId =  user.userID
+        userInfo.firstName = user.profile.name
+        userInfo.lastName = ""
+        userInfo.provider = "Google"
+        userInfo.email = user.profile.email
+        userInfo.image = ""
+        socialLogin(userInfo)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+    }
+    
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        print("dismissing Google SignIn")
+    }
+    
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        print("presenting Google SignIn")
     }
 }
 
