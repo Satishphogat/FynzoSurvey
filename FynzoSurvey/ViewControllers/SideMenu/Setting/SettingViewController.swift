@@ -57,9 +57,16 @@ class SettingViewController: UIViewController {
     }
     
     private func handleSignUpSuccess(_ json: JSON) {
-        print(json)
+        let isAutoUpload = AppUserDefaults.value(forKey: .isAutoUpload, fallBackValue: false) as? Bool ?? false
         userInfo = UserInfo(json: json)
-        dataArray = [[userInfo.email], [userInfo.plan.name, userInfo.plan.startDate.getCustomizedDate(), userInfo.plan.endDate.getCustomizedDate()], [versionNumber], ["False"]]
+        dataArray = [[userInfo.email], [userInfo.plan.name, userInfo.plan.startDate.getCustomizedDate(), userInfo.plan.endDate.getCustomizedDate()], [versionNumber], ["\(isAutoUpload)"]]
+        tableView.reloadData()
+    }
+    
+    @objc private func switchClicked() {
+        let isAutoUpload = AppUserDefaults.value(forKey: .isAutoUpload, fallBackValue: false) as? Bool ?? false
+        AppUserDefaults.save(value: !isAutoUpload, forKey: .isAutoUpload)
+        dataArray[3] = ["\(!isAutoUpload)"]
         tableView.reloadData()
     }
 }
@@ -93,6 +100,7 @@ extension SettingViewController: UITableViewDataSource {
             cell.mySwitch.isHidden = false
             cell.subTitleLabel.isHidden = true
             cell.mySwitch.isOn = dataArray[indexPath.section][indexPath.row] == "true"
+            cell.mySwitch.addTarget(self, action: #selector(switchClicked), for: .valueChanged)
         }
         cell.subTitleLabel.text = dataArray[indexPath.section][indexPath.row]
 

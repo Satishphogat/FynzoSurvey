@@ -53,7 +53,7 @@ class TemplatesViewController: UIViewController {
     }
     
     private func getFormsApi(_ categories: [Category]) {
-        FynzoWebServices.shared.surveyForms(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""]) { [weak self](json, error) in
+        FynzoWebServices.shared.surveyForms(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: "18"]) { [weak self](json, error) in
             guard let `self` = self else { return }
             
             self.handleSurveyFormsSuccess(json, categories)

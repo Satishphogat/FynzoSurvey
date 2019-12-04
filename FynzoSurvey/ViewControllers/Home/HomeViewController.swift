@@ -155,7 +155,12 @@ class HomeViewController: UIViewController {
         lastUpdateTime.text = "Last Updated " + Date().getDateString("dd-MMM-yy, hh:mm a")
         forms = Form.models(from: json.arrayValue)
         if forms.isEmpty {
-            customizedAlert(message: "No Survey found")
+            customizedAlert(message: "No Survey added yet", iconImage: #imageLiteral(resourceName: "ic_notification"), buttonTitles: ["Cancel", "Add now"]) { (selectedButton) in
+                if selectedButton == 1 {
+                    let controller = ImportTemplateSurveyViewController.instantiate(fromAppStoryboard: .Home)
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }
+            }
         }
         tableView.reloadData()
     }

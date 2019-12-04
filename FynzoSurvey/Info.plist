@@ -21,7 +21,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb2576551475723794</string>
+				<string>fb2366538323575460</string>
 			</array>
 		</dict>
 		<dict>
@@ -34,9 +34,9 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>2576551475723794</string>
+	<string>2366538323575460</string>
 	<key>FacebookDisplayName</key>
 	<string>Fynzo Survey</string>
 	<key>ITSAppUsesNonExemptEncryption</key>

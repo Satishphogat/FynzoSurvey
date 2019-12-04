@@ -103,6 +103,7 @@
 		25FEE08D234E483300BF002A /* Poppins-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE055234E483300BF002A /* Poppins-BlackItalic.otf */; };
 		25FEE08E234E483300BF002A /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE056234E483300BF002A /* Poppins-Regular.otf */; };
 		25FEE08F234E483300BF002A /* Poppins-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */; };
+		4C0330DB2397BD0200E8C32B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C0330DA2397BD0200E8C32B /* GoogleService-Info.plist */; };
 		4C3EA753238D26E000AE5491 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3EA752238D26E000AE5491 /* LocalAuthentication.framework */; };
 		4C4376BF2390F22C00A4EEAF /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4376BE2390F22C00A4EEAF /* FacebookManager.swift */; };
 		4C4376C12391204600A4EEAF /* SurveyorUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4376C02391204600A4EEAF /* SurveyorUserInfo.swift */; };
@@ -110,7 +111,6 @@
 		4C4376C62391478F00A4EEAF /* PickerViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4376C42391478F00A4EEAF /* PickerViewCollectionViewCell.xib */; };
 		4C4376C92391487700A4EEAF /* PickerViiewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4376C72391487700A4EEAF /* PickerViiewTableViewCell.swift */; };
 		4C4376CA2391487700A4EEAF /* PickerViiewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4376C82391487700A4EEAF /* PickerViiewTableViewCell.xib */; };
-		4C5775572395097400463911 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5775562395097400463911 /* credentials.plist */; };
 		4C57755A23952BA500463911 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C57755923952BA500463911 /* WebKitViewController.swift */; };
 		4C577563239538F800463911 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C577562239538F700463911 /* SafariServices.framework */; };
 		4C5775652395390300463911 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5775642395390300463911 /* AuthenticationServices.framework */; };
@@ -259,6 +259,7 @@
 		25FEE056234E483300BF002A /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
 		25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.otf"; sourceTree = "<group>"; };
 		457444D65E7D507BC1774A41 /* Pods-MyMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayer/Pods-MyMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		4C0330DA2397BD0200E8C32B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C3EA752238D26E000AE5491 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		4C4376BE2390F22C00A4EEAF /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		4C4376C02391204600A4EEAF /* SurveyorUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyorUserInfo.swift; sourceTree = "<group>"; };
@@ -266,7 +267,6 @@
 		4C4376C42391478F00A4EEAF /* PickerViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerViewCollectionViewCell.xib; sourceTree = "<group>"; };
 		4C4376C72391487700A4EEAF /* PickerViiewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViiewTableViewCell.swift; sourceTree = "<group>"; };
 		4C4376C82391487700A4EEAF /* PickerViiewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerViiewTableViewCell.xib; sourceTree = "<group>"; };
-		4C5775562395097400463911 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		4C57755923952BA500463911 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
 		4C577562239538F700463911 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		4C5775642395390300463911 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
@@ -793,7 +793,7 @@
 				7199ADC221EC8A850066B969 /* Assets */,
 				7199ADC021EC8A4F0066B969 /* Storyboard */,
 				7199ADB821EC8A1D0066B969 /* Info.plist */,
-				4C5775562395097400463911 /* credentials.plist */,
+				4C0330DA2397BD0200E8C32B /* GoogleService-Info.plist */,
 			);
 			path = FynzoSurvey;
 			sourceTree = "<group>";
@@ -949,6 +949,7 @@
 				250C11202351A10400758B04 /* FirstCollectionViewCell.xib in Resources */,
 				250C112D2351A86B00758B04 /* StarTableViewCell.xib in Resources */,
 				25FEE07B234E483300BF002A /* LoaderView.xib in Resources */,
+				4C0330DB2397BD0200E8C32B /* GoogleService-Info.plist in Resources */,
 				252307AB2364984C002A6A24 /* HelpTableViewCell.xib in Resources */,
 				25FEE08D234E483300BF002A /* Poppins-BlackItalic.otf in Resources */,
 				250C115123521E7800758B04 /* TextfieldCollectionViewCell.xib in Resources */,
@@ -987,7 +988,6 @@
 				25348D9623655ECD006B8AA0 /* ImportTamplateSurveyTableViewCell.xib in Resources */,
 				250C114B2351C64600758B04 /* CardInnerCollectionViewCell.xib in Resources */,
 				25FEE080234E483300BF002A /* Poppins-ExtraLight.otf in Resources */,
-				4C5775572395097400463911 /* credentials.plist in Resources */,
 				7199ADDA21EC8B380066B969 /* Assets.xcassets in Resources */,
 				254A84E3234FA9D800B35EF0 /* HomeTableViewCell.xib in Resources */,
 				25FEE08A234E483300BF002A /* Poppins-LightItalic.otf in Resources */,
@@ -1284,7 +1284,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yolo9 Internet Solutions Private Limited (994Y4LVL39)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 994Y4LVL39;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1295,12 +1296,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fynzo.feedback;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fynzo.survey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Fynzo Survey";
 				SWIFT_OBJC_BRIDGING_HEADER = "FynzoSurvey/Manager/FynzoSurvey-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1310,7 +1312,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yolo9 Internet Solutions Private Limited (994Y4LVL39)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 994Y4LVL39;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1321,11 +1324,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fynzo.feedback;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fynzo.survey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Fynzo Survey";
 				SWIFT_OBJC_BRIDGING_HEADER = "FynzoSurvey/Manager/FynzoSurvey-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
