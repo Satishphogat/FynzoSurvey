@@ -8,9 +8,8 @@
 
 import Foundation
 import SwiftyJSON
-import RealmSwift
 
-class Form: Object {
+class Form {
     var id = ""
     var uniqueKey = ""
     var ownerId = ""
@@ -42,10 +41,6 @@ class Form: Object {
         updateTime          = json[Fynzo.ApiKey.updateTime].stringValue
         status          = json[Fynzo.ApiKey.status].stringValue
         copiedFrom          = json[Fynzo.ApiKey.copiedFrom].stringValue
-    }
-    
-    override required init() {
-        super.init()
     }
     
     static func models(from jsonArray: [JSON]) -> [Form] {

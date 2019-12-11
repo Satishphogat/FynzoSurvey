@@ -78,8 +78,8 @@ extension FynzoWebServices {
         postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: AppConfiguration.baseUrl + EndPoint.forgotPassword.rawValue, controller: controller, parameters: parameters, headers: [:], completion: completion)
     }
     
-    func settings(controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock) {
-        postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: AppConfiguration.appUrl + EndPoint.setting.rawValue, controller: controller, parameters: parameters, headers: [:], completion: completion)
+    func settings(showHud: Bool, controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock) {
+        postRequest(showHud: showHud, showHudText: "", shouldErrorRequired: false, endPoint: AppConfiguration.appUrl + EndPoint.setting.rawValue, controller: controller, parameters: parameters, headers: [:], completion: completion)
     }
     
     
@@ -172,7 +172,9 @@ extension FynzoWebServices {
     
     func showIndicator(_ controller: UIViewController, _ showHud: Bool, _ pageNumber: Int = 1) {
         self.controller = controller
+        if showHud {
             GIFLoading.shared.showWithActivityIndicator("Loading", activitycolor: .white, labelfontcolor: .white, labelfontsize: 15, activityStyle: .whiteLarge)
+        }
     }
     
     func removeIndicator() {

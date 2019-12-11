@@ -80,7 +80,9 @@ class HomeViewController: UIViewController {
             let surverForms = AppUserDefaults.value(forKey: .surveyorData, fallBackValue: [[:]]) as? [[String: Any]] ?? [[String: Any]]()
             self.handleSurveyFormsSuccess(JSON(surverForms))
         } else {
-            getFormsApi()
+            let surverForms = AppUserDefaults.value(forKey: .formData, fallBackValue: "") as? [[String: Any]] ?? [[String: Any]]()
+            forms = Form.models(from: JSON(surverForms).arrayValue)
+            getFormsApi(forms.isEmpty)
         }
         (isDemoSurvey || isSurveyor ) ? () : addFloatingButton()
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: UIControl.Event.valueChanged)
@@ -141,11 +143,20 @@ class HomeViewController: UIViewController {
         refreshControl.endRefreshing()
     }
     
-    private func getFormsApi() {
+    private func getFormsApi(_ showHud: Bool = true) {
         let id = isDemoSurvey ? "18" : AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""
-        FynzoWebServices.shared.surveyForms(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: id]) { [weak self](json, error) in
+        FynzoWebServices.shared.surveyForms(showHud: showHud, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: id]) { [weak self](json, error) in
             guard let `self` = self else { return }
             
+            var valueResult = [[String: Any]]()
+            for item in json.arrayValue {
+                var temp = [String: Any]()
+                for dictKey in item.dictionaryValue {
+                    temp[dictKey.key] = dictKey.value.stringValue
+                }
+                valueResult.append(temp)
+            }
+            AppUserDefaults.save(value: valueResult, forKey: .formData)
             self.handleSurveyFormsSuccess(json)
         }
     }
@@ -241,11 +252,19 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func chatButtonAction(_ sender: UIButton) {
-    
+        let user = FreshchatUser.sharedInstance();
+        user?.firstName = "Demo Survey"
+        user?.lastName = ""
+        user?.email = "user@gmail.com"
+        user?.phoneCountryCode = "+91"
+        Freshchat.sharedInstance().setUser(user)
+        DispatchQueue.main.async {
+            Freshchat.sharedInstance().showConversations(self)
+        }
     }
     
     @IBAction func updateSurveyButtonAction(_ sender: UIButton) {
-        getFormsApi()
+        getFormsApi(true)
     }
 
     @IBAction func uploadLocalDataButtonAction(_ sender: UIButton) {

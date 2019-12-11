@@ -31,10 +31,7 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         
         getUserDetailApi()
-        
-        if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String, let build = Bundle.main.infoDictionary!["CFBundleVersion"] as? String {
-            versionNumber = version + "." + build
-        }
+        versionNumber = (SwifterSwift.appVersion ?? "") + "." + (SwifterSwift.appBuild ?? "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +46,7 @@ class SettingViewController: UIViewController {
     }
     
     private func getUserDetailApi() {
-        FynzoWebServices.shared.settings(controller: self, parameters: ["user_id": AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""]) { [weak self](json, error) in
+        FynzoWebServices.shared.settings(showHud: dataArray.isEmpty, controller: self, parameters: ["user_id": AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""]) { [weak self](json, error) in
             guard let `self` = self else { return }
             
             self.handleSignUpSuccess(json)
@@ -60,6 +57,7 @@ class SettingViewController: UIViewController {
         let isAutoUpload = AppUserDefaults.value(forKey: .isAutoUpload, fallBackValue: false) as? Bool ?? false
         userInfo = UserInfo(json: json)
         dataArray = [[userInfo.email], [userInfo.plan.name, userInfo.plan.startDate.getCustomizedDate(), userInfo.plan.endDate.getCustomizedDate()], [versionNumber], ["\(isAutoUpload)"]]
+        AppUserDefaults.save(value: dataArray, forKey: .settings)
         tableView.reloadData()
     }
     

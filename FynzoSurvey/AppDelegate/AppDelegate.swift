@@ -8,8 +8,6 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-import Realm
-import RealmSwift
 import FBSDKCoreKit
 import GoogleSignIn
 
@@ -29,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let freschatConfig:FreshchatConfig = FreshchatConfig.init(appID: "e743a1e5-e085-46c8-83ce-01144bdded67", andAppKey: "036d3733-3e81-4ce2-aea8-9b94ed7797fb")
+        let freschatConfig:FreshchatConfig = FreshchatConfig.init(appID: AppConfiguration.freshChatAppId, andAppKey: AppConfiguration.freshChatAppKey)
         Freshchat.sharedInstance().initWith(freschatConfig)
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
@@ -38,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        GIDSignIn.sharedInstance().clientID = "1055448883217-dejbpkpem5gtlrulht1kvatitu716qp1.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = AppConfiguration.googleClientid
 
         return true
     }

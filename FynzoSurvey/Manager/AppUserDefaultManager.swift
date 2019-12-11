@@ -17,6 +17,8 @@ class AppUserDefaults {
         case isSurveyor
         case surveyorData
         case isAutoUpload
+        case settings
+        case formData
     }
 }
 

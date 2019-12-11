@@ -107,6 +107,9 @@ extension SideMenuViewController: UITableViewDelegate {
             navigationController?.pushViewController(controller, animated: true)
         } else if indexPath.row == 1 {
             let controller = SettingViewController.instantiate(fromAppStoryboard: .SideMenu)
+            if let res = AppUserDefaults.value(forKey: .settings, fallBackValue: "") as? [[String]] {
+                controller.dataArray = res
+            }
             navigationController?.pushViewController(controller, animated: true)
         } else if indexPath.row == titleArray.count - 1 {
             logoutButtonAction()

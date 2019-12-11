@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var facebookLoginButton: UIButton!
     @IBOutlet weak var googleLoginButton: GIDSignInButton!
+    @IBOutlet weak var appleLoginButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton! {
         didSet {
             createAccountButton.setAttributedTitle(underline("Create an account", font: UIFont.systemFont(ofSize: 16), color: AppDelegate.shared.appThemeColor), for: .normal)
@@ -101,6 +102,11 @@ class LoginViewController: UIViewController {
             let controller = SignUpViewController.instantiate(fromAppStoryboard: .Authentication)
             navigationController?.pushViewController(controller, animated: true)
         }
+    }
+    
+    @IBAction func appleButtonAction(_ sender: UIButton) {
+        view.endEditing(true)
+        
     }
     
     @IBAction func forgotPasswordButtonAction(_ sender: UIButton) {

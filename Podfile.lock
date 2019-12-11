@@ -55,11 +55,6 @@ PODS:
   - Kingfisher (5.8.3):
     - Kingfisher/Core (= 5.8.3)
   - Kingfisher/Core (5.8.3)
-  - Realm (4.1.1):
-    - Realm/Headers (= 4.1.1)
-  - Realm/Headers (4.1.1)
-  - RealmSwift (4.1.1):
-    - Realm (= 4.1.1)
   - SideMenu (4.0.0)
   - SwiftyJSON (4.0.0)
 
@@ -77,7 +72,6 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 6.2.0)
   - JJFloatingActionButton
   - Kingfisher (= 5.8.3)
-  - RealmSwift
   - SideMenu (= 4.0.0)
   - SwiftyJSON (= 4.0.0)
 
@@ -103,8 +97,6 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - JJFloatingActionButton
     - Kingfisher
-    - Realm
-    - RealmSwift
     - SideMenu
     - SwiftyJSON
 
@@ -129,11 +121,9 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   JJFloatingActionButton: 26805f87c7e9f68c6a91bd9f3f09c2e6b904a84f
   Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
-  Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
-  RealmSwift: 9e2657b33764f80e4a4dffd6d440e24715782052
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 913e5845c747357109b3ae82619f452e070bce35
+PODFILE CHECKSUM: b4bbbd55542d42fdfdac8cd981656a453981a475
 
 COCOAPODS: 1.8.4

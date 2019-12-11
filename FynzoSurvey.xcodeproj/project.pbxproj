@@ -329,8 +329,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C5775672395390A00463911 /* SystemConfiguration.framework in Frameworks */,
 				4C5775652395390300463911 /* AuthenticationServices.framework in Frameworks */,
+				4C5775672395390A00463911 /* SystemConfiguration.framework in Frameworks */,
 				4C577563239538F800463911 /* SafariServices.framework in Frameworks */,
 				4C3EA753238D26E000AE5491 /* LocalAuthentication.framework in Frameworks */,
 				5F8B092C3BC88E536F11BF7A /* Pods_FynzoSurvey.framework in Frameworks */,

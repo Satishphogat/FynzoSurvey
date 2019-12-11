@@ -13,7 +13,6 @@ target 'FynzoSurvey' do
   pod 'Kingfisher','5.8.3'
   pod 'ALCameraViewController', '3.0.2'
   pod 'ABGaugeViewKit', '1.0.1'
-  pod ‘RealmSwift’
   pod 'IQKeyboardManagerSwift','6.2.0'
   pod 'FreshchatSDK'
   pod 'FacebookCore','0.5.0'
