@@ -36,11 +36,9 @@ class ReportViewController: UIViewController {
         super.viewDidLoad()
         
         getReport()
-        
-        
     }
     
-    private func getQuestions(_ index: Int) -> [Question]{
+    private func getQuestions(_ index: Int) -> [Question] {
         let rawResponse = graphReport.surverResponse.allResponses[index].rawResponse
         if let data = rawResponse.data(using: String.Encoding.utf8) {
             do {

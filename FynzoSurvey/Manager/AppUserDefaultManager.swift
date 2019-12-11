@@ -19,6 +19,10 @@ class AppUserDefaults {
         case isAutoUpload
         case settings
         case formData
+        case importCategory
+        case allForms
+        case allCategory
+        case responseReport
     }
 }
 

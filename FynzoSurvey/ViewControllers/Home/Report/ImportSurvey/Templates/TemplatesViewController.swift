@@ -24,7 +24,7 @@ class TemplatesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCategoryTemplates()
+        configureForm()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,37 +37,19 @@ class TemplatesViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    private func getCategoryTemplates() {
-        FynzoWebServices.shared.getCategoryTemplate(controller: self) { [weak self](json, error) in
-            guard let `self` = self else { return }
-            
-            self.handlegetCategoryTemplatesSuccess(json)
-            
-        }
-    }
-    
-    private func handlegetCategoryTemplatesSuccess(_ json: JSON) {
-        let categoryTemplates = Category.models(from: json.arrayValue)
+    private func configureForm() {
+        let categoryValue = AppUserDefaults.value(forKey: .allCategory, fallBackValue: "") as? [[String: Any]] ?? [[:]]
+        let categoryTemplates = Category.models(from: JSON(categoryValue).arrayValue)
         let selectedCategoryList = categoryTemplates.filter({$0.categoryId == category.id})
-        getFormsApi(selectedCategoryList)
-    }
-    
-    private func getFormsApi(_ categories: [Category]) {
-        FynzoWebServices.shared.surveyForms(showHud: true, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: "18"]) { [weak self](json, error) in
-            guard let `self` = self else { return }
-            
-            self.handleSurveyFormsSuccess(json, categories)
+        if let formResult = AppUserDefaults.value(forKey: .allForms, fallBackValue: "") as? [[String: Any]] {
+            let forms = Form.models(from: JSON(formResult).arrayValue)
+            var selectedForm = [Form]()
+            for category in selectedCategoryList {
+                selectedForm += forms.filter({$0.copiedFrom == category.surveyFormId})
+            }
+            selectedForms = selectedForm.unique(map: {$0.copiedFrom})
         }
-    }
-    
-    private func handleSurveyFormsSuccess(_ json: JSON, _ categories: [Category]) {
-       let forms = Form.models(from: json.arrayValue)
-        var selectedForm = [Form]()
-        for category in categories {
-            selectedForm += forms.filter({$0.copiedFrom == category.surveyFormId})
-        }
-       selectedForms = selectedForm.unique(map: {$0.copiedFrom})
-       tableView.reloadData()
+        tableView.reloadData()
     }
     
     func openPicker(_ sender: UIButton) {

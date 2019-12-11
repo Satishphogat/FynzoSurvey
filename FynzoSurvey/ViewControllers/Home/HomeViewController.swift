@@ -70,7 +70,6 @@ class HomeViewController: UIViewController {
         
     var isDemoSurvey = false
     var forms = [Form]()
-    var refreshControl = UIRefreshControl()
     var isSurveyor = AppUserDefaults.value(forKey: .isSurveyor, fallBackValue: false) as? Bool ?? false
     
     override func viewDidLoad() {
@@ -85,8 +84,12 @@ class HomeViewController: UIViewController {
             getFormsApi(forms.isEmpty)
         }
         (isDemoSurvey || isSurveyor ) ? () : addFloatingButton()
-        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: UIControl.Event.valueChanged)
-        tableView.addSubview(refreshControl)
+        if let res = AppUserDefaults.value(forKey: .allCategory, fallBackValue: [[:]]) as? [[String: Any]], res.isEmpty {
+            getCategoryTemplates()
+        }
+        if let res = AppUserDefaults.value(forKey: .allForms, fallBackValue: [[:]]) as? [[String: Any]], res.isEmpty {
+            getAllFormsApi()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -138,10 +141,41 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @objc func pullToRefresh() {
-        getFormsApi()
-        refreshControl.endRefreshing()
+    private func getCategoryTemplates() {
+        FynzoWebServices.shared.getCategoryTemplate(controller: self) { [weak self] (json, error) in
+            guard self != nil else { return }
+            
+            var valueResult = [[String: Any]]()
+            for item in json.arrayValue {
+                var temp = [String: Any]()
+                for dictKey in item.dictionaryValue {
+                    temp[dictKey.key] = dictKey.value.stringValue
+                }
+                valueResult.append(temp)
+            }
+            AppUserDefaults.save(value: valueResult, forKey: .allCategory)
+        }
     }
+    
+    private func getAllFormsApi() {
+        let allForms = AppUserDefaults.value(forKey: .allForms, fallBackValue: "") as? [[String: Any]] ?? [[:]]
+        FynzoWebServices.shared.surveyForms(showHud: allForms.isEmpty, showHudText: "", controller: self, parameters: [Fynzo.ApiKey.userId: "18"]) { [weak self] (json, error) in
+            guard let `self` = self else { return }
+
+            AppUserDefaults.save(value: Date().getDateString("dd-MMM-yy, hh:mm a"), forKey: .homeRefreshTime)
+            self.lastUpdateTime.text = "Last Updated " + Date().getDateString("dd-MMM-yy, hh:mm a")
+            var valueResult = [[String: Any]]()
+            for item in json.arrayValue {
+                var temp = [String: Any]()
+                for dictKey in item.dictionaryValue {
+                    temp[dictKey.key] = dictKey.value.stringValue
+                }
+                valueResult.append(temp)
+            }
+            AppUserDefaults.save(value: valueResult, forKey: .allForms)
+        }
+    }
+
     
     private func getFormsApi(_ showHud: Bool = true) {
         let id = isDemoSurvey ? "18" : AppUserDefaults.value(forKey: .id, fallBackValue: false) as? String ?? ""
@@ -162,8 +196,6 @@ class HomeViewController: UIViewController {
     }
     
     private func handleSurveyFormsSuccess(_ json: JSON) {
-        AppUserDefaults.save(value: Date().getDateString("dd-MMM-yy, hh:mm a"), forKey: .homeRefreshTime)
-        lastUpdateTime.text = "Last Updated " + Date().getDateString("dd-MMM-yy, hh:mm a")
         forms = Form.models(from: json.arrayValue)
         if forms.isEmpty {
             customizedAlert(message: "No Survey added yet", iconImage: #imageLiteral(resourceName: "ic_notification"), buttonTitles: ["Cancel", "Add now"]) { (selectedButton) in
@@ -232,6 +264,9 @@ class HomeViewController: UIViewController {
         
         actionButton.addItem(title: "Import Survey From Templates", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in
             let controller = ImportTemplateSurveyViewController.instantiate(fromAppStoryboard: .Home)
+            if let resValue = AppUserDefaults.value(forKey: .importCategory, fallBackValue: "") as? [[String: Any]] {
+                controller.categoryList = Category.models(from: JSON(resValue).arrayValue)
+            }
             self.navigationController?.pushViewController(controller, animated: true)
         }
         
@@ -265,6 +300,8 @@ class HomeViewController: UIViewController {
     
     @IBAction func updateSurveyButtonAction(_ sender: UIButton) {
         getFormsApi(true)
+        getCategoryTemplates()
+        getAllFormsApi()
     }
 
     @IBAction func uploadLocalDataButtonAction(_ sender: UIButton) {

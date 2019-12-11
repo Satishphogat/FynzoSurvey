@@ -93,9 +93,9 @@ extension FynzoWebServices {
         postRequest(showHud: showHud, showHudText: showHudText, shouldErrorRequired: shouldErrorRequired, endPoint: AppConfiguration.appUrl + EndPoint.surveyForm.rawValue, controller: controller, parameters: parameters, headers: [:], completion: completion)
     }
     
-    func getCategories(controller: UIViewController, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
+    func getCategories(showHud: Bool, controller: UIViewController, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {
         
-        postRequest(showHud: true, showHudText: "", shouldErrorRequired: false, endPoint: AppConfiguration.appUrl + EndPoint.getCategory.rawValue, controller: controller, parameters: [:], headers: [:], completion: completion)
+        postRequest(showHud: showHud, showHudText: "", shouldErrorRequired: false, endPoint: AppConfiguration.appUrl + EndPoint.getCategory.rawValue, controller: controller, parameters: [:], headers: [:], completion: completion)
     }
     
     func importSurvey(parameters: JSONDictionary ,controller: UIViewController, isSocialLogin: Bool = false, completion: @escaping CompletionBlock) {

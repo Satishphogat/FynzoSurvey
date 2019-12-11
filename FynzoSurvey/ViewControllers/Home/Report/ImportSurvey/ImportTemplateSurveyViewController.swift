@@ -37,9 +37,18 @@ class ImportTemplateSurveyViewController: UIViewController {
     }
     
     private func getCategories() {
-        FynzoWebServices.shared.getCategories(controller: self) { [weak self] (json, error) in
+        FynzoWebServices.shared.getCategories(showHud: categoryList.isEmpty, controller: self) { [weak self] (json, error) in
             guard let `self` = self, error == nil else { return }
             
+            var valueResult = [[String: Any]]()
+            for item in json.arrayValue {
+                var temp = [String: Any]()
+                for dictKey in item.dictionaryValue {
+                    temp[dictKey.key] = dictKey.value.stringValue
+                }
+                valueResult.append(temp)
+            }
+            AppUserDefaults.save(value: valueResult, forKey: .importCategory)
             self.categoryList = Category.models(from: json.arrayValue)
             self.tableView.reloadData()
         }
