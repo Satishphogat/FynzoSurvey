@@ -26,13 +26,24 @@ class FormViewController: UIViewController {
             collectionView.register(cellType: PickerViewCollectionViewCell.self)
         }
     }
-    
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nextArrowButton: UIButton!
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var previousArrowButton: UIButton!
+    @IBOutlet weak var backgroundImageView: UIImageView! {
+        didSet {
+            if let img = UserDefaults.standard.value(forKey: "formBackground" + form.id) as? String,  let url = URL(string: AppConfiguration.appUrl + img) {
+                backgroundImageView.kf.setImage(with: url)
+            }
+        }
+    }
+    @IBOutlet weak var logoImageView: UIImageView! {
+        didSet {
+            if let img = UserDefaults.standard.value(forKey: "formLogo" + form.id) as? String, let url = URL(string: AppConfiguration.appUrl + img) {
+                logoImageView.kf.setImage(with: url)
+            }
+        }
+    }
 
     var form = Form()
     var questionnairies: [[Questionnaire]] = [[]]
@@ -78,7 +89,8 @@ class FormViewController: UIViewController {
     private func handleSurveyFormsSuccess(_ json: JSON) {
         let form = Form(json: json[Fynzo.ApiKey.surveyForm])
         //manageBackGroundData(form)
-
+        UserDefaults.standard.set(form.logo, forKey: "formLogo" + form.id)
+        UserDefaults.standard.set(form.backgroundImage, forKey: "formBackground" + form.id)
         if let url = URL(string: AppConfiguration.appUrl + form.logo) {
             logoImageView.kf.setImage(with: url)
         }
@@ -126,12 +138,6 @@ class FormViewController: UIViewController {
                     } else if isNpsAdded {
                         updatedQuestionary.append(questionary[index])
                     }
-                        
-                    
-//                    if updatedQuestionary.contains(where: {$0.questingNo == questionary[index].questingNo && $0.screenNo == questionary[index].screenNo}) {
-//
-//                    } else
-                    
                 } else {
                     updatedQuestionary.append(questionary[index])
                 }

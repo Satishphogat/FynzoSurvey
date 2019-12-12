@@ -196,7 +196,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="form_background" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-r1-Llu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fslogo" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-r1-Llu">
                                 <rect key="frame" x="0.0" y="18" width="375" height="649"/>
                             </imageView>
                             <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N05-Ha-I99">
@@ -1024,7 +1024,6 @@
     <resources>
         <image name="Chat With Us" width="64" height="64"/>
         <image name="backward" width="225" height="225"/>
-        <image name="form_background" width="1900" height="782"/>
         <image name="forward" width="225" height="225"/>
         <image name="fslogo" width="40" height="40"/>
         <image name="profileImage" width="306" height="331"/>
