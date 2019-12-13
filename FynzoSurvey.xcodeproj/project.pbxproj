@@ -260,6 +260,7 @@
 		25FEE057234E483300BF002A /* Poppins-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.otf"; sourceTree = "<group>"; };
 		457444D65E7D507BC1774A41 /* Pods-MyMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayer/Pods-MyMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		4C0330DA2397BD0200E8C32B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4C0D587623A22174004395E6 /* FynzoSurvey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FynzoSurvey.entitlements; sourceTree = "<group>"; };
 		4C3EA752238D26E000AE5491 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		4C4376BE2390F22C00A4EEAF /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		4C4376C02391204600A4EEAF /* SurveyorUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyorUserInfo.swift; sourceTree = "<group>"; };
@@ -783,6 +784,7 @@
 		7199ADAB21EC8A1D0066B969 /* FynzoSurvey */ = {
 			isa = PBXGroup;
 			children = (
+				4C0D587623A22174004395E6 /* FynzoSurvey.entitlements */,
 				254A84C7234F91D600B35EF0 /* Manager */,
 				25FEE018234E480600BF002A /* AppConfiguration */,
 				251596D42354DD9200E69D95 /* Model */,
@@ -1284,6 +1286,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FynzoSurvey/FynzoSurvey.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yolo9 Internet Solutions Private Limited (994Y4LVL39)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 994Y4LVL39;
@@ -1312,6 +1315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FynzoSurvey/FynzoSurvey.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yolo9 Internet Solutions Private Limited (994Y4LVL39)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 994Y4LVL39;

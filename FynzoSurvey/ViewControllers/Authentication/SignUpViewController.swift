@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import FBSDKLoginKit
 import GoogleSignIn
+import AuthenticationServices
 
 class SignUpViewController: UIViewController {
     
@@ -24,6 +25,7 @@ class SignUpViewController: UIViewController {
         }
     }
     @IBOutlet weak var facebookLoginButton: UIButton!
+    @IBOutlet weak var appleLoginButton: UIButton!
     @IBOutlet weak var googleLoginButton: GIDSignInButton!
 
     let titleArray = ["Name", "Email", "Phone", "Password", "Company/Organization"]
@@ -148,6 +150,23 @@ class SignUpViewController: UIViewController {
     @IBAction func googleButtonAction(_ sender: UIButton) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             GIDSignIn.sharedInstance()?.signIn()
+        }
+    }
+    
+    @IBAction func appleButtonAction(_ sender: UIButton) {
+        view.endEditing(true)
+        
+        if #available(iOS 13.0, *) {
+            let authorizationAppleIDProvider = ASAuthorizationAppleIDProvider()
+            let authorizationRequest = authorizationAppleIDProvider.createRequest()
+            authorizationRequest.requestedScopes = [.fullName, .email]
+            
+            let authorizationController = ASAuthorizationController(authorizationRequests: [authorizationRequest])
+            authorizationController.presentationContextProvider = self
+            authorizationController.delegate = self
+            authorizationController.performRequests()
+        } else {
+            customizedAlert(message: "Apple Id sign-in is supported in iOS 13.0 or above only")
         }
     }
     
@@ -364,4 +383,33 @@ extension SignUpViewController: UITextFieldDelegate {
         
         return range.location < 50 && string != " "
     }
+}
+
+extension SignUpViewController: ASAuthorizationControllerPresentationContextProviding {
+    
+    @available(iOS 13.0, *)
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return AppDelegate.shared.window ?? UIWindow()
+    }
+}
+
+extension SignUpViewController: ASAuthorizationControllerDelegate {
+
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
+        
+        userInfo.fbId =  appleIDCredential.user
+        userInfo.firstName = appleIDCredential.fullName?.givenName ?? ""
+        userInfo.lastName = ""
+        userInfo.provider = "Apple"
+        userInfo.email = appleIDCredential.email ?? userInfo.fbId + "@gmail.com"
+        userInfo.image = ""
+        socialLogin(userInfo)
+    }
+  
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        customizedAlert(message: error.localizedDescription)
+  }
 }

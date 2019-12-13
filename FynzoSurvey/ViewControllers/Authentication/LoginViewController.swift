@@ -11,6 +11,7 @@ import Foundation
 import SwiftyJSON
 import FBSDKLoginKit
 import GoogleSignIn
+import AuthenticationServices
 //import ObjectMapper
 
 class LoginViewController: UIViewController {
@@ -26,6 +27,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var facebookLoginButton: UIButton!
     @IBOutlet weak var googleLoginButton: GIDSignInButton!
     @IBOutlet weak var appleLoginButton: UIButton!
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var createAccountButton: UIButton! {
         didSet {
             createAccountButton.setAttributedTitle(underline("Create an account", font: UIFont.systemFont(ofSize: 16), color: AppDelegate.shared.appThemeColor), for: .normal)
@@ -107,6 +109,18 @@ class LoginViewController: UIViewController {
     @IBAction func appleButtonAction(_ sender: UIButton) {
         view.endEditing(true)
         
+        if #available(iOS 13.0, *) {
+            let authorizationAppleIDProvider = ASAuthorizationAppleIDProvider()
+            let authorizationRequest = authorizationAppleIDProvider.createRequest()
+            authorizationRequest.requestedScopes = [.fullName, .email]
+            
+            let authorizationController = ASAuthorizationController(authorizationRequests: [authorizationRequest])
+            authorizationController.presentationContextProvider = self
+            authorizationController.delegate = self
+            authorizationController.performRequests()
+        } else {
+            customizedAlert(message: "Apple Id sign-in is supported in iOS 13.0 or above only")
+        }
     }
     
     @IBAction func forgotPasswordButtonAction(_ sender: UIButton) {
@@ -212,6 +226,35 @@ class LoginViewController: UIViewController {
             self.handleLoginSuccess(json)
         }
     }
+}
+
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+
+    @available(iOS 13.0, *)
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return AppDelegate.shared.window ?? UIWindow()
+  }
+}
+
+extension LoginViewController: ASAuthorizationControllerDelegate {
+
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
+        
+        userInfo.fbId =  appleIDCredential.user
+        userInfo.firstName = appleIDCredential.fullName?.givenName ?? ""
+        userInfo.lastName = ""
+        userInfo.provider = "Apple"
+        userInfo.email = appleIDCredential.email ?? userInfo.fbId + "@gmail.com"
+        userInfo.image = ""
+        socialLogin(userInfo)
+    }
+  
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        customizedAlert(message: error.localizedDescription)
+  }
 }
 
 extension LoginViewController: GIDSignInDelegate {
