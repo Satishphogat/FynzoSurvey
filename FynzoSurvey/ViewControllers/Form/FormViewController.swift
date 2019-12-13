@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import Kingfisher
 import Alamofire
+import RealmSwift
 
 class FormViewController: UIViewController {
     
@@ -54,6 +55,18 @@ class FormViewController: UIViewController {
         
         moveToLandscape()
         getFormsApi()
+        if let res = UserDefaults.standard.value(forKey: "formQuestion" + form.id) as? String {
+            if let json = res.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+                do {
+                    let offloadData =  try JSON(data: json)
+                    mapFormData(offloadData)
+                } catch {
+                    print("Error")
+                }
+            } else {
+                print("Error")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,12 +104,18 @@ class FormViewController: UIViewController {
         //manageBackGroundData(form)
         UserDefaults.standard.set(form.logo, forKey: "formLogo" + form.id)
         UserDefaults.standard.set(form.backgroundImage, forKey: "formBackground" + form.id)
+        UserDefaults.standard.set(json.rawString() ?? "", forKey: "formQuestion" + form.id)
         if let url = URL(string: AppConfiguration.appUrl + form.logo) {
             logoImageView.kf.setImage(with: url)
         }
         if let url = URL(string: AppConfiguration.appUrl + form.backgroundImage) {
             backgroundImageView.kf.setImage(with: url)
         }
+        
+        mapFormData(json)
+    }
+    
+    private func mapFormData(_ json: JSON) {
         let questionnaire = Questionnaire.models(from: json[Fynzo.ApiKey.questionnaire].arrayValue)
         let screens = Set(questionnaire.map({$0.screenNo})).sortedNumerically(.orderedAscending)
         questionnairies.removeFirst()
@@ -147,7 +166,6 @@ class FormViewController: UIViewController {
         
         questionnairies = updatedQuestionaries.filter({!$0.isEmpty})
         questionnairies.append([Questionnaire()]) // for submit screen
-        
         collectionView.reloadData()
     }
     
