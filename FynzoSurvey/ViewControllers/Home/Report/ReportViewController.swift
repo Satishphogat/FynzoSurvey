@@ -35,7 +35,22 @@ class ReportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getReport()
+        var showHud = true
+        if let res = UserDefaults.standard.value(forKey: "formReportResponse" + form.id) as? String {
+             if let json = res.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+                 do {
+                    showHud = false
+                     let offloadData =  try JSON(data: json)
+                     self.graphReport = GraphReportResponse(json: offloadData)
+                     self.handleSuccessResponse()
+                 } catch {
+                     print("Error")
+                 }
+             } else {
+                 print("Error")
+             }
+         }
+        getReport(showHud)
     }
     
     private func getQuestions(_ index: Int) -> [Question] {
@@ -107,12 +122,13 @@ class ReportViewController: UIViewController {
         return questionResponse
     }
     
-    private func getReport() {
+    private func getReport(_ showHud: Bool = true) {
         let dict = [Fynzo.ApiKey.userId: AppUserDefaults.value(forKey: .id, fallBackValue: "") as? String ?? "",
                     Fynzo.ApiKey.surveyFormId: form.id]
-        FynzoWebServices.shared.getGraphReport(showHud: true, showHudText: "", controller: self, parameters: dict) { [weak self] (json, error) in
+        FynzoWebServices.shared.getGraphReport(showHud: showHud, showHudText: "", controller: self, parameters: dict) { [weak self] (json, error) in
             guard let `self` = self, error == nil else { return }
-            print(json)
+            
+            UserDefaults.standard.set(json.rawString() ?? "", forKey: "formReportResponse" + self.form.id)
             self.graphReport = GraphReportResponse(json: json)
             self.handleSuccessResponse()
         }
