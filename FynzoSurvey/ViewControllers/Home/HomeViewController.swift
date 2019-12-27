@@ -84,10 +84,10 @@ class HomeViewController: UIViewController {
             getFormsApi(forms.isEmpty)
         }
         (isDemoSurvey || isSurveyor ) ? () : addFloatingButton()
-        if let res = AppUserDefaults.value(forKey: .allCategory, fallBackValue: [[:]]) as? [[String: Any]], res.isEmpty {
+        if let res = AppUserDefaults.value(forKey: .allCategory, fallBackValue: [[String: Any]]()) as? [[String: Any]], res.isEmpty {
             getCategoryTemplates()
         }
-        if let res = AppUserDefaults.value(forKey: .allForms, fallBackValue: [[:]]) as? [[String: Any]], res.isEmpty {
+        if let res = AppUserDefaults.value(forKey: .allForms, fallBackValue: [[String: Any]]()) as? [[String: Any]], res.isEmpty {
             getAllFormsApi()
         }
     }
@@ -305,13 +305,14 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func uploadLocalDataButtonAction(_ sender: UIButton) {
-        if var updatedTime = AppUserDefaults.value(forKey: .form, fallBackValue: "") as? [[String: Any]] {
+        if let updatedTime = AppUserDefaults.value(forKey: .form, fallBackValue: "") as? [[String: Any]] {
             localDataLabel.text = "\(updatedTime.count) stored locally"
             for index in 0..<updatedTime.count {
                 FynzoWebServices.shared.submitForm(controller: self, parameters: updatedTime[index]) { [weak self](json, error) in
                     guard let `self` = self else { return }
                     
                     AppUserDefaults.removeValue(forKey: .form)
+                    self.customizedAlert(withTitle: "Fynzo", message: "Form submitted successfully!", iconImage: #imageLiteral(resourceName: "filled_tick"), afterDelay: 0.5, completion: nil)
                     self.localDataLabel.text = "0 stored locally"
                 }
             }

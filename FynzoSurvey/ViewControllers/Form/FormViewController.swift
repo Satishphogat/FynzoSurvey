@@ -10,7 +10,6 @@ import UIKit
 import SwiftyJSON
 import Kingfisher
 import Alamofire
-import RealmSwift
 
 class FormViewController: UIViewController {
     

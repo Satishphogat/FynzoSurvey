@@ -20,5 +20,4 @@ target 'FynzoSurvey' do
   pod 'FacebookShare','0.5.0'
   pod 'GoogleSignIn','4.1.1'
   pod 'FBSDKMessengerShareKit'
-  pod 'RealmSwift'
 end
