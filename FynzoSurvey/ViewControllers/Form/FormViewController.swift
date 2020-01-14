@@ -28,7 +28,11 @@ class FormViewController: UIViewController {
     }
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nextArrowButton: UIButton!
-    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var previousButton: UIButton! {
+        didSet {
+            previousButton.setTitle("Exit", for: .normal)
+        }
+    }
     @IBOutlet weak var previousArrowButton: UIButton!
     @IBOutlet weak var backgroundImageView: UIImageView! {
         didSet {
@@ -72,9 +76,7 @@ class FormViewController: UIViewController {
         super.viewWillAppear(animated)
         
         moveToLandscape()
-
-        configureNavigationBar(withTitle: "Fynzo Survey", leftBarImage: #imageLiteral(resourceName: "leftArrowWhite"), leftSelector: #selector(leftButtonAction))
-        
+        navigationController?.navigationBar.isHidden = true
     }
     
     @objc func leftButtonAction() {
@@ -117,7 +119,7 @@ class FormViewController: UIViewController {
     private func mapFormData(_ json: JSON) {
         let questionnaire = Questionnaire.models(from: json[Fynzo.ApiKey.questionnaire].arrayValue)
         let screens = Set(questionnaire.map({$0.screenNo})).sortedNumerically(.orderedAscending)
-        questionnairies.removeFirst()
+        questionnairies.removeAll()
         
         for screen in screens.sortedNumerically(.orderedAscending) {  // number of screen
             let screenTypeArray = questionnaire.filter({$0.screenNo == screen})
@@ -198,8 +200,26 @@ class FormViewController: UIViewController {
     
     func moveCollectionToFrame(contentOffset : CGFloat) {
         DispatchQueue.main.async {
-            let frame: CGRect = CGRect(x : contentOffset ,y : self.collectionView.contentOffset.y ,width : self.collectionView.frame.width,height : self.collectionView.frame.height)
-            self.collectionView.scrollRectToVisible(frame, animated: false)
+            if contentOffset < 0 {
+                self.customizedAlert(withTitle: "Fynzo!", message: "Are you sure you want to exit this survey?", iconImage: #imageLiteral(resourceName: "fslogo"), buttonTitles: ["Cancel", "Ok"]) { (selectedButton) in
+                    if selectedButton == 1 {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            } else {
+                self.nextButton.isHidden = false
+                self.nextArrowButton.isHidden = false
+                self.previousButton.setTitle("PREV", for: .normal)
+                if contentOffset >= (self.collectionView.contentSize.width - self.collectionView.bounds.size.width) {
+                    self.nextButton.isHidden = true
+                    self.nextArrowButton.isHidden = true
+                }
+                if contentOffset == 0 {
+                    self.previousButton.setTitle("Exit", for: .normal)
+                }
+                let frame: CGRect = CGRect(x : contentOffset ,y : self.collectionView.contentOffset.y ,width : self.collectionView.frame.width,height : self.collectionView.frame.height)
+                self.collectionView.scrollRectToVisible(frame, animated: false)
+            }
         }
     }
     
@@ -341,11 +361,6 @@ extension FormViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let questionary = questionnairies[indexPath.item]
         
-//        previousButton.isHidden = indexPath.item == 0
-//        previousArrowButton.isHidden = indexPath.item == 0
-//        nextButton.isHidden = indexPath.item == questionnairies.count - 1
-//        nextArrowButton.isHidden = indexPath.item == questionnairies.count - 1
-
         if questionary.isEmpty {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: FirstCollectionViewCell.self)
             

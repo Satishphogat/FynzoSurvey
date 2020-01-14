@@ -219,12 +219,6 @@ class HomeViewController: UIViewController {
             KPItem(title: Fynzo.ButtonTitle.openWithLock, titleColor: Fynzo.ColorCode.black, onTap: {
                 self.openWithLock(sender.tag)
             }),
-            KPItem(title: Fynzo.ButtonTitle.shareUrl, titleColor: Fynzo.ColorCode.black, onTap: {
-                self.openShareScreen(sender.tag)
-            }),
-            KPItem(title: Fynzo.ButtonTitle.responseReport, titleColor: Fynzo.ColorCode.black, onTap: {
-                self.openReportScreen(sender.tag)
-            }),
             KPItem(title: Fynzo.ButtonTitle.edit, titleColor: Fynzo.ColorCode.black, onTap: {
             }),
             ])
@@ -257,12 +251,12 @@ class HomeViewController: UIViewController {
     
     private func addFloatingButton() {
         let actionButton = JJFloatingActionButton()
-        
-        actionButton.addItem(title: "Create New Survey", image: UIImage(named: "First")?.withRenderingMode(.alwaysTemplate)) { item in
+        actionButton.buttonColor = #colorLiteral(red: 0.2705882353, green: 0.6, blue: 0.937254902, alpha: 1)
+        actionButton.addItem(title: "Create New Survey", image: UIImage(named: "create")?.withRenderingMode(.alwaysTemplate)) { item in
             self.navigationController?.pushViewController(WebKitViewController.instantiate(fromAppStoryboard: .Home), animated: true)
         }
         
-        actionButton.addItem(title: "Import Survey From Templates", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in
+        actionButton.addItem(title: "Import Survey From Templates", image: UIImage(named: "import")?.withRenderingMode(.alwaysTemplate)) { item in
             let controller = ImportTemplateSurveyViewController.instantiate(fromAppStoryboard: .Home)
             if let resValue = AppUserDefaults.value(forKey: .importCategory, fallBackValue: "") as? [[String: Any]] {
                 controller.categoryList = Category.models(from: JSON(resValue).arrayValue)
@@ -318,6 +312,23 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    @objc func openPickerForDotButton(_ sender: UIButton) {
+        var croppingParameters: CroppingParameters {
+            return CroppingParameters(isEnabled: true, allowResizing: true, allowMoving: true, minimumSize: CGSize(width: 60, height: 60))
+        }
+        let actionSheet = KPActionSheet(items: [
+            KPItem(title: "Share survey url", titleColor: Fynzo.ColorCode.black, onTap: {
+                self.openShareScreen(sender.tag)
+            }),
+            KPItem(title: "Response report", titleColor: Fynzo.ColorCode.black, onTap: {
+                self.openReportScreen(sender.tag)
+            })
+            ])
+        DispatchQueue.main.async {
+            self.present(actionSheet, animated: true, completion: nil)
+        }
+    }
  }
 
 extension HomeViewController: UITableViewDataSource {
@@ -332,7 +343,9 @@ extension HomeViewController: UITableViewDataSource {
         cell.label.text = forms[indexPath.row].name
         cell.startButton.tag = indexPath.row
         cell.startButton.addTarget(self, action: #selector(startButtonAction(_:)), for: .touchUpInside)
-        
+        cell.dotButton.tag = indexPath.row
+        cell.dotButton.addTarget(self, action: #selector(openPickerForDotButton(_:)), for: .touchUpInside)
+
         return cell
     }
 }

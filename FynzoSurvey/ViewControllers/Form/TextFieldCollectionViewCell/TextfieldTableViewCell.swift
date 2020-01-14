@@ -12,4 +12,5 @@ class TextfieldTableViewCell: UITableViewCell, NibReusable {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textView: UITextView!
 }

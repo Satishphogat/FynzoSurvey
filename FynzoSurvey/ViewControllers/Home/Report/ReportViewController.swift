@@ -43,14 +43,16 @@ class ReportViewController: UIViewController {
                      let offloadData =  try JSON(data: json)
                      self.graphReport = GraphReportResponse(json: offloadData)
                      self.handleSuccessResponse()
+                    self.getReport(false)
                  } catch {
                      print("Error")
                  }
              } else {
                  print("Error")
              }
-         }
-        getReport(showHud)
+        } else {
+            getReport(showHud)
+        }
     }
     
     private func getQuestions(_ index: Int) -> [Question] {

@@ -28,10 +28,26 @@ extension TextfieldCollectionViewCell: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: TextfieldTableViewCell.self)
-        cell.label.text = questionnaries[indexPath.row].questingText
+        if questionnaries[indexPath.row].questingText == "Name" {
+            cell.label.text = "Full Name"
+        } else if questionnaries[indexPath.row].questingText == "Mobile" {
+            cell.label.text = "Phone Number"
+        } else {
+            cell.label.text = questionnaries[indexPath.row].questingText
+        }
         cell.textField.tag = indexPath.row
+        cell.textView.tag = indexPath.row
         cell.textField.delegate = self
+        cell.textView.delegate = self
         
+        if questionnaries[indexPath.row].isTextbox == "0" || questionnaries[indexPath.row].isTextbox.isEmpty {
+            cell.textField.isHidden = false
+            cell.textView.isHidden = true
+        } else {
+            cell.textField.isHidden = true
+            cell.textView.isHidden = false
+        }
+
         return cell
     }
 }
@@ -48,6 +64,16 @@ extension TextfieldCollectionViewCell: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         questionnaries[textField.tag].answer = textField.text ?? ""
         if textField.tag == questionnaries.count - 1 {
+          completion?(questionnaries)
+        }
+    }
+}
+
+extension TextfieldCollectionViewCell: UITextViewDelegate {
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        questionnaries[textView.tag].answer = textView.text ?? ""
+        if textView.tag == questionnaries.count - 1 {
           completion?(questionnaries)
         }
     }

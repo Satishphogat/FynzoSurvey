@@ -12,4 +12,5 @@ class HomeTableViewCell: UITableViewCell, NibReusable {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var dotButton: UIButton!
 }

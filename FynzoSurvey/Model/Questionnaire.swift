@@ -28,6 +28,7 @@ struct Questionnaire {
     var question = Question()
     var selectedStars = 0
     var answer = ""
+    var isTextbox = "0"
     
     init(json: JSON = JSON.null) {
         id          = json[Fynzo.ApiKey.id].stringValue
@@ -46,6 +47,8 @@ struct Questionnaire {
         questingText          = json[Fynzo.ApiKey.questionText].stringValue
         question          = Question(json: json[Fynzo.ApiKey.question])
         questionTypeId          = json[Fynzo.ApiKey.questionTypeId].stringValue
+        isTextbox          = json["isTextbox"].stringValue
+
     }
     
     static func models(from jsonArray: [JSON]) -> [Questionnaire] {

@@ -56,7 +56,6 @@ class SurveyorLoginViewController: UIViewController {
         FynzoWebServices.shared.survoyrLogin(showHud: true, showHudText: "", controller: self, parameters: dict) { [weak self](json, error) in
             guard let `self` = self else { return }
             
-            print(json)
             if json[Fynzo.ApiKey.status].boolValue {
                 self.formsArray = json["forms"].arrayValue
                 self.handleSuceess(SurveyorUserInfo(json))
@@ -120,7 +119,10 @@ extension SurveyorLoginViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        return range.location < 50 && string != " "
+        if isNewuser {
+            return textField == phoneTextField ? range.location < 10 : range.location < 50
+        } else {
+            return range.location < 50 && string != " "
+        }
     }
 }

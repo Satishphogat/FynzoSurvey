@@ -54,7 +54,7 @@ class SettingViewController: UIViewController {
     }
     
     private func handleSignUpSuccess(_ json: JSON) {
-        let isAutoUpload = AppUserDefaults.value(forKey: .isAutoUpload, fallBackValue: false) as? Bool ?? false
+        let isAutoUpload = AppUserDefaults.value(forKey: .isAutoUpload, fallBackValue: true) as? Bool ?? true
         userInfo = UserInfo(json: json)
         dataArray = [[userInfo.email], [userInfo.plan.name, userInfo.plan.startDate.getCustomizedDate(), userInfo.plan.endDate.getCustomizedDate()], [versionNumber], ["\(isAutoUpload)"]]
         AppUserDefaults.save(value: dataArray, forKey: .settings)
